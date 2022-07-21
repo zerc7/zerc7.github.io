@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#777"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg">
+  <link rel="mask-icon" href="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg" color="#777">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code+Light:300,300italic,400,400italic,700,700italic%7CLato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zerc.tk","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"waline","storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="摘要：多项式（FFT），生成函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数论笔记 II">
+<meta property="og:url" content="https://zerc.tk/mathII/index.html">
+<meta property="og:site_name" content="zerc">
+<meta property="og:description" content="摘要：多项式（FFT），生成函数">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-21T07:54:26.000Z">
+<meta property="article:modified_time" content="2022-07-21T13:49:31.731Z">
+<meta property="article:author" content="zerc_7">
+<meta property="article:tag" content="oi">
+<meta property="article:tag" content="math">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://zerc.tk/mathII/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zerc.tk/mathII/","path":"mathII/","title":"数论笔记 II"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数论笔记 II | zerc</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">zerc</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">zone</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a></li><li class="menu-item menu-item-公告"><a href="/notice/" rel="section"><i class="fa fa-notice fa-fw"></i>公告</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FFT"><span class="nav-number">1.</span> <span class="nav-text">FFT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">前置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DFT"><span class="nav-number">1.3.</span> <span class="nav-text">DFT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDFT"><span class="nav-number">1.4.</span> <span class="nav-text">IDFT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">生成函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">普通生成函数</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zerc_7"
+      src="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg">
+  <p class="site-author-name" itemprop="name">zerc_7</p>
+  <div class="site-description" itemprop="description">blog</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zerc&" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zerc&amp;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:3508610899@qq.com" title="E-Mail → mailto:3508610899@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zerc.tk/mathII/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg">
+      <meta itemprop="name" content="zerc_7">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zerc">
+      <meta itemprop="description" content="blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数论笔记 II | zerc">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数论笔记 II
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-21 15:54:26 / 修改时间：21:49:31" itemprop="dateCreated datePublished" datetime="2022-07-21T15:54:26+08:00">2022-07-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>摘要：多项式（FFT），生成函数</p>
+</blockquote>
+<span id="more"></span>
+
+<hr>
+<h2 id="FFT"><a href="#FFT" class="headerlink" title="FFT"></a>FFT</h2><h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><p>设：</p>
+<p>$$<br>\begin{split}<br>A&#x3D;\sum_{i&#x3D;0}^{n} a_ix^i \\<br>B&#x3D;\sum_{i&#x3D;0}^{m} b_ix^i<br>\end{split}<br>$$</p>
+<p>那么：</p>
+<p>$$<br>\begin{split}<br>C&amp;&#x3D;A\ast B\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^{nm}\sum_{j&#x3D;0}^{i}a_jb_{i-j}x^{i}<br>\end{split}<br>$$</p>
+<p>时间复杂度 $O(n^2)$，无法接受，考虑优化。</p>
+<h3 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h3><p><strong>单位根</strong> </p>
+<p>在复平面上画一个以 $(0,0)$ 为圆心的圆，将圆 $n$ 等分，并规定 $(1,0)$ 为第零个等分点，逆时针标号，就得到了第 $0$ 到 $n-1$ 个等分点，也就是第 $0$ 到 $n-1$ 个 $n$ 次单位根，记做 $\omega_n^0,\omega_n^1,\cdots,\omega_n^{n-1}$ 。</p>
+<p><strong>性质</strong> ：</p>
+<ul>
+<li><p>$\omega_n^k&#x3D;e^\frac{2\pi ik}{n}$</p>
+<p>$e^{i\theta}&#x3D;cos\theta+i\ast sin\theta$</p>
+</li>
+<li><p>$\omega_{dn}^{dk}&#x3D;\omega_n^k$</p>
+<p>$\omega_{dn}^{dk}&#x3D;e^\frac{2\pi idk}{dn}&#x3D;e^\frac{2\pi ik}{n}&#x3D;\omega_n^k$</p>
+</li>
+<li><p>$\omega_n^k&#x3D;a+bi \Rightarrow \omega_n^{-k}&#x3D;a-bi$</p>
+<p>$\omega_n^k&#x3D;e^\frac{2\pi ik}{n}$</p>
+</li>
+<li><p>$\omega_n^{k+\frac n2}&#x3D;-\omega_n^k$</p>
+<p>$\omega_n^{k+\frac n2}&#x3D;\omega_n^k\ast \omega_n^\frac n2&#x3D;-\omega_n^k$</p>
+</li>
+</ul>
+<h3 id="DFT"><a href="#DFT" class="headerlink" title="DFT"></a>DFT</h3><p>DFT 主要的思想是在求一部分值的时候求出来另外一部分，然后分治进行。</p>
+<p>比如说我们要求 $A(x)&#x3D;\sum_{i&#x3D;0}^{n} a_ix_i$ 在 $x_1,x_2,\cdots,x_n$ 处取值，那么：</p>
+<p>将 $A$ 的系数按照下标的奇偶性分类，即：</p>
+<p>$$<br>\begin{split}<br>A_0(x)&amp;&#x3D;a_0+a_2x^1+a_4x^2+\cdots \\<br>A_1(x)&amp;&#x3D;a_1+a_3x^1+a_5x^2+\cdots \\<br>A(x)&amp;&#x3D;A_0(x^2)+x\ast A_1(x^2)<br>\end{split}<br>$$</p>
+<p>分别将 $\omega_n^k$ 和 $\omega_n^{k+\frac{n}{2}}$ 代入得：</p>
+<p>$$<br>\begin{cases}<br>A(\omega_n^k)&amp;&#x3D;&amp;A_0(\omega_{n&#x2F;2}^{k})+\omega_n^kA_1(\omega_{n&#x2F;2}^k)\\<br>A(\omega_n^{k+\frac n2})&amp;&#x3D;&amp;A_0(\omega_{n&#x2F;2}^{k})-\omega_n^{k}A_1(\omega_{n&#x2F;2}^{k})<br>\end{cases}<br>$$</p>
+<p>递归求解，时间复杂度 $O(n\log n)$</p>
+<h3 id="IDFT"><a href="#IDFT" class="headerlink" title="IDFT"></a>IDFT</h3><p>IDFT 可以看作是 DFT 的逆运算。</p>
+<p>先引入单位根的一个性质：</p>
+<p>$$<br>\dfrac1n\sum_{i&#x3D;0}^{n-<br>1}\omega_n^{v\ast i}&#x3D;[v\bmod n&#x3D;0]<br>$$</p>
+<p>其实很好证明：</p>
+<p>$$<br>\begin{split}<br>&amp;\because\omega_{n}^{v\ast i}&#x3D;\omega_{n}^{v\ast i}\ast \omega_{n}^{v}\\<br>&amp;\therefore {\omega_n^{v\ast i}}\ \text is\ 等比数列\\<br>&amp;1.\ v\bmod n&#x3D;0\\<br>&amp;\ \ \ \sum_{i&#x3D;0}^{n-1}\omega_n^{v\ast i}&#x3D;\sum_{i&#x3D;0}^{n-1} 1^i&#x3D;n\\<br>&amp;2.\ v\bmod n\not&#x3D;0\\<br>&amp;\ \ \ \sum_{i&#x3D;0}^{n-1}\omega_n^{v\ast i}&#x3D;\dfrac{1-\omega_n^{n\ast v}}{1-\omega_n^v}&#x3D;\dfrac{1-1^v}{1-\omega_n^v}&#x3D;0<br>\end{split}<br>$$</p>
+<p>假设我们要求 $C&#x3D;A\ast B$ ：</p>
+<p>$$<br>\begin{split}<br>c_i&#x3D;&amp;\sum_{j&#x3D;0}^{i-1}a_j\times b_{i-1-j}\\<br>c_i&#x3D;&amp;\sum_{p&#x3D;0}\sum_{q&#x3D;0}a_p\times b_q\left[(p+q-i)\bmod n&#x3D;0\right] \\<br>nc_i&#x3D;&amp;\sum_{p&#x3D;0}\sum_{q&#x3D;0}a_p\times b_q\sum_{j&#x3D;0}\omega_n^{(p+q-i)j}\\<br>nc_i&#x3D;&amp;\sum_{j&#x3D;0}\omega_n^{(-i)j}(\sum_{p&#x3D;0}\omega_n^{pj}a_p)(\sum_{q&#x3D;0}\omega_n^{qj}b_q)<br>\end{split}<br>$$</p>
+<p>设：</p>
+<p>$$<br>f_a(j)&#x3D;\sum_{i&#x3D;0}\omega_n^{ji}a_i\ ,\ f_a^{-1}(j)&#x3D;\sum_{i&#x3D;0}\omega_n^{(-j)i}a_i<br>$$</p>
+<p>然后：</p>
+<p>$$<br>{\begin{split}<br>nc_i&#x3D;&amp;\sum_{j&#x3D;0}\omega_n^{(-i)j}f_a(j)f_b(j)\\<br>nc_i&#x3D;&amp;\sum_{j&#x3D;0}\omega_n^{(-i)j}f_c(j)\\<br>nc_i&#x3D;&amp;f_{f_c}^{-1}(i)<br>\end{split}}<br>$$</p>
+<blockquote>
+<p>唯一的坑点在于 <code>maxn</code> 的取值，一开始没注意，<code>1e6+6</code> &#x3D;&gt; WA<code>(read &#39;-&#39;)</code> + RE，<code>2e6+6</code> 还是 WA，最后 <code>3e6+6</code> AC !</p>
+</blockquote>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">double</span> ldb<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">3e6</span><span class="token operator">+</span><span class="token number">6</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> ldb Pi <span class="token operator">=</span> <span class="token function">acos</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> n<span class="token punctuation">,</span> m<span class="token punctuation">,</span> q <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> a<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">,</span> b<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">Complex</span> <span class="token punctuation">&#123;</span>
+    ldb x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+    <span class="token keyword">friend</span> Complex <span class="token keyword">operator</span> <span class="token operator">+</span> <span class="token punctuation">(</span>Complex a<span class="token punctuation">,</span> Complex b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token keyword">return</span> <span class="token punctuation">&#123;</span>a<span class="token punctuation">.</span>x<span class="token operator">+</span>b<span class="token punctuation">.</span>x<span class="token punctuation">,</span> a<span class="token punctuation">.</span>y<span class="token operator">+</span>b<span class="token punctuation">.</span>y<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+    <span class="token keyword">friend</span> Complex <span class="token keyword">operator</span> <span class="token operator">-</span> <span class="token punctuation">(</span>Complex a<span class="token punctuation">,</span> Complex b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token keyword">return</span> <span class="token punctuation">&#123;</span>a<span class="token punctuation">.</span>x<span class="token operator">-</span>b<span class="token punctuation">.</span>x<span class="token punctuation">,</span> a<span class="token punctuation">.</span>y<span class="token operator">-</span>b<span class="token punctuation">.</span>y<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+    <span class="token keyword">friend</span> Complex <span class="token keyword">operator</span> <span class="token operator">*</span> <span class="token punctuation">(</span>Complex a<span class="token punctuation">,</span> Complex b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token keyword">return</span> <span class="token punctuation">&#123;</span>a<span class="token punctuation">.</span>x<span class="token operator">*</span>b<span class="token punctuation">.</span>x<span class="token operator">-</span>a<span class="token punctuation">.</span>y<span class="token operator">*</span>b<span class="token punctuation">.</span>y<span class="token punctuation">,</span> a<span class="token punctuation">.</span>x<span class="token operator">*</span>b<span class="token punctuation">.</span>y<span class="token operator">+</span>a<span class="token punctuation">.</span>y<span class="token operator">*</span>b<span class="token punctuation">.</span>x<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> x1<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">,</span> x2<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">change</span><span class="token punctuation">(</span>Complex x<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token operator">=</span>len<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span> k<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> <span class="token function">swap</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> x<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        k <span class="token operator">=</span> len <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">>=</span> k<span class="token punctuation">)</span> j <span class="token operator">-=</span> k<span class="token punctuation">,</span> k <span class="token operator">/=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        j <span class="token operator">+=</span> k<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">FFT</span><span class="token punctuation">(</span>Complex x<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">,</span> <span class="token keyword">int</span> im<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">change</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> d <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> d <span class="token operator">&lt;=</span> len<span class="token punctuation">;</span> d <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        Complex wn <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token function">cos</span><span class="token punctuation">(</span>Pi <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">/</span> d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">sin</span><span class="token punctuation">(</span>im <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">*</span> Pi <span class="token operator">/</span> d<span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> j <span class="token operator">+=</span> d<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            Complex w <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> j<span class="token punctuation">;</span> k <span class="token operator">&lt;</span> j <span class="token operator">+</span> d <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                Complex u <span class="token operator">=</span> x<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> t <span class="token operator">=</span> w <span class="token operator">*</span> x<span class="token punctuation">[</span>k <span class="token operator">+</span> d <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                x<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> u <span class="token operator">+</span> t<span class="token punctuation">;</span>
+                x<span class="token punctuation">[</span>k <span class="token operator">+</span> d <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> u <span class="token operator">-</span> t<span class="token punctuation">;</span>
+                w <span class="token operator">=</span> w <span class="token operator">*</span> wn<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>im <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x <span class="token operator">/=</span> len<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d %d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">,</span> <span class="token operator">&amp;</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> x1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span>ldb<span class="token punctuation">)</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> x2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span>ldb<span class="token punctuation">)</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>q <span class="token operator">&lt;=</span> <span class="token punctuation">(</span>n <span class="token operator">+</span> m <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> q <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">FFT</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span> q<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">FFT</span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span> q<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>  q<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> x1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> x1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> x2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">FFT</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span> q<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>  q<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> c<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span>x1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    q <span class="token operator">=</span> n <span class="token operator">+</span> m<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> q<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h2><h3 id="普通生成函数"><a href="#普通生成函数" class="headerlink" title="普通生成函数"></a>普通生成函数</h3><p><strong>定义</strong></p>
+<p>序列 $a$ 的普通生成函数为：</p>
+<p>$$<br>F(x)&#x3D;\sum_{n}a_{n}x^{n}<br>$$</p>
+<p>换句话说，如果序列 a 有通项公式，那么它的普通生成函数的系数就是通项公式。</p>
+<p><strong>运算</strong></p>
+<p>$$<br>\begin{split}<br>F(x)\pm G(x)&#x3D;\sum_n (a_n\pm b_n)x^n<br>\\<br>F(x)G(x)&#x3D;\sum_n x^n \sum_{i&#x3D;0}^na_ib_{n-i}<br>\end{split}<br>$$</p>
+<p><strong>封闭形式</strong></p>
+<p>例如 $\left&lt;1,1,1,\dots\right&gt;$ 的普通生成函数为：$F(x)&#x3D;\sum_{n\ge 0}x^{n}$</p>
+<p>因为：</p>
+<p>$$<br>F(x)x+1&#x3D;F(x)<br>$$</p>
+<p>所以：</p>
+<p>$$<br>F(x)&#x3D;\frac{1}{1-x}<br>$$</p>
+<p><strong>推导</strong></p>
+<ol>
+<li>$a&#x3D;\left&lt;0,1,1,1,\dots\right&gt;$</li>
+</ol>
+<p>$$<br>F(x)&#x3D;\sum_{n\ge 1}x^n&#x3D;<br>$$</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/oi/" rel="tag"># oi</a>
+              <a href="/tags/math/" rel="tag"># math</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/mathI/" rel="prev" title="数论笔记 I">
+                  <i class="fa fa-chevron-left"></i> 数论笔记 I
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zerc_7</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/code-unfold.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.1/es5/tex-mml-chtml.js","integrity":"sha256-hlC2uSQYTmPsrzGZTEQEg9PZ1a/+SV6VBCTclohf2og="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
