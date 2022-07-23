@@ -1767,4 +1767,71 @@ zerc <span class="token function">calc</span><span class="token punctuation">(</
         <tag>math</tag>
       </tags>
   </entry>
+  <entry>
+    <title>博弈论</title>
+    <url>/game-theory/</url>
+    <content><![CDATA[<blockquote>
+<p>摘要：博弈论（Nim，）</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="公平组合游戏"><a href="#公平组合游戏" class="headerlink" title="公平组合游戏"></a>公平组合游戏</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>公平组合游戏（Impartial Game）</strong>：</p>
+<ul>
+<li><p>游戏有两个人参与，二者轮流做出决策，双方均知道游戏的完整信息；</p>
+</li>
+<li><p>任意一个游戏者在某一确定状态可以作出的决策集合只与当前的状态有关，而与游戏者无关；</p>
+</li>
+<li><p>游戏中的同一个状态不可能多次抵达，游戏以玩家无法行动为结束，且游戏一定会在有限步后以非平局结束。</p>
+</li>
+</ul>
+<p><strong>下面开始玩游戏</strong></p>
+<h3 id="巴什博弈"><a href="#巴什博弈" class="headerlink" title="巴什博弈"></a>巴什博弈</h3><p><strong>问题模型</strong></p>
+<blockquote>
+<p> 两个人一堆石子轮流取，每次可以取 $[1,k]$ 个，先取完者胜。</p>
+</blockquote>
+<p><strong>手动模拟</strong></p>
+<p>假设每次只可以取 $1$ 或 $2$ 个</p>
+<ol>
+<li><p>只有一个石子 先手胜</p>
+</li>
+<li><p>只有两个石子 先手胜</p>
+</li>
+<li><p>有三个石子 无论先手取一个还是取两个 都会败 此时后手必胜</p>
+</li>
+<li><p>有四个石子···</p>
+</li>
+</ol>
+<p><strong>结论推导</strong></p>
+<p>将这一堆石子（假设有 $n$ 个）分成若干个 $3$ 个一堆的石子和一堆 $&lt; 3$ 的石子；</p>
+<p>如果 $n\bmod3&#x3D;0$，那么假设先手从第 $x$ 堆中 取了 $y$ 个，那后手可以取 $3-y$ 个将这一堆取完，那么无论先手怎么取，后手都能将这一堆的石子取完，也就是取到最后一个石子的人一定是后手；</p>
+<p>如果 $n\bmod3\not&#x3D;0$，那先手就可以把那 $&lt;3$ 的一堆取完，然后（让后手面对那必败的局面），必胜；</p>
+<p>显然可以推广到取 $[1,m]$ 个石子。</p>
+<h3 id="威佐夫博弈"><a href="#威佐夫博弈" class="headerlink" title="威佐夫博弈"></a>威佐夫博弈</h3><p><strong>问题模型</strong></p>
+<blockquote>
+<p> 两堆石子两个人，每次从任意一堆中拿任意多个，或者从两堆中拿相同多个，拿走最后一个的人获胜。</p>
+</blockquote>
+<p><strong>结论推导</strong></p>
+<blockquote>
+<p>威佐夫博弈不同于 Nim 游戏与巴什博奕，它的特殊之处在于不能将两堆石子分开分析。</p>
+</blockquote>
+<p>从末状态开始分析：</p>
+<p>首先 $(0,0)$ 是一个 N-pos，进而推得在二维坐标系上 $y&#x3D;0$，$x&#x3D;0$，$y&#x3D;x$ 上的点为 P-pos（不考虑 $(0,0)$）。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/f7m582xj.png"></p>
+<p>再来考虑 $A1&#x3D;(1,0)$，无论怎么转移都会移动到 P-pos，所以 $(1,0)$ 为 N-pos。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/vsyokj64.png"></p>
+<p><strong>因为要准备数据结构，就先搁了QwQ</strong></p>
+<!-- 
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token function">abs</span><span class="token punctuation">(</span>a <span class="token operator">-</span> b<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1.0</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span> <span class="token operator">==</span> <span class="token function">min</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<h3 id="Nim"><a href="#Nim" class="headerlink" title="Nim"></a>Nim</h3><p><strong>问题模型</strong></p>
+<blockquote>
+<p> $n$ 堆物品，每堆有 $a_i$ 个，两个玩家轮流取走任意一堆的任意个物品，但不能不取。取走最后一个物品的人获胜。<br> –&gt;</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>oi</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
 </search>
