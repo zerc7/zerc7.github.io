@@ -238,58 +238,6 @@
       </tags>
   </entry>
   <entry>
-    <title>每日总结 II</title>
-    <url>/dailyII/</url>
-    <content><![CDATA[<h2 id="7-18"><a href="#7-18" class="headerlink" title="7.18"></a>7.18</h2><p>正式集训的第一天（昨天开学，</p>
-<p>今天考试，</p>
-<p>数论，</p>
-<p>寄了···</p>
-<span id="more"></span>
-
-<p>boom_zero</p>
-<h3 id="考试"><a href="#考试" class="headerlink" title="考试"></a>考试</h3><p>T1 说是原题，</p>
-<p>没做过，</p>
-<p>就没怎么写，</p>
-<p>T2 做到 77% 大概，</p>
-<p>然后因为样例有误，</p>
-<p>然后就写挂了，，，</p>
-<p>考完了才发现离 ak 只差一点，</p>
-<p>一个小 Bug + 特判，</p>
-<p>话说谁扒题不用原样例 QwQ，</p>
-<p>非得自己写，</p>
-<p>还写挂了，</p>
-<p>T3 想到是组合数之类的，</p>
-<p>没推出来，</p>
-<p>好不容易打表过了一个点，</p>
-<p>还是 SubTask，</p>
-<p>正解是 FFT 吧大概</p>
-<p>QwQ，</p>
-<p>T4 因为题有误，</p>
-<p>$\sum_{i&#x3D;1}^{0}$ ?</p>
-<p>考完试之后他说 $i&#x3D;0$，</p>
-<p>就，</p>
-<h3 id="芝士"><a href="#芝士" class="headerlink" title="芝士"></a>芝士</h3><p><strong>Dirichlet 前缀和</strong></p>
-<p>$b_i&#x3D;\sum_{j|i}a_j$</p>
-<p>话说 <code>unsigned int</code> 为什么不能用 <code>printf(&quot;%lld&quot;, ans)</code></p>
-<p>算是 T1 的前置，</p>
-<p>过了板子，</p>
-<p><strong>单位根及其性质</strong></p>
-<p>也是前置，</p>
-<p>之前讲过但忘了，</p>
-<p>QwQ，</p>
-<p>大概就这些吧。</p>
-<h2 id="7-19"><a href="#7-19" class="headerlink" title="7.19"></a>7.19</h2><p>因为 <code>exBSGS</code> 所以没写</p>
-<h2 id="7-20"><a href="#7-20" class="headerlink" title="7.20"></a>7.20</h2><p>不想写</p>
-<p>咕了咕了</p>
-<h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><p>讲的生成函数，</p>
-<p>人没了···</p>
-<h2 id="咕了咕了"><a href="#咕了咕了" class="headerlink" title="咕了咕了"></a>咕了咕了</h2><p><del>此贴完结</del></p>
-]]></content>
-      <tags>
-        <tag>daily</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>每日总结</title>
     <url>/daily/</url>
     <content><![CDATA[<p>​	前言：作为一名 OIer ，要每天做好反思，所以我 <del>自愿</del> 做好每日总结。</p>
@@ -375,6 +323,58 @@
 <p>​	通过做题感受到了自己对板子还是不熟悉，有的写过一遍了但还是不太能完整地写下来，还有就是像莫比乌斯反演这种，想的是把基础打牢之后再去看这些，理解应该会比现在更深。</p>
 <h4 id="2-22-总结"><a href="#2-22-总结" class="headerlink" title="2.22 总结"></a>2.22 总结</h4><p>​	<del>很 2 的一天，</del></p>
 <p>​	做平面最近点对的时候了解到了随机化的算法（随机化大法好，但唯一的问题时时间复杂度和正确性的权衡，以后在做题的时候慢慢积累吧，还有爬山和模拟退火，想学又学不太明白。</p>
+]]></content>
+      <tags>
+        <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每日总结 II</title>
+    <url>/dailyII/</url>
+    <content><![CDATA[<h2 id="7-18"><a href="#7-18" class="headerlink" title="7.18"></a>7.18</h2><p>正式集训的第一天（昨天开学，</p>
+<p>今天考试，</p>
+<p>数论，</p>
+<p>寄了···</p>
+<span id="more"></span>
+
+<p>boom_zero</p>
+<h3 id="考试"><a href="#考试" class="headerlink" title="考试"></a>考试</h3><p>T1 说是原题，</p>
+<p>没做过，</p>
+<p>就没怎么写，</p>
+<p>T2 做到 77% 大概，</p>
+<p>然后因为样例有误，</p>
+<p>然后就写挂了，，，</p>
+<p>考完了才发现离 ak 只差一点，</p>
+<p>一个小 Bug + 特判，</p>
+<p>话说谁扒题不用原样例 QwQ，</p>
+<p>非得自己写，</p>
+<p>还写挂了，</p>
+<p>T3 想到是组合数之类的，</p>
+<p>没推出来，</p>
+<p>好不容易打表过了一个点，</p>
+<p>还是 SubTask，</p>
+<p>正解是 FFT 吧大概</p>
+<p>QwQ，</p>
+<p>T4 因为题有误，</p>
+<p>$\sum_{i&#x3D;1}^{0}$ ?</p>
+<p>考完试之后他说 $i&#x3D;0$，</p>
+<p>就，</p>
+<h3 id="芝士"><a href="#芝士" class="headerlink" title="芝士"></a>芝士</h3><p><strong>Dirichlet 前缀和</strong></p>
+<p>$b_i&#x3D;\sum_{j|i}a_j$</p>
+<p>话说 <code>unsigned int</code> 为什么不能用 <code>printf(&quot;%lld&quot;, ans)</code></p>
+<p>算是 T1 的前置，</p>
+<p>过了板子，</p>
+<p><strong>单位根及其性质</strong></p>
+<p>也是前置，</p>
+<p>之前讲过但忘了，</p>
+<p>QwQ，</p>
+<p>大概就这些吧。</p>
+<h2 id="7-19"><a href="#7-19" class="headerlink" title="7.19"></a>7.19</h2><p>因为 <code>exBSGS</code> 所以没写</p>
+<h2 id="7-20"><a href="#7-20" class="headerlink" title="7.20"></a>7.20</h2><p>不想写</p>
+<p>咕了咕了</p>
+<h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><p>讲的生成函数，</p>
+<p>人没了···</p>
+<h2 id="咕了咕了"><a href="#咕了咕了" class="headerlink" title="咕了咕了"></a>咕了咕了</h2><p><del>此贴完结</del></p>
 ]]></content>
       <tags>
         <tag>daily</tag>
@@ -581,84 +581,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数论笔记 II</title>
-    <url>/mathII/</url>
-    <content><![CDATA[<blockquote>
-<p>摘要：多项式（FFT），生成函数</p>
-</blockquote>
-<span id="more"></span>
-
-<hr>
-<h2 id="FFT"><a href="#FFT" class="headerlink" title="FFT"></a>FFT</h2><h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><p>设：</p>
-<p>$$<br>\begin{split}<br>A&#x3D;\sum_{i&#x3D;0}^{n} a_ix^i \\<br>B&#x3D;\sum_{i&#x3D;0}^{m} b_ix^i<br>\end{split}<br>$$</p>
-<p>那么：</p>
-<p>$$<br>\begin{split}<br>C&amp;&#x3D;A\ast B\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^{nm}\sum_{j&#x3D;0}^{i}a_jb_{i-j}x^{i}<br>\end{split}<br>$$</p>
-<p>时间复杂度 $O(n^2)$，无法接受，考虑优化。</p>
-<h3 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h3><p><strong>单位根</strong> </p>
-<p>在复平面上画一个以 $(0,0)$ 为圆心的圆，将圆 $n$ 等分，并规定 $(1,0)$ 为第零个等分点，逆时针标号，就得到了第 $0$ 到 $n-1$ 个等分点，也就是第 $0$ 到 $n-1$ 个 $n$ 次单位根，记做 $\omega_n^0,\omega_n^1,\cdots,\omega_n^{n-1}$ 。</p>
-<p><strong>性质</strong> ：</p>
-<ul>
-<li><p>$\omega_n^k&#x3D;e^\frac{2\pi ik}{n}$</p>
-<p>$e^{i\theta}&#x3D;cos\theta+i\ast sin\theta$</p>
-</li>
-<li><p>$\omega_{dn}^{dk}&#x3D;\omega_n^k$</p>
-<p>$\omega_{dn}^{dk}&#x3D;e^\frac{2\pi idk}{dn}&#x3D;e^\frac{2\pi ik}{n}&#x3D;\omega_n^k$</p>
-</li>
-<li><p>$\omega_n^k&#x3D;a+bi \Rightarrow \omega_n^{-k}&#x3D;a-bi$</p>
-<p>$\omega_n^k&#x3D;e^\frac{2\pi ik}{n}$</p>
-</li>
-<li><p>$\omega_n^{k+\frac n2}&#x3D;-\omega_n^k$</p>
-<p>$\omega_n^{k+\frac n2}&#x3D;\omega_n^k\ast \omega_n^\frac n2&#x3D;-\omega_n^k$</p>
-</li>
-</ul>
-<h3 id="DFT"><a href="#DFT" class="headerlink" title="DFT"></a>DFT</h3><p>DFT 主要的思想是在求一部分值的时候求出来另外一部分，然后分治进行。</p>
-<p>比如说我们要求 $A(x)&#x3D;\sum_{i&#x3D;0}^{n} a_ix_i$ 在 $x_1,x_2,\cdots,x_n$ 处取值，那么：</p>
-<p>将 $A$ 的系数按照下标的奇偶性分类，即：</p>
-<p>$$<br>\begin{split}<br>A_0(x)&amp;&#x3D;a_0+a_2x^1+a_4x^2+\cdots \\<br>A_1(x)&amp;&#x3D;a_1+a_3x^1+a_5x^2+\cdots \\<br>A(x)&amp;&#x3D;A_0(x^2)+x\ast A_1(x^2)<br>\end{split}<br>$$</p>
-<p>分别将 $\omega_n^k$ 和 $\omega_n^{k+\frac{n}{2}}$ 代入得：</p>
-<p>$$<br>\begin{cases}<br>A(\omega_n^k)&amp;&#x3D;&amp;A_0(\omega_{n&#x2F;2}^{k})+\omega_n^kA_1(\omega_{n&#x2F;2}^k)\\<br>A(\omega_n^{k+\frac n2})&amp;&#x3D;&amp;A_0(\omega_{n&#x2F;2}^{k})-\omega_n^{k}A_1(\omega_{n&#x2F;2}^{k})<br>\end{cases}<br>$$</p>
-<p>递归求解，时间复杂度 $O(n\log n)$</p>
-<h3 id="IDFT"><a href="#IDFT" class="headerlink" title="IDFT"></a>IDFT</h3><p>IDFT 可以看作是 DFT 的逆运算。</p>
-<p>先引入单位根的一个性质：</p>
-<p>$$<br>\dfrac1n\sum_{i&#x3D;0}^{n-<br>1}\omega_n^{v\ast i}&#x3D;[v\bmod n&#x3D;0]<br>$$</p>
-<p>其实很好证明：</p>
-<p>$$<br>\begin{split}<br>&amp;\because\omega_{n}^{v\ast i}&#x3D;\omega_{n}^{v\ast i}\ast \omega_{n}^{v}\\<br>&amp;\therefore {\omega_n^{v\ast i}}\ \text is\ 等比数列\\<br>&amp;1.\ v\bmod n&#x3D;0\\<br>&amp;\ \ \ \sum_{i&#x3D;0}^{n-1}\omega_n^{v\ast i}&#x3D;\sum_{i&#x3D;0}^{n-1} 1^i&#x3D;n\\<br>&amp;2.\ v\bmod n\not&#x3D;0\\<br>&amp;\ \ \ \sum_{i&#x3D;0}^{n-1}\omega_n^{v\ast i}&#x3D;\dfrac{1-\omega_n^{n\ast v}}{1-\omega_n^v}&#x3D;\dfrac{1-1^v}{1-\omega_n^v}&#x3D;0<br>\end{split}<br>$$</p>
-<p>假设我们要求 $C&#x3D;A\ast B$ ：</p>
-<p>$$<br>\begin{split}<br>c_i&#x3D;&amp;\sum_{j&#x3D;0}^{i-1}a_j\times b_{i-1-j}\\<br>c_i&#x3D;&amp;\sum_{p&#x3D;0}\sum_{q&#x3D;0}a_p\times b_q\left[(p+q-i)\bmod n&#x3D;0\right] \\<br>nc_i&#x3D;&amp;\sum_{p&#x3D;0}\sum_{q&#x3D;0}a_p\times b_q\sum_{j&#x3D;0}\omega_n^{(p+q-i)j}\\<br>nc_i&#x3D;&amp;\sum_{j&#x3D;0}\omega_n^{(-i)j}(\sum_{p&#x3D;0}\omega_n^{pj}a_p)(\sum_{q&#x3D;0}\omega_n^{qj}b_q)<br>\end{split}<br>$$</p>
-<p>设：</p>
-<p>$$<br>f_a(j)&#x3D;\sum_{i&#x3D;0}\omega_n^{ji}a_i\ ,\ f_a^{-1}(j)&#x3D;\sum_{i&#x3D;0}\omega_n^{(-j)i}a_i<br>$$</p>
-<p>然后：</p>
-<p>$$<br>{\begin{split}<br>nc_i&#x3D;&amp;\sum_{j&#x3D;0}\omega_n^{(-i)j}f_a(j)f_b(j)\\<br>nc_i&#x3D;&amp;\sum_{j&#x3D;0}\omega_n^{(-i)j}f_c(j)\\<br>nc_i&#x3D;&amp;f_{f_c}^{-1}(i)<br>\end{split}}<br>$$</p>
-<blockquote>
-<p>唯一的坑点在于 <code>maxn</code> 的取值，一开始没注意，<code>1e6+6</code> &#x3D;&gt; WA<code>(read &#39;-&#39;)</code> + RE，<code>2e6+6</code> 还是 WA，最后 <code>3e6+6</code> AC !</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">double</span> ldb;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">3e6</span>+<span class="number">6</span>;</span><br><span class="line"><span class="type">const</span> ldb Pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, q = <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> a[maxn], b[maxn], c[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Complex</span> &#123;</span><br><span class="line">    ldb x, y;</span><br><span class="line">    <span class="keyword">friend</span> Complex <span class="keyword">operator</span> + (Complex a, Complex b) &#123;<span class="keyword">return</span> &#123;a.x+b.x, a.y+b.y&#125;;&#125;</span><br><span class="line">    <span class="keyword">friend</span> Complex <span class="keyword">operator</span> - (Complex a, Complex b) &#123;<span class="keyword">return</span> &#123;a.x-b.x, a.y-b.y&#125;;&#125;</span><br><span class="line">    <span class="keyword">friend</span> Complex <span class="keyword">operator</span> * (Complex a, Complex b) &#123;<span class="keyword">return</span> &#123;a.x*b.x-a.y*b.y, a.x*b.y+a.y*b.x&#125;;&#125;</span><br><span class="line">&#125; x1[maxn], x2[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(Complex x[], <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>, j=len/<span class="number">2</span>, k; i &lt; len<span class="number">-1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) <span class="built_in">swap</span>(x[i], x[j]);</span><br><span class="line">        k = len / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= k) j -= k, k /= <span class="number">2</span>;</span><br><span class="line">        j += k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">FFT</span><span class="params">(Complex x[], <span class="type">int</span> len, <span class="type">int</span> im)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">change</span>(x, len);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> d = <span class="number">1</span>; d &lt;= len; d &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        Complex wn = &#123;<span class="built_in">cos</span>(Pi * <span class="number">2</span> / d), <span class="built_in">sin</span>(im * <span class="number">2</span> * Pi / d)&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; len; j += d) &#123;</span><br><span class="line">            Complex w = &#123;<span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = j; k &lt; j + d / <span class="number">2</span>; k++) &#123;</span><br><span class="line">                Complex u = x[k], t = w * x[k + d / <span class="number">2</span>];</span><br><span class="line">                x[k] = u + t;</span><br><span class="line">                x[k + d / <span class="number">2</span>] = u - t;</span><br><span class="line">                w = w * wn;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (im == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">            x[i].x /= len;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]), x1[i]=&#123;(ldb)a[i], <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= m; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b[i]), x2[i]=&#123;(ldb)b[i], <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(q &lt;= (n + m + <span class="number">2</span>)) q &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">FFT</span>(x1, q, <span class="number">1</span>), <span class="built_in">FFT</span>(x2, q, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;  q; i++) x1[i] = x1[i] * x2[i];</span><br><span class="line">    <span class="built_in">FFT</span>(x1, q, <span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;  q; i++) c[i] = (<span class="type">int</span>)(x1[i].x + <span class="number">0.5</span>);</span><br><span class="line">    q = n + m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= q; i++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, c[i]); <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h2><h3 id="普通生成函数"><a href="#普通生成函数" class="headerlink" title="普通生成函数"></a>普通生成函数</h3><p><strong>定义</strong></p>
-<p>序列 $a$ 的普通生成函数为：</p>
-<p>$$<br>F(x)&#x3D;\sum_{n}a_{n}x^{n}<br>$$</p>
-<p>换句话说，如果序列 a 有通项公式，那么它的普通生成函数的系数就是通项公式。</p>
-<p><strong>运算</strong></p>
-<p>$$<br>\begin{split}<br>F(x)\pm G(x)&#x3D;\sum_n (a_n\pm b_n)x^n<br>\\<br>F(x)G(x)&#x3D;\sum_n x^n \sum_{i&#x3D;0}^na_ib_{n-i}<br>\end{split}<br>$$</p>
-<p><strong>封闭形式</strong></p>
-<p>例如 $\left&lt;1,1,1,\dots\right&gt;$ 的普通生成函数为：$F(x)&#x3D;\sum_{n\ge 0}x^{n}$</p>
-<p>因为：</p>
-<p>$$<br>F(x)x+1&#x3D;F(x)<br>$$</p>
-<p>所以：</p>
-<p>$$<br>F(x)&#x3D;\frac{1}{1-x}<br>$$</p>
-<p><strong>推导</strong></p>
-<ol>
-<li>$a&#x3D;\left&lt;0,1,1,1,\dots\right&gt;$</li>
-</ol>
-<p>$$<br>F(x)&#x3D;\sum_{n\ge 1}x^n&#x3D;<br>$$</p>
-]]></content>
-      <tags>
-        <tag>oi</tag>
-        <tag>math</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数论笔记 I</title>
     <url>/mathI/</url>
     <content><![CDATA[<blockquote>
@@ -732,6 +654,100 @@
 <p>此题卡 $\bmod$ 非常严重，建议有事没事按俩 <code>% p</code> 。</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> llt;</span><br><span class="line"><span class="type">const</span> llt p = <span class="number">998244353</span>;</span><br><span class="line"><span class="type">const</span> llt inv2 = <span class="number">499122177</span>;</span><br><span class="line"><span class="type">const</span> llt inv6 = <span class="number">166374059</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">zerc</span> &#123;</span><br><span class="line">	llt f, g, h;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">mod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		f = (f % p + p) % p, </span><br><span class="line">		g = (g % p + p) % p, </span><br><span class="line">		h = (h % p + p) % p;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">zerc <span class="title">calc</span><span class="params">(llt n, llt a, llt b, llt c)</span> </span>&#123;	</span><br><span class="line">	<span class="comment">// printf(&quot;|&gt; %lld %lld %lld %lld\n&quot;, n, a, b, c);</span></span><br><span class="line">	llt m = ((a * n + b) / c - <span class="number">1</span>);</span><br><span class="line">	llt n1bc = ((n + <span class="number">1</span>) * (b / c)) % p;</span><br><span class="line">	llt n1bc2= ((n + <span class="number">1</span>) * (b / c) % p * (b / c) % p) % p;</span><br><span class="line">	llt n2ac = (n * (n + <span class="number">1</span>) % p * inv2 % p * (a / c) % p) % p;</span><br><span class="line">	llt n2bc = (n * (n + <span class="number">1</span>) % p * inv2 % p * (b / c) % p) % p;</span><br><span class="line">	llt n21acbc = (n * (n + <span class="number">1</span>) % p * (a / c) % p * (b / c) % p) % p;</span><br><span class="line">	llt n3ac = (n * (n + <span class="number">1</span>) % p * (n * <span class="number">2</span> + <span class="number">1</span>) % p * inv6 % p * (a / c) % p)  % p;</span><br><span class="line">	llt n3ac2= (n * (n + <span class="number">1</span>) % p * (n * <span class="number">2</span> + <span class="number">1</span>) % p * inv6 % p * (a / c) % p * (a / c) % p)  % p;</span><br><span class="line">	zerc d, e;</span><br><span class="line">	<span class="keyword">if</span> (!a) &#123;</span><br><span class="line">		d.f = n1bc;</span><br><span class="line">		d.g = n2bc;</span><br><span class="line">		d.h = n1bc2;</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a &gt;= c || b &gt;= c) &#123;</span><br><span class="line">		d.f = n2ac + n1bc;</span><br><span class="line">		d.g = n3ac + n2bc;</span><br><span class="line">		d.h = n3ac2 + n1bc2 + n21acbc;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		e = <span class="built_in">calc</span>(n, a % c, b % c, c);</span><br><span class="line">		d.f += e.f;</span><br><span class="line">		d.g += e.g;</span><br><span class="line">		d.h += e.h + (b / c) * <span class="number">2</span> * e.f % p + (a / c) * <span class="number">2</span> * e.g % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a &lt; c &amp;&amp; b &lt; c) &#123;</span><br><span class="line">		e = <span class="built_in">calc</span>(m, c, c - b - <span class="number">1</span>, a);</span><br><span class="line">		d.f = (n * (m + <span class="number">1</span>) % p - e.f) % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		d.g = (n * (m + <span class="number">1</span>) % p * (n + <span class="number">1</span>) % p - e.h - e.f) % p * inv2 % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		d.h = (n * (m + <span class="number">1</span>) % p * (m + <span class="number">2</span>) % p - e.g * <span class="number">2</span> % p - e.f * <span class="number">2</span> % p - d.f) % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;P5170_6.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;P5170.out&quot;</span>, <span class="string">&quot;w&quot;</span>, stdout);</span><br><span class="line">	<span class="type">int</span> T; <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T); <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		llt n, a, b, c;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%lld %lld %lld %lld&quot;</span>, &amp;n, &amp;a, &amp;b, &amp;c);</span><br><span class="line">		zerc ans = <span class="built_in">calc</span>(n, a, b, c);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld %lld %lld\n&quot;</span>, ans.f, ans.h, ans.g);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>oi</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数论笔记 II</title>
+    <url>/mathII/</url>
+    <content><![CDATA[<blockquote>
+<p>摘要：多项式（FFT），生成函数</p>
+</blockquote>
+<span id="more"></span>
+
+<hr>
+<h2 id="FFT"><a href="#FFT" class="headerlink" title="FFT"></a>FFT</h2><h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><p>设：</p>
+<p>$$<br>\begin{split}<br>A&#x3D;\sum_{i&#x3D;0}^{n} a_ix^i \\<br>B&#x3D;\sum_{i&#x3D;0}^{m} b_ix^i<br>\end{split}<br>$$</p>
+<p>那么：</p>
+<p>$$<br>\begin{split}<br>C&amp;&#x3D;A\ast B\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^{nm}\sum_{j&#x3D;0}^{i}a_jb_{i-j}x^{i}<br>\end{split}<br>$$</p>
+<p>时间复杂度 $O(n^2)$，无法接受，考虑优化。</p>
+<h3 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h3><p><strong>单位根</strong> </p>
+<p><img src="https://i.loli.net/2020/01/12/4y2KfzpmA1BdjRE.png"></p>
+<p>在复平面上画一个以 $(0,0)$ 为圆心的圆，将圆 $n$ 等分，并规定 $(1,0)$ 为第零个等分点，逆时针标号，就得到了第 $0$ 到 $n-1$ 个等分点，也就是第 $0$ 到 $n-1$ 个 $n$ 次单位根，记做 $\omega_n^0,\omega_n^1,\cdots,\omega_n^{n-1}$ 。</p>
+<p><strong>性质</strong> ：</p>
+<ul>
+<li><p>$\omega_n^k&#x3D;e^\frac{2\pi ik}{n}$</p>
+<p>$e^{i\theta}&#x3D;cos\theta+i\ast sin\theta$</p>
+</li>
+<li><p>$\omega_{dn}^{dk}&#x3D;\omega_n^k$</p>
+<p>$\omega_{dn}^{dk}&#x3D;e^\frac{2\pi idk}{dn}&#x3D;e^\frac{2\pi ik}{n}&#x3D;\omega_n^k$</p>
+</li>
+<li><p>$\omega_n^k&#x3D;a+bi \Rightarrow \omega_n^{-k}&#x3D;a-bi$</p>
+<p>$\omega_n^k&#x3D;e^\frac{2\pi ik}{n}$</p>
+</li>
+<li><p>$\omega_n^{k+\frac n2}&#x3D;-\omega_n^k$</p>
+<p>$\omega_n^{k+\frac n2}&#x3D;\omega_n^k\ast \omega_n^\frac n2&#x3D;-\omega_n^k$</p>
+</li>
+</ul>
+<h3 id="DFT"><a href="#DFT" class="headerlink" title="DFT"></a>DFT</h3><p>DFT 主要的思想是在求一部分值的时候求出来另外一部分，然后分治进行。</p>
+<p>比如说我们要求 $A(x)&#x3D;\sum_{i&#x3D;0}^{n} a_ix^i$ 在 $x_1,x_2,\cdots,x_n$ 处取值，那么：</p>
+<p>将 $A$ 的系数按照下标的奇偶性分类，即：</p>
+<p>$$<br>\begin{split}<br>A_0(x)&amp;&#x3D;a_0+a_2x^1+a_4x^2+\cdots \\<br>A_1(x)&amp;&#x3D;a_1+a_3x^1+a_5x^2+\cdots \\<br>A(x)&amp;&#x3D;A_0(x^2)+x\ast A_1(x^2)<br>\end{split}<br>$$</p>
+<p>分别将 $\omega_n^k$ 和 $\omega_n^{k+\frac{n}{2}}$ 代入得：</p>
+<p>$$<br>\begin{cases}<br>A(\omega_n^k)&amp;&#x3D;&amp;A_0(\omega_{n&#x2F;2}^{k})+\omega_n^kA_1(\omega_{n&#x2F;2}^k)\\<br>A(\omega_n^{k+\frac n2})&amp;&#x3D;&amp;A_0(\omega_{n&#x2F;2}^{k})-\omega_n^{k}A_1(\omega_{n&#x2F;2}^{k})<br>\end{cases}<br>$$</p>
+<p>递归求解，时间复杂度 $O(n\log n)$</p>
+<h3 id="IDFT"><a href="#IDFT" class="headerlink" title="IDFT"></a>IDFT</h3><p>IDFT 可以看作是 DFT 的逆运算。</p>
+<p>先引入单位根的一个性质：</p>
+<p>$$<br>\dfrac1n\sum_{i&#x3D;0}^{n-<br>1}\omega_n^{v\ast i}&#x3D;[v\bmod n&#x3D;0]<br>$$</p>
+<p>其实很好证明：</p>
+<p>$$<br>\begin{split}<br>&amp;\because\omega_{n}^{v\ast i}&#x3D;\omega_{n}^{v\ast i}\ast \omega_{n}^{v}\\<br>&amp;\therefore {\omega_n^{v\ast i}}\ \text is\ 等比数列\\<br>&amp;1.\ v\bmod n&#x3D;0\\<br>&amp;\ \ \ \sum_{i&#x3D;0}^{n-1}\omega_n^{v\ast i}&#x3D;\sum_{i&#x3D;0}^{n-1} 1^i&#x3D;n\\<br>&amp;2.\ v\bmod n\not&#x3D;0\\<br>&amp;\ \ \ \sum_{i&#x3D;0}^{n-1}\omega_n^{v\ast i}&#x3D;\dfrac{1-\omega_n^{n\ast v}}{1-\omega_n^v}&#x3D;\dfrac{1-1^v}{1-\omega_n^v}&#x3D;0<br>\end{split}<br>$$</p>
+<p>假设我们要求 $C&#x3D;A\ast B$ ：</p>
+<p>$$<br>\begin{split}<br>c_i&#x3D;&amp;\sum_{j&#x3D;0}^{i-1}a_j\times b_{i-1-j}\\<br>c_i&#x3D;&amp;\sum_{p&#x3D;0}\sum_{q&#x3D;0}a_p\times b_q\left[(p+q-i)\bmod n&#x3D;0\right] \\<br>nc_i&#x3D;&amp;\sum_{p&#x3D;0}\sum_{q&#x3D;0}a_p\times b_q\sum_{j&#x3D;0}\omega_n^{(p+q-i)j}\\<br>nc_i&#x3D;&amp;\sum_{j&#x3D;0}\omega_n^{(-i)j}(\sum_{p&#x3D;0}\omega_n^{pj}a_p)(\sum_{q&#x3D;0}\omega_n^{qj}b_q)<br>\end{split}<br>$$</p>
+<p>设：</p>
+<p>$$<br>f_a(j)&#x3D;\sum_{i&#x3D;0}\omega_n^{ji}a_i\ ,\ f_a^{-1}(j)&#x3D;\sum_{i&#x3D;0}\omega_n^{(-j)i}a_i<br>$$</p>
+<p>然后：</p>
+<p>$$<br>{\begin{split}<br>nc_i&#x3D;&amp;\sum_{j&#x3D;0}\omega_n^{(-i)j}f_a(j)f_b(j)\\<br>nc_i&#x3D;&amp;\sum_{j&#x3D;0}\omega_n^{(-i)j}f_c(j)\\<br>nc_i&#x3D;&amp;f_{f_c}^{-1}(i)<br>\end{split}}<br>$$</p>
+<blockquote>
+<p>唯一的坑点在于 <code>maxn</code> 的取值，一开始没注意，<code>1e6+6</code> &#x3D;&gt; WA<code>(read &#39;-&#39;)</code> + RE，<code>2e6+6</code> 还是 WA，最后 <code>3e6+6</code> AC !</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">double</span> ldb;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">3e6</span>+<span class="number">6</span>;</span><br><span class="line"><span class="type">const</span> ldb Pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, q = <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> a[maxn], b[maxn], c[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Complex</span> &#123;</span><br><span class="line">    ldb x, y;</span><br><span class="line">    <span class="keyword">friend</span> Complex <span class="keyword">operator</span> + (Complex a, Complex b) &#123;<span class="keyword">return</span> &#123;a.x+b.x, a.y+b.y&#125;;&#125;</span><br><span class="line">    <span class="keyword">friend</span> Complex <span class="keyword">operator</span> - (Complex a, Complex b) &#123;<span class="keyword">return</span> &#123;a.x-b.x, a.y-b.y&#125;;&#125;</span><br><span class="line">    <span class="keyword">friend</span> Complex <span class="keyword">operator</span> * (Complex a, Complex b) &#123;<span class="keyword">return</span> &#123;a.x*b.x-a.y*b.y, a.x*b.y+a.y*b.x&#125;;&#125;</span><br><span class="line">&#125; x1[maxn], x2[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(Complex x[], <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>, j=len/<span class="number">2</span>, k; i &lt; len<span class="number">-1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) <span class="built_in">swap</span>(x[i], x[j]);</span><br><span class="line">        k = len / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= k) j -= k, k /= <span class="number">2</span>;</span><br><span class="line">        j += k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">FFT</span><span class="params">(Complex x[], <span class="type">int</span> len, <span class="type">int</span> im)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">change</span>(x, len);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> d = <span class="number">1</span>; d &lt;= len; d &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        Complex wn = &#123;<span class="built_in">cos</span>(Pi * <span class="number">2</span> / d), <span class="built_in">sin</span>(im * <span class="number">2</span> * Pi / d)&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; len; j += d) &#123;</span><br><span class="line">            Complex w = &#123;<span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = j; k &lt; j + d / <span class="number">2</span>; k++) &#123;</span><br><span class="line">                Complex u = x[k], t = w * x[k + d / <span class="number">2</span>];</span><br><span class="line">                x[k] = u + t;</span><br><span class="line">                x[k + d / <span class="number">2</span>] = u - t;</span><br><span class="line">                w = w * wn;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (im == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">            x[i].x /= len;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]), x1[i]=&#123;(ldb)a[i], <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= m; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b[i]), x2[i]=&#123;(ldb)b[i], <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(q &lt;= (n + m + <span class="number">2</span>)) q &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">FFT</span>(x1, q, <span class="number">1</span>), <span class="built_in">FFT</span>(x2, q, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;  q; i++) x1[i] = x1[i] * x2[i];</span><br><span class="line">    <span class="built_in">FFT</span>(x1, q, <span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;  q; i++) c[i] = (<span class="type">int</span>)(x1[i].x + <span class="number">0.5</span>);</span><br><span class="line">    q = n + m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= q; i++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, c[i]); <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="NTT"><a href="#NTT" class="headerlink" title="NTT"></a>NTT</h3><p>在某些时候，我们需要求模 $p$ 意义下的卷积</p>
+<p>先求出 $p$ 的原根 $g$，方法如下</p>
+<p>从小到大枚举 $d\in [2,p-1]$，令 $a_i$ 为 $\varphi(p)$ 的素因子，若 $d^{\frac{\varphi(p)}{a_i}}\equiv1\pmod p$ 都不成立，那么 $d$ 就是模 $p$ 的一个原根</p>
+<p>这种方法的证明：</p>
+<p>假设对于 $d^{\frac{\varphi(p)}{a_i}}\equiv1\pmod p$ 均不成立，但存在 $k&lt;\varphi(p)$，使得 $dk\equiv1\pmod p$</p>
+<p>令 $q&#x3D;\gcd(k,\varphi(p))$，那么 $q&lt;p$ 并且 x 一定整除 $\dfrac{\varphi(p)}{a_i}$ 中的一个，不妨设它整除 $\dfrac{\varphi(p)}{a_i}$</p>
+<p>考虑等式 $kn+\varphi(p)m&#x3D;q$，容易发现一定存在正整数解</p>
+<p>由于 $d^q\equiv d^{kn+φ(p)m}≡1\pmod p$，而 $q|\dfrac{\varphi(p)}{a_i}$，与假设矛盾</p>
+<p>得证</p>
+<p>在求出原根后，可以发现，$g^\frac{p-1}n$ 与 $w_n$ 的性质类似</p>
+<p>所以我们可以用 $g^\frac{p-1}n$ 来代替 $w_n$</p>
+<p>和FFT几乎相同</p>
+<p>PS:这种方法只在 $p&#x3D;a*2^k+1$ 的情况下才成立</p>
+<p>三模数 NTT</p>
+<p>首先挑选 3 个 $a*2^k+1￥ 形式的模数，进行3次 NTT，求出3组答案</p>
+<p>然后将每一个数用中国剩余定理合并即可</p>
+<h2 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h2><h3 id="普通生成函数"><a href="#普通生成函数" class="headerlink" title="普通生成函数"></a>普通生成函数</h3><p><strong>定义</strong></p>
+<p>序列 $a$ 的普通生成函数为：</p>
+<p>$$<br>F(x)&#x3D;\sum_{n}a_{n}x^{n}<br>$$</p>
+<p>换句话说，如果序列 a 有通项公式，那么它的普通生成函数的系数就是通项公式。</p>
+<p><strong>运算</strong></p>
+<p>$$<br>\begin{split}<br>F(x)\pm G(x)&#x3D;\sum_n (a_n\pm b_n)x^n<br>\\<br>F(x)G(x)&#x3D;\sum_n x^n \sum_{i&#x3D;0}^na_ib_{n-i}<br>\end{split}<br>$$</p>
+<p><strong>封闭形式</strong></p>
+<p>例如 $\left&lt;1,1,1,\dots\right&gt;$ 的普通生成函数为：$F(x)&#x3D;\sum_{n\ge 0}x^{n}$</p>
+<p>因为：</p>
+<p>$$<br>F(x)x+1&#x3D;F(x)<br>$$</p>
+<p>所以：</p>
+<p>$$<br>F(x)&#x3D;\frac{1}{1-x}<br>$$</p>
+<p><strong>推导</strong></p>
+<ol>
+<li>$a&#x3D;\left&lt;0,1,1,1,\dots\right&gt;$</li>
+</ol>
+<p>$$<br>F(x)&#x3D;\sum_{n\ge 1}x^n&#x3D;<br>$$</p>
+]]></content>
       <tags>
         <tag>oi</tag>
         <tag>math</tag>

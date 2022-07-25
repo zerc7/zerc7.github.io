@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zerc.tk/notice/index.html</loc>
+    
+    <lastmod>2022-07-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zerc.tk/mathII/</loc>
+    
+    <lastmod>2022-07-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zerc.tk/ds/</loc>
     
     <lastmod>2022-07-25</lastmod>
@@ -47,24 +65,6 @@
   </url>
   
   <url>
-    <loc>https://zerc.tk/mathII/</loc>
-    
-    <lastmod>2022-07-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zerc.tk/notice/index.html</loc>
-    
-    <lastmod>2022-07-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zerc.tk/daily/</loc>
     
     <lastmod>2022-07-15</lastmod>
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://zerc.tk/about/index.html</loc>
+    <loc>https://zerc.tk/file/readme.html</loc>
     
     <lastmod>2022-06-01</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://zerc.tk/file/readme.html</loc>
+    <loc>https://zerc.tk/about/index.html</loc>
     
     <lastmod>2022-06-01</lastmod>
     
