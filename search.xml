@@ -1387,99 +1387,83 @@ Vector <span class="token function">Intersect</span> <span class="token punctuat
 <p>咕了咕了</p>
 <h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><p>讲的生成函数，</p>
 <p>人没了···</p>
+<h2 id="咕了咕了"><a href="#咕了咕了" class="headerlink" title="咕了咕了"></a>咕了咕了</h2><p><del>此贴完结</del></p>
 ]]></content>
       <tags>
         <tag>daily</tag>
       </tags>
   </entry>
   <entry>
-    <title>寄！</title>
-    <url>/ji/</url>
-    <content><![CDATA[<h1 id="寄！"><a href="#寄！" class="headerlink" title="寄！"></a>寄！</h1><blockquote>
-<p>注：子标题后面所缀 Rome number 表示第几任老师</p>
-</blockquote>
-<blockquote>
-<p>建议打开左侧目录</p>
+    <title>博弈论</title>
+    <url>/game-theory/</url>
+    <content><![CDATA[<blockquote>
+<p>摘要：博弈论（Nim，）</p>
 </blockquote>
 <span id="more"></span>
 
+<h2 id="公平组合游戏"><a href="#公平组合游戏" class="headerlink" title="公平组合游戏"></a>公平组合游戏</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>公平组合游戏（Impartial Game）</strong>：</p>
+<ul>
+<li><p>游戏有两个人参与，二者轮流做出决策，双方均知道游戏的完整信息；</p>
+</li>
+<li><p>任意一个游戏者在某一确定状态可以作出的决策集合只与当前的状态有关，而与游戏者无关；</p>
+</li>
+<li><p>游戏中的同一个状态不可能多次抵达，游戏以玩家无法行动为结束，且游戏一定会在有限步后以非平局结束。</p>
+</li>
+</ul>
+<p><strong>下面开始玩游戏</strong></p>
+<h3 id="巴什博弈"><a href="#巴什博弈" class="headerlink" title="巴什博弈"></a>巴什博弈</h3><p><strong>问题模型</strong></p>
+<blockquote>
+<p> 两个人一堆石子轮流取，每次可以取 $[1,k]$ 个，先取完者胜。</p>
+</blockquote>
+<p><strong>手动模拟</strong></p>
+<p>假设每次只可以取 $1$ 或 $2$ 个</p>
+<ol>
+<li><p>只有一个石子 先手胜</p>
+</li>
+<li><p>只有两个石子 先手胜</p>
+</li>
+<li><p>有三个石子 无论先手取一个还是取两个 都会败 此时后手必胜</p>
+</li>
+<li><p>有四个石子···</p>
+</li>
+</ol>
+<p><strong>结论推导</strong></p>
+<p>将这一堆石子（假设有 $n$ 个）分成若干个 $3$ 个一堆的石子和一堆 $&lt; 3$ 的石子；</p>
+<p>如果 $n\bmod3&#x3D;0$，那么假设先手从第 $x$ 堆中 取了 $y$ 个，那后手可以取 $3-y$ 个将这一堆取完，那么无论先手怎么取，后手都能将这一堆的石子取完，也就是取到最后一个石子的人一定是后手；</p>
+<p>如果 $n\bmod3\not&#x3D;0$，那先手就可以把那 $&lt;3$ 的一堆取完，然后（让后手面对那必败的局面），必胜；</p>
+<p>显然可以推广到取 $[1,m]$ 个石子。</p>
+<h3 id="威佐夫博弈"><a href="#威佐夫博弈" class="headerlink" title="威佐夫博弈"></a>威佐夫博弈</h3><p><strong>问题模型</strong></p>
+<blockquote>
+<p> 两堆石子两个人，每次从任意一堆中拿任意多个，或者从两堆中拿相同多个，拿走最后一个的人获胜。</p>
+</blockquote>
+<p><strong>结论推导</strong></p>
+<blockquote>
+<p>威佐夫博弈不同于 Nim 游戏与巴什博奕，它的特殊之处在于不能将两堆石子分开分析。</p>
+</blockquote>
+<p>从末状态开始分析：</p>
+<p>首先 $(0,0)$ 是一个 N-pos，进而推得在二维坐标系上 $y&#x3D;0$，$x&#x3D;0$，$y&#x3D;x$ 上的点为 P-pos（不考虑 $(0,0)$）。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/f7m582xj.png"></p>
+<p>再来考虑 $A1&#x3D;(1,0)$，无论怎么转移都会移动到 P-pos，所以 $(1,0)$ 为 N-pos。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/vsyokj64.png"></p>
+<p><strong>因为要准备数据结构，就先搁了QwQ</strong></p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token function">abs</span><span class="token punctuation">(</span>a <span class="token operator">-</span> b<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1.0</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span> <span class="token operator">==</span> <span class="token function">min</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="寄-for-English-Teacher-II"><a href="#寄-for-English-Teacher-II" class="headerlink" title="寄 for English Teacher II"></a>寄 for English Teacher II</h2><h3 id="Part-1"><a href="#Part-1" class="headerlink" title="Part 1"></a>Part 1</h3><p> 完型什么鬼啊，（默默的拿起了蓝书</p>
-<p> 完了，自助没写，（默默的拿来了 ZMC 的卷子</p>
-<p> （他英语还行，不算太差</p>
-<h3 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2"></a>Part 2</h3><p> 晚，</p>
-<p> “这几个人自助做的太差，改错！“</p>
-<p> “WSQ， ZMC，…“</p>
-<p> ？</p>
-<h3 id="Part-3"><a href="#Part-3" class="headerlink" title="Part 3"></a>Part 3</h3><p> 晚，</p>
-<p> 主任开会，</p>
-<p> 晚四无了，</p>
-<p> 英语改错 …</p>
-<p> 嘶，ta 应该忘了吧，</p>
-<p> 应该吧，</p>
-<h3 id="Part-4"><a href="#Part-4" class="headerlink" title="Part 4"></a>Part 4</h3><p> 晚，</p>
-<p> “谁改错没交，站起来！”</p>
-<p> (stand up with ZMC</p>
-<p> “改多少了？”</p>
-<p> “没改”</p>
-<p> “没改完是吧，出去！”</p>
-<p> ？？？</p>
-<p> （背书</p>
-<p> “为什么没改完？”</p>
-<p> “e—”</p>
-<p> “开会是吧？”</p>
-<p> (开会就是借口吗？开会就能不改吗？</p>
-<p> (我猜 ta 会这么说 </p>
-<p> “————-”</p>
-<p> 复问 ZMC：“是不是开会了？”</p>
-<p> 他：“en！”</p>
-<p> （ta 没生气？我预判错了？</p>
-<p> “那你呢？”</p>
-<p> “开会了”</p>
-<p> “刚才问你你怎么说的？”</p>
-<p> （我刚没说话啊！</p>
-<p> ？？？？？？？？？？？？</p>
-<h2 id="寄-for-Physics-Teacher-II"><a href="#寄-for-Physics-Teacher-II" class="headerlink" title="寄 for Physics Teacher II"></a>寄 for Physics Teacher II</h2><p> 这个题属于常规题型</p>
-<p> （板书</p>
-<p> 这个题呢有一点难度</p>
-<p> （板书</p>
-<p> …</p>
-<h2 id="寄-for-Physics-Teacher-III"><a href="#寄-for-Physics-Teacher-III" class="headerlink" title="寄 for Physics Teacher III"></a>寄 for Physics Teacher III</h2><p> 是不是<strong>呀</strong>，同学们</p>
-<p> 对不对<strong>呀</strong></p>
-<p> 这是什么<strong>呀</strong>， -“电压表”</p>
-<p> <strong>我看谁</strong>不抬头</p>
-<p> <strong>我看谁</strong>不记笔记</p>
-<p> <strong>我看谁</strong>能全做对</p>
-<h2 id="寄-for-director-I-Mr-While"><a href="#寄-for-director-I-Mr-While" class="headerlink" title="寄 for director I (Mr.While)"></a>寄 for director I (Mr.While)</h2><h2 id="寄-for-director-II-people"><a href="#寄-for-director-II-people" class="headerlink" title="寄 for director II (!people)"></a>寄 for director II (!people)</h2><p> <del>众所周知 <code>!</code> 代表非</del></p>
-<p> 我自谓心性还算随和，前面所写几个老师就算再不好，勉勉强强还能接受，就算是 shermen，回到宿舍和几个同学说说，调侃两句，再之后也没有什么，</p>
-<p> 但，</p>
-<p> 他不一样，</p>
- <!-- 也许是常年带高一高二实验班， -->]]></content>
+]]></content>
       <tags>
-        <tag>daily</tag>
+        <tag>oi</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
     <title>数论笔记 I</title>
     <url>/mathI/</url>
     <content><![CDATA[<blockquote>
-<p>摘要：杜教筛，类欧几里得</p>
+<p>摘要：莫比乌斯反演，杜教筛，类欧几里得</p>
 </blockquote>
-<!--
----
-额。
-
-今天讲的数论，
-
-但还是什么都不懂，
-
-QwQ，
-
--->
 <span id="more"></span>
 
 <hr>
-<h2 id="杜教筛"><a href="#杜教筛" class="headerlink" title="杜教筛"></a>杜教筛</h2><blockquote>
+<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><h2 id="杜教筛"><a href="#杜教筛" class="headerlink" title="杜教筛"></a>杜教筛</h2><blockquote>
 <p>杜教筛被用来处理数论函数的前缀和问题。对于求解一个前缀和，杜教筛可以在低于线性时间的复杂度内求解。</p>
 </blockquote>
 <h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><p>对于数论函数 $f$，我们要计算其前缀和，也就是：</p>
@@ -1633,6 +1617,74 @@ zerc <span class="token function">calc</span><span class="token punctuation">(</
       </tags>
   </entry>
   <entry>
+    <title>寄！for teachers</title>
+    <url>/ji/</url>
+    <content><![CDATA[<blockquote>
+<p>注：子标题后面所缀 Rome number 表示第几任老师</p>
+</blockquote>
+<blockquote>
+<p>建议打开左侧目录</p>
+</blockquote>
+<span id="more"></span>
+
+
+<h2 id="寄-for-English-Teacher-II"><a href="#寄-for-English-Teacher-II" class="headerlink" title="寄 for English Teacher II"></a>寄 for English Teacher II</h2><h3 id="Part-1"><a href="#Part-1" class="headerlink" title="Part 1"></a>Part 1</h3><p> 完型什么鬼啊，（默默的拿起了蓝书</p>
+<p> 完了，自助没写，（默默的拿来了 ZMC 的卷子</p>
+<p> （他英语还行，不算太差</p>
+<h3 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2"></a>Part 2</h3><p> 晚，</p>
+<p> “这几个人自助做的太差，改错！“</p>
+<p> “WSQ， ZMC，…“</p>
+<p> ？</p>
+<h3 id="Part-3"><a href="#Part-3" class="headerlink" title="Part 3"></a>Part 3</h3><p> 晚，</p>
+<p> 主任开会，</p>
+<p> 晚四无了，</p>
+<p> 英语改错 …</p>
+<p> 嘶，ta 应该忘了吧，</p>
+<p> 应该吧，</p>
+<h3 id="Part-4"><a href="#Part-4" class="headerlink" title="Part 4"></a>Part 4</h3><p> 晚，</p>
+<p> “谁改错没交，站起来！”</p>
+<p> (stand up with ZMC</p>
+<p> “改多少了？”</p>
+<p> “没改”</p>
+<p> “没改完是吧，出去！”</p>
+<p> ？？？</p>
+<p> （背书</p>
+<p> “为什么没改完？”</p>
+<p> “e—”</p>
+<p> “开会是吧？”</p>
+<p> (开会就是借口吗？开会就能不改吗？</p>
+<p> (我猜 ta 会这么说 </p>
+<p> “————-”</p>
+<p> 复问 ZMC：“是不是开会了？”</p>
+<p> 他：“en！”</p>
+<p> （ta 没生气？我预判错了？</p>
+<p> “那你呢？”</p>
+<p> “开会了”</p>
+<p> “刚才问你你怎么说的？”</p>
+<p> （我刚没说话啊！</p>
+<p> ？？？？？？？？？？？？</p>
+<h2 id="寄-for-Physics-Teacher-II"><a href="#寄-for-Physics-Teacher-II" class="headerlink" title="寄 for Physics Teacher II"></a>寄 for Physics Teacher II</h2><p> 这个题属于常规题型</p>
+<p> （板书</p>
+<p> 这个题呢有一点难度</p>
+<p> （板书</p>
+<p> …</p>
+<p> 这不是显然吗这不是</p>
+<h2 id="寄-for-Physics-Teacher-III"><a href="#寄-for-Physics-Teacher-III" class="headerlink" title="寄 for Physics Teacher III"></a>寄 for Physics Teacher III</h2><p> 是不是<strong>呀</strong>，同学们</p>
+<p> 对不对<strong>呀</strong></p>
+<p> 这是什么<strong>呀</strong>， -“电压表”</p>
+<p> <strong>我看谁</strong>不抬头</p>
+<p> <strong>我看谁</strong>不记笔记</p>
+<p> <strong>我看谁</strong>能全做对</p>
+<h2 id="寄-for-director-I-Mr-While"><a href="#寄-for-director-I-Mr-While" class="headerlink" title="寄 for director I (Mr.While)"></a>寄 for director I (Mr.While)</h2><blockquote>
+<p>在 people 与 !people 之间我毅然决然选择了白主任</p>
+</blockquote>
+<h2 id="寄-for-director-II-people"><a href="#寄-for-director-II-people" class="headerlink" title="寄 for director II (!people)"></a>寄 for director II (!people)</h2><p> <del>众所周知 <code>!</code> 代表非</del></p>
+]]></content>
+      <tags>
+        <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数论笔记 II</title>
     <url>/mathII/</url>
     <content><![CDATA[<blockquote>
@@ -1768,70 +1820,78 @@ zerc <span class="token function">calc</span><span class="token punctuation">(</
       </tags>
   </entry>
   <entry>
-    <title>博弈论</title>
-    <url>/game-theory/</url>
+    <title>数据结构</title>
+    <url>/ds/</url>
     <content><![CDATA[<blockquote>
-<p>摘要：博弈论（Nim，）</p>
+<p>左偏树，</p>
 </blockquote>
 <span id="more"></span>
 
-<h2 id="公平组合游戏"><a href="#公平组合游戏" class="headerlink" title="公平组合游戏"></a>公平组合游戏</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>公平组合游戏（Impartial Game）</strong>：</p>
+<hr>
+<h2 id="左偏树"><a href="#左偏树" class="headerlink" title="左偏树"></a>左偏树</h2><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/reey5ms2.png"></p>
+<p>左偏树是一种 <strong>可并堆</strong>，具有堆的性质，能在 $O(\log n)$ 的时间内进行合并。</p>
+<p>再讲左偏树之前，要先引入 $\mathrm{dist}$ 的定义以及性质：</p>
 <ul>
-<li><p>游戏有两个人参与，二者轮流做出决策，双方均知道游戏的完整信息；</p>
+<li><p>对于一棵二叉树，我们定义 <strong>外节点</strong> 为左儿子或右儿子为空的节点；</p>
 </li>
-<li><p>任意一个游戏者在某一确定状态可以作出的决策集合只与当前的状态有关，而与游戏者无关；</p>
-</li>
-<li><p>游戏中的同一个状态不可能多次抵达，游戏以玩家无法行动为结束，且游戏一定会在有限步后以非平局结束。</p>
+<li><p>定义一个外节点的 $\mathrm{dist}$ 为 $0$，一个不是外节点的节点 $\mathrm{dist}$ 为其到子树中最近的外节点的距离加一。空节点的 $\mathrm{dist}$ 为 $-1$。</p>
 </li>
 </ul>
-<p><strong>下面开始玩游戏</strong></p>
-<h3 id="巴什博弈"><a href="#巴什博弈" class="headerlink" title="巴什博弈"></a>巴什博弈</h3><p><strong>问题模型</strong></p>
-<blockquote>
-<p> 两个人一堆石子轮流取，每次可以取 $[1,k]$ 个，先取完者胜。</p>
-</blockquote>
-<p><strong>手动模拟</strong></p>
-<p>假设每次只可以取 $1$ 或 $2$ 个</p>
-<ol>
-<li><p>只有一个石子 先手胜</p>
-</li>
-<li><p>只有两个石子 先手胜</p>
-</li>
-<li><p>有三个石子 无论先手取一个还是取两个 都会败 此时后手必胜</p>
-</li>
-<li><p>有四个石子···</p>
-</li>
-</ol>
-<p><strong>结论推导</strong></p>
-<p>将这一堆石子（假设有 $n$ 个）分成若干个 $3$ 个一堆的石子和一堆 $&lt; 3$ 的石子；</p>
-<p>如果 $n\bmod3&#x3D;0$，那么假设先手从第 $x$ 堆中 取了 $y$ 个，那后手可以取 $3-y$ 个将这一堆取完，那么无论先手怎么取，后手都能将这一堆的石子取完，也就是取到最后一个石子的人一定是后手；</p>
-<p>如果 $n\bmod3\not&#x3D;0$，那先手就可以把那 $&lt;3$ 的一堆取完，然后（让后手面对那必败的局面），必胜；</p>
-<p>显然可以推广到取 $[1,m]$ 个石子。</p>
-<h3 id="威佐夫博弈"><a href="#威佐夫博弈" class="headerlink" title="威佐夫博弈"></a>威佐夫博弈</h3><p><strong>问题模型</strong></p>
-<blockquote>
-<p> 两堆石子两个人，每次从任意一堆中拿任意多个，或者从两堆中拿相同多个，拿走最后一个的人获胜。</p>
-</blockquote>
-<p><strong>结论推导</strong></p>
-<blockquote>
-<p>威佐夫博弈不同于 Nim 游戏与巴什博奕，它的特殊之处在于不能将两堆石子分开分析。</p>
-</blockquote>
-<p>从末状态开始分析：</p>
-<p>首先 $(0,0)$ 是一个 N-pos，进而推得在二维坐标系上 $y&#x3D;0$，$x&#x3D;0$，$y&#x3D;x$ 上的点为 P-pos（不考虑 $(0,0)$）。</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/f7m582xj.png"></p>
-<p>再来考虑 $A1&#x3D;(1,0)$，无论怎么转移都会移动到 P-pos，所以 $(1,0)$ 为 N-pos。</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/vsyokj64.png"></p>
-<p><strong>因为要准备数据结构，就先搁了QwQ</strong></p>
-<!-- 
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token function">abs</span><span class="token punctuation">(</span>a <span class="token operator">-</span> b<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1.0</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span> <span class="token operator">==</span> <span class="token function">min</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>左偏树</strong> 之所以是「左偏」的，是因为每个节点左儿子的 $\mathrm{dist}$ 都大于等于右儿子的 $\mathrm{dist}$。</p>
+<p>因此，左偏树每个节点的 $\mathrm{dist}$ 都等于其右儿子的 $\mathrm{dist}$ 加一。</p>
+<p>进而我们可以归纳出左偏树的性质：</p>
+<ul>
+<li>$\mathrm{dist}[x]&#x3D;\mathrm{dist}[rson]+1$</li>
+</ul>
+<p>需要注意的是：$\mathrm{dist}$ 不是深度，左偏树的深度没有保证，一条向左的链也是左偏树。</p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><h4 id="合并（merge）"><a href="#合并（merge）" class="headerlink" title="合并（merge）"></a>合并（merge）</h4><p>定义 <code>merge(x,y)</code> 为合并两棵分别以 $x,y$ 为根节点的左偏树，其返回值为合并之后的根节点。</p>
+<p>合并两个堆时，由于要满足堆性质，先取值较小的那个根作为合并后堆的根节点（小根堆），然后将这个根的左儿子作为合并后堆的左儿子，递归地合并其右儿子与另一个堆，作为合并后的堆的右儿子。</p>
+<p>为了满足左偏性质，合并后若左儿子的 $\mathrm{dist}$ 小于右儿子的 $\mathrm{dist}$，就交换两个儿子。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/pyr2fbz8.png"></p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6ralzdh3.png"></p>
+<p><code>merge</code> 后的树不画了，（<a href="https://csacademy.com/app/graph_editor/">CSA</a> 画树太难用了）</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 象征性地放一下代码</span>
+<span class="token keyword">int</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>x <span class="token operator">||</span> <span class="token operator">!</span>y<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> x <span class="token operator">|</span> y<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>val <span class="token operator">></span> tre<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">]</span><span class="token punctuation">.</span>dist <span class="token operator">></span> tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">]</span><span class="token punctuation">.</span>dist<span class="token punctuation">)</span> 
+        <span class="token function">swap</span><span class="token punctuation">(</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">,</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>dist <span class="token operator">=</span> tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">]</span><span class="token punctuation">.</span>dist <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h4><p>单个节点也可以视为一个堆，合并即可。</p>
+<h4 id="删除根（最小值）"><a href="#删除根（最小值）" class="headerlink" title="删除根（最小值）"></a>删除根（最小值）</h4><p>合并根的左右儿子即可。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>val <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">;</span>
+    tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span>  <span class="token function">merge</span><span class="token punctuation">(</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">,</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-<h3 id="Nim"><a href="#Nim" class="headerlink" title="Nim"></a>Nim</h3><p><strong>问题模型</strong></p>
+<h4 id="查询根（最小值）"><a href="#查询根（最小值）" class="headerlink" title="查询根（最小值）"></a>查询根（最小值）</h4><p>前面说过左偏树的深度没有保证，那就不能简单的跳父亲，</p>
+<p>想一想并查集是怎么维护的，记录每个结点的父亲，类比过来，记录每个节点的 <code>root</code>，然后</p>
+<p>因为你们板子题都过了，所以就不放代码了（qwq。</p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><strong>纯板子</strong></p>
 <blockquote>
-<p> $n$ 堆物品，每堆有 $a_i$ 个，两个玩家轮流取走任意一堆的任意个物品，但不能不取。取走最后一个物品的人获胜。<br> –&gt;</p>
+<p>3 倍经验，恭喜你淼掉了两蓝一紫</p>
 </blockquote>
+<p><a href="https://www.luogu.com.cn/problem/P3377">P3377 【模板】左偏树（可并堆）</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P2713">P2713 罗马游戏</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P1456">P1456 Monkey King</a></p>
+<p><strong>树上问题</strong></p>
+<blockquote>
+<p>2 倍经验，恭喜你水掉了两紫</p>
+</blockquote>
+<p><a href="https://www.luogu.com.cn/problem/P1552">P1552 [APIO2012] 派遣</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P3261">P3261 [JLOI2015]城池攻占</a></p>
 ]]></content>
       <tags>
         <tag>oi</tag>
-        <tag>math</tag>
+        <tag>ds</tag>
       </tags>
   </entry>
 </search>
