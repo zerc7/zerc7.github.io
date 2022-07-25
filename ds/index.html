@@ -19,20 +19,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"zerc.tk","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"waline","storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zerc.tk","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"waline","storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="左偏树，">
+    <meta name="description" content="摘要：左偏树，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构">
 <meta property="og:url" content="https://zerc.tk/ds/index.html">
 <meta property="og:site_name" content="zerc">
-<meta property="og:description" content="左偏树，">
+<meta property="og:description" content="摘要：左偏树，">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/reey5ms2.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/pyr2fbz8.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/6ralzdh3.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/btfep76r.png">
 <meta property="article:published_time" content="2022-07-23T13:29:13.000Z">
-<meta property="article:modified_time" content="2022-07-25T01:43:03.869Z">
+<meta property="article:modified_time" content="2022-07-25T07:31:48.771Z">
 <meta property="article:author" content="zerc_7">
 <meta property="article:tag" content="oi">
 <meta property="article:tag" content="ds">
@@ -57,7 +56,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-</head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -150,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E5%81%8F%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">左偏树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%EF%BC%88merge%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">合并（merge）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9"><span class="nav-number">1.1.2.</span> <span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%A0%B9%EF%BC%88%E6%9C%80%E5%B0%8F%E5%80%BC%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除根（最小值）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%A0%B9%EF%BC%88%E6%9C%80%E5%B0%8F%E5%80%BC%EF%BC%89"><span class="nav-number">1.1.4.</span> <span class="nav-text">查询根（最小值）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">例题</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E5%81%8F%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">左偏树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%EF%BC%88merge%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">合并（merge）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9"><span class="nav-number">1.1.2.</span> <span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%A0%B9%EF%BC%88%E6%9C%80%E5%B0%8F%E5%80%BC%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除根（最小值）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%A0%B9%EF%BC%88%E6%9C%80%E5%B0%8F%E5%80%BC%EF%BC%89"><span class="nav-number">1.1.4.</span> <span class="nav-text">查询根（最小值）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.5.</span> <span class="nav-text">树上问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code"><span class="nav-number">1.1.6.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">例题</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -254,7 +253,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-25 09:43:03" itemprop="dateModified" datetime="2022-07-25T09:43:03+08:00">2022-07-25</time>
+      <time title="修改时间：2022-07-25 15:31:48" itemprop="dateModified" datetime="2022-07-25T15:31:48+08:00">2022-07-25</time>
     </span>
 
   
@@ -268,13 +267,13 @@
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>
-<p>左偏树，</p>
+<p>摘要：左偏树，</p>
 </blockquote>
 <span id="more"></span>
 
 <hr>
 <h2 id="左偏树"><a href="#左偏树" class="headerlink" title="左偏树"></a>左偏树</h2><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/reey5ms2.png"></p>
-<p>左偏树是一种 <strong>可并堆</strong>，具有堆的性质，能在 $O(\log n)$ 的时间内进行合并。</p>
+<p>左偏树（Leftist Tree）是一种 <strong>可并堆</strong>，具有堆的性质，能在 $O(\log n)$ 的时间内进行合并。</p>
 <p>再讲左偏树之前，要先引入 $\mathrm{dist}$ 的定义以及性质：</p>
 <ul>
 <li><p>对于一棵二叉树，我们定义 <strong>外节点</strong> 为左儿子或右儿子为空的节点；</p>
@@ -283,43 +282,38 @@
 </li>
 </ul>
 <p><strong>左偏树</strong> 之所以是「左偏」的，是因为每个节点左儿子的 $\mathrm{dist}$ 都大于等于右儿子的 $\mathrm{dist}$。</p>
-<p>因此，左偏树每个节点的 $\mathrm{dist}$ 都等于其右儿子的 $\mathrm{dist}$ 加一。</p>
 <p>进而我们可以归纳出左偏树的性质：</p>
-<ul>
-<li>$\mathrm{dist}[x]&#x3D;\mathrm{dist}[rson]+1$</li>
-</ul>
-<p>需要注意的是：$\mathrm{dist}$ 不是深度，左偏树的深度没有保证，一条向左的链也是左偏树。</p>
+<ol>
+<li><p>$\mathrm{val}[i]\le \mathrm{val}[son[i]]$</p>
+</li>
+<li><p>$\mathrm{dist}[rson]\ge\mathrm{dist}[rson]$</p>
+</li>
+<li><p>$\mathrm{dist}[x]&#x3D;\mathrm{dist}[rson]+1$</p>
+</li>
+</ol>
+<p>我们的印象中，平衡树是具有非常小的深度的，这也意味着到达任何一个节点所经过的边数很少。左偏树并不是为了快速访问所有的节点而设计的，它的目的是快速访问最小节点以及在对树修改后快速的恢复堆性质。</p>
+<p>从图中我们可以看到它并不平衡，由于性质 2 的缘故，它的结构偏向左侧，不过距离的概念和树的深度并不同，左偏树并不意味着左子树的节点数或是深度一定大于右子树。</p>
 <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><h4 id="合并（merge）"><a href="#合并（merge）" class="headerlink" title="合并（merge）"></a>合并（merge）</h4><p>定义 <code>merge(x,y)</code> 为合并两棵分别以 $x,y$ 为根节点的左偏树，其返回值为合并之后的根节点。</p>
 <p>合并两个堆时，由于要满足堆性质，先取值较小的那个根作为合并后堆的根节点（小根堆），然后将这个根的左儿子作为合并后堆的左儿子，递归地合并其右儿子与另一个堆，作为合并后的堆的右儿子。</p>
 <p>为了满足左偏性质，合并后若左儿子的 $\mathrm{dist}$ 小于右儿子的 $\mathrm{dist}$，就交换两个儿子。</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/pyr2fbz8.png"></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6ralzdh3.png"></p>
-<p><code>merge</code> 后的树不画了，（<a target="_blank" rel="noopener" href="https://csacademy.com/app/graph_editor/">CSA</a> 画树太难用了）</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 象征性地放一下代码</span>
-<span class="token keyword">int</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>x <span class="token operator">||</span> <span class="token operator">!</span>y<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> x <span class="token operator">|</span> y<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>val <span class="token operator">></span> tre<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">.</span>val<span class="token punctuation">)</span>
-        <span class="token function">swap</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">]</span><span class="token punctuation">.</span>dist <span class="token operator">></span> tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">]</span><span class="token punctuation">.</span>dist<span class="token punctuation">)</span> 
-        <span class="token function">swap</span><span class="token punctuation">(</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">,</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> x<span class="token punctuation">;</span>
-    tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>dist <span class="token operator">=</span> tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">]</span><span class="token punctuation">.</span>dist <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> x<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/btfep76r.png"></p>
+<!-- ![](https://cdn.luogu.com.cn/upload/image_hosting/pyr2fbz8.png)
+
+![](https://cdn.luogu.com.cn/upload/image_hosting/6ralzdh3.png)
+
+`merge` 后的树不画了，（[CSA](https://csacademy.com/app/graph_editor/) 画树太难用了） -->
+
+
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 象征性地放一下代码</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!x || !y)</span><br><span class="line">        <span class="keyword">return</span> x | y;</span><br><span class="line">    <span class="keyword">if</span> (tre[x].val &gt; tre[y].val)</span><br><span class="line">        <span class="built_in">swap</span>(x, y);</span><br><span class="line">    tre[x].rs = <span class="built_in">merge</span>(tre[x].rs, y);</span><br><span class="line">    <span class="keyword">if</span> (tre[tre[x].rs].dist &gt; tre[tre[x].ls].dist) </span><br><span class="line">        <span class="built_in">swap</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">    tre[tre[x].ls].root = tre[tre[x].rs].root = tre[x].root = x;</span><br><span class="line">    tre[x].dist = tre[tre[x].rs].dist + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h4><p>单个节点也可以视为一个堆，合并即可。</p>
 <h4 id="删除根（最小值）"><a href="#删除根（最小值）" class="headerlink" title="删除根（最小值）"></a>删除根（最小值）</h4><p>合并根的左右儿子即可。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>val <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">;</span>
-    tre<span class="token punctuation">[</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>root <span class="token operator">=</span>  <span class="token function">merge</span><span class="token punctuation">(</span>tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>ls<span class="token punctuation">,</span> tre<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>rs<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    tre[x].val = <span class="number">-1</span>;</span><br><span class="line">    tre[tre[x].ls].root = tre[x].ls;</span><br><span class="line">    tre[tre[x].rs].root = tre[x].rs;</span><br><span class="line">    <span class="keyword">return</span> tre[x].root =  <span class="built_in">merge</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="查询根（最小值）"><a href="#查询根（最小值）" class="headerlink" title="查询根（最小值）"></a>查询根（最小值）</h4><p>前面说过左偏树的深度没有保证，那就不能简单的跳父亲，</p>
-<p>想一想并查集是怎么维护的，记录每个结点的父亲，类比过来，记录每个节点的 <code>root</code>，然后</p>
-<p>因为你们板子题都过了，所以就不放代码了（qwq。</p>
+<p>想一想并查集是怎么维护的，记录每个结点的父亲，类比过来，记录每个节点的 <code>root</code>，然后路径压缩即可。</p>
+<h4 id="树上问题"><a href="#树上问题" class="headerlink" title="树上问题"></a>树上问题</h4><p>题目中会很明确的告诉你，这是一颗有根树，</p>
+<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p>因为你们板子题都过了，所以就不放代码了（qwq。</p>
 <h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><strong>纯板子</strong></p>
 <blockquote>
 <p>3 倍经验，恭喜你淼掉了两蓝一紫</p>
@@ -327,6 +321,7 @@
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3377">P3377 【模板】左偏树（可并堆）</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2713">P2713 罗马游戏</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1456">P1456 Monkey King</a></p>
+<p>Monkey King 这个题很有意思，有很多<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/discuss/465593">需要注意的小点</a>，做完之后你会对左偏树有更深的认识。</p>
 <p><strong>树上问题</strong></p>
 <blockquote>
 <p>2 倍经验，恭喜你水掉了两紫</p>
@@ -398,6 +393,8 @@
   <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
   <script src="/js/third-party/tags/pdf.js"></script>
 
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.1/mermaid.min.js","integrity":"sha256-8L3O8tirFUa8Va4NSTAyIbHJeLd6OnlcxgupV9F77e0="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
 
   <script src="/js/third-party/fancybox.js"></script>
 
@@ -413,6 +410,26 @@
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '76px',
+  right: 'unset',
+  left: '10px',
+  time: '0.9s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
 
 </body>
 </html>

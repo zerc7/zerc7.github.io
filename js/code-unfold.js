@@ -12,7 +12,6 @@ $('body').on('click', '.js_retract_code_btn', function () {
   var offsetTop = $container.offset().top;
   $(this).css('top', 0);
   if (winTop > offsetTop) {
-    // 设置滚动条位置
     $('body, html').animate({
       scrollTop: $container.offset().top - CODE_MAX_HEIGHT
     }, 600);
@@ -26,8 +25,6 @@ $(window).on('scroll', function () {
     var item = containers[i];
     var { $container, height, $hide, hasHorizontalScrollbar } = item;
     if ($container.closest('body').length === 0) {
-      // 如果 $container 元素已经不在页面上, 则删除该元素
-      // 防止pjax页面跳转之后，元素未删除
       continue;
     }
     temp.push(item);
@@ -36,15 +33,13 @@ $(window).on('scroll', function () {
     }
     var offsetTop = $container.offset().top;
     var hideBtnHeight = $hide.outerHeight();
-    // 减去按钮高度，减去底部滚动条高度
     var maxTop = parseInt(height - (hasHorizontalScrollbar ? 17 : 0) - hideBtnHeight);
     let top = parseInt(
       Math.min(
-        Math.max(scrollTop - offsetTop, 0), // 如果小于 0 ，则取 0
-        maxTop,// 如果大于 height ，则取 height
+        Math.max(scrollTop - offsetTop, 0), 
+        maxTop,
       )
     );
-    // 根据 sin 曲线设置"收起代码"位置
     var halfHeight = parseInt($(window).height() / 2 * Math.sin((top / maxTop) * 90 * (2 * Math.PI/360)));
     $hide.css('top', Math.min(top + halfHeight, maxTop));
   }
@@ -58,9 +53,9 @@ function addCodeWrap($node) {
   // 底部 "展开代码" 与 侧边栏 "收起代码"
   var $btn = $(`
     <div class="highlight-footer">
-      <a class="js_unfold_code_btn show-btn" href="javascript:;">展开代码<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+      <a class="js_unfold_code_btn show-btn" href="javascript:;">All<i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </div>
-    <a class="js_retract_code_btn hide-btn" href="javascript:;"><i class="fa fa-angle-up" aria-hidden="true"></i>收起代码</a>
+    <a class="js_retract_code_btn hide-btn" href="javascript:;"><i class="fa fa-angle-up" aria-hidden="true"></i>Hide</a>
   `);
 
   $container.append($btn);
