@@ -238,58 +238,6 @@
       </tags>
   </entry>
   <entry>
-    <title>每日总结 II</title>
-    <url>/dailyII/</url>
-    <content><![CDATA[<h2 id="7-18"><a href="#7-18" class="headerlink" title="7.18"></a>7.18</h2><p>正式集训的第一天（昨天开学，</p>
-<p>今天考试，</p>
-<p>数论，</p>
-<p>寄了···</p>
-<span id="more"></span>
-
-<p>boom_zero</p>
-<h3 id="考试"><a href="#考试" class="headerlink" title="考试"></a>考试</h3><p>T1 说是原题，</p>
-<p>没做过，</p>
-<p>就没怎么写，</p>
-<p>T2 做到 77% 大概，</p>
-<p>然后因为样例有误，</p>
-<p>然后就写挂了，，，</p>
-<p>考完了才发现离 ak 只差一点，</p>
-<p>一个小 Bug + 特判，</p>
-<p>话说谁扒题不用原样例 QwQ，</p>
-<p>非得自己写，</p>
-<p>还写挂了，</p>
-<p>T3 想到是组合数之类的，</p>
-<p>没推出来，</p>
-<p>好不容易打表过了一个点，</p>
-<p>还是 SubTask，</p>
-<p>正解是 FFT 吧大概</p>
-<p>QwQ，</p>
-<p>T4 因为题有误，</p>
-<p>$\sum_{i&#x3D;1}^{0}$ ?</p>
-<p>考完试之后他说 $i&#x3D;0$，</p>
-<p>就，</p>
-<h3 id="芝士"><a href="#芝士" class="headerlink" title="芝士"></a>芝士</h3><p><strong>Dirichlet 前缀和</strong></p>
-<p>$b_i&#x3D;\sum_{j|i}a_j$</p>
-<p>话说 <code>unsigned int</code> 为什么不能用 <code>printf(&quot;%lld&quot;, ans)</code></p>
-<p>算是 T1 的前置，</p>
-<p>过了板子，</p>
-<p><strong>单位根及其性质</strong></p>
-<p>也是前置，</p>
-<p>之前讲过但忘了，</p>
-<p>QwQ，</p>
-<p>大概就这些吧。</p>
-<h2 id="7-19"><a href="#7-19" class="headerlink" title="7.19"></a>7.19</h2><p>因为 <code>exBSGS</code> 所以没写</p>
-<h2 id="7-20"><a href="#7-20" class="headerlink" title="7.20"></a>7.20</h2><p>不想写</p>
-<p>咕了咕了</p>
-<h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><p>讲的生成函数，</p>
-<p>人没了···</p>
-<h2 id="咕了咕了"><a href="#咕了咕了" class="headerlink" title="咕了咕了"></a>咕了咕了</h2><p><del>此贴完结</del></p>
-]]></content>
-      <tags>
-        <tag>daily</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>每日总结</title>
     <url>/daily/</url>
     <content><![CDATA[<p>​	前言：作为一名 OIer ，要每天做好反思，所以我 <del>自愿</del> 做好每日总结。</p>
@@ -381,6 +329,58 @@
       </tags>
   </entry>
   <entry>
+    <title>每日总结 II</title>
+    <url>/dailyII/</url>
+    <content><![CDATA[<h2 id="7-18"><a href="#7-18" class="headerlink" title="7.18"></a>7.18</h2><p>正式集训的第一天（昨天开学，</p>
+<p>今天考试，</p>
+<p>数论，</p>
+<p>寄了···</p>
+<span id="more"></span>
+
+<p>boom_zero</p>
+<h3 id="考试"><a href="#考试" class="headerlink" title="考试"></a>考试</h3><p>T1 说是原题，</p>
+<p>没做过，</p>
+<p>就没怎么写，</p>
+<p>T2 做到 77% 大概，</p>
+<p>然后因为样例有误，</p>
+<p>然后就写挂了，，，</p>
+<p>考完了才发现离 ak 只差一点，</p>
+<p>一个小 Bug + 特判，</p>
+<p>话说谁扒题不用原样例 QwQ，</p>
+<p>非得自己写，</p>
+<p>还写挂了，</p>
+<p>T3 想到是组合数之类的，</p>
+<p>没推出来，</p>
+<p>好不容易打表过了一个点，</p>
+<p>还是 SubTask，</p>
+<p>正解是 FFT 吧大概</p>
+<p>QwQ，</p>
+<p>T4 因为题有误，</p>
+<p>$\sum_{i&#x3D;1}^{0}$ ?</p>
+<p>考完试之后他说 $i&#x3D;0$，</p>
+<p>就，</p>
+<h3 id="芝士"><a href="#芝士" class="headerlink" title="芝士"></a>芝士</h3><p><strong>Dirichlet 前缀和</strong></p>
+<p>$b_i&#x3D;\sum_{j|i}a_j$</p>
+<p>话说 <code>unsigned int</code> 为什么不能用 <code>printf(&quot;%lld&quot;, ans)</code></p>
+<p>算是 T1 的前置，</p>
+<p>过了板子，</p>
+<p><strong>单位根及其性质</strong></p>
+<p>也是前置，</p>
+<p>之前讲过但忘了，</p>
+<p>QwQ，</p>
+<p>大概就这些吧。</p>
+<h2 id="7-19"><a href="#7-19" class="headerlink" title="7.19"></a>7.19</h2><p>因为 <code>exBSGS</code> 所以没写</p>
+<h2 id="7-20"><a href="#7-20" class="headerlink" title="7.20"></a>7.20</h2><p>不想写</p>
+<p>咕了咕了</p>
+<h2 id="7-21"><a href="#7-21" class="headerlink" title="7.21"></a>7.21</h2><p>讲的生成函数，</p>
+<p>人没了···</p>
+<h2 id="咕了咕了"><a href="#咕了咕了" class="headerlink" title="咕了咕了"></a>咕了咕了</h2><p><del>此贴完结</del></p>
+]]></content>
+      <tags>
+        <tag>daily</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构</title>
     <url>/ds/</url>
     <content><![CDATA[<blockquote>
@@ -408,6 +408,7 @@
 <li><p>$\mathrm{dist}[x]&#x3D;\mathrm{dist}[rson]+1$</p>
 </li>
 </ol>
+<p>为了保证你建出来的是一颗左偏树，需要加上 <code>tre[0].dist = -1</code>，<del>不写好像也没多大问题</del>。</p>
 <p>我们的印象中，平衡树是具有非常小的深度的，这也意味着到达任何一个节点所经过的边数很少。左偏树并不是为了快速访问所有的节点而设计的，它的目的是快速访问最小节点以及在对树修改后快速的恢复堆性质。</p>
 <p>从图中我们可以看到它并不平衡，由于性质 2 的缘故，它的结构偏向左侧，不过距离的概念和树的深度并不同，左偏树并不意味着左子树的节点数或是深度一定大于右子树。</p>
 <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><h4 id="合并（merge）"><a href="#合并（merge）" class="headerlink" title="合并（merge）"></a>合并（merge）</h4><p>定义 <code>merge(x,y)</code> 为合并两棵分别以 $x,y$ 为根节点的左偏树，其返回值为合并之后的根节点。</p>
@@ -424,28 +425,55 @@
 
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 象征性地放一下代码</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!x || !y)</span><br><span class="line">        <span class="keyword">return</span> x | y;</span><br><span class="line">    <span class="keyword">if</span> (tre[x].val &gt; tre[y].val)</span><br><span class="line">        <span class="built_in">swap</span>(x, y);</span><br><span class="line">    tre[x].rs = <span class="built_in">merge</span>(tre[x].rs, y);</span><br><span class="line">    <span class="keyword">if</span> (tre[tre[x].rs].dist &gt; tre[tre[x].ls].dist) </span><br><span class="line">        <span class="built_in">swap</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">    tre[tre[x].ls].root = tre[tre[x].rs].root = tre[x].root = x;</span><br><span class="line">    tre[x].dist = tre[tre[x].rs].dist + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h4><p>单个节点也可以视为一个堆，合并即可。</p>
+<h4 id="查询根（最小值）"><a href="#查询根（最小值）" class="headerlink" title="查询根（最小值）"></a>查询根（最小值）</h4><p>前面说过左偏树的深度没有保证，那就不能简单的跳父亲，</p>
+<p>想一想并查集是怎么维护的，记录每个结点的父亲，类比过来，记录每个节点的 <code>root</code>，然后路径压缩即可。</p>
+<p>记得初始化。</p>
 <h4 id="删除根（最小值）"><a href="#删除根（最小值）" class="headerlink" title="删除根（最小值）"></a>删除根（最小值）</h4><p>合并根的左右儿子即可。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    tre[x].val = <span class="number">-1</span>;</span><br><span class="line">    tre[tre[x].ls].root = tre[x].ls;</span><br><span class="line">    tre[tre[x].rs].root = tre[x].rs;</span><br><span class="line">    <span class="keyword">return</span> tre[x].root =  <span class="built_in">merge</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="查询根（最小值）"><a href="#查询根（最小值）" class="headerlink" title="查询根（最小值）"></a>查询根（最小值）</h4><p>前面说过左偏树的深度没有保证，那就不能简单的跳父亲，</p>
-<p>想一想并查集是怎么维护的，记录每个结点的父亲，类比过来，记录每个节点的 <code>root</code>，然后路径压缩即可。</p>
-<h4 id="树上问题"><a href="#树上问题" class="headerlink" title="树上问题"></a>树上问题</h4><p>题目中会很明确的告诉你，这是一颗有根树，</p>
+<h4 id="单点修改"><a href="#单点修改" class="headerlink" title="单点修改"></a>单点修改</h4><p>第一想法是：<code>pop() -&gt; tre[x].val = c -&gt; merge()</code>，</p>
+<p>没问题，但你会发现它会 MLE，调了一个小时才发现 <code>pop()</code> 中没有删掉 <code>tre[x].ls,rs</code>，父亲指向儿子，儿子指向父亲，，，可不就爆栈嘛，</p>
+<p>把上面的改一下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    tre[x].val &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    tre[tre[x].ls].root = tre[x].ls;</span><br><span class="line">    tre[tre[x].rs].root = tre[x].rs;</span><br><span class="line">    tre[x].root =  <span class="built_in">merge</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">    tre[x].ls = <span class="number">0</span>;</span><br><span class="line">    tre[x].rs = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    tre[x].root = <span class="built_in">merge</span>(tre[x].root, x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>没问题了是吧，但是在任意节点修改时还是会 MLE，我不都把儿子删了嘛，等会，父节点还指向它呢，，，</p>
+<p>再改一下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> x, llt b)</span> </span>&#123;</span><br><span class="line">    tre[x].val -= (tre[x].val &gt; b ? b : tre[x].val);</span><br><span class="line">    <span class="type">int</span> ll = tre[tre[x].ls].root = tre[x].ls; tre[x].ls = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> rr = tre[tre[x].rs].root = tre[x].rs; tre[x].rs = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">merge</span>(<span class="built_in">get</span>(x), <span class="built_in">merge</span>(ll, rr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>到具体题上还是要具体分析的，比如</p>
+<h4 id="树上问题"><a href="#树上问题" class="headerlink" title="树上问题"></a>树上问题</h4><p>以 <a href="https://www.luogu.com.cn/problem/P3261">P3261 [JLOI2015]城池攻占</a> 为例：</p>
+<p>$n$ 座城池构成树形结构，$m$ 个骑士 fighting，因为问题涉及合并，所以考虑左偏树，</p>
+<p>开始时 $m$ 个骑士各自构成一个堆，然后合并到初始城池，<code>top[i]</code> 记录第 $i$ 城池的堆顶元素；然后 <code>DFS</code>，先统计一遍 <code>dep</code>（我们可以根据 <code>dep</code> 统计出骑士攻占的城池数目），再把在这座城池牺牲的骑士弹出去，统计答案，剩下的向上一级合并，然后就成功了。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = head[x]; i; i = e[i].nxt) &#123;</span><br><span class="line">        <span class="type">int</span> y = e[i].v;</span><br><span class="line">        dep[y] = dep[x] + <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (top[x] &amp;&amp; tre[top[x]].val &lt; h[x]) &#123;</span><br><span class="line">        ans1[x]++;</span><br><span class="line">        ans2[top[x]] = dep[c[top[x]]] - dep[x];</span><br><span class="line">        top[x] = <span class="built_in">pop</span>(top[x]);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="built_in">change</span>(a[x], top[x], v[x]);</span><br><span class="line">    <span class="keyword">if</span> (x != <span class="number">1</span>)</span><br><span class="line">        top[fa[x]] = <span class="built_in">merge</span>(top[x], top[fa[x]]);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (top[x]) &#123;</span><br><span class="line">            ans2[top[x]] = dep[c[top[x]]] + <span class="number">1</span>;</span><br><span class="line">            top[x] = <span class="built_in">pop</span>(top[x]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还有一个问题是骑士的战斗力会发生变化，乘或者加，你想到了什么，<a href="https://www.luogu.com.cn/problem/P3373">线段树2</a>！</p>
+<p>与线段树类似，我们也可以打 <code>tag</code>，<code>push_down</code>，先乘后加，成功了。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> opt, <span class="type">int</span> x, llt val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (opt) &#123;</span><br><span class="line">        tre[x].val *= val;</span><br><span class="line">        tre[x].add *= val;</span><br><span class="line">        tre[x].mul *= val;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        tre[x].val += val;</span><br><span class="line">        tre[x].add += val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">push_down</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">1</span>, tre[x].ls, tre[x].mul);</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">0</span>, tre[x].ls, tre[x].add);</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">1</span>, tre[x].rs, tre[x].mul);</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">0</span>, tre[x].rs, tre[x].add);</span><br><span class="line">    tre[x].mul = <span class="number">1</span>;</span><br><span class="line">    tre[x].add = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="shu学问题"><a href="#shu学问题" class="headerlink" title="shu学问题"></a>shu学问题</h4><p>看一道例题：</p>
+<blockquote>
+<p>给定一个整数序列$a_1, a_2, ··· , a_n$，求出一个递增序列$b_1 &lt; b_2 &lt; ··· &lt; b_n$，使得序列$a_i$和$b_i$的各项之差的绝对值之和$|a_1 - b_1| + |a_2 - b_2| + ··· + |a_n - b_n|$最小。</p>
+</blockquote>
 <h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p>因为你们板子题都过了，所以就不放代码了（qwq。</p>
-<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><a href="https://www.luogu.com.cn/problem/list?tag=215&orderBy=difficulty&order=asc&page=1"><strong>题单</strong></a></p>
+<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p><a href="https://www.luogu.com.cn/problem/list?tag=215&orderBy=difficulty&order=asc&page=1">题单</a> | <a href="https://www.luogu.com.cn/training/202116#problems">题单</a></p>
 <p><strong>纯板子</strong></p>
 <blockquote>
-<p>3 倍经验，恭喜你淼掉了两蓝一紫</p>
+<p>4 倍经验，恭喜你淼掉了两蓝两紫</p>
 </blockquote>
 <p><a href="https://www.luogu.com.cn/problem/P3377">P3377 【模板】左偏树（可并堆）</a></p>
 <p><a href="https://www.luogu.com.cn/problem/P2713">P2713 罗马游戏</a></p>
 <p><a href="https://www.luogu.com.cn/problem/P1456">P1456 Monkey King</a></p>
-<p>Monkey King 这个题很有意思，有很多<a href="https://www.luogu.com.cn/discuss/465593">需要注意的小点</a>，做完之后你会对左偏树有更深的认识。</p>
+<p><a href="https://www.luogu.com.cn/problem/P4971">断罪者</a></p>
 <p><strong>树上问题</strong></p>
 <blockquote>
 <p>2 倍经验，恭喜你水掉了两紫</p>
 </blockquote>
-<p><a href="https://www.luogu.com.cn/problem/P1552">P1552 [APIO2012] 派遣</a></p>
 <p><a href="https://www.luogu.com.cn/problem/P3261">P3261 [JLOI2015]城池攻占</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P1552">P1552 [APIO2012] 派遣</a></p>
+<h3 id="引用及参考"><a href="#引用及参考" class="headerlink" title="引用及参考"></a>引用及参考</h3><p><a href="https://oi-wiki.org//ds/leftist-tree/">左偏树_OI wiki</a></p>
+<p><a href="https://github.com/OI-wiki/libs/blob/master/%E9%9B%86%E8%AE%AD%E9%98%9F%E5%8E%86%E5%B9%B4%E8%AE%BA%E6%96%87/%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F2005%E8%AE%BA%E6%96%87%E9%9B%86/%E9%BB%84%E6%BA%90%E6%B2%B3--%E5%B7%A6%E5%81%8F%E6%A0%91%E7%9A%84%E7%89%B9%E7%82%B9%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/%E9%BB%84%E6%BA%90%E6%B2%B3.pdf">IOI2005 国家集训队论文_黄源河</a></p>
+<p><a href="https://www.luogu.com.cn/blog/_post/143620">左偏树题解_hsfzLZH1</a></p>
 ]]></content>
       <tags>
         <tag>oi</tag>
@@ -582,6 +610,85 @@
       </tags>
   </entry>
   <entry>
+    <title>数论笔记 I</title>
+    <url>/mathI/</url>
+    <content><![CDATA[<blockquote>
+<p>摘要：莫比乌斯反演，杜教筛，类欧几里得</p>
+</blockquote>
+<span id="more"></span>
+
+<hr>
+<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><h2 id="杜教筛"><a href="#杜教筛" class="headerlink" title="杜教筛"></a>杜教筛</h2><blockquote>
+<p>杜教筛被用来处理数论函数的前缀和问题。对于求解一个前缀和，杜教筛可以在低于线性时间的复杂度内求解。</p>
+</blockquote>
+<h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><p>对于数论函数 $f$，我们要计算其前缀和，也就是：</p>
+<p>$$S(n)&#x3D;\sum_{i&#x3D;1}^{n}f(i)$$</p>
+<p>需要注意的是：</p>
+<ol>
+<li><p>杜教筛<strong>不要求</strong>函数一定有积性</p>
+</li>
+<li><p>使用限制：$f(i)$，$(g*f)(i)$前缀和能快速求出</p>
+</li>
+</ol>
+<p>构造数论函数 $g$，则：</p>
+<p>$$\begin{split}<br>&amp;\sum_{i&#x3D;1}^{n}(g*f)(i)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}\sum_{d\mid i}g(d)f\left(\frac{i}{d}\right)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{\lfloor\frac{n}{i}\rfloor} g(i)f(j)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}g(i)\sum_{j&#x3D;1}^{\lfloor\frac{n}{i}\rfloor} f(j)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}g(i)S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)\\<br>&#x3D;&amp;\sum_{i&#x3D;2}^{n}g(i)S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)+g(1)S(n)\\<br>\end{split}$$</p>
+<p>所以：</p>
+<p>$$<br>g(1)S(n)&#x3D;\sum_{i&#x3D;1}^{n}(g*f)(i)-\sum_{i&#x3D;2}^{n}g(i)S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)<br>$$</p>
+<h3 id="莫比乌斯函数前缀和"><a href="#莫比乌斯函数前缀和" class="headerlink" title="莫比乌斯函数前缀和"></a>莫比乌斯函数前缀和</h3><p>$$<br>\because\epsilon&#x3D;\mu\ast I\\<br>\therefore<br>S(n)&#x3D;1-\sum_{i&#x3D;2}^{n}S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)<br>$$</p>
+<p>后半部分数论分块，预处理前 $n^{\frac{2}{3}}$ 项，时间复杂度 $O(n^{\frac{2}{3}})$。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">PreWork</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 预处理 miu[1-&gt;1e7]</span></span><br><span class="line">    <span class="comment">// 预处理 sum[] 维护 miu[] 前缀和</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">llt <span class="title">SUM_miu</span> <span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &lt; mx) <span class="keyword">return</span> sum[x];</span><br><span class="line">	<span class="keyword">if</span> (mp.<span class="built_in">find</span>(x) != mp.<span class="built_in">end</span>()) <span class="keyword">return</span> mp[x];</span><br><span class="line">	llt val = <span class="number">1ll</span>;</span><br><span class="line">	<span class="keyword">for</span> (llt i = <span class="number">2</span>, j; i &lt;= x; i = j + <span class="number">1</span>) &#123;</span><br><span class="line">		j = x / (x / i);</span><br><span class="line">		val -= <span class="built_in">SUM_miu</span>(x / i) * (j - i + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> mp[x] = val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实测 <code>unordered_map</code> 比 <code>map</code> 慢 <code>0.05s</code>，离谱。</p>
+<h3 id="欧拉函数前缀和"><a href="#欧拉函数前缀和" class="headerlink" title="欧拉函数前缀和"></a>欧拉函数前缀和</h3><p><strong>莫比乌斯反演</strong></p>
+<p>$$<br>\begin{split}<br>&amp;\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{n}1[\gcd(i,j)&#x3D;1]\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{n}\sum_{d\mid i,d\mid j}\mu(d)\\<br>&#x3D;&amp;\sum_{d&#x3D;1}^{n}\mu(d)\left\lfloor\frac{n}{d}\right\rfloor^2<br>\end{split}<br>$$</p>
+<p>所以：</p>
+<p>$$<br>\begin{split}<br>&amp;\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{i}1[\gcd(i,j)&#x3D;1]\\<br>&#x3D;&amp;\frac{\sum_{d&#x3D;1}^{n}\mu(d)\left\lfloor\frac{n}{d}\right\rfloor^2}{2}\\<br>\end{split}<br>$$</p>
+<hr>
+<h2 id="类欧几里得"><a href="#类欧几里得" class="headerlink" title="类欧几里得"></a>类欧几里得</h2><h3 id="引入-f"><a href="#引入-f" class="headerlink" title="引入 $f$"></a>引入 $f$</h3><p>设:</p>
+<p>$$<br>f(a,b,c,n)&#x3D;\sum _{i&#x3D;0}^{n}\left\lfloor\frac{ai+b}{c}\right\rfloor<br>$$</p>
+<p>先考虑 $a\ge c\ ||\ b\ge c$ 的情况:</p>
+<p>$$<br>\begin{split}<br>f(a,b,c,n)&amp;&#x3D;\sum_{i&#x3D;0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^n\left\lfloor<br>\frac{\left(\left\lfloor\frac{a}{c}\right\rfloor c+a\bmod c\right)i+\left(\left\lfloor\frac{b}{c}\right\rfloor c+b\bmod c\right)}{c}\right\rfloor\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^{n}\left\lfloor\frac{a}{c}\right\rfloor i+\left\lfloor\frac{b}{c}\right\rfloor+\left\lfloor\frac{\left(a\bmod c\right)i+\left(b\bmod c\right)}{c}<br>\right\rfloor\\<br>&amp;&#x3D;\frac{n(n+1)}{2}\left\lfloor\frac{a}{c}\right\rfloor+(n+1)\left\lfloor\frac{b}{c}\right\rfloor+\sum_{i&#x3D;0}^n\left\lfloor\frac{\left(a\bmod c\right)i+\left(b\bmod c\right)}{c}\right\rfloor\\<br>&amp;&#x3D;\frac{n(n+1)}{2}\left\lfloor\frac{a}{c}\right\rfloor<br>+(n+1)\left\lfloor\frac{b}{c}\right\rfloor+f(a\bmod c,\ b\bmod c,\ c,\ n)<br>\end{split}<br>$$</p>
+<p>在第四步进行转化时用到了一点数学知识（其中 $C$ 为常数项）:</p>
+<p>$$<br>\sum_{i&#x3D;0}^{n}i*C&#x3D;\frac{n(n+1)}{2}C<br>$$</p>
+<p>同理可得：</p>
+<p>$$<br>\sum_{i&#x3D;0}^{n}i^2*C&#x3D;\frac{n(n+1)(2n+1)}{6}C<br>$$</p>
+<p>我们会在下面用到。</p>
+<p>然后就是 $a&lt;c,b&lt;c$ 的情况（设 $m&#x3D;\left\lfloor\frac{an+b}{c}\right\rfloor-1$）：</p>
+<p>$$<br>\begin{split}<br>f(a,b,c,n)&amp;&#x3D;\sum_{i&#x3D;0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^{n}\sum_{j&#x3D;0}^{\left\lfloor\frac{ai+b}{a}-1\right\rfloor}1\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^{n}\sum_{j&#x3D;0}^{m}\left[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor\right]\\<br>\end{split}<br>$$</p>
+<p>尝试更换枚举项（限制转移）：</p>
+<p>$$<br>\begin{split}<br>j+1&amp;\le\frac{ai+b}{c}\\<br>jc+c&amp;\le ai+b\\<br>jc+c-b-1&amp;&lt;ai\\<br>i&amp;&gt;\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor<br>\end{split}<br>$$</p>
+<p>于是原式化为：</p>
+<p>$$<br>\begin{split}<br>f(a,b,c,n)&amp;&#x3D;\sum_{j&#x3D;0}^{m}<br>\sum_{i&#x3D;0}^n\left[i&gt;\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor \right]\\<br>&amp;&#x3D;\sum_{j&#x3D;0}^{m}<br>(n-\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor)\\<br>&amp;&#x3D;n(m+1)-f\left(c,c-b-1,a,m\right)<br>\end{split}<br>$$</p>
+<h3 id="推导-g"><a href="#推导-g" class="headerlink" title="推导 $g$"></a>推导 $g$</h3><p>设:</p>
+<p>$$<br>g(a,b,c,n)&#x3D;\sum _{i&#x3D;0}^{n}i\left\lfloor\frac{ai+b}{c}\right\rfloor<br>$$</p>
+<p>先考虑 $a\ge c\ ||\ b\ge c$ 的情况，与上文类似，我们可以得到：</p>
+<p>$$<br>g(a,b,c,n)<br>&#x3D;\frac{n(n+1)(2n+1)}{6}\left\lfloor\frac{a}{c}\right\rfloor<br>+\frac{n(n+1)}{2}\left\lfloor\frac{b}{c}\right\rfloor<br>+g(a\bmod c,\ b\bmod c,\ c,\ n)<br>$$</p>
+<p>然后就是 $a&lt;c,b&lt;c$ 的情况（同样地设 $m&#x3D;\left\lfloor\frac{an+b}{c}\right\rfloor-1$，$t&#x3D;\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor$）：</p>
+<p>$$<br>\begin{split}<br>g(a,b,c,n)&amp;&#x3D;\sum_{i&#x3D;0}^ni\left\lfloor \frac{ai+b}{c} \right\rfloor\\<br>&amp;&#x3D;\sum_{j&#x3D;0}^{m}\sum_{i&#x3D;0}^ni\left[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor\right]\\<br>&amp;&#x3D;\sum_{j&#x3D;0}^{m}\sum_{i&#x3D;0}^ni[i&gt;t]\\<br>&amp;&#x3D;\sum_{j&#x3D;0}^{m}\frac{1}{2}(t+n+1)(n-t)\\<br>&amp;&#x3D;\frac{1}{2}\left[(m+1)n(n+1)-\sum_{j&#x3D;0}^{m-1}t^2-\sum_{j&#x3D;0}^{m-1}t\right]\\<br>&amp;&#x3D;\frac{1}{2}[(m+1)n(n+1)-h(c,c-b-1,a,m-1)-f(c,c-b-1,a,m)]<br>\end{split}<br>$$</p>
+<h3 id="推导-h"><a href="#推导-h" class="headerlink" title="推导 $h$"></a>推导 $h$</h3><p>设:</p>
+<p>$$<br>h(a,b,c,n)&#x3D;\sum _{i&#x3D;0}^{n}\left\lfloor\frac{ai+b}{c}\right\rfloor^2<br>$$</p>
+<p>先考虑 $a\ge c\ ||\ b\ge c$ 的情况：</p>
+<p>$$<br>\begin{split}<br>h(a,b,c,n)&amp;&#x3D;h(a\bmod c,b\bmod c,c,n)\\<br>&amp;+2\left\lfloor\frac{b}{c}\right\rfloor f(a\bmod c,b\bmod c,c,n)<br>+2\left\lfloor\frac{a}{c}\right\rfloor g(a\bmod c,b\bmod c,c,n)\\<br>&amp;+\left\lfloor\frac{a}{c}\right\rfloor^2\frac{n(n+1)(2n+1)}{6}+\left\lfloor\frac{b}{c}\right\rfloor^2(n+1)<br>+\left\lfloor\frac{a}{c}\right\rfloor\left\lfloor\frac{b}{c}\right\rfloor n(n+1)<br>\end{split}<br>$$</p>
+<p>然后就是 $a&lt;c,b&lt;c$ 的情况（同样地设 $m&#x3D;\left\lfloor\frac{an+b}{c}\right\rfloor-1$，$t&#x3D;\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor$）：</p>
+<p>这里用到了一点数学技巧:</p>
+<p>$$<br>n^2&#x3D;2\dfrac{n(n+1)}{2}-n&#x3D;\left(2\sum_{i&#x3D;0}^ni\right)-n<br>$$</p>
+<p>这样做的意义在于不会出现 $\sum\times\sum$ 的形式：</p>
+<p>$$<br>\begin{split}<br>h(a,b,c,n)&amp;&#x3D;\sum_{i&#x3D;0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor^2\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^n\left[\left(2\sum_{j&#x3D;1}^{\left\lfloor \frac{ai+b}{c} \right\rfloor}j \right)-\left\lfloor\frac{ai+b}{c}\right\rfloor\right]\\<br>&amp;&#x3D;\left(2\sum_{i&#x3D;0}^n\sum_{j&#x3D;1}^{\left\lfloor \frac{ai+b}{c} \right\rfloor}j\right) -f(a,b,c,n)\\<br>\end{split}<br>$$</p>
+<p>接下来考虑化简前一部分：</p>
+<p>$$<br>\begin{split}<br>&amp;\sum_{i&#x3D;0}^n\sum_{j&#x3D;1}^{\left\lfloor \frac{ai+b}{c} \right\rfloor}j\\<br>&#x3D;&amp;\sum_{i&#x3D;0}^n\sum_{j&#x3D;0}^{\left\lfloor \frac{ai+b}{c} \right\rfloor-1}(j+1)\\<br>&#x3D;&amp;\sum_{j&#x3D;0}^{m}(j+1)\sum_{i&#x3D;0}^n\left[j&lt;\left\lfloor \frac{ai+b}{c} \right\rfloor\right]\\<br>&#x3D;&amp;\sum_{j&#x3D;0}^{m}(j+1)\sum_{i&#x3D;0}^n[i&gt;t]\\<br>&#x3D;&amp;\sum_{j&#x3D;0}^{m}(j+1)(n-t)\\<br>&#x3D;&amp;\frac{1}{2}n(m+1)(m+2)-\sum_{j&#x3D;0}^{m}(j+1)\left\lfloor \frac{jc+c-b-1}{a} \right\rfloor\\<br>&#x3D;&amp;\frac{1}{2}n(m+1)(m+2)-g(c,c-b-1,a,m)-f(c,c-b-1,a,m)<br>\end{split}<br>$$</p>
+<p>最终得到：</p>
+<p>$$<br>h(a,b,c,n)&#x3D;n(m+1)(m+2)-2g(c,c-b-1,a,m)-2f(c,c-b-1,a,m)-f(a,b,c,n)<br>$$</p>
+<h3 id="板子题"><a href="#板子题" class="headerlink" title="板子题"></a>板子题</h3><p><a href="https://www.luogu.com.cn/problem/P5170">luogu_P5170</a></p>
+<blockquote>
+<p>此题卡 $\bmod$ 非常严重，建议有事没事按俩 <code>% p</code> 。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> llt;</span><br><span class="line"><span class="type">const</span> llt p = <span class="number">998244353</span>;</span><br><span class="line"><span class="type">const</span> llt inv2 = <span class="number">499122177</span>;</span><br><span class="line"><span class="type">const</span> llt inv6 = <span class="number">166374059</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">zerc</span> &#123;</span><br><span class="line">	llt f, g, h;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">mod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		f = (f % p + p) % p, </span><br><span class="line">		g = (g % p + p) % p, </span><br><span class="line">		h = (h % p + p) % p;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">zerc <span class="title">calc</span><span class="params">(llt n, llt a, llt b, llt c)</span> </span>&#123;	</span><br><span class="line">	<span class="comment">// printf(&quot;|&gt; %lld %lld %lld %lld\n&quot;, n, a, b, c);</span></span><br><span class="line">	llt m = ((a * n + b) / c - <span class="number">1</span>);</span><br><span class="line">	llt n1bc = ((n + <span class="number">1</span>) * (b / c)) % p;</span><br><span class="line">	llt n1bc2= ((n + <span class="number">1</span>) * (b / c) % p * (b / c) % p) % p;</span><br><span class="line">	llt n2ac = (n * (n + <span class="number">1</span>) % p * inv2 % p * (a / c) % p) % p;</span><br><span class="line">	llt n2bc = (n * (n + <span class="number">1</span>) % p * inv2 % p * (b / c) % p) % p;</span><br><span class="line">	llt n21acbc = (n * (n + <span class="number">1</span>) % p * (a / c) % p * (b / c) % p) % p;</span><br><span class="line">	llt n3ac = (n * (n + <span class="number">1</span>) % p * (n * <span class="number">2</span> + <span class="number">1</span>) % p * inv6 % p * (a / c) % p)  % p;</span><br><span class="line">	llt n3ac2= (n * (n + <span class="number">1</span>) % p * (n * <span class="number">2</span> + <span class="number">1</span>) % p * inv6 % p * (a / c) % p * (a / c) % p)  % p;</span><br><span class="line">	zerc d, e;</span><br><span class="line">	<span class="keyword">if</span> (!a) &#123;</span><br><span class="line">		d.f = n1bc;</span><br><span class="line">		d.g = n2bc;</span><br><span class="line">		d.h = n1bc2;</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a &gt;= c || b &gt;= c) &#123;</span><br><span class="line">		d.f = n2ac + n1bc;</span><br><span class="line">		d.g = n3ac + n2bc;</span><br><span class="line">		d.h = n3ac2 + n1bc2 + n21acbc;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		e = <span class="built_in">calc</span>(n, a % c, b % c, c);</span><br><span class="line">		d.f += e.f;</span><br><span class="line">		d.g += e.g;</span><br><span class="line">		d.h += e.h + (b / c) * <span class="number">2</span> * e.f % p + (a / c) * <span class="number">2</span> * e.g % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a &lt; c &amp;&amp; b &lt; c) &#123;</span><br><span class="line">		e = <span class="built_in">calc</span>(m, c, c - b - <span class="number">1</span>, a);</span><br><span class="line">		d.f = (n * (m + <span class="number">1</span>) % p - e.f) % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		d.g = (n * (m + <span class="number">1</span>) % p * (n + <span class="number">1</span>) % p - e.h - e.f) % p * inv2 % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		d.h = (n * (m + <span class="number">1</span>) % p * (m + <span class="number">2</span>) % p - e.g * <span class="number">2</span> % p - e.f * <span class="number">2</span> % p - d.f) % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;P5170_6.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;P5170.out&quot;</span>, <span class="string">&quot;w&quot;</span>, stdout);</span><br><span class="line">	<span class="type">int</span> T; <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T); <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		llt n, a, b, c;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%lld %lld %lld %lld&quot;</span>, &amp;n, &amp;a, &amp;b, &amp;c);</span><br><span class="line">		zerc ans = <span class="built_in">calc</span>(n, a, b, c);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld %lld %lld\n&quot;</span>, ans.f, ans.h, ans.g);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>oi</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数论笔记 II</title>
     <url>/mathII/</url>
     <content><![CDATA[<blockquote>
@@ -676,82 +783,11 @@
       </tags>
   </entry>
   <entry>
-    <title>数论笔记 I</title>
-    <url>/mathI/</url>
-    <content><![CDATA[<blockquote>
-<p>摘要：莫比乌斯反演，杜教筛，类欧几里得</p>
-</blockquote>
-<span id="more"></span>
-
-<hr>
-<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><h2 id="杜教筛"><a href="#杜教筛" class="headerlink" title="杜教筛"></a>杜教筛</h2><blockquote>
-<p>杜教筛被用来处理数论函数的前缀和问题。对于求解一个前缀和，杜教筛可以在低于线性时间的复杂度内求解。</p>
-</blockquote>
-<h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><p>对于数论函数 $f$，我们要计算其前缀和，也就是：</p>
-<p>$$S(n)&#x3D;\sum_{i&#x3D;1}^{n}f(i)$$</p>
-<p>需要注意的是：</p>
-<ol>
-<li><p>杜教筛<strong>不要求</strong>函数一定有积性</p>
-</li>
-<li><p>使用限制：$f(i)$，$(g*f)(i)$前缀和能快速求出</p>
-</li>
-</ol>
-<p>构造数论函数 $g$，则：</p>
-<p>$$\begin{split}<br>&amp;\sum_{i&#x3D;1}^{n}(g*f)(i)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}\sum_{d\mid i}g(d)f\left(\frac{i}{d}\right)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{\lfloor\frac{n}{i}\rfloor} g(i)f(j)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}g(i)\sum_{j&#x3D;1}^{\lfloor\frac{n}{i}\rfloor} f(j)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}g(i)S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)\\<br>&#x3D;&amp;\sum_{i&#x3D;2}^{n}g(i)S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)+g(1)S(n)\\<br>\end{split}$$</p>
-<p>所以：</p>
-<p>$$<br>g(1)S(n)&#x3D;\sum_{i&#x3D;1}^{n}(g*f)(i)-\sum_{i&#x3D;2}^{n}g(i)S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)<br>$$</p>
-<h3 id="莫比乌斯函数前缀和"><a href="#莫比乌斯函数前缀和" class="headerlink" title="莫比乌斯函数前缀和"></a>莫比乌斯函数前缀和</h3><p>$$<br>\because\epsilon&#x3D;\mu\ast I\\<br>\therefore<br>S(n)&#x3D;1-\sum_{i&#x3D;2}^{n}S\left(\left\lfloor\frac{n}{i}\right\rfloor\right)<br>$$</p>
-<p>后半部分数论分块，预处理前 $n^{\frac{2}{3}}$ 项，时间复杂度 $O(n^{\frac{2}{3}})$。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">PreWork</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 预处理 miu[1-&gt;1e7]</span></span><br><span class="line">    <span class="comment">// 预处理 sum[] 维护 miu[] 前缀和</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">llt <span class="title">SUM_miu</span> <span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &lt; mx) <span class="keyword">return</span> sum[x];</span><br><span class="line">	<span class="keyword">if</span> (mp.<span class="built_in">find</span>(x) != mp.<span class="built_in">end</span>()) <span class="keyword">return</span> mp[x];</span><br><span class="line">	llt val = <span class="number">1ll</span>;</span><br><span class="line">	<span class="keyword">for</span> (llt i = <span class="number">2</span>, j; i &lt;= x; i = j + <span class="number">1</span>) &#123;</span><br><span class="line">		j = x / (x / i);</span><br><span class="line">		val -= <span class="built_in">SUM_miu</span>(x / i) * (j - i + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> mp[x] = val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>实测 <code>unordered_map</code> 比 <code>map</code> 慢 <code>0.05s</code>，离谱。</p>
-<h3 id="欧拉函数前缀和"><a href="#欧拉函数前缀和" class="headerlink" title="欧拉函数前缀和"></a>欧拉函数前缀和</h3><p><strong>莫比乌斯反演</strong></p>
-<p>$$<br>\begin{split}<br>&amp;\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{n}1[\gcd(i,j)&#x3D;1]\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{n}\sum_{d\mid i,d\mid j}\mu(d)\\<br>&#x3D;&amp;\sum_{d&#x3D;1}^{n}\mu(d)\left\lfloor\frac{n}{d}\right\rfloor^2<br>\end{split}<br>$$</p>
-<p>所以：</p>
-<p>$$<br>\begin{split}<br>&amp;\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{i}1[\gcd(i,j)&#x3D;1]\\<br>&#x3D;&amp;\frac{\sum_{d&#x3D;1}^{n}\mu(d)\left\lfloor\frac{n}{d}\right\rfloor^2}{2}\\<br>\end{split}<br>$$</p>
-<hr>
-<h2 id="类欧几里得"><a href="#类欧几里得" class="headerlink" title="类欧几里得"></a>类欧几里得</h2><h3 id="引入-f"><a href="#引入-f" class="headerlink" title="引入 $f$"></a>引入 $f$</h3><p>设:</p>
-<p>$$<br>f(a,b,c,n)&#x3D;\sum _{i&#x3D;0}^{n}\left\lfloor\frac{ai+b}{c}\right\rfloor<br>$$</p>
-<p>先考虑 $a\ge c\ ||\ b\ge c$ 的情况:</p>
-<p>$$<br>\begin{split}<br>f(a,b,c,n)&amp;&#x3D;\sum_{i&#x3D;0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^n\left\lfloor<br>\frac{\left(\left\lfloor\frac{a}{c}\right\rfloor c+a\bmod c\right)i+\left(\left\lfloor\frac{b}{c}\right\rfloor c+b\bmod c\right)}{c}\right\rfloor\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^{n}\left\lfloor\frac{a}{c}\right\rfloor i+\left\lfloor\frac{b}{c}\right\rfloor+\left\lfloor\frac{\left(a\bmod c\right)i+\left(b\bmod c\right)}{c}<br>\right\rfloor\\<br>&amp;&#x3D;\frac{n(n+1)}{2}\left\lfloor\frac{a}{c}\right\rfloor+(n+1)\left\lfloor\frac{b}{c}\right\rfloor+\sum_{i&#x3D;0}^n\left\lfloor\frac{\left(a\bmod c\right)i+\left(b\bmod c\right)}{c}\right\rfloor\\<br>&amp;&#x3D;\frac{n(n+1)}{2}\left\lfloor\frac{a}{c}\right\rfloor<br>+(n+1)\left\lfloor\frac{b}{c}\right\rfloor+f(a\bmod c,\ b\bmod c,\ c,\ n)<br>\end{split}<br>$$</p>
-<p>在第四步进行转化时用到了一点数学知识（其中 $C$ 为常数项）:</p>
-<p>$$<br>\sum_{i&#x3D;0}^{n}i*C&#x3D;\frac{n(n+1)}{2}C<br>$$</p>
-<p>同理可得：</p>
-<p>$$<br>\sum_{i&#x3D;0}^{n}i^2*C&#x3D;\frac{n(n+1)(2n+1)}{6}C<br>$$</p>
-<p>我们会在下面用到。</p>
-<p>然后就是 $a&lt;c,b&lt;c$ 的情况（设 $m&#x3D;\left\lfloor\frac{an+b}{c}\right\rfloor-1$）：</p>
-<p>$$<br>\begin{split}<br>f(a,b,c,n)&amp;&#x3D;\sum_{i&#x3D;0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^{n}\sum_{j&#x3D;0}^{\left\lfloor\frac{ai+b}{a}-1\right\rfloor}1\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^{n}\sum_{j&#x3D;0}^{m}\left[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor\right]\\<br>\end{split}<br>$$</p>
-<p>尝试更换枚举项（限制转移）：</p>
-<p>$$<br>\begin{split}<br>j+1&amp;\le\frac{ai+b}{c}\\<br>jc+c&amp;\le ai+b\\<br>jc+c-b-1&amp;&lt;ai\\<br>i&amp;&gt;\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor<br>\end{split}<br>$$</p>
-<p>于是原式化为：</p>
-<p>$$<br>\begin{split}<br>f(a,b,c,n)&amp;&#x3D;\sum_{j&#x3D;0}^{m}<br>\sum_{i&#x3D;0}^n\left[i&gt;\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor \right]\\<br>&amp;&#x3D;\sum_{j&#x3D;0}^{m}<br>(n-\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor)\\<br>&amp;&#x3D;n(m+1)-f\left(c,c-b-1,a,m\right)<br>\end{split}<br>$$</p>
-<h3 id="推导-g"><a href="#推导-g" class="headerlink" title="推导 $g$"></a>推导 $g$</h3><p>设:</p>
-<p>$$<br>g(a,b,c,n)&#x3D;\sum _{i&#x3D;0}^{n}i\left\lfloor\frac{ai+b}{c}\right\rfloor<br>$$</p>
-<p>先考虑 $a\ge c\ ||\ b\ge c$ 的情况，与上文类似，我们可以得到：</p>
-<p>$$<br>g(a,b,c,n)<br>&#x3D;\frac{n(n+1)(2n+1)}{6}\left\lfloor\frac{a}{c}\right\rfloor<br>+\frac{n(n+1)}{2}\left\lfloor\frac{b}{c}\right\rfloor<br>+g(a\bmod c,\ b\bmod c,\ c,\ n)<br>$$</p>
-<p>然后就是 $a&lt;c,b&lt;c$ 的情况（同样地设 $m&#x3D;\left\lfloor\frac{an+b}{c}\right\rfloor-1$，$t&#x3D;\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor$）：</p>
-<p>$$<br>\begin{split}<br>g(a,b,c,n)&amp;&#x3D;\sum_{i&#x3D;0}^ni\left\lfloor \frac{ai+b}{c} \right\rfloor\\<br>&amp;&#x3D;\sum_{j&#x3D;0}^{m}\sum_{i&#x3D;0}^ni\left[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor\right]\\<br>&amp;&#x3D;\sum_{j&#x3D;0}^{m}\sum_{i&#x3D;0}^ni[i&gt;t]\\<br>&amp;&#x3D;\sum_{j&#x3D;0}^{m}\frac{1}{2}(t+n+1)(n-t)\\<br>&amp;&#x3D;\frac{1}{2}\left[(m+1)n(n+1)-\sum_{j&#x3D;0}^{m-1}t^2-\sum_{j&#x3D;0}^{m-1}t\right]\\<br>&amp;&#x3D;\frac{1}{2}[(m+1)n(n+1)-h(c,c-b-1,a,m-1)-f(c,c-b-1,a,m)]<br>\end{split}<br>$$</p>
-<h3 id="推导-h"><a href="#推导-h" class="headerlink" title="推导 $h$"></a>推导 $h$</h3><p>设:</p>
-<p>$$<br>h(a,b,c,n)&#x3D;\sum _{i&#x3D;0}^{n}\left\lfloor\frac{ai+b}{c}\right\rfloor^2<br>$$</p>
-<p>先考虑 $a\ge c\ ||\ b\ge c$ 的情况：</p>
-<p>$$<br>\begin{split}<br>h(a,b,c,n)&amp;&#x3D;h(a\bmod c,b\bmod c,c,n)\\<br>&amp;+2\left\lfloor\frac{b}{c}\right\rfloor f(a\bmod c,b\bmod c,c,n)<br>+2\left\lfloor\frac{a}{c}\right\rfloor g(a\bmod c,b\bmod c,c,n)\\<br>&amp;+\left\lfloor\frac{a}{c}\right\rfloor^2\frac{n(n+1)(2n+1)}{6}+\left\lfloor\frac{b}{c}\right\rfloor^2(n+1)<br>+\left\lfloor\frac{a}{c}\right\rfloor\left\lfloor\frac{b}{c}\right\rfloor n(n+1)<br>\end{split}<br>$$</p>
-<p>然后就是 $a&lt;c,b&lt;c$ 的情况（同样地设 $m&#x3D;\left\lfloor\frac{an+b}{c}\right\rfloor-1$，$t&#x3D;\left\lfloor\frac{jc+c-b-1}{a}\right\rfloor$）：</p>
-<p>这里用到了一点数学技巧:</p>
-<p>$$<br>n^2&#x3D;2\dfrac{n(n+1)}{2}-n&#x3D;\left(2\sum_{i&#x3D;0}^ni\right)-n<br>$$</p>
-<p>这样做的意义在于不会出现 $\sum\times\sum$ 的形式：</p>
-<p>$$<br>\begin{split}<br>h(a,b,c,n)&amp;&#x3D;\sum_{i&#x3D;0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor^2\\<br>&amp;&#x3D;\sum_{i&#x3D;0}^n\left[\left(2\sum_{j&#x3D;1}^{\left\lfloor \frac{ai+b}{c} \right\rfloor}j \right)-\left\lfloor\frac{ai+b}{c}\right\rfloor\right]\\<br>&amp;&#x3D;\left(2\sum_{i&#x3D;0}^n\sum_{j&#x3D;1}^{\left\lfloor \frac{ai+b}{c} \right\rfloor}j\right) -f(a,b,c,n)\\<br>\end{split}<br>$$</p>
-<p>接下来考虑化简前一部分：</p>
-<p>$$<br>\begin{split}<br>&amp;\sum_{i&#x3D;0}^n\sum_{j&#x3D;1}^{\left\lfloor \frac{ai+b}{c} \right\rfloor}j\\<br>&#x3D;&amp;\sum_{i&#x3D;0}^n\sum_{j&#x3D;0}^{\left\lfloor \frac{ai+b}{c} \right\rfloor-1}(j+1)\\<br>&#x3D;&amp;\sum_{j&#x3D;0}^{m}(j+1)\sum_{i&#x3D;0}^n\left[j&lt;\left\lfloor \frac{ai+b}{c} \right\rfloor\right]\\<br>&#x3D;&amp;\sum_{j&#x3D;0}^{m}(j+1)\sum_{i&#x3D;0}^n[i&gt;t]\\<br>&#x3D;&amp;\sum_{j&#x3D;0}^{m}(j+1)(n-t)\\<br>&#x3D;&amp;\frac{1}{2}n(m+1)(m+2)-\sum_{j&#x3D;0}^{m}(j+1)\left\lfloor \frac{jc+c-b-1}{a} \right\rfloor\\<br>&#x3D;&amp;\frac{1}{2}n(m+1)(m+2)-g(c,c-b-1,a,m)-f(c,c-b-1,a,m)<br>\end{split}<br>$$</p>
-<p>最终得到：</p>
-<p>$$<br>h(a,b,c,n)&#x3D;n(m+1)(m+2)-2g(c,c-b-1,a,m)-2f(c,c-b-1,a,m)-f(a,b,c,n)<br>$$</p>
-<h3 id="板子题"><a href="#板子题" class="headerlink" title="板子题"></a>板子题</h3><p><a href="https://www.luogu.com.cn/problem/P5170">luogu_P5170</a></p>
-<blockquote>
-<p>此题卡 $\bmod$ 非常严重，建议有事没事按俩 <code>% p</code> 。</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> llt;</span><br><span class="line"><span class="type">const</span> llt p = <span class="number">998244353</span>;</span><br><span class="line"><span class="type">const</span> llt inv2 = <span class="number">499122177</span>;</span><br><span class="line"><span class="type">const</span> llt inv6 = <span class="number">166374059</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">zerc</span> &#123;</span><br><span class="line">	llt f, g, h;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">mod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		f = (f % p + p) % p, </span><br><span class="line">		g = (g % p + p) % p, </span><br><span class="line">		h = (h % p + p) % p;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">zerc <span class="title">calc</span><span class="params">(llt n, llt a, llt b, llt c)</span> </span>&#123;	</span><br><span class="line">	<span class="comment">// printf(&quot;|&gt; %lld %lld %lld %lld\n&quot;, n, a, b, c);</span></span><br><span class="line">	llt m = ((a * n + b) / c - <span class="number">1</span>);</span><br><span class="line">	llt n1bc = ((n + <span class="number">1</span>) * (b / c)) % p;</span><br><span class="line">	llt n1bc2= ((n + <span class="number">1</span>) * (b / c) % p * (b / c) % p) % p;</span><br><span class="line">	llt n2ac = (n * (n + <span class="number">1</span>) % p * inv2 % p * (a / c) % p) % p;</span><br><span class="line">	llt n2bc = (n * (n + <span class="number">1</span>) % p * inv2 % p * (b / c) % p) % p;</span><br><span class="line">	llt n21acbc = (n * (n + <span class="number">1</span>) % p * (a / c) % p * (b / c) % p) % p;</span><br><span class="line">	llt n3ac = (n * (n + <span class="number">1</span>) % p * (n * <span class="number">2</span> + <span class="number">1</span>) % p * inv6 % p * (a / c) % p)  % p;</span><br><span class="line">	llt n3ac2= (n * (n + <span class="number">1</span>) % p * (n * <span class="number">2</span> + <span class="number">1</span>) % p * inv6 % p * (a / c) % p * (a / c) % p)  % p;</span><br><span class="line">	zerc d, e;</span><br><span class="line">	<span class="keyword">if</span> (!a) &#123;</span><br><span class="line">		d.f = n1bc;</span><br><span class="line">		d.g = n2bc;</span><br><span class="line">		d.h = n1bc2;</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a &gt;= c || b &gt;= c) &#123;</span><br><span class="line">		d.f = n2ac + n1bc;</span><br><span class="line">		d.g = n3ac + n2bc;</span><br><span class="line">		d.h = n3ac2 + n1bc2 + n21acbc;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		e = <span class="built_in">calc</span>(n, a % c, b % c, c);</span><br><span class="line">		d.f += e.f;</span><br><span class="line">		d.g += e.g;</span><br><span class="line">		d.h += e.h + (b / c) * <span class="number">2</span> * e.f % p + (a / c) * <span class="number">2</span> * e.g % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a &lt; c &amp;&amp; b &lt; c) &#123;</span><br><span class="line">		e = <span class="built_in">calc</span>(m, c, c - b - <span class="number">1</span>, a);</span><br><span class="line">		d.f = (n * (m + <span class="number">1</span>) % p - e.f) % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		d.g = (n * (m + <span class="number">1</span>) % p * (n + <span class="number">1</span>) % p - e.h - e.f) % p * inv2 % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		d.h = (n * (m + <span class="number">1</span>) % p * (m + <span class="number">2</span>) % p - e.g * <span class="number">2</span> % p - e.f * <span class="number">2</span> % p - d.f) % p;</span><br><span class="line">		d.<span class="built_in">mod</span>();</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;P5170_6.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;P5170.out&quot;</span>, <span class="string">&quot;w&quot;</span>, stdout);</span><br><span class="line">	<span class="type">int</span> T; <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T); <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		llt n, a, b, c;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%lld %lld %lld %lld&quot;</span>, &amp;n, &amp;a, &amp;b, &amp;c);</span><br><span class="line">		zerc ans = <span class="built_in">calc</span>(n, a, b, c);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld %lld %lld\n&quot;</span>, ans.f, ans.h, ans.g);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <title>OI 学案</title>
+    <url>/oi/</url>
+    <content><![CDATA[]]></content>
       <tags>
         <tag>oi</tag>
-        <tag>math</tag>
       </tags>
   </entry>
 </search>

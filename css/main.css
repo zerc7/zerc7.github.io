@@ -184,7 +184,7 @@ body {
   background: var(--body-bg-color);
   box-sizing: border-box;
   color: var(--text-color);
-  font-family: Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Serif SC, Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 1em;
   line-height: 2;
   min-height: 100%;
@@ -197,7 +197,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Serif SC, Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 30px 0 15px;
@@ -437,7 +437,7 @@ pre figcaption a:hover {
 }
 pre,
 code {
-  font-family: Fira Code Light, consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
+  font-family: Source Code Pro, Fira Code Light, consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
 }
 code {
   border-radius: 3px;
@@ -1200,7 +1200,7 @@ header.header {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Serif SC, Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   line-height: 1.5;
@@ -1889,7 +1889,7 @@ header.header {
   width: 4px;
 }
 .post-body {
-  font-family: Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Serif SC, Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
@@ -2076,7 +2076,7 @@ header.header {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Serif SC, Fira Code Light, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }
@@ -2468,6 +2468,9 @@ ul.breadcrumb li:last-child {
 .tag-cloud-10 {
   border-bottom-color: #111;
   color: #111;
+}
+.utterances {
+  max-width: unset;
 }
 .search-active {
   overflow: hidden;
@@ -2927,7 +2930,7 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #ff70fb;
+  background: #86ff39;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
