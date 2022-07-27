@@ -381,10 +381,10 @@
       </tags>
   </entry>
   <entry>
-    <title>数据结构</title>
+    <title>左偏树</title>
     <url>/ds/</url>
     <content><![CDATA[<blockquote>
-<p>摘要：左偏树，</p>
+<p>摘要：左偏树，左偏树，左偏树</p>
 </blockquote>
 <span id="more"></span>
 
@@ -408,53 +408,69 @@
 <li><p>$\mathrm{dist}[x]&#x3D;\mathrm{dist}[rson]+1$</p>
 </li>
 </ol>
-<p>为了保证你建出来的是一颗左偏树，需要加上 <code>tre[0].dist = -1</code>，<del>不写好像也没多大问题</del>。</p>
+<p>为了保证你建出来的是一颗左偏树，需要加上 <code>tre[0].dist = -1</code>。</p>
 <p>我们的印象中，平衡树是具有非常小的深度的，这也意味着到达任何一个节点所经过的边数很少。左偏树并不是为了快速访问所有的节点而设计的，它的目的是快速访问最小节点以及在对树修改后快速的恢复堆性质。</p>
 <p>从图中我们可以看到它并不平衡，由于性质 2 的缘故，它的结构偏向左侧，不过距离的概念和树的深度并不同，左偏树并不意味着左子树的节点数或是深度一定大于右子树。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/74uvuu29.png"></p>
+<p>没有一种算法（数据结构）能完美的平衡 时空复杂度，编程复杂度，只是说在不同的问题上各有侧重罢了。</p>
 <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><h4 id="合并（merge）"><a href="#合并（merge）" class="headerlink" title="合并（merge）"></a>合并（merge）</h4><p>定义 <code>merge(x,y)</code> 为合并两棵分别以 $x,y$ 为根节点的左偏树，其返回值为合并之后的根节点。</p>
 <p>合并两个堆时，由于要满足堆性质，先取值较小的那个根作为合并后堆的根节点（小根堆），然后将这个根的左儿子作为合并后堆的左儿子，递归地合并其右儿子与另一个堆，作为合并后的堆的右儿子。</p>
 <p>为了满足左偏性质，合并后若左儿子的 $\mathrm{dist}$ 小于右儿子的 $\mathrm{dist}$，就交换两个儿子。</p>
 <p><img src="https://cdn.luogu.com.cn/upload/image_hosting/btfep76r.png"></p>
-<!-- ![](https://cdn.luogu.com.cn/upload/image_hosting/pyr2fbz8.png)
-
-![](https://cdn.luogu.com.cn/upload/image_hosting/6ralzdh3.png)
-
-`merge` 后的树不画了，（[CSA](https://csacademy.com/app/graph_editor/) 画树太难用了） -->
-
-
-
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 象征性地放一下代码</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!x || !y)</span><br><span class="line">        <span class="keyword">return</span> x | y;</span><br><span class="line">    <span class="keyword">if</span> (tre[x].val &gt; tre[y].val)</span><br><span class="line">        <span class="built_in">swap</span>(x, y);</span><br><span class="line">    tre[x].rs = <span class="built_in">merge</span>(tre[x].rs, y);</span><br><span class="line">    <span class="keyword">if</span> (tre[tre[x].rs].dist &gt; tre[tre[x].ls].dist) </span><br><span class="line">        <span class="built_in">swap</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">    tre[tre[x].ls].root = tre[tre[x].rs].root = tre[x].root = x;</span><br><span class="line">    tre[x].dist = tre[tre[x].rs].dist + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h4><p>单个节点也可以视为一个堆，合并即可。</p>
-<h4 id="查询根（最小值）"><a href="#查询根（最小值）" class="headerlink" title="查询根（最小值）"></a>查询根（最小值）</h4><p>前面说过左偏树的深度没有保证，那就不能简单的跳父亲，</p>
+<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><p>单个节点也可以视为一个堆，合并即可。</p>
+<h4 id="查询（find）"><a href="#查询（find）" class="headerlink" title="查询（find）"></a>查询（find）</h4><p>前面说过左偏树的深度没有保证，那就不能简单的跳父亲，</p>
 <p>想一想并查集是怎么维护的，记录每个结点的父亲，类比过来，记录每个节点的 <code>root</code>，然后路径压缩即可。</p>
 <p>记得初始化。</p>
-<h4 id="删除根（最小值）"><a href="#删除根（最小值）" class="headerlink" title="删除根（最小值）"></a>删除根（最小值）</h4><p>合并根的左右儿子即可。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    tre[x].val = <span class="number">-1</span>;</span><br><span class="line">    tre[tre[x].ls].root = tre[x].ls;</span><br><span class="line">    tre[tre[x].rs].root = tre[x].rs;</span><br><span class="line">    <span class="keyword">return</span> tre[x].root =  <span class="built_in">merge</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="删除（pop）"><a href="#删除（pop）" class="headerlink" title="删除（pop）"></a>删除（pop）</h4><p>删除根的话合并左右儿子即可。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    tre[x].val = <span class="number">-1</span>;</span><br><span class="line">    tre[tre[x].ls].root = tre[x].ls;</span><br><span class="line">    tre[tre[x].rs].root = tre[x].rs;</span><br><span class="line">    tre[x].root =  <span class="built_in">merge</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="单点修改"><a href="#单点修改" class="headerlink" title="单点修改"></a>单点修改</h4><p>第一想法是：<code>pop() -&gt; tre[x].val = c -&gt; merge()</code>，</p>
-<p>没问题，但你会发现它会 MLE，调了一个小时才发现 <code>pop()</code> 中没有删掉 <code>tre[x].ls,rs</code>，父亲指向儿子，儿子指向父亲，，，可不就爆栈嘛，</p>
-<p>把上面的改一下：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    tre[x].val &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    tre[tre[x].ls].root = tre[x].ls;</span><br><span class="line">    tre[tre[x].rs].root = tre[x].rs;</span><br><span class="line">    tre[x].root =  <span class="built_in">merge</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">    tre[x].ls = <span class="number">0</span>;</span><br><span class="line">    tre[x].rs = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    tre[x].root = <span class="built_in">merge</span>(tre[x].root, x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>删除任意节点就比较麻烦，你得让它六亲不认，，，但也可以在 <code>merge()</code> 时 <code>push_up()</code>，自底向上更新 $\mathrm{dist}$。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">push_up</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!x) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (tre[x].dist != tre[tre[x].ls].dist + <span class="number">1</span>) &#123;</span><br><span class="line">        tre[x].dist =  tre[tre[x].rs].dist + <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">push_up</span>(tre[x].root);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="built_in">push_up</span>(x);</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    tre[x].val = <span class="number">-1</span>;</span><br><span class="line">    tre[x].root =  <span class="built_in">merge</span>(tre[x].ls, tre[x].rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>没问题了是吧，但是在任意节点修改时还是会 MLE，我不都把儿子删了嘛，等会，父节点还指向它呢，，，</p>
-<p>再改一下：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> x, llt b)</span> </span>&#123;</span><br><span class="line">    tre[x].val -= (tre[x].val &gt; b ? b : tre[x].val);</span><br><span class="line">    <span class="type">int</span> ll = tre[tre[x].ls].root = tre[x].ls; tre[x].ls = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> rr = tre[tre[x].rs].root = tre[x].rs; tre[x].rs = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">merge</span>(<span class="built_in">get</span>(x), <span class="built_in">merge</span>(ll, rr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>到具体题上还是要具体分析的，比如</p>
+<h4 id="修改（change-val）"><a href="#修改（change-val）" class="headerlink" title="修改（change_val）"></a>修改（change_val）</h4><p>第一想法是：<code>pop() -&gt; tre[x].val = c -&gt; merge()</code>，</p>
+<p>没问题，但 <code>pop()</code> 中一定要删掉 <code>tre[x].ls,rs</code>，不然父亲指向儿子，儿子指向父亲，，，爆栈 MLE，</p>
+<p>一般情况下父节点不用删，例如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">change_val</span><span class="params">(<span class="type">int</span> x, llt b)</span> </span>&#123;</span><br><span class="line">    tre[x].val -= (tre[x].val &gt; b ? b : tre[x].val);</span><br><span class="line">    <span class="type">int</span> ll = tre[tre[x].ls].root = tre[x].ls; tre[x].ls = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> rr = tre[tre[x].rs].root = tre[x].rs; tre[x].rs = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">merge</span>(<span class="built_in">get</span>(x), <span class="built_in">merge</span>(ll, rr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是上面这个问题中维护的是一个大根堆，<code>x</code> 的 <code>val</code> 改变之后还是比父节点小的，所以这么写是没问题的。</p>
+<p>具体的写法要看题目里要求的是大根堆还是小根堆，<code>change_val</code> 之后 <code>val</code> 变大还是变小，要根据题面灵活变换的。</p>
 <h4 id="树上问题"><a href="#树上问题" class="headerlink" title="树上问题"></a>树上问题</h4><p>以 <a href="https://www.luogu.com.cn/problem/P3261">P3261 [JLOI2015]城池攻占</a> 为例：</p>
 <p>$n$ 座城池构成树形结构，$m$ 个骑士 fighting，因为问题涉及合并，所以考虑左偏树，</p>
 <p>开始时 $m$ 个骑士各自构成一个堆，然后合并到初始城池，<code>top[i]</code> 记录第 $i$ 城池的堆顶元素；然后 <code>DFS</code>，先统计一遍 <code>dep</code>（我们可以根据 <code>dep</code> 统计出骑士攻占的城池数目），再把在这座城池牺牲的骑士弹出去，统计答案，剩下的向上一级合并，然后就成功了。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = head[x]; i; i = e[i].nxt) &#123;</span><br><span class="line">        <span class="type">int</span> y = e[i].v;</span><br><span class="line">        dep[y] = dep[x] + <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (top[x] &amp;&amp; tre[top[x]].val &lt; h[x]) &#123;</span><br><span class="line">        ans1[x]++;</span><br><span class="line">        ans2[top[x]] = dep[c[top[x]]] - dep[x];</span><br><span class="line">        top[x] = <span class="built_in">pop</span>(top[x]);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="built_in">change</span>(a[x], top[x], v[x]);</span><br><span class="line">    <span class="keyword">if</span> (x != <span class="number">1</span>)</span><br><span class="line">        top[fa[x]] = <span class="built_in">merge</span>(top[x], top[fa[x]]);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (top[x]) &#123;</span><br><span class="line">            ans2[top[x]] = dep[c[top[x]]] + <span class="number">1</span>;</span><br><span class="line">            top[x] = <span class="built_in">pop</span>(top[x]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>还有一个问题是骑士的战斗力会发生变化，乘或者加，你想到了什么，<a href="https://www.luogu.com.cn/problem/P3373">线段树2</a>！</p>
+<h4 id="Tag-标记"><a href="#Tag-标记" class="headerlink" title="Tag 标记"></a>Tag 标记</h4><p>还是上面这个题，骑士的战斗力会发生变化，乘或者加，你想到了什么，<a href="https://www.luogu.com.cn/problem/P3373">线段树2</a> ！</p>
 <p>与线段树类似，我们也可以打 <code>tag</code>，<code>push_down</code>，先乘后加，成功了。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> opt, <span class="type">int</span> x, llt val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (opt) &#123;</span><br><span class="line">        tre[x].val *= val;</span><br><span class="line">        tre[x].add *= val;</span><br><span class="line">        tre[x].mul *= val;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        tre[x].val += val;</span><br><span class="line">        tre[x].add += val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">push_down</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">1</span>, tre[x].ls, tre[x].mul);</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">0</span>, tre[x].ls, tre[x].add);</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">1</span>, tre[x].rs, tre[x].mul);</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">0</span>, tre[x].rs, tre[x].add);</span><br><span class="line">    tre[x].mul = <span class="number">1</span>;</span><br><span class="line">    tre[x].add = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="shu学问题"><a href="#shu学问题" class="headerlink" title="shu学问题"></a>shu学问题</h4><p>看一道例题：</p>
+<h4 id="shu-学问题"><a href="#shu-学问题" class="headerlink" title="shu 学问题"></a>shu 学问题</h4><p>看一道例题：</p>
+<p><a href="https://www.luogu.com.cn/problem/P4331">P4331 [BalticOI 2004]Sequence 数字序列</a></p>
 <blockquote>
-<p>给定一个整数序列$a_1, a_2, ··· , a_n$，求出一个递增序列$b_1 &lt; b_2 &lt; ··· &lt; b_n$，使得序列$a_i$和$b_i$的各项之差的绝对值之和$|a_1 - b_1| + |a_2 - b_2| + ··· + |a_n - b_n|$最小。</p>
+<p>给定一个整数序列 $a_1, a_2, ··· , a_n$，求出一个递增序列 $b_1 &lt; b_2 &lt; ··· &lt; b_n$，使得序列 $a_i$ 和 $b_i$ 的各项之差的绝对值之和 $\sum_{i&#x3D;1}^{n}|a_i - b_i|$  最小。</p>
 </blockquote>
+<p><strong>Solution I</strong></p>
+<p>考虑两种极端的情况：</p>
+<ol>
+<li>若原序列 $a$ 满足 $a_1&lt;a_2&lt;\dots&lt;a_n$，显然最优情况为 $b_i&#x3D;a_i$<br>​</li>
+<li>若原序列 $a$ 满足 $a_1&gt;a_2&gt;\dots&gt;a_n$，显然最优情况为 $b_{mid}&#x3D;a_{mid}$</li>
+</ol>
+<p>有了上述的两种情况再去想整个序列，$a$ 序列是由一些单调区间组成，因此我们可以将原序列 $a$ 拆成若干个单调区间，最后再将答案合并。</p>
+<p>将两个堆合并来找中位数，不难想到用左偏树。</p>
+<p>假设我们已经找到前 $k$ 个数的最优解，队列中有 $cnt$ 段区间，每段区间最优解为 $w_1,w_2,…,w_{cnt}$，现在要加入 $a_{k+1}$，并更新队列。</p>
+<p>首先把 $a_{k+1}$ 加入队尾，令 $w_{cnt+1}&#x3D;a_{k+1}$，如果 $w_{cnt}&gt;w_{cnt+1}$，就将最后两个区间合并，并找出新区间的最优解。重复上述过程，直至满足 $w$ 单调递增。</p>
+<p>注意：题目要求的是一个递增序列 $b$，可以用减下标来实现（即输入时把每个数都减去对应下标，输出时加上），这样就可以将递增序列转化成不下降序列，这样就可以保证每一段区间的序列 $b$ 不一样了（原本有很多连续一段区间全是中位数，不能保证递增）。</p>
+<p><strong>Solution II</strong></p>
+<p>首先是一个显然的 DP。</p>
+<p>$f[i][j]$ 表示前 $i$ 个数字，其中最后一个数字小于等于 $j$ 的最优答案</p>
+<p>考虑转移，首先让 $f[i][j] &#x3D; f[i-1][j] + \left|a[i] - j\right|$</p>
+<p>然后再让 $f[i][j] &#x3D; \min(f[i][j],f[i][j-1])$</p>
+<p>如果我们得到这个 dp 数组，用一般的方法就可以倒着推回去得到方案。</p>
+<p>其实 $f[i][j]$ 其实是一个斜率单调以 $1$ 递减的折线。我们只需要知道拐点就可以了。</p>
+<p>考虑加入一个绝对值函数，如果在之前斜率为 $0$ 的直线上，相当于这个左边斜率减一，否则相当于右边的斜率都加一（这时候斜率为为 $-1$ 的就没了，和右边并起来了）。</p>
+<p>我们用堆来维护折线的拐点的横坐标即可。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/tjtggko4.png"></p>
 <h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p>因为你们板子题都过了，所以就不放代码了（qwq。</p>
 <h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p><a href="https://www.luogu.com.cn/problem/list?tag=215&orderBy=difficulty&order=asc&page=1">题单</a> | <a href="https://www.luogu.com.cn/training/202116#problems">题单</a></p>
 <p><strong>纯板子</strong></p>
@@ -464,16 +480,28 @@
 <p><a href="https://www.luogu.com.cn/problem/P3377">P3377 【模板】左偏树（可并堆）</a></p>
 <p><a href="https://www.luogu.com.cn/problem/P2713">P2713 罗马游戏</a></p>
 <p><a href="https://www.luogu.com.cn/problem/P1456">P1456 Monkey King</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P4971">断罪者</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P4971">P4971 断罪者</a></p>
 <p><strong>树上问题</strong></p>
 <blockquote>
 <p>2 倍经验，恭喜你水掉了两紫</p>
 </blockquote>
 <p><a href="https://www.luogu.com.cn/problem/P3261">P3261 [JLOI2015]城池攻占</a></p>
 <p><a href="https://www.luogu.com.cn/problem/P1552">P1552 [APIO2012] 派遣</a></p>
+<p><strong>shu 学问题</strong></p>
+<blockquote>
+<p>例题，恭喜你水掉了一紫</p>
+</blockquote>
+<p><a href="https://www.luogu.com.cn/problem/P4331">P4331 [BalticOI 2004]Sequence 数字序列</a></p>
+<p><strong>应用进阶</strong></p>
+<blockquote>
+<p>恭喜你可以教我左偏树了</p>
+</blockquote>
+<p><a href="https://www.luogu.com.cn/problem/P3642">P3642 [APIO2016] 烟火表演</a></p>
 <h3 id="引用及参考"><a href="#引用及参考" class="headerlink" title="引用及参考"></a>引用及参考</h3><p><a href="https://oi-wiki.org//ds/leftist-tree/">左偏树_OI wiki</a></p>
-<p><a href="https://github.com/OI-wiki/libs/blob/master/%E9%9B%86%E8%AE%AD%E9%98%9F%E5%8E%86%E5%B9%B4%E8%AE%BA%E6%96%87/%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F2005%E8%AE%BA%E6%96%87%E9%9B%86/%E9%BB%84%E6%BA%90%E6%B2%B3--%E5%B7%A6%E5%81%8F%E6%A0%91%E7%9A%84%E7%89%B9%E7%82%B9%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/%E9%BB%84%E6%BA%90%E6%B2%B3.pdf">IOI2005 国家集训队论文_黄源河</a></p>
 <p><a href="https://www.luogu.com.cn/blog/_post/143620">左偏树题解_hsfzLZH1</a></p>
+<p><a href="https://github.com/OI-wiki/libs/blob/master/%E9%9B%86%E8%AE%AD%E9%98%9F%E5%8E%86%E5%B9%B4%E8%AE%BA%E6%96%87/%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F2005%E8%AE%BA%E6%96%87%E9%9B%86/%E9%BB%84%E6%BA%90%E6%B2%B3--%E5%B7%A6%E5%81%8F%E6%A0%91%E7%9A%84%E7%89%B9%E7%82%B9%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/%E9%BB%84%E6%BA%90%E6%B2%B3.pdf">IOI2005 国家集训队论文_黄源河</a></p>
+<p><a href="https://www.luogu.com.cn/blog/_post/109869">P4331 题解_Nemlit (Solution I)</a></p>
+<p><a href="https://www.luogu.com.cn/blog/_post/79145">P4331 题解_wzporz (Solution II)</a></p>
 ]]></content>
       <tags>
         <tag>oi</tag>
@@ -780,14 +808,6 @@
       <tags>
         <tag>oi</tag>
         <tag>math</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OI 学案</title>
-    <url>/oi/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>oi</tag>
       </tags>
   </entry>
 </search>
