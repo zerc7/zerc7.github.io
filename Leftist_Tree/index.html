@@ -24,7 +24,7 @@
     <meta name="description" content="摘要：左偏树，左偏树，左偏树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="左偏树">
-<meta property="og:url" content="https://zerc.tk/ds/index.html">
+<meta property="og:url" content="https://zerc.tk/Leftist_Tree/index.html">
 <meta property="og:site_name" content="zerc">
 <meta property="og:description" content="摘要：左偏树，左偏树，左偏树">
 <meta property="og:locale" content="zh_CN">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/btfep76r.png">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/tjtggko4.png">
 <meta property="article:published_time" content="2022-07-23T13:29:13.000Z">
-<meta property="article:modified_time" content="2022-07-28T02:20:55.979Z">
+<meta property="article:modified_time" content="2022-07-28T06:39:36.778Z">
 <meta property="article:author" content="zerc_7">
 <meta property="article:tag" content="oi">
 <meta property="article:tag" content="ds">
@@ -41,11 +41,11 @@
 <meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/reey5ms2.png">
 
 
-<link rel="canonical" href="https://zerc.tk/ds/">
+<link rel="canonical" href="https://zerc.tk/Leftist_Tree/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zerc.tk/ds/","path":"ds/","title":"左偏树"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zerc.tk/Leftist_Tree/","path":"Leftist_Tree/","title":"左偏树"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>左偏树 | zerc</title>
@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E5%81%8F%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">左偏树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%EF%BC%88merge%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">合并（merge）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%85%A5"><span class="nav-number">1.1.2.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%EF%BC%88find%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">查询（find）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%EF%BC%88pop%EF%BC%89"><span class="nav-number">1.1.4.</span> <span class="nav-text">删除（pop）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%EF%BC%88change-val%EF%BC%89"><span class="nav-number">1.1.5.</span> <span class="nav-text">修改（change_val）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.6.</span> <span class="nav-text">树上问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tag-%E6%A0%87%E8%AE%B0"><span class="nav-number">1.1.7.</span> <span class="nav-text">Tag 标记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shu-%E5%AD%A6%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.8.</span> <span class="nav-text">shu 学问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code"><span class="nav-number">1.1.9.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">练习题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E5%8F%8A%E5%8F%82%E8%80%83"><span class="nav-number">1.3.</span> <span class="nav-text">引用及参考</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E5%81%8F%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">左偏树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%EF%BC%88merge%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">合并（merge）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%85%A5"><span class="nav-number">1.1.2.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%EF%BC%88find%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">查询（find）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%EF%BC%88pop%EF%BC%89"><span class="nav-number">1.1.4.</span> <span class="nav-text">删除（pop）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%EF%BC%88change-val%EF%BC%89"><span class="nav-number">1.1.5.</span> <span class="nav-text">修改（change_val）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.6.</span> <span class="nav-text">树上问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tag-%E6%A0%87%E8%AE%B0"><span class="nav-number">1.1.7.</span> <span class="nav-text">Tag 标记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shu-%E5%AD%A6%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.8.</span> <span class="nav-text">shu 学问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95"><span class="nav-number">1.1.9.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code"><span class="nav-number">1.1.10.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">练习题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E5%8F%8A%E5%8F%82%E8%80%83"><span class="nav-number">1.3.</span> <span class="nav-text">引用及参考</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -222,7 +222,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zerc.tk/ds/">
+    <link itemprop="mainEntityOfPage" href="https://zerc.tk/Leftist_Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg">
@@ -258,7 +258,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-28 10:20:55" itemprop="dateModified" datetime="2022-07-28T10:20:55+08:00">2022-07-28</time>
+      <time title="修改时间：2022-07-28 14:39:36" itemprop="dateModified" datetime="2022-07-28T14:39:36+08:00">2022-07-28</time>
     </span>
 
   
@@ -300,7 +300,8 @@
 <p>我们的印象中，平衡树是具有非常小的深度的，这也意味着到达任何一个节点所经过的边数很少。左偏树并不是为了快速访问所有的节点而设计的，它的目的是快速访问最小节点以及在对树修改后快速的恢复堆性质。</p>
 <p>从图中我们可以看到它并不平衡，由于性质 2 的缘故，它的结构偏向左侧，不过距离的概念和树的深度并不同，左偏树并不意味着左子树的节点数或是深度一定大于右子树。</p>
 <p><img src="https://cdn.luogu.com.cn/upload/image_hosting/74uvuu29.png"></p>
-<p>没有一种算法（数据结构）能完美的平衡 时空复杂度，编程复杂度，只是说在不同的问题上各有侧重罢了。</p>
+<!-- 没有一种算法（数据结构）能完美的平衡 时空复杂度，编程复杂度，只是说在不同的问题上各有侧重罢了。 -->
+
 <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><h4 id="合并（merge）"><a href="#合并（merge）" class="headerlink" title="合并（merge）"></a>合并（merge）</h4><p>定义 <code>merge(x,y)</code> 为合并两棵分别以 $x,y$ 为根节点的左偏树，其返回值为合并之后的根节点。</p>
 <p>合并两个堆时，由于要满足堆性质，先取值较小的那个根作为合并后堆的根节点（小根堆），然后将这个根的左儿子作为合并后堆的左儿子，递归地合并其右儿子与另一个堆，作为合并后的堆的右儿子。</p>
 <p>为了满足左偏性质，合并后若左儿子的 $\mathrm{dist}$ 小于右儿子的 $\mathrm{dist}$，就交换两个儿子。</p>
@@ -330,16 +331,14 @@
 <h4 id="Tag-标记"><a href="#Tag-标记" class="headerlink" title="Tag 标记"></a>Tag 标记</h4><p>还是上面这个题，骑士的战斗力会发生变化，乘或者加，你想到了什么，<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3373">线段树2</a> ！</p>
 <p>与线段树类似，我们也可以打 <code>tag</code>，<code>push_down</code>，先乘后加，成功了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> opt, <span class="type">int</span> x, llt val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (opt) &#123;</span><br><span class="line">        tre[x].val *= val;</span><br><span class="line">        tre[x].add *= val;</span><br><span class="line">        tre[x].mul *= val;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        tre[x].val += val;</span><br><span class="line">        tre[x].add += val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">push_down</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">1</span>, tre[x].ls, tre[x].mul);</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">0</span>, tre[x].ls, tre[x].add);</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">1</span>, tre[x].rs, tre[x].mul);</span><br><span class="line">    <span class="built_in">change</span>(<span class="number">0</span>, tre[x].rs, tre[x].add);</span><br><span class="line">    tre[x].mul = <span class="number">1</span>;</span><br><span class="line">    tre[x].add = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <h4 id="shu-学问题"><a href="#shu-学问题" class="headerlink" title="shu 学问题"></a>shu 学问题</h4><p>看一道例题：</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4331">P4331 [BalticOI 2004]Sequence 数字序列</a></p>
 <blockquote>
-<p>给定一个序列 $a_1, a_2, ··· , a_n$，求出一个<strong>递增（不下降？）</strong>序列 $b_1 &lt; b_2 &lt; ··· &lt; b_n$，使得 $\sum_{i&#x3D;1}^{n}|a_i - b_i|$  最小。</p>
+<p>给定一个序列 $a_1, a_2, ··· , a_n$，求出一个<strong>严格递增</strong>序列 $b_1 &lt; b_2 &lt; ··· &lt; b_n$，使得 $\sum_{i&#x3D;1}^{n}|a_i - b_i|$  最小。</p>
 </blockquote>
 <p><strong>Solution I</strong></p>
-<p>考虑两种极端的情况：</p>
+<p>我们先考虑原题的弱化版：</p>
+<p>求<strong>不下降</strong>序列 $b$ 使得 $\sum_{i&#x3D;1}^n|a_i-b_i|$最小，我们可以感性的得到两个结论：</p>
 <ol>
 <li>若原序列 $a$ 满足 $a_1&lt;a_2&lt;\dots&lt;a_n$，显然最优情况为 $b_i&#x3D;a_i$<br>​</li>
 <li>若原序列 $a$ 满足 $a_1&gt;a_2&gt;\dots&gt;a_n$，显然最优情况为 $b_{i}&#x3D;a_{mid}$</li>
@@ -348,9 +347,19 @@
 <p>将两个堆合并来找中位数，不难想到用左偏树。</p>
 <p>假设我们已经找到前 $k$ 个数的最优解，队列中有 $cnt$ 段区间，每段区间最优解为 $w_1,w_2,…,w_{cnt}$，现在要加入 $a_{k+1}$，并更新队列。</p>
 <p>首先把 $a_{k+1}$ 加入队尾，令 $w_{cnt+1}&#x3D;a_{k+1}$，如果 $w_{cnt}&gt;w_{cnt+1}$，就将最后两个区间合并，并找出新区间的最优解。重复上述过程，直至满足 $w$ 单调递增。</p>
-<p>算法中涉及到以下两种操作：合并两个有序集以及查询某个有序集内的中位数。能较高效地支持这两种操作的数据结构有不少，一个比较明显的例子是二叉检索树(BST)，它的询问操作复杂度是 $O(\log n)$，但合并操作不甚理想，采用启发式合并，总时间复杂度为 $O(n\log^2n)$。</p>
-<p>我们发现，只有当某一区间内的中位数比后一区间内的中位数大时，合并操作才会发生，也就是说，任一区间与后面的区间合并后，该区间内的中位数不会变大。于是我们可以用最大堆来维护每个区间内的中位数，当堆中的元素大于该区间内元素的一半时，删除堆顶元素，这样堆中的元素始终为区间内较小的一半元素，堆顶元素即为该区间内的中位数。考虑到我们必须高效地完成合并操作，左偏树是一个理想的选择。左偏树的询问操作时间复杂度为 $O(1)$，删除和合并操作时间复杂度都是 $O(\log n)$，而询问操作和合并操作少于 $n$ 次，删除操作不超过 $n&#x2F;2$ 次（因为删除操作只会在合并两个元素个数为奇数的堆时发生），因此用左偏树实现，可以把算法的时间复杂度降为 $O(n\log n)$。</p>
-<p><strong>注意</strong>：题目要求的是一个递增序列 $b$，可以用减下标来实现（即输入时把每个数都减去对应下标，输出时加上），这样就可以将递增序列转化成不下降序列，这样就可以保证每一段区间的序列 $b$ 不一样了（原本有很多连续一段区间全是中位数，不能保证递增）。</p>
+<p>算法中涉及到以下两种操作：合并两个有序集以及查询某个有序集内的中位数。能较高效地支持这两种操作的数据结构有不少，一个比较明显的例子是二叉检索树（BST），它的询问操作复杂度是 $O(\log n)$，但合并操作不甚理想，采用启发式合并，总时间复杂度为 $O(n\log^2n)$。</p>
+<p>我们发现，只有当某一区间内的中位数比后一区间内的中位数大时，合并操作才会发生，也就是说，任一区间与后面的区间合并后，该区间内的中位数不会变大。于是我们可以用大根堆来维护每个区间内的中位数，当堆中的元素大于该区间内元素的一半时，删除堆顶元素，这样堆中的元素始终为区间内较小的一半元素，堆顶元素即为该区间内的中位数。考虑到我们必须高效地完成合并操作，左偏树是一个理想的选择。左偏树的询问操作时间复杂度为 $O(1)$，删除和合并操作时间复杂度都是 $O(\log n)$，而询问操作和合并操作少于 $n$ 次，删除操作不超过 $n&#x2F;2$ 次（因为删除操作只会在合并两个元素个数为奇数的堆时发生），因此用左偏树实现，可以把算法的时间复杂度降为 $O(n\log n)$。</p>
+<!-- 初始令每一段的长度为 $1$，令中位数为 $c_i$，则 $c_i = a_i$，然后一段一段的合并起来。若 $c_i\le c_{i+1}$，那么就保持不变；否则将 $c_i$ 和 $c_{i+1}$ 所在的区间合并，取一个新的中位数，作为新区间的答案。这里会出现一个问题，就是第一次合并时，有可能 $c_i\le c_{i+1}$，没有把两个区间并起来取中位数。但是可能后面的那个区间又和其他区间合并了，中位数变小了，以至于还要和前一个区间合并。
+
+其实很简单，用栈维护一下就好了。
+
+那么问题来了，怎么求中位数呢？求了中位数还要把两段区间合并起来？
+
+因此我们需要一个数据结构，支持**合并、查询最大值和删除**。为什么要查询最大值和删除呢？因为维护中位数可以只维护⌈1/2区间长度⌉小的数，用一个大根堆，则堆顶就是中位数。合并完两个区间后，就一直删除堆顶，直到元素个数 = ⌈1/2区间长度⌉。
+
+显然是用左偏树啦。 -->
+
+<p>再考虑原题面：题目要求的是一个递增序列 $b$，可以用减下标来实现（即输入时把每个数都减去对应下标，输出时加上），这样就可以将递增序列转化成不下降序列，这样就可以保证每一段区间的序列 $b$ 不一样了（原本有很多连续一段区间全是中位数，不能保证递增）。</p>
 <p><strong>Solution II</strong></p>
 <p>首先是一个显然的 DP。</p>
 <p>$f[i][j]$ 表示前 $i$ 个数字，其中最后一个数字小于等于 $j$ 的最优答案</p>
@@ -361,13 +370,39 @@
 <p>考虑加入一个绝对值函数，如果在之前斜率为 $0$ 的直线上，相当于这个左边斜率减一，否则相当于右边的斜率都加一（这时候斜率为为 $-1$ 的就没了，和右边并起来了）。</p>
 <p>我们用堆来维护折线的拐点的横坐标即可。</p>
 <p><img src="https://cdn.luogu.com.cn/upload/image_hosting/tjtggko4.png"></p>
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3273">P3273 [SCOI2011]棘手的操作</a></p>
+<ul>
+<li>U x y: 加一条边，连接第x个节点和第y个节点</li>
+<li>A1 x v: 将第x个节点的权值增加v</li>
+<li>A2 x v: 将第x个节点所在的连通块的所有节点的权值都增加v</li>
+<li>A3 v: 将所有节点的权值都增加v</li>
+<li>F1 x: 输出第x个节点当前的权值</li>
+<li>F2 x: 输出第x个节点所在的连通块中，权值最大的节点的权值</li>
+<li>F3: 输出所有节点中，权值最大的节点的权值</li>
+</ul>
+<p><del>这道题的正解不是左偏树，但 OI wiki 上有这个题就加上了</del></p>
+<p>首先，找一个节点所在堆的堆顶要用并查集，而不能暴力向上跳。</p>
+<p>再考虑单点查询，若用普通的方法打标记，就得查询点到根路径上的标记之和，最坏情况下可以达到  的复杂度。如果只有堆顶有标记，就可以快速地查询了，但如何做到呢？</p>
+<p>可以用类似启发式合并的方式，每次合并的时候把较小的那个堆标记暴力下传到每个节点，然后把较大的堆的标记作为合并后的堆的标记。由于合并后有另一个堆的标记，所以较小的堆下传标记时要下传其标记减去另一个堆的标记。由于每个节点每被合并一次所在堆的大小至少乘二，所以每个节点最多被下放  次标记，暴力下放标记的总复杂度就是 。</p>
+<p>再考虑单点加，先删除，再更新，最后插入即可。</p>
+<p>然后是全局最大值，可以用一个平衡树&#x2F;支持删除任意节点的堆（如左偏树）&#x2F;multiset 来维护每个堆的堆顶。</p>
+<p>所以，每个操作分别如下：</p>
+<ul>
+<li>暴力下传点数较小的堆的标记，合并两个堆，更新 size、tag，在 multiset 中删去合并后不在堆顶的那个原堆顶。</li>
+<li>删除节点，更新值，插入回来，更新 multiset。需要分删除节点是否为根来讨论一下。</li>
+<li>堆顶打标记，更新 multiset。</li>
+<li>打全局标记。</li>
+<li>查询值 + 堆顶标记 + 全局标记。</li>
+<li>查询根的值 + 堆顶标记 + 全局标记。</li>
+<li>查询 multiset 最大值 + 全局标记。</li>
+</ul>
 <h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><p>因为你们板子题都过了，所以就不放代码了（qwq。</p>
 <h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/list?tag=215&orderBy=difficulty&order=asc&page=1">题单</a> | <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/training/202116#problems">题单</a></p>
 <p><strong>纯板子</strong></p>
 <blockquote>
 <p>4 倍经验，恭喜你淼掉了两蓝两紫</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3377">P3377 【模板】左偏树（可并堆）</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3377">P3377【模板】左偏树（可并堆）</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2713">P2713 罗马游戏</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1456">P1456 Monkey King</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4971">P4971 断罪者</a></p>
@@ -379,9 +414,13 @@
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1552">P1552 [APIO2012] 派遣</a></p>
 <p><strong>shu 学问题</strong></p>
 <blockquote>
-<p>例题，恭喜你水掉了一紫</p>
+<p>5 倍经验，恭喜你水掉了一蓝四紫</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4331">P4331 [BalticOI 2004]Sequence 数字序列</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2893">P2893 [USACO08FEB]Making the Grade G</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF13C">CF13C Sequence</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4597">P4597 序列 sequence</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF713C">CF713C Sonya and Problem Wihtout a Legend</a></p>
 <p><strong>应用进阶</strong></p>
 <blockquote>
 <p>恭喜你可以教我左偏树了</p>
@@ -391,6 +430,7 @@
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/_post/143620">左偏树题解_hsfzLZH1</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/OI-wiki/libs/blob/master/%E9%9B%86%E8%AE%AD%E9%98%9F%E5%8E%86%E5%B9%B4%E8%AE%BA%E6%96%87/%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F2005%E8%AE%BA%E6%96%87%E9%9B%86/%E9%BB%84%E6%BA%90%E6%B2%B3--%E5%B7%A6%E5%81%8F%E6%A0%91%E7%9A%84%E7%89%B9%E7%82%B9%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/%E9%BB%84%E6%BA%90%E6%B2%B3.pdf">IOI2005 国家集训队论文_黄源河</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/_post/109869">P4331 题解_Nemlit (Solution I)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/_post/145785">P4331 题解_Soulist (Solution I)</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/_post/79145">P4331 题解_wzporz (Solution II)</a></p>
 
     </div>
