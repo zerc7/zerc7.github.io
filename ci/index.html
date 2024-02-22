@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+
+<html class="amoled-dark use-big-shadow use-serif article-header-style-1">
+<head>
+	
+	<title>ci 透彻指南 - zerc</title>
+	<meta charset="utf-8">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<meta name="description" content="原标题：ConsolePauserPlusPlus 透彻指南  Q: 为什么叫这个名字？ A: ConsolePauserPlus &amp; ConsolePauser 这篇文章可以看作是对 solstice23 Dalao 的补充，所以又加了一个 Plus，简称 CPPP。  在 CPPP 基础上再次增加新功能，命名为 ci，精简版为 ci_mini。 0. 开始之前 首先你需要一台电脑（雾，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ci 透彻指南">
+<meta property="og:url" content="https://zerc.tk/ci/index.html">
+<meta property="og:site_name" content="zerc">
+<meta property="og:description" content="原标题：ConsolePauserPlusPlus 透彻指南  Q: 为什么叫这个名字？ A: ConsolePauserPlus &amp; ConsolePauser 这篇文章可以看作是对 solstice23 Dalao 的补充，所以又加了一个 Plus，简称 CPPP。  在 CPPP 基础上再次增加新功能，命名为 ci，精简版为 ci_mini。 0. 开始之前 首先你需要一台电脑（雾，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-25T20:42:00.000Z">
+<meta property="article:modified_time" content="2024-02-22T00:10:25.000Z">
+<meta property="article:author" content="zerc">
+<meta property="article:tag" content="oi">
+<meta property="article:tag" content="vscode">
+<meta name="twitter:card" content="summary">
+
+	<meta name="theme-color" content="#2196F3">
+	<meta name="theme-color-rgb" content="33,150,243">
+	<meta name="theme-color-origin" content="#2196F3">
+	<meta name="argon-enable-custom-theme-color" content="true">
+	<meta name="theme-card-radius" content="7">
+	<meta name="theme-version" content="1.0.2">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+	
+<link rel="stylesheet" href="/assets/argon_css_merged.css">
+
+	
+<link rel="stylesheet" href="/style.css">
+
+	
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Open+Sans:300,400,600,700|Noto+Serif+SC:300,600&display=swap.css">
+
+	
+<script src="/assets/argon_js_merged.js"></script>
+
+	
+<script src="/assets/js/argon.min.js"></script>
+
+	
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+	
+
+	<script>
+		var argonConfig = {
+			language: "zh_CN",
+			
+				zoomify: {
+					duration: 200,
+					easing: "cubic-bezier(0.4,0,0,1)",
+					scale: 0.9
+				},
+			
+			pangu: "true",
+			
+				lazyload: {
+					threshold: 800,
+					effect: "fadeIn"
+				},
+			
+			disable_pjax: false,
+			headroom: true
+		}
+	</script>
+	<script>
+		var darkmodeAutoSwitch = "false";
+		function setDarkmode(enable){
+			if (enable == true){
+				$("html").addClass("darkmode");
+			}else{
+				$("html").removeClass("darkmode");
+			}
+			$(window).trigger("scroll");
+		}
+		function toggleDarkmode(){
+			if ($("html").hasClass("darkmode")){
+				setDarkmode(false);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "false");
+			}else{
+				setDarkmode(true);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "true");
+			}
+		}
+		if (sessionStorage.getItem("Argon_Enable_Dark_Mode") == "true"){
+			setDarkmode(true);
+		}
+		function toggleDarkmodeByPrefersColorScheme(media){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			if (media.matches){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		function toggleDarkmodeByTime(){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			let hour = new Date().getHours();
+			if (hour < 7 || hour >= 22){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		if (darkmodeAutoSwitch == 'system'){
+			var darkmodeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+			darkmodeMediaQuery.addListener(toggleDarkmodeByPrefersColorScheme);
+			toggleDarkmodeByPrefersColorScheme(darkmodeMediaQuery);
+		}
+		if (darkmodeAutoSwitch == 'time'){
+			toggleDarkmodeByTime();
+		}
+		if (darkmodeAutoSwitch == 'alwayson'){
+			setDarkmode(true);
+		}
+
+		function toggleAmoledDarkMode(){
+			$("html").toggleClass("amoled-dark");
+			if ($("html").hasClass("amoled-dark")){
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "true");
+			}else{
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "false");
+			}
+		}
+		if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "true"){
+			$("html").addClass("amoled-dark");
+		}else if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "false"){
+			$("html").removeClass("amoled-dark");
+		}
+	</script>
+	<script>
+		if (navigator.userAgent.indexOf("Safari") !== -1 && navigator.userAgent.indexOf("Chrome") === -1){
+			$("html").addClass("using-safari");
+		}
+	</script>
+
+	
+		
+<script src="/assets/vendor/smoothscroll/smoothscroll3.min.js"></script>
+
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+<style id="themecolor_css">
+	
+	:root{
+		--themecolor: #2196F3;
+		--themecolor-dark0: #1590F2;
+		--themecolor-dark: #0D8AEE;
+		--themecolor-dark2: #0C7CD5;
+		--themecolor-dark3: #0A6EBD;
+		--themecolor-light: #51ADF6;
+		--themecolor-rgbstr: 33,150,243;
+		--themecolor-gradient: linear-gradient(150deg,var(--themecolor-light) 15%, var(--themecolor) 70%, var(--themecolor-dark0) 94%);
+
+	}
+</style>
+<style id="theme_cardradius_css">
+	:root{
+		--card-radius: 7px;
+	}
+</style>
+
+<body>
+<div id="toolbar">
+	<header class="header-global">
+		<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light bg-primary headroom--not-bottom headroom--not-top headroom--pinned">
+			<div class="container">
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand" href="/">zerc blog</a>
+				<div class="navbar-collapse collapse" id="navbar_global">
+					<div class="navbar-collapse-header">
+						<div class="row">
+							<div class="col-6 collapse-brand"></div>
+							<div class="col-6 collapse-close">
+								<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+									<span></span>
+									<span></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<ul id="navbar_search_btn_mobile" class="navbar-nav align-items-lg-center ml-lg-auto">
+						<li class="nav-item" data-toggle="modal" data-target="#argon_search_modal" style="padding-left: 5px;">
+							<a class="nav-link nav-link-icon">
+								<i class="fa fa-search"></i>
+								<span class="nav-link-inner--text d-lg-none">搜索</span>
+							</a>
+						</li>
+					</ul>
+					
+							<ul class='navbar-nav navbar-nav-hover align-items-lg-center'>
+								
+										<li class='nav-item'>
+											<a href='/hide' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Hidepage</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/archives' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Archives</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/friends' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Friends</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/notice' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Notice</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/about' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>About</span>
+											</a>
+											
+										</li>
+									
+							</ul>
+						
+					<ul class="navbar-nav align-items-lg-center ml-lg-auto">
+						<li class="nav-item" data-toggle="modal" data-target="#argon_search_modal" id="navbar_search_btn_pc">
+							<a class="nav-link nav-link-icon">
+								<i class="fa fa-search"></i>
+								<span class="nav-link-inner--text d-lg-none">搜索</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="navbar_menu_mask" data-toggle="collapse" data-target="#navbar_global"></div>
+			</div>
+		</nav>
+	</header>
+</div>
+<div class="modal fade" id="argon_search_modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">搜索</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<!-- TODO -->
+<div class="form-group mb-3">
+	<div class="input-group input-group-alternative">
+		<div class="input-group-prepend">
+			<span class="input-group-text"><i class="fa fa-search"></i></span>
+		</div>
+		<input id="local-search-input" class="form-control" placeholder="搜索什么..." type="text"  autocomplete="off" data-search.path="search.xml" data-config.root="/">
+	</div>
+	<div id="local-search-result"></div>
+</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!--Banner-->
+<section id="banner" class="banner section section-lg section-shaped">
+	<div class="shape shape-style-1 shape-success">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	
+	<div id="banner_container" class="banner-container container text-center">
+		
+			<div class="banner-title text-white" data-text="zerc" data-interval=""><span class="banner-title-inner">&nbsp;</span>
+		
+		<span class="banner-subtitle d-block">an oier</span></div>
+	</div>
+	
+		<style>
+			section.banner{
+				background-image: url(/assets/img/banner.jpg) !important;
+			}
+		</style>
+	
+</section>
+
+
+	<style>
+		#content:before {
+			content: '';
+			display: block;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -2;
+			background: url(https://s2.loli.net/2024/02/06/4LcDYjs3CoZOMeG.png);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: ;
+			transition: opacity .5s ease;
+		}
+		html.darkmode #content:before{
+			filter: brightness(0.65);
+		}
+		
+			#content:after {
+				content: '';
+				display: block;
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -2;
+				background: url(https://s2.loli.net/2024/02/06/4LcDYjs3CoZOMeG.png);
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				opacity: 0;
+				transition: opacity .5s ease;
+			}
+			html.darkmode #content:after {
+				opacity: ;
+			}
+			html.darkmode #content:before {
+				opacity: 0;
+			}
+		
+		
+			#banner, #banner .shape {
+				background: transparent !important;
+			}
+		
+	</style>
+
+
+
+
+<div id="float_action_buttons" class="float-action-buttons fabtns-unloaded">
+	<button id="fabtn_toggle_sides" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-hidden="true" tooltip-move-to-left="移至左侧" tooltip-move-to-right="移至右侧">
+		<span class="btn-inner--icon fabtn-show-on-right"><i class="fa fa-caret-left"></i></span>
+		<span class="btn-inner--icon fabtn-show-on-left"><i class="fa fa-caret-right"></i></span>
+	</button>
+	<button id="fabtn_back_to_top" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-label="Back To Top" tooltip="回到顶部">
+		<span class="btn-inner--icon"><i class="fa fa-angle-up"></i></span>
+	</button>
+	<button id="fabtn_go_to_comment" class="btn btn-icon btn-neutral fabtn shadow-sm d-none" type="button" <-% theme.fab_show_gotocomment_button ? "" : "style='display: none;'"  aria-label="Comment" tooltip="评论">
+		<span class="btn-inner--icon"><i class="fa fa-comment-o"></i></span>
+	</button>
+	<button id="fabtn_toggle_darkmode" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" <-% theme.fab_show_darkmode_button ? "" : "style='display: none;'"  aria-label="Toggle Darkmode" tooltip-darkmode="夜间模式" tooltip-blackmode="暗黑模式" tooltip-lightmode="日间模式">
+		<span class="btn-inner--icon"><i class="fa fa-moon-o"></i><i class='fa fa-lightbulb-o'></i></span>
+	</button>
+	<button id="fabtn_toggle_blog_settings_popup" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" <-% theme.fab_show_settings_button ? "" : "style='display: none;'"  aria-label="Open Blog Settings Menu" tooltip="设置">
+		<span class="btn-inner--icon"><i class="fa fa-cog"></i></span>
+	</button>
+	<div id="fabtn_blog_settings_popup" class="card shadow-sm" style="opacity: 0;" aria-hidden="true">
+		<div id="close_blog_settings"><i class="fa fa-close"></i></div>
+		<div class="blog-setting-item mt-3">
+			<div style="transform: translateY(-4px);"><div id="blog_setting_toggle_darkmode_and_amoledarkmode" tooltip-switch-to-darkmode="切换到夜间模式" tooltip-switch-to-blackmode="切换到暗黑模式"><span>夜间模式</span><span>暗黑模式</span></div></div>
+			<div style="flex: 1;"></div>
+			<label id="blog_setting_darkmode_switch" class="custom-toggle">
+				<span class="custom-toggle-slider rounded-circle"></span>
+			</label>
+		</div>
+		<div class="blog-setting-item mt-3">
+			<div style="flex: 1;">字体</div>
+			<div>
+				<button id="blog_setting_font_sans_serif" type="button" class="blog-setting-font btn btn-outline-primary blog-setting-selector-left">Sans Serif</button><button id="blog_setting_font_serif" type="button" class="blog-setting-font btn btn-outline-primary blog-setting-selector-right">Serif</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mt-3">
+			<div style="flex: 1;">阴影</div>
+			<div>
+				<button id="blog_setting_shadow_small" type="button" class="blog-setting-shadow btn btn-outline-primary blog-setting-selector-left">浅阴影</button><button id="blog_setting_shadow_big" type="button" class="blog-setting-shadow btn btn-outline-primary blog-setting-selector-right">深阴影</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mt-3 mb-3">
+			<div style="flex: 1;">滤镜</div>
+			<div id="blog_setting_filters" class="ml-3">
+				<button id="blog_setting_filter_off" type="button" class="blog-setting-filter-btn ml-0" filter-name="off">关闭</button>
+				<button id="blog_setting_filter_sunset" type="button" class="blog-setting-filter-btn" filter-name="sunset">日落</button>
+				<button id="blog_setting_filter_darkness" type="button" class="blog-setting-filter-btn" filter-name="darkness">暗化</button>
+				<button id="blog_setting_filter_grayscale" type="button" class="blog-setting-filter-btn" filter-name="grayscale">灰度</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mb-3">
+			<div id="blog_setting_card_radius_to_default" style="cursor: pointer;" tooltip="恢复默认">圆角</div>
+			<div style="flex: 1;margin-left: 20px;margin-right: 8px;transform: translateY(2px);">
+				<div id="blog_setting_card_radius"></div>
+			</div>
+		</div>
+		
+			<div class="blog-setting-item mt-1 mb-3">
+				<div style="flex: 1;">主题色</div>
+				<div id="theme-color-picker" class="ml-3"></div>
+			</div>
+		
+	</div>
+	<button id="fabtn_open_sidebar" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-label="Open Sidebar Menu" tooltip="菜单">
+		<span class="btn-inner--icon"><i class="fa fa-bars"></i></span>
+	</button>
+	<button id="fabtn_reading_progress" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-hidden="true" tooltip="阅读进度">
+		<div id="fabtn_reading_progress_bar" style="width: 0%;"></div>
+		<span id="fabtn_reading_progress_details">0%</span>
+	</button>
+</div>
+
+<div id="content" class="site-content">
+
+
+
+
+
+
+
+
+
+<div class="page-information-card-container">
+	
+</div>
+
+<div id="sidebar_mask"></div>
+<aside id="leftbar" class="leftbar widget-area" role="complementary">
+		
+			<div id="leftbar_announcement" class="card bg-white shadow-sm border-0">
+				<div class="leftbar-announcement-body">
+					<div class="leftbar-announcement-title text-white">公告</div>
+					<div class="leftbar-announcement-content text-white">评论需要 F5 刷新显示 qwq, KaTex 炸了的公式随缘修（咕咕咕）。</div>
+				</div>
+			</div>
+		
+		<div id="leftbar_part1" class="widget widget_search card bg-white shadow-sm border-0">
+			<div class="leftbar-banner card-body">
+				<span class="leftbar-banner-title text-white">zerc</span>
+				
+				
+					<span class="leftbar-banner-subtitle text-white"><span class='hitokoto'></span></span>
+				
+			</div>
+			
+			
+				<ul id='leftbar_part1_menu' class='leftbar-menu'>
+					<li class='leftbar-menu-item'><a href='/'>首页</a></li><li class='leftbar-menu-item'><a href='/archives'>归档</a></li>
+				</ul>
+			
+			<div class="card-body text-center leftbar-search-button">
+				<button id="leftbar_search" class="btn btn-secondary btn-lg active btn-sm btn-block border-0" role="button" data-toggle="modal" data-target="#argon_search_modal" >
+					<i class="menu-item-icon fa fa-search mr-0"></i> 搜索
+				</button>
+			</div>
+		</div>
+		<div id="leftbar_part2" class="widget widget_search card bg-white shadow-sm border-0">
+			<div id="leftbar_part2_inner" class="card-body">
+				
+				<div class="nav-wrapper" style="padding-top: 5px;">
+	                <ul class="nav nav-pills nav-fill" role="tablist">
+						
+							<li class="nav-item sidebar-tab-switcher">
+								<a class="active show" id="leftbar_tab_catalog_btn" data-toggle="tab" href="#leftbar_tab_catalog" role="tab" aria-controls="leftbar_tab_catalog" no-pjax>文章目录</a>
+							</li>
+						
+						<li class="nav-item sidebar-tab-switcher">
+							<a class="" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
+						</li>
+	                </ul>
+				</div>
+				<div>
+					<div class="tab-content" style="padding: 10px 10px 0 10px;">
+						
+							<div class="tab-pane fade active show" id="leftbar_tab_catalog" role="tabpanel" aria-labelledby="leftbar_tab_catalog_btn">
+								<div id="leftbar_catalog"></div>
+								<script type="text/javascript">
+									$(function () {
+										$(document).headIndex({
+											articleWrapSelector: '#post_content',
+											indexBoxSelector: '#leftbar_catalog',
+											subItemBoxClass: "index-subItem-box",
+											itemClass: "index-item",
+											linkClass: "index-link",
+											offset: 80,
+										});
+									})
+								</script>
+								
+							</div>
+						
+						<div class="tab-pane fade text-center" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
+							<img id="leftbar_overview_author_image" src="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg" class="img-fluid rounded-circle shadow-sm" style="width: 100px;" alt="avatar">
+							<h6 id="leftbar_overview_author_name">zerc</h6>
+							<nav class="site-state">
+								<div class="site-state-item site-state-posts">
+									<a href="/archives">
+										<span class="site-state-item-count">28</span>
+										<span class="site-state-item-name">文章</span>
+									</a>
+								</div>
+								<div class="site-state-item site-state-categories">
+									<a data-toggle="modal" data-target="#blog_categories">
+										<span class="site-state-item-count">0</span>
+										<span class="site-state-item-name">分类</span>
+									</a>
+								</div>      
+								<div class="site-state-item site-state-tags">
+									<a data-toggle="modal" data-target="#blog_tags">
+										<span class="site-state-item-count">9</span>
+										<span class="site-state-item-name">标签</span>
+									</a>
+								</div>
+							</nav>
+							
+									<div class="site-author-links">
+										
+											<div class='site-author-links-item'>
+												<a href="https://www.luogu.com.cn/user/581312" rel='noopener' target='_blank'>luogu</a>
+											</div>
+										
+											<div class='site-author-links-item'>
+												<a href="https://github.com/zerc7" rel='noopener' target='_blank'>github</a>
+											</div>
+										
+									</div>
+								
+							
+									<div class='site-friend-links'>
+										<div class='site-friend-links-title'><i class='fa fa-fw fa-link'></i> Links</div>
+										<ul class='site-friend-links-ul'>
+											
+												<li class='site-friend-links-item'>
+													<a href='https://www.pozhu.cf' rel='noopener' target='_blank'>Pozhu(blog 现已寄)</a>
+												</li>
+											
+										</ul>
+									</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</aside>
+<div class="modal fade" id="blog_categories" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">分类</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="blog_tags" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">标签</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<a class="badge badge-secondary tag" href="/tags/daily/" rel="tag">daily <span class="tag-num">3</span></a><a class="badge badge-secondary tag" href="/tags/dp/" rel="tag">dp <span class="tag-num">2</span></a><a class="badge badge-secondary tag" href="/tags/ds/" rel="tag">ds <span class="tag-num">1</span></a><a class="badge badge-secondary tag" href="/tags/math/" rel="tag">math <span class="tag-num">5</span></a><a class="badge badge-secondary tag" href="/tags/oi/" rel="tag">oi <span class="tag-num">19</span></a><a class="badge badge-secondary tag" href="/tags/todo/" rel="tag">todo <span class="tag-num">1</span></a><a class="badge badge-secondary tag" href="/tags/travels/" rel="tag">travels <span class="tag-num">2</span></a><a class="badge badge-secondary tag" href="/tags/vscode/" rel="tag">vscode <span class="tag-num">1</span></a><a class="badge badge-secondary tag" href="/tags/%E9%97%B2%E8%B0%88/" rel="tag">闲谈 <span class="tag-num">2</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+		
+			
+	<article class="post post-full card bg-white shadow-sm border-0 post-preview">
+	<header class="post-header text-center">
+		
+		<a class="post-title" href="/ci/">ci 透彻指南</a>
+		<div class="post-meta">
+			
+						
+						<div class="post-meta-detail post-meta-detail-time">
+							<i class="fa fa-clock-o" aria-hidden="true"></i>
+							<time title="发布于 2022-8-25 20:42:00 | 编辑于 2024-2-22 0:10:25">2022-8-25 20:42
+							</time>
+						</div>
+					
+						
+							<div class="post-meta-devide">|</div>
+						
+						<div class="post-meta-detail post-meta-detail-words">
+							<i class="fa fa-file-word-o" aria-hidden="true"></i>
+							3.9k 字
+						</div>
+					
+		</div>
+		
+	</header>
+
+	<div class="post-content" id="post_content">
+		<p><strong>原标题：ConsolePauserPlusPlus 透彻指南</strong></p>
+<blockquote>
+<p><strong>Q:</strong> 为什么叫这个名字？</p>
+<p><strong>A:</strong> <a target="_blank" rel="noopener" href="https://solstice23.top/archives/1624">ConsolePauserPlus</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/Embarcadero/Dev-Cpp/blob/master/Source/Tools/ConsolePauser/main.cpp">ConsolePauser</a></p>
+<p>这篇文章可以看作是对 <a target="_blank" rel="noopener" href="https://solstice23.top/">solstice23</a> Dalao 的补充，所以又加了一个 Plus，简称 CPPP。</p>
+</blockquote>
+<p><strong>在 CPPP 基础上再次增加新功能，命名为 ci，精简版为 ci_mini。</strong></p>
+<h3 id="0-开始之前"><a href="#0-开始之前" class="headerlink" title="0. 开始之前"></a>0. 开始之前</h3><ol>
+<li><p>首先你需要一台电脑（雾，还需要安装好 VSCode，然后就可以继续了。</p>
+</li>
+<li><p>Command Runner 的使用：<a target="_blank" rel="noopener" href="https://ptilopsisw.github.io/2022/08/09/Command%20Runner%20%E9%80%8F%E5%BD%BB%E6%8C%87%E5%8D%97(VSCode)/">配置指南</a> by Ptilopsis_w Dalao。</p>
+</li>
+</ol>
+<h3 id="1-重定向文件输入输出"><a href="#1-重定向文件输入输出" class="headerlink" title="1. 重定向文件输入输出"></a>1. 重定向文件输入输出</h3><blockquote>
+<p>你不觉得复制粘贴样例很痛苦么？</p>
+<p>emm，你用 freopen 啊！</p>
+<p>啊？ 我不想手打，，，</p>
+</blockquote>
+<p>然后就有了这篇文章。</p>
+<p>其实 cmd 里提供了重定向文件IO的功能，如：</p>
+<pre><code class="cmd">P0000.exe &lt; sample.in &gt; sample.ans
+</code></pre>
+<p>套到上面的编译运行指令里就好，</p>
+<p>如果我们需要将 DEBUG 信息输出到控制台而非输出文件，可以用 <code>std::cerr</code>，用法与 <code>std::cin</code> 基本相同。</p>
+<h3 id="2-计时误差"><a href="#2-计时误差" class="headerlink" title="2. 计时误差"></a>2. 计时误差</h3><p>大多数情况下，计时误差主要来源于：</p>
+<ol>
+<li><p>评测机状态波动，这点在个人电脑尤为明显；</p>
+</li>
+<li><p>调用计时函数，终端等误差。</p>
+</li>
+</ol>
+<p>虽然前者已经决定了 99.114514%，但为了严谨，还是引入了系统调用误差。</p>
+<p>在原版 ConsolePauserPlus 和 ConsolePauser 中调用 <code>GetClockTick()</code> 和 <code>GetClockFrequency()</code> 实现计时，为减少函数调用时间损耗，将其替换成了精度更高更简单的 <code>chrono</code>，但还是存在终端调用的时间损耗，因此，我们创建了一个空程序，模拟调用并计时，计入 <code>deviation</code>，</p>
+<p>这个空程序的源代码只有 12 bytes：</p>
+<pre><code class="cpp">int mian()&#123;&#125;
+</code></pre>
+<p>有它我们可以得到当前状态下系统调用误差，经测试，误差正常范围在 $\text{0.005s-0.008s}$ 之间，虽然这个数据并没有什么用，<del>但还是保留在了 DEBUG 中。</del></p>
+<p>保留在 CPPP 的 DEBUG 中，在 ci_mini 中移除，ci 待确定。</p>
+<h3 id="3-调试信息颜色"><a href="#3-调试信息颜色" class="headerlink" title="3. 调试信息颜色"></a>3. 调试信息颜色</h3><p>为了好 van，在输出中加入了字体颜色控制。</p>
+<h3 id="4-加入编译运行功能"><a href="#4-加入编译运行功能" class="headerlink" title="4. 加入编译运行功能"></a>4. 加入编译运行功能</h3><p>为了支持更多的功能，将编译运行纳入程序。</p>
+<p>程序传参示例：</p>
+<pre><code class="cmd">CPPP.exe 2 P0000
+</code></pre>
+<p><code>2</code> 表示功能类型：</p>
+<p>在 CPPP 中：<code>0</code> 为仅编译，<code>1</code> 为仅运行，<code>2</code> 为编译运行；</p>
+<p>在 ci 和 ci_mini 中：<code>1</code> 为仅编译，<code>2</code> 为仅运行，<code>3</code> 为编译运行；</p>
+<p><code>P0000</code> 表示需要编译&#x2F;运行的程序名，不含后缀名。</p>
+<p><del>暂不支持自定义复杂性传参，倒是可以加入咕咕列表。</del></p>
+<p>ci 中支持较复杂的传参。</p>
+<p>此时你就可以将 setting.json 的内容改为：</p>
+<pre><code class="json">    &quot;command-runner.terminal.autoFocus&quot;: true,
+    &quot;command-runner.commands&quot;: &#123;
+        &quot;compile-cpp&quot;:     &quot;cls &amp;&amp; cd $&#123;fileDirname&#125; &amp;&amp; ci_mini 1 $&#123;fileBasenameNoExtension&#125;&quot;,
+        &quot;run-cpp&quot;:         &quot;cls &amp;&amp; cd $&#123;fileDirname&#125; &amp;&amp; ci_mini 2 $&#123;fileBasenameNoExtension&#125; &lt; D:\\code\\.vscode\\sample.in &gt; D:\\code\\.vscode\\sample.out&quot;,
+        &quot;compile&amp;run-cpp&quot;: &quot;cls &amp;&amp; cd $&#123;fileDirname&#125; &amp;&amp; ci_mini 3 $&#123;fileBasenameNoExtension&#125; &lt; D:\\code\\.vscode\\sample.in &gt; D:\\code\\.vscode\\sample.out&quot;,
+        
+        // &quot;compile-cpp&quot;:     &quot;cd $&#123;fileDirname&#125; &amp;&amp; consolepauserplusplus 0 $&#123;fileBasenameNoExtension&#125;&quot;,
+        // &quot;run-cpp&quot;:         &quot;cd $&#123;fileDirname&#125; &amp;&amp; consolepauserplusplus 1 $&#123;fileBasenameNoExtension&#125; &lt; D:\\code\\.vscode\\sample.in &gt; D:\\code\\.vscode\\sample.out&quot;,
+        // &quot;compile&amp;run-cpp&quot;: &quot;cd $&#123;fileDirname&#125; &amp;&amp; consolepauserplusplus 2 $&#123;fileBasenameNoExtension&#125; &lt; D:\\code\\.vscode\\sample.in &gt; D:\\code\\.vscode\\sample.out&quot;,
+
+        // &quot;compile-cpp&quot;:      &quot;cls &amp;&amp; cd $&#123;fileDirname&#125; &amp;&amp; echo Compiling... &amp;&amp; g++ -g -std=c++14 -O2 -lpsapi $&#123;fileBasenameNoExtension&#125;.cpp -o $&#123;fileBasenameNoExtension&#125;.exe &amp;&amp; cls &amp;&amp; echo Compilation Completed!&quot;,
+        // &quot;run-cpp&quot;:          &quot;cls &amp;&amp; cd $&#123;fileDirname&#125; &amp;&amp; echo The program is running! &amp;&amp; consolepauserplus 1 $&#123;fileBasenameNoExtension&#125; &lt; D:\\code\\.vscode\\sample.in &gt; D:\\code\\.vscode\\sample.out&quot;,
+        // &quot;compile&amp;run-cpp&quot;:  &quot;cls &amp;&amp; cd $&#123;fileDirname&#125; &amp;&amp; echo Compiling... &amp;&amp; g++ -g -std=c++14 -O2 $&#123;fileBasenameNoExtension&#125;.cpp -o $&#123;fileBasenameNoExtension&#125;.exe &amp;&amp; cls &amp;&amp; echo Compilation Completed! &amp;&amp; cls &amp;&amp; cd $&#123;fileDirname&#125; &amp;&amp; echo The program is running! &amp;&amp; consolepauserplus 2 $&#123;fileBasenameNoExtension&#125;.exe &lt; D:\\code\\.vscode\\sample.in &gt; D:\\code\\.vscode\\sample.out&quot;
+    &#125;,
+</code></pre>
+<h3 id="5-fc-判断结果"><a href="#5-fc-判断结果" class="headerlink" title="5. fc 判断结果"></a>5. fc 判断结果</h3><p>调用 <code>system(&quot;fc a.out a.ans &gt;&gt; a.diff&quot;)</code> 可以实现文件比较，进而判断样例运行是否通过。</p>
+<p>在 CPPP 中存在误判情况，ci 中运行正常。</p>
+<h3 id="6-完整代码"><a href="#6-完整代码" class="headerlink" title="6. 完整代码"></a>6. 完整代码</h3><h4 id="ci-mini"><a href="#ci-mini" class="headerlink" title="ci_mini"></a>ci_mini</h4><pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
+#include &lt;windows.h&gt;
+#include &lt;psapi.h&gt;
+using namespace std;
+typedef unsigned long uint;
+
+const string compileOptions = &quot; -g -std=c++14 -O2 -lpsapi &quot;;
+
+double usedMemory = 0;
+int    usedMemoryUnit = 0;
+char   usedMemoryUnitsName[5][5] = &#123;&quot;B&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;, &quot;TB&quot;&#125;;
+
+uint ExecuteCommand(int opt, string command) &#123;
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+    memset(&amp;si, 0, sizeof si);
+    si.cb = sizeof(si);
+    memset(&amp;pi, 0, sizeof pi);
+    
+    if(!CreateProcess(NULL, (LPSTR)command.c_str(), NULL, NULL, false, 0, NULL, NULL, &amp;si, &amp;pi)) &#123;
+        fprintf(stderr, &quot;\nFailed to execute \&quot;%s\&quot;:&quot;,command.c_str());
+    &#125;
+    WaitForSingleObject(pi.hProcess, INFINITE);
+    
+    if (opt == 1) &#123;
+        PROCESS_MEMORY_COUNTERS pmc;
+        GetProcessMemoryInfo(pi.hProcess, &amp;pmc, sizeof(pmc));
+        usedMemory = pmc.PeakPagefileUsage;
+        while (usedMemory &gt;= 1024)&#123;
+            usedMemory /= 1024.0;
+            usedMemoryUnit++;
+        &#125;
+    &#125;
+
+    uint result = 0;
+    GetExitCodeProcess(pi.hProcess, &amp;result);
+    return result;
+&#125;
+
+void CompileFile(string filename) &#123;
+    string compile = &quot;g++ &quot; + compileOptions + filename + &quot;.cpp -o &quot; + filename + &quot;.exe&quot;;
+    uint returnVal = ExecuteCommand(0, compile);
+    
+    if (returnVal) &#123;
+        fprintf(stderr, &quot;\033[1;33;40mci &gt;&gt; Compile Error\033[0m\n&quot;), exit(0);
+    &#125; else &#123;
+        fprintf(stderr, &quot;\033[0;32;40mci &gt;&gt; Compiled Successfully\033[0m\n&quot;);
+    &#125;
+&#125;
+
+void RunFile(string filename) &#123;
+    string command = filename + &quot;.exe&quot;;    
+    chrono::time_point&lt;chrono::system_clock&gt; start = chrono::system_clock::now();
+    uint returnVal = ExecuteCommand(1, command);
+    chrono::time_point&lt;chrono::system_clock&gt; end = chrono::system_clock::now();
+    chrono::duration&lt;double&gt; elapsed = end - start;
+    
+    if (returnVal) &#123;
+        return fprintf(stderr, &quot;\033[1;35;40mci &gt;&gt; Runtime Error\033[0m\n&quot;), void();
+    &#125; else &#123;
+        fprintf(stderr, &quot;\033[0;32;40mci &gt;&gt; Run Successfully\033[0m\n&quot;);
+    &#125;
+    fprintf(stderr, &quot;\033[1;34;40mTime \033[0m%0.3lf s \033[1;34;40mMemery \033[0m%0.2lf %s\n&quot;,
+        elapsed, usedMemory, usedMemoryUnitsName[usedMemoryUnit]);
+&#125;
+
+int main(int argc, char* argv[]) &#123;   
+    if ((string)argv[1] == &quot;1&quot;) &#123;
+        CompileFile((string)argv[2]);
+    &#125;
+    if ((string)argv[1] == &quot;2&quot;) &#123;
+        RunFile((string)argv[2]);
+    &#125;    
+    if ((string)argv[1] == &quot;3&quot;) &#123;
+        CompileFile((string)argv[2]);
+        RunFile((string)argv[2]);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h4 id="ci"><a href="#ci" class="headerlink" title="ci"></a>ci</h4><pre><code class="cpp">#include &lt;string&gt;
+#include &lt;chrono&gt;
+#include &lt;stdio.h&gt;
+#include &lt;direct.h&gt;
+#include &lt;iostream&gt;
+#include &lt;windows.h&gt;
+#include &lt;Psapi.h&gt;
+
+#include &lt;SimpleIni.h&gt;
+using namespace std;
+
+typedef unsigned long uint;
+
+const char version[32] = &quot;0.1.2 Dev&quot;;
+const int MAX_COMMAND_LENGTH = 32768;
+const int MAX_ERROR_LENGTH   =  2048;
+
+string CiPath = &quot;&quot;;
+string CiSettingPath = &quot;&quot;;
+
+// ci_setting.ini
+bool showDebug = 1;
+#define DEBUG if(showDebug)
+string compileOptions = &quot;-g -std=c++14 -O2 -lpsapi&quot;;
+string samplePath = &quot;&quot;;
+
+double usedMemory = 0;
+int    usedMemoryUnit = 0;
+char   usedMemoryUnitsName[5][5] = &#123;&quot;B&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;, &quot;TB&quot;&#125;;
+
+void Init();
+void FirstUse();
+void CheckFile();
+void MakeSampleExe();
+void RunFile(string);
+void CompileFile(string);
+
+string GetCiPath();
+string GetErrorMessage();
+uint ExecuteCommand(int, string);
+
+int main(int argc, char* argv[]) &#123;
+
+    Init();
+    
+    if (argv[1][0] == &#39;-&#39;) &#123;
+        // help
+        if (argv[1][1] == &#39;h&#39;) &#123;
+            fprintf(stderr,&quot;ci &gt;&gt; help\n&quot;);
+            fprintf(stderr, &quot;-------------------------------------\n&quot;);
+            fprintf(stderr, &quot;-h(elp)             | ci help        \n&quot;);
+            fprintf(stderr, &quot;-a(bout)            | ci about       \n&quot;);
+            fprintf(stderr, &quot;-d(ebug)            | ci debug       \n&quot;);
+            fprintf(stderr, &quot;-v(ersion)          | ci version     \n&quot;);
+            fprintf(stderr, &quot;-s(ettings)         | ci settings    \n&quot;);
+            fprintf(stderr, &quot;1 &lt;filename&gt;        | compile   file \n&quot;);
+            fprintf(stderr, &quot;2 &lt;filename&gt;        | run       file \n&quot;);
+            fprintf(stderr, &quot;3 &lt;filename&gt;        | cp &amp; run  file \n&quot;);
+            fprintf(stderr, &quot;4                   | check file(fc) \n&quot;);
+            fprintf(stderr, &quot;compile &lt;filename&gt;  | compile   file \n&quot;);
+            fprintf(stderr, &quot;run     &lt;filename&gt;  | run       file \n&quot;);
+            fprintf(stderr, &quot;cprun   &lt;filename&gt;  | cp &amp; run  file \n&quot;);
+            fprintf(stderr, &quot;check               | check file(fc) \n&quot;);
+            fprintf(stderr, &quot;make sample.exe     | DEBUG &amp; TEST   \n&quot;);
+            fprintf(stderr, &quot;-------------------------------------\n&quot;);
+        &#125;
+        
+        // version
+        if (argv[1][1] == &#39;v&#39;) &#123;
+            fprintf(stderr, &quot;\nci version: %s\n&quot;, version);
+        &#125;
+        
+        // settings
+        if (argv[1][1] == &#39;s&#39;) &#123;
+            fprintf(stderr,&quot;ci &gt;&gt; settings(current)\n&quot;);
+            fprintf(stderr, &quot;-------------------------------------------------------------\n&quot;);
+            fprintf(stderr, &quot;sample_path      | %s\n&quot;, samplePath.c_str());
+            fprintf(stderr, &quot;compile_options  | %s\n&quot;, compileOptions.c_str());
+            fprintf(stderr, &quot;-------------------------------------------------------------\n&quot;);
+            fprintf(stderr,&quot;plause edit \&#39;ci_settings.ini\&#39; to change settings \n&quot;);
+        &#125;
+        
+        // about
+        if (argv[1][1] == &#39;a&#39;) &#123;
+            //
+        &#125;
+        
+        // debug
+        if (argv[1][1] == &#39;d&#39;) &#123;
+            fprintf(stderr,&quot;ci &gt;&gt; debug(current status)\n&quot;);
+            fprintf(stderr, &quot;-------------------------------------------------------------\n&quot;);
+            fprintf(stderr, &quot;ci_path          | %s\n&quot;, CiPath.c_str());
+            fprintf(stderr, &quot;ci_setting_path  | %s\n&quot;, CiSettingPath.c_str());
+            fprintf(stderr, &quot;sample_path      | %s\n&quot;, samplePath.c_str());
+            fprintf(stderr, &quot;compile_options  | %s\n&quot;, compileOptions.c_str());
+            fprintf(stderr, &quot;-------------------------------------------------------------\n&quot;);
+        &#125;
+        
+        return 0;
+    &#125;
+    
+    if ((string)argv[1] == &quot;make&quot;) &#123;
+        if ((string)argv[2] == &quot;sample.exe&quot;) &#123;
+            MakeSampleExe();
+        &#125;
+    &#125;
+    
+    if ((string)argv[1] == &quot;1&quot; || (string)argv[1] == &quot;compile&quot;) &#123;
+        CompileFile((string)argv[2]);
+    &#125;
+    
+    if ((string)argv[1] == &quot;2&quot; || (string)argv[1] == &quot;run&quot;    ) &#123;
+        RunFile((string)argv[2]);
+    &#125;
+    
+    if ((string)argv[1] == &quot;3&quot; || (string)argv[1] == &quot;cprun&quot;  ) &#123;
+        CompileFile((string)argv[2]);
+        
+        RunFile((string)argv[2]);
+    &#125;
+    
+    if ((string)argv[1] == &quot;4&quot; || (string)argv[1] == &quot;check&quot;  ) &#123;
+        CheckFile();
+    &#125;
+&#125;
+
+string GetErrorMessage() &#123;
+    string result(MAX_ERROR_LENGTH,0);
+ 
+    FormatMessage(
+        FORMAT_MESSAGE_FROM_SYSTEM|FORMAT_MESSAGE_IGNORE_INSERTS,
+        NULL,GetLastError(),MAKELANGID(LANG_NEUTRAL,SUBLANG_DEFAULT),&amp;result[0],result.size(),NULL);
+ 
+    for(int i = result.length()-1;i &gt;= 0;i--) &#123;
+        if(isspace(result[i])) &#123;
+            result[i] = 0;
+        &#125; else &#123;
+            break;
+        &#125;
+    &#125;
+    return result;
+&#125;
+
+uint ExecuteCommand(int opt, string command) &#123;
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+    memset(&amp;si, 0, sizeof si);
+    si.cb = sizeof(si);
+    memset(&amp;pi, 0, sizeof pi);
+    
+    if (samplePath != &quot;&quot; &amp;&amp; opt == 1) &#123;
+        string Input = samplePath + &quot;sample.in&quot;;
+        string Output= samplePath + &quot;sample.out&quot;;
+        
+        si.hStdInput = freopen(Input.c_str(), &quot;r&quot;, stdin);
+        si.hStdOutput=freopen(Output.c_str(), &quot;w&quot;, stdout);
+    &#125;    
+    
+    if(!CreateProcess(NULL, (LPSTR)command.c_str(), NULL, NULL, false, 0, NULL, NULL, &amp;si, &amp;pi)) &#123;
+        fprintf(stderr, &quot;\nFailed to execute \&quot;%s\&quot;:&quot;,command.c_str());
+        fprintf(stderr, &quot;\nError %lu: %s\n&quot;,GetLastError(),GetErrorMessage().c_str());
+    &#125;
+    WaitForSingleObject(pi.hProcess, INFINITE);
+    
+    if (opt == 1) &#123;
+        PROCESS_MEMORY_COUNTERS pmc;
+        GetProcessMemoryInfo(pi.hProcess, &amp;pmc, sizeof(pmc));
+        usedMemory = pmc.PeakPagefileUsage;
+        while (usedMemory &gt;= 1024)&#123;
+            usedMemory /= 1024.0;
+            usedMemoryUnit++;
+        &#125;
+    &#125;
+
+    uint result = 0;
+    GetExitCodeProcess(pi.hProcess, &amp;result);
+    return result;
+&#125;
+
+void MakeSampleExe() &#123;
+    freopen(&quot;ci_sample.cpp&quot;, &quot;w&quot;, stdout);
+        printf(&quot;int main()&#123;&#125;&quot;);
+    fclose(stdout);
+    DEBUG fprintf(stderr, &quot;ci &gt;&gt; Write Successfully\n&quot;);    
+    
+    string compile = &quot;g++ -g ci_sample.cpp -o ci_sample.exe&quot;;
+    uint returnVal = ExecuteCommand(0, compile);
+    
+    if (returnVal) &#123;
+        fprintf(stderr, &quot;ci &gt;&gt; Compile Error\n&quot;);
+    &#125; else &#123;
+        fprintf(stderr, &quot;ci &gt;&gt; Compiled Successfully\n&quot;);
+    &#125;
+&#125;
+
+void CompileFile(string filename) &#123;
+    string compile = &quot;g++ &quot; + compileOptions + &quot; &quot; + filename + &quot;.cpp -o &quot; + filename + &quot;.exe&quot;;
+    DEBUG fprintf(stderr, &quot;ci &gt;&gt; Compile %s\n&quot;, compile.c_str());
+    uint returnVal = ExecuteCommand(0, compile);
+    
+    if (returnVal) &#123;
+        fprintf(stderr, &quot;\033[1;33;40mci &gt;&gt; Compile Error\033[0m\n&quot;);
+    &#125; else &#123;
+        fprintf(stderr, &quot;\033[0;32;40mci &gt;&gt; Compiled Successfully\033[0m\n&quot;);
+    &#125;    
+&#125;
+
+void RunFile(string filename) &#123;
+    string command = filename + &quot;.exe&quot;;
+    if (samplePath != &quot;&quot;) &#123;
+        cerr &lt;&lt; samplePath &lt;&lt; endl;
+    &#125;
+    DEBUG fprintf(stderr, &quot;ci &gt;&gt; Command %s\n&quot;, command.c_str());
+    
+    chrono::time_point&lt;chrono::system_clock&gt; start = chrono::system_clock::now();
+    uint returnVal = ExecuteCommand(1, command);
+    chrono::time_point&lt;chrono::system_clock&gt; end   = chrono::system_clock::now();
+    chrono::duration&lt;double&gt; elapsed = end - start;   
+    
+    if (returnVal) &#123;
+        return fprintf(stderr, &quot;\033[1;35;40mci &gt;&gt; Runtime Error\033[0m\n&quot;), void();
+    &#125; else &#123;
+        fprintf(stderr, &quot;\033[0;32;40mci &gt;&gt; Run Successfully\033[0m\n&quot;);
+    &#125;
+    fprintf(stderr, &quot;\033[1;34;40mTime \033[0m%0.3lf s \033[1;34;40mMemery \033[0m%0.2lf %s\n&quot;,
+        elapsed, usedMemory, usedMemoryUnitsName[usedMemoryUnit]);
+&#125;
+
+void CheckFile() &#123;
+    if (samplePath == &quot;&quot;) &#123;
+        return fprintf(stderr, &quot;\033[1;31;40mci &gt;&gt; Please set the sample_path first\033[0m\n&quot;), void();
+    &#125;
+    
+    string command = &quot;fc &quot; + samplePath + &quot;sample.out &quot; + samplePath + &quot;sample.ans &gt; &quot; + samplePath + &quot;sample.diff&quot;;
+    cerr &lt;&lt; command &lt;&lt; endl;
+    if (system(command.c_str())) &#123;
+        fprintf(stderr, &quot;\033[1;31;40mci &gt;&gt; Difference are saved in \&#39;sample.diff\&#39;\033[0m\n&quot;);
+    &#125; else &#123;
+        fprintf(stderr, &quot;\033[0;32;40mci &gt;&gt; No Difference\033[0m\n&quot;);
+    &#125;
+&#125;
+
+void Init() &#123;
+    CiPath = GetCiPath();
+    CiSettingPath = CiPath + &quot;ci_setting.ini&quot;;
+    
+    CSimpleIniA ini;
+    ini.SetUnicode();
+    SI_Error rc = ini.LoadFile(CiSettingPath.c_str());
+    if (rc &lt; 0) &#123;
+        return FirstUse(), void();
+    &#125;
+    
+    showDebug = ini.GetBoolValue(&quot;ci_setting&quot;, &quot;show_debug&quot;);
+    samplePath = (string)ini.GetValue(&quot;ci_setting&quot;, &quot;sample_path&quot;);
+    compileOptions = (string)ini.GetValue(&quot;ci_setting&quot;, &quot;compile_options&quot;);
+&#125;
+
+void FirstUse() &#123;
+    CSimpleIniA ini;
+    DEBUG fprintf(stderr, &quot;ci &gt;&gt; init ci_setting.ini\n&quot;);
+    
+    samplePath = CiPath;
+    
+    freopen(CiSettingPath.c_str(), &quot;w&quot;, stdout);
+        printf(&quot;; use \&#39;;\&#39; as a note\n&quot;);
+        printf(&quot;; sample_path example: D:\\code\\.vscode\\\n&quot;);
+    fclose(stdout);
+    
+    SI_Error rc = ini.LoadFile(CiSettingPath.c_str());
+    if (rc &lt; 0) &#123;
+        return fprintf(stderr, &quot;ci &gt;&gt; Error !&quot;), void();
+    &#125;
+    
+    ini.SetBoolValue(&quot;ci_setting&quot;, &quot;show_debug&quot;, showDebug);
+    ini.SetValue(&quot;ci_setting&quot;, &quot;sample_path&quot;, samplePath.c_str());
+    ini.SetValue(&quot;ci_setting&quot;, &quot;compile_options&quot;, compileOptions.c_str());
+    ini.SaveFile(CiSettingPath.c_str());
+&#125;
+
+string GetCiPath() &#123;
+    char _szPath[255 + 1]=&#123;0&#125;;
+    GetModuleFileName(NULL, _szPath, 255);
+    (strrchr(_szPath, &#39;\\&#39;))[1] = 0;
+    return _szPath;
+&#125;
+</code></pre>
+<h4 id="CPPP"><a href="#CPPP" class="headerlink" title="CPPP"></a>CPPP</h4><p>已经咕了，不再维护。</p>
+<pre><code class="cpp">#include &lt;string&gt;
+#include &lt;chrono&gt;
+#include &lt;stdio.h&gt;
+#include &lt;iomanip&gt;
+#include &lt;iostream&gt;
+#include &lt;windows.h&gt;
+#include &lt;Psapi.h&gt;
+using std::string;
+ 
+#define MAX_COMMAND_LENGTH 32768
+#define MAX_ERROR_LENGTH 2048
+
+// LONGLONG GetClockTick() &#123;
+// 	LARGE_INTEGER dummy;
+// 	QueryPerformanceCounter(&amp;dummy);
+// 	return dummy.QuadPart;
+// &#125;
+ 
+// LONGLONG GetClockFrequency() &#123;
+// 	LARGE_INTEGER dummy;
+// 	QueryPerformanceFrequency(&amp;dummy);
+// 	return dummy.QuadPart;
+// &#125;
+ 
+// void PauseExit(int exitcode) &#123;
+// 	system(&quot;pause&quot;);
+// 	exit(exitcode);
+// &#125;
+
+string GetErrorMessage() &#123;
+    string result(MAX_ERROR_LENGTH,0);
+ 
+    FormatMessage(
+        FORMAT_MESSAGE_FROM_SYSTEM|FORMAT_MESSAGE_IGNORE_INSERTS,
+        NULL,GetLastError(),MAKELANGID(LANG_NEUTRAL,SUBLANG_DEFAULT),&amp;result[0],result.size(),NULL);
+ 
+    // Clear newlines at end of string
+    for(int i = result.length()-1;i &gt;= 0;i--) &#123;
+        if(isspace(result[i])) &#123;
+            result[i] = 0;
+        &#125; else &#123;
+            break;
+        &#125;
+    &#125;
+    return result;
+&#125;
+ 
+string GetCommand(int argc,char** argv) &#123;
+    string result;
+    for(int i = 1;i &lt; argc;i++) &#123;
+        // Quote the arguments in case they contain spaces
+        // Could use additional quoting code around the argument
+        if(string(argv[i]).find(&quot; &quot;)!=string::npos) &#123;
+            result += string(&quot;\&quot;&quot;) + string(argv[i]) + string(&quot;\&quot;&quot;);
+        &#125; else &#123;
+            result += string(argv[i]);
+        &#125;
+ 
+        // Add a space except for the last argument
+        if(i != (argc-1)) &#123;
+            result += string(&quot; &quot;);
+        &#125;
+        // std::cerr &lt;&lt; &quot;DEBUG::Result &quot; &lt;&lt; result &lt;&lt; &quot;\n&quot;;
+    &#125;
+ 
+    if(result.length() &gt; MAX_COMMAND_LENGTH) &#123;
+        printf(&quot;\nError: Length of command line string is over %d characters\n&quot;,MAX_COMMAND_LENGTH);
+    &#125;
+    return result;
+&#125;
+ 
+double usedMemory;
+int usedMemoryUnit = 0;
+char usedMemoryUnitsName[5][5] = &#123;&quot;B&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;, &quot;TB&quot;&#125;;
+ 
+DWORD ExecuteCommand(string&amp; command) &#123;
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+    memset(&amp;si,0,sizeof(si));
+    si.cb = sizeof(si);
+    memset(&amp;pi,0,sizeof(pi));
+ 
+    if(!CreateProcess(NULL, (LPSTR)command.c_str(), NULL, NULL, false, 0, NULL, NULL, &amp;si, &amp;pi)) &#123;
+        printf(&quot;\nFailed to execute \&quot;%s\&quot;:&quot;,command.c_str());
+        printf(&quot;\nError %lu: %s\n&quot;,GetLastError(),GetErrorMessage().c_str());
+    &#125;
+    WaitForSingleObject(pi.hProcess, INFINITE); // Wait for it to finish
+ 
+    PROCESS_MEMORY_COUNTERS pmc;
+    GetProcessMemoryInfo(pi.hProcess, &amp;pmc, sizeof(pmc));
+    usedMemory = pmc.PeakPagefileUsage;
+    while (usedMemory &gt;= 1024)&#123;
+        usedMemory /= 1024.0;
+        usedMemoryUnit++;
+    &#125;
+ 
+    DWORD result = 0;
+    GetExitCodeProcess(pi.hProcess, &amp;result);
+    return result;
+&#125;
+
+DWORD ExecuteCommandNoCountMemory(string&amp; command) &#123;
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+    memset(&amp;si,0,sizeof(si));
+    si.cb = sizeof(si);
+    memset(&amp;pi,0,sizeof(pi));
+ 
+    if(!CreateProcess(NULL, (LPSTR)command.c_str(), NULL, NULL, false, 0, NULL, NULL, &amp;si, &amp;pi)) &#123;
+        printf(&quot;\nFailed to execute \&quot;%s\&quot;:&quot;,command.c_str());
+        printf(&quot;\nError %lu: %s\n&quot;,GetLastError(),GetErrorMessage().c_str());
+    &#125;
+    WaitForSingleObject(pi.hProcess, INFINITE); // Wait for it to finish
+ 
+    DWORD result = 0;
+    GetExitCodeProcess(pi.hProcess, &amp;result);
+    return result;
+&#125;
+ 
+int main(int argc, char* argv[]) &#123;
+    // std::cerr &lt;&lt; &quot;DEBUG::Argc &quot; &lt;&lt; argc &lt;&lt; &quot;\n&quot;;
+    // std::cerr &lt;&lt; &quot;DEBUG::Argv &quot; &lt;&lt; argv[1] &lt;&lt; &quot;\n&quot;;
+ 
+    // First make sure we aren&#39;t going to read nonexistent arrays
+    // if(argc &lt; 2) &#123;
+    // 	std::cerr &lt;&lt; &quot;Usage: CPPP.exe &lt;options&gt; &lt;filename&gt;\n&quot;;
+    // &#125;
+    
+    // Make us look like the paused program
+    SetConsoleTitle(argv[2]);
+ 
+    // Then build the to-run application command
+    string command = GetCommand(argc-1,argv+1);
+    
+    // Compile
+    if (argv[1][0] == &#39;0&#39; || argv[1][0] == &#39;2&#39;) &#123;
+        string compile = &quot;g++ -g -std=c++14 -O2 -lpsapi &quot; + command + &quot;.cpp -o &quot; + command + &quot;.exe&quot;;
+        DWORD returnvalue = ExecuteCommandNoCountMemory(compile);
+        // std::cerr &lt;&lt; &quot;DEBUG::Compile &quot; &lt;&lt; compile &lt;&lt; &quot;\n&quot;;
+    &#125;
+    if (argv[1][0] == &#39;0&#39;) &#123;
+        return 0;
+    &#125;
+     
+    // Save starting timestamp
+    std::chrono::time_point&lt;std::chrono::system_clock&gt; start = std::chrono::system_clock::now();
+ 
+    // Then execute said command
+    DWORD returnvalue = ExecuteCommand(command);
+ 
+    // Get ending timestamp
+    std::chrono::time_point&lt;std::chrono::system_clock&gt; end = std::chrono::system_clock::now();
+    string tmp = &quot;sample.exe&quot;; ExecuteCommandNoCountMemory(tmp);
+    std::chrono::time_point&lt;std::chrono::system_clock&gt; end2 = std::chrono::system_clock::now();
+    std::chrono::duration&lt;double&gt; elapsed = end - start;
+    std::chrono::duration&lt;double&gt; deviation = end2 - end;
+    
+    // Deviation
+    std::cerr &lt;&lt; &quot;DEBUG::System Deviation &quot; &lt;&lt; deviation.count() &lt;&lt; &quot; s\n&quot;;
+        
+    if (returnvalue) &#123;
+        return std::cerr &lt;&lt; &quot;\033[0;35m&quot;&lt;&lt; &quot;Runtime Error&quot; &lt;&lt; &quot;\033[0m&quot; &lt;&lt; &quot;  &quot;, 0;
+    &#125;
+    if (system(&quot;fc D:\\code\\.vscode\\sample.out D:\\code\\.vscode\\sample.ans &gt;&gt; sample.diff&quot;)) &#123;
+        std::cerr &lt;&lt; &quot;\033[0;31m&quot; &lt;&lt; &quot;Wrong Answer&quot; &lt;&lt; &quot;\033[0m&quot; &lt;&lt; &quot;  &quot;;
+    &#125; else &#123;
+        std::cerr &lt;&lt; &quot;\033[0;32m&quot; &lt;&lt; &quot;Accepted&quot;&lt;&lt; &quot;\033[0m&quot; &lt;&lt; &quot;  &quot;;
+    &#125;
+    
+     // Done? Print return value of executed program
+     std::cerr &lt;&lt; &quot;\033[0;34m&quot; &lt;&lt; &quot;Return: &quot; &lt;&lt; returnvalue &lt;&lt; &quot; &quot;;
+    std::cerr &lt;&lt;   &quot;Time: &quot; &lt;&lt; std::setprecision(4) &lt;&lt; elapsed.count() &lt;&lt; &quot; s &quot;;
+    std::cerr &lt;&lt; &quot;Memory: &quot; &lt;&lt; std::setprecision(4) &lt;&lt; usedMemory  &lt;&lt; &quot; &quot; &lt;&lt; usedMemoryUnitsName[usedMemoryUnit];
+    std::cerr &lt;&lt; &quot;\033[0m&quot;  &lt;&lt; std::endl;
+&#125;
+</code></pre>
+<h3 id="7-效果展示"><a href="#7-效果展示" class="headerlink" title="7. 效果展示"></a>7. 效果展示</h3><!-- ![demo](https://s1.328888.xyz/2022/08/28/GnQVN.png)
+
+![demo](https://s1.328888.xyz/2022/08/28/Gn765.png)
+
+![demo](https://s1.328888.xyz/2022/08/28/GnSHy.png) -->
+
+<p>2024.02.06 考古，图床寄了。</p>
+<h3 id="8-更新日志"><a href="#8-更新日志" class="headerlink" title="8. 更新日志"></a>8. 更新日志</h3><p>2022 09 03 Add ci code</p>
+<p>2022 08 27 修复已知 Bug；</p>
+<p>2022 08 27 精简 ci 代码，命名为 ci_mini；</p>
+<p>2022 08 26 开发功能更完备的 ci；</p>
+<p>2022 08 25 更新，加入新功能；</p>
+<p>2022 08 ?? 基于 ConsolePauserPlus 二次开发；</p>
+<h3 id="9-后记"><a href="#9-后记" class="headerlink" title="9. 后记"></a>9. 后记</h3><p><del>其实做到这一步就不能再叫 <code>ConsolePauser</code> 了，现在的她更像是一个工具箱，开箱即用，方便自在，但为了感谢前人的贡献，仍沿用其命名。</del></p>
+<p>所以有了 ci 和 ci_mini。</p>
+
+	</div>
+
+	
+
+	
+
+	
+		<div class="post-tags">
+			<i class="fa fa-tags" aria-hidden="true"></i>
+			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/oi/" rel="tag">oi</a><a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/vscode/" rel="tag">vscode</a>
+		</div>
+	
+</article>
+
+	<div id="share_container">
+	<div id="share" data-initialized="true">
+		<a class="no-pjax icon-wechat" tooltip="分享到微信">
+			<button class="btn btn-icon btn-success">
+				<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
+			<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
+				豆
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
+			<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
+			<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
+			<button class="btn btn-icon btn-warning">
+				<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
+			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
+			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=https://zerc.tk/ci/&text=ci 透彻指南" tooltip="分享到 Telegram">
+			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
+			<button class="btn btn-icon btn-default">
+				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
+			</button>
+		</a>
+	</div>
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
+		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
+	</button>
+</div>
+<script type="text/javascript">
+	socialShare("#share", {
+	    title : 'ci 透彻指南',
+	    description : '原标题：ConsolePauserPlusPlus 透彻指南
+
+Q: 为什么叫这个名字？
+A: Co...',
+	    wechatQrcodeTitle : "分享到微信",
+	    wechatQrcodeHelper : '微信扫描二维码',
+	    source : 'https://zerc.tk/ci/'
+	});
+	$("#share_show")[0].onclick = function(){
+		$("#share_container").addClass("opened");
+	};
+	$("#share_copy_link")[0].onclick = function(){
+		let input = document.createElement('input');
+		document.body.appendChild(input);
+		input.setAttribute("value", window.location.href);
+		input.setAttribute("readonly", "readonly");
+		input.setAttribute("style", "opacity: 0;mouse-events:none;");
+		input.select();
+		if (document.execCommand('copy')){
+			iziToast.show({
+				title: '链接已复制',
+				message: "链接已复制到剪贴板",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#2dce89',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-check',
+				timeout: 5000
+			});
+		}else{
+			iziToast.show({
+				title: '复制失败',
+				message: "请手动复制链接",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#f5365c',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-close',
+				timeout: 5000
+			});
+		}
+		document.body.removeChild(input);
+	};
+</script>
+
+
+
+	<div id="post_comment" class="card shadow-sm">
+		<div id="giscus"></div>
+<script src="https://giscus.app/client.js"
+        data-repo="zerc7/comment"
+        data-repo-id="R_kgDOGzyhVA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOGzyhVM4CREtV"
+        data-mapping="pathname"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+	</div>
+
+
+
+<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"><span class="page-navigation-extra-text"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>上一篇</span><a href="/mathIII/" rel="prev"> 数论笔记 III</a></div><div class="post-navigation-item post-navigation-next"><span class="page-navigation-extra-text">下一篇 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span><a href="/dp/" rel="next"> DP_Part II</a></div></div>
+
+
+
+
+		
+		
+		
+		
+
+					<footer id="footer" class="site-footer card shadow-sm border-0">
+						
+						<div>Theme <a target="_blank" rel="noopener" href="https://github.com/solstice23/hexo-theme-argon"><strong>Argon</strong></a> | Powered by Hexo</div>
+						<span id="busuanzi_container_site_uv">
+							本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+						</span>
+					</footer>
+				</main>
+			</div>
+		</div>
+		
+<script src="/argontheme.js"></script>
+
+		
+		
+		
+			<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+			<script src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+			<script src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script>
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body,{
+						delimiters: [
+							{left: "$$", right: "$$", display: true},
+							{left: "$", right: "$", display: false},
+							{left: "\\(", right: "\\)", display: false}
+						]
+					});
+				});
+			</script>
+		
+
+		
+			<script>
+				var argonEnableCodeHighlight = true;
+			</script>
+			
+<link rel="stylesheet" href="/assets/vendor/highlight/styles/onedark.css">
+
+		
+
+	</div>
+</div>
+<noscript>
+	<style>
+		article img.lazyload[src^="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPg"]{display: none;}
+		.comment-item-text .comment-sticker.lazyload{display: none;}
+	</style>
+</noscript>
+</body>
+
+
+
+</html>
+

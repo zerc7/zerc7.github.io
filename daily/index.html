@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+<html class="amoled-dark use-big-shadow use-serif article-header-style-1">
+<head>
+	
+	<title>每日总结 - zerc</title>
+	<meta charset="utf-8">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<meta name="description" content="​	前言：作为一名 OIer ，要每天做好反思，所以我 自愿 做好每日总结。 2.8 总结数据结构  P3368 【模板】树状数组 2     P2357 守墓人    P1558 色板游戏 P4145 上帝造题的七分钟 2 &#x2F; 花神游历各国">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日总结">
+<meta property="og:url" content="https://zerc.tk/daily/index.html">
+<meta property="og:site_name" content="zerc">
+<meta property="og:description" content="​	前言：作为一名 OIer ，要每天做好反思，所以我 自愿 做好每日总结。 2.8 总结数据结构  P3368 【模板】树状数组 2     P2357 守墓人    P1558 色板游戏 P4145 上帝造题的七分钟 2 &#x2F; 花神游历各国">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-10T22:11:55.000Z">
+<meta property="article:modified_time" content="2024-02-22T00:10:25.000Z">
+<meta property="article:author" content="zerc">
+<meta property="article:tag" content="daily">
+<meta name="twitter:card" content="summary">
+
+	<meta name="theme-color" content="#2196F3">
+	<meta name="theme-color-rgb" content="33,150,243">
+	<meta name="theme-color-origin" content="#2196F3">
+	<meta name="argon-enable-custom-theme-color" content="true">
+	<meta name="theme-card-radius" content="7">
+	<meta name="theme-version" content="1.0.2">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+	
+<link rel="stylesheet" href="/assets/argon_css_merged.css">
+
+	
+<link rel="stylesheet" href="/style.css">
+
+	
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Open+Sans:300,400,600,700|Noto+Serif+SC:300,600&display=swap.css">
+
+	
+<script src="/assets/argon_js_merged.js"></script>
+
+	
+<script src="/assets/js/argon.min.js"></script>
+
+	
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+	
+
+	<script>
+		var argonConfig = {
+			language: "zh_CN",
+			
+				zoomify: {
+					duration: 200,
+					easing: "cubic-bezier(0.4,0,0,1)",
+					scale: 0.9
+				},
+			
+			pangu: "true",
+			
+				lazyload: {
+					threshold: 800,
+					effect: "fadeIn"
+				},
+			
+			disable_pjax: false,
+			headroom: true
+		}
+	</script>
+	<script>
+		var darkmodeAutoSwitch = "false";
+		function setDarkmode(enable){
+			if (enable == true){
+				$("html").addClass("darkmode");
+			}else{
+				$("html").removeClass("darkmode");
+			}
+			$(window).trigger("scroll");
+		}
+		function toggleDarkmode(){
+			if ($("html").hasClass("darkmode")){
+				setDarkmode(false);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "false");
+			}else{
+				setDarkmode(true);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "true");
+			}
+		}
+		if (sessionStorage.getItem("Argon_Enable_Dark_Mode") == "true"){
+			setDarkmode(true);
+		}
+		function toggleDarkmodeByPrefersColorScheme(media){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			if (media.matches){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		function toggleDarkmodeByTime(){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			let hour = new Date().getHours();
+			if (hour < 7 || hour >= 22){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		if (darkmodeAutoSwitch == 'system'){
+			var darkmodeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+			darkmodeMediaQuery.addListener(toggleDarkmodeByPrefersColorScheme);
+			toggleDarkmodeByPrefersColorScheme(darkmodeMediaQuery);
+		}
+		if (darkmodeAutoSwitch == 'time'){
+			toggleDarkmodeByTime();
+		}
+		if (darkmodeAutoSwitch == 'alwayson'){
+			setDarkmode(true);
+		}
+
+		function toggleAmoledDarkMode(){
+			$("html").toggleClass("amoled-dark");
+			if ($("html").hasClass("amoled-dark")){
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "true");
+			}else{
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "false");
+			}
+		}
+		if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "true"){
+			$("html").addClass("amoled-dark");
+		}else if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "false"){
+			$("html").removeClass("amoled-dark");
+		}
+	</script>
+	<script>
+		if (navigator.userAgent.indexOf("Safari") !== -1 && navigator.userAgent.indexOf("Chrome") === -1){
+			$("html").addClass("using-safari");
+		}
+	</script>
+
+	
+		
+<script src="/assets/vendor/smoothscroll/smoothscroll3.min.js"></script>
+
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+<style id="themecolor_css">
+	
+	:root{
+		--themecolor: #2196F3;
+		--themecolor-dark0: #1590F2;
+		--themecolor-dark: #0D8AEE;
+		--themecolor-dark2: #0C7CD5;
+		--themecolor-dark3: #0A6EBD;
+		--themecolor-light: #51ADF6;
+		--themecolor-rgbstr: 33,150,243;
+		--themecolor-gradient: linear-gradient(150deg,var(--themecolor-light) 15%, var(--themecolor) 70%, var(--themecolor-dark0) 94%);
+
+	}
+</style>
+<style id="theme_cardradius_css">
+	:root{
+		--card-radius: 7px;
+	}
+</style>
+
+<body>
+<div id="toolbar">
+	<header class="header-global">
+		<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light bg-primary headroom--not-bottom headroom--not-top headroom--pinned">
+			<div class="container">
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand" href="/">zerc blog</a>
+				<div class="navbar-collapse collapse" id="navbar_global">
+					<div class="navbar-collapse-header">
+						<div class="row">
+							<div class="col-6 collapse-brand"></div>
+							<div class="col-6 collapse-close">
+								<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+									<span></span>
+									<span></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<ul id="navbar_search_btn_mobile" class="navbar-nav align-items-lg-center ml-lg-auto">
+						<li class="nav-item" data-toggle="modal" data-target="#argon_search_modal" style="padding-left: 5px;">
+							<a class="nav-link nav-link-icon">
+								<i class="fa fa-search"></i>
+								<span class="nav-link-inner--text d-lg-none">搜索</span>
+							</a>
+						</li>
+					</ul>
+					
+							<ul class='navbar-nav navbar-nav-hover align-items-lg-center'>
+								
+										<li class='nav-item'>
+											<a href='/hide' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Hidepage</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/archives' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Archives</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/friends' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Friends</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/notice' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Notice</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/about' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>About</span>
+											</a>
+											
+										</li>
+									
+							</ul>
+						
+					<ul class="navbar-nav align-items-lg-center ml-lg-auto">
+						<li class="nav-item" data-toggle="modal" data-target="#argon_search_modal" id="navbar_search_btn_pc">
+							<a class="nav-link nav-link-icon">
+								<i class="fa fa-search"></i>
+								<span class="nav-link-inner--text d-lg-none">搜索</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="navbar_menu_mask" data-toggle="collapse" data-target="#navbar_global"></div>
+			</div>
+		</nav>
+	</header>
+</div>
+<div class="modal fade" id="argon_search_modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">搜索</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<!-- TODO -->
+<div class="form-group mb-3">
+	<div class="input-group input-group-alternative">
+		<div class="input-group-prepend">
+			<span class="input-group-text"><i class="fa fa-search"></i></span>
+		</div>
+		<input id="local-search-input" class="form-control" placeholder="搜索什么..." type="text"  autocomplete="off" data-search.path="search.xml" data-config.root="/">
+	</div>
+	<div id="local-search-result"></div>
+</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!--Banner-->
+<section id="banner" class="banner section section-lg section-shaped">
+	<div class="shape shape-style-1 shape-success">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	
+	<div id="banner_container" class="banner-container container text-center">
+		
+			<div class="banner-title text-white" data-text="zerc" data-interval=""><span class="banner-title-inner">&nbsp;</span>
+		
+		<span class="banner-subtitle d-block">an oier</span></div>
+	</div>
+	
+		<style>
+			section.banner{
+				background-image: url(/assets/img/banner.jpg) !important;
+			}
+		</style>
+	
+</section>
+
+
+	<style>
+		#content:before {
+			content: '';
+			display: block;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -2;
+			background: url(https://s2.loli.net/2024/02/06/4LcDYjs3CoZOMeG.png);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: ;
+			transition: opacity .5s ease;
+		}
+		html.darkmode #content:before{
+			filter: brightness(0.65);
+		}
+		
+			#content:after {
+				content: '';
+				display: block;
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -2;
+				background: url(https://s2.loli.net/2024/02/06/4LcDYjs3CoZOMeG.png);
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				opacity: 0;
+				transition: opacity .5s ease;
+			}
+			html.darkmode #content:after {
+				opacity: ;
+			}
+			html.darkmode #content:before {
+				opacity: 0;
+			}
+		
+		
+			#banner, #banner .shape {
+				background: transparent !important;
+			}
+		
+	</style>
+
+
+
+
+<div id="float_action_buttons" class="float-action-buttons fabtns-unloaded">
+	<button id="fabtn_toggle_sides" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-hidden="true" tooltip-move-to-left="移至左侧" tooltip-move-to-right="移至右侧">
+		<span class="btn-inner--icon fabtn-show-on-right"><i class="fa fa-caret-left"></i></span>
+		<span class="btn-inner--icon fabtn-show-on-left"><i class="fa fa-caret-right"></i></span>
+	</button>
+	<button id="fabtn_back_to_top" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-label="Back To Top" tooltip="回到顶部">
+		<span class="btn-inner--icon"><i class="fa fa-angle-up"></i></span>
+	</button>
+	<button id="fabtn_go_to_comment" class="btn btn-icon btn-neutral fabtn shadow-sm d-none" type="button" <-% theme.fab_show_gotocomment_button ? "" : "style='display: none;'"  aria-label="Comment" tooltip="评论">
+		<span class="btn-inner--icon"><i class="fa fa-comment-o"></i></span>
+	</button>
+	<button id="fabtn_toggle_darkmode" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" <-% theme.fab_show_darkmode_button ? "" : "style='display: none;'"  aria-label="Toggle Darkmode" tooltip-darkmode="夜间模式" tooltip-blackmode="暗黑模式" tooltip-lightmode="日间模式">
+		<span class="btn-inner--icon"><i class="fa fa-moon-o"></i><i class='fa fa-lightbulb-o'></i></span>
+	</button>
+	<button id="fabtn_toggle_blog_settings_popup" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" <-% theme.fab_show_settings_button ? "" : "style='display: none;'"  aria-label="Open Blog Settings Menu" tooltip="设置">
+		<span class="btn-inner--icon"><i class="fa fa-cog"></i></span>
+	</button>
+	<div id="fabtn_blog_settings_popup" class="card shadow-sm" style="opacity: 0;" aria-hidden="true">
+		<div id="close_blog_settings"><i class="fa fa-close"></i></div>
+		<div class="blog-setting-item mt-3">
+			<div style="transform: translateY(-4px);"><div id="blog_setting_toggle_darkmode_and_amoledarkmode" tooltip-switch-to-darkmode="切换到夜间模式" tooltip-switch-to-blackmode="切换到暗黑模式"><span>夜间模式</span><span>暗黑模式</span></div></div>
+			<div style="flex: 1;"></div>
+			<label id="blog_setting_darkmode_switch" class="custom-toggle">
+				<span class="custom-toggle-slider rounded-circle"></span>
+			</label>
+		</div>
+		<div class="blog-setting-item mt-3">
+			<div style="flex: 1;">字体</div>
+			<div>
+				<button id="blog_setting_font_sans_serif" type="button" class="blog-setting-font btn btn-outline-primary blog-setting-selector-left">Sans Serif</button><button id="blog_setting_font_serif" type="button" class="blog-setting-font btn btn-outline-primary blog-setting-selector-right">Serif</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mt-3">
+			<div style="flex: 1;">阴影</div>
+			<div>
+				<button id="blog_setting_shadow_small" type="button" class="blog-setting-shadow btn btn-outline-primary blog-setting-selector-left">浅阴影</button><button id="blog_setting_shadow_big" type="button" class="blog-setting-shadow btn btn-outline-primary blog-setting-selector-right">深阴影</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mt-3 mb-3">
+			<div style="flex: 1;">滤镜</div>
+			<div id="blog_setting_filters" class="ml-3">
+				<button id="blog_setting_filter_off" type="button" class="blog-setting-filter-btn ml-0" filter-name="off">关闭</button>
+				<button id="blog_setting_filter_sunset" type="button" class="blog-setting-filter-btn" filter-name="sunset">日落</button>
+				<button id="blog_setting_filter_darkness" type="button" class="blog-setting-filter-btn" filter-name="darkness">暗化</button>
+				<button id="blog_setting_filter_grayscale" type="button" class="blog-setting-filter-btn" filter-name="grayscale">灰度</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mb-3">
+			<div id="blog_setting_card_radius_to_default" style="cursor: pointer;" tooltip="恢复默认">圆角</div>
+			<div style="flex: 1;margin-left: 20px;margin-right: 8px;transform: translateY(2px);">
+				<div id="blog_setting_card_radius"></div>
+			</div>
+		</div>
+		
+			<div class="blog-setting-item mt-1 mb-3">
+				<div style="flex: 1;">主题色</div>
+				<div id="theme-color-picker" class="ml-3"></div>
+			</div>
+		
+	</div>
+	<button id="fabtn_open_sidebar" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-label="Open Sidebar Menu" tooltip="菜单">
+		<span class="btn-inner--icon"><i class="fa fa-bars"></i></span>
+	</button>
+	<button id="fabtn_reading_progress" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-hidden="true" tooltip="阅读进度">
+		<div id="fabtn_reading_progress_bar" style="width: 0%;"></div>
+		<span id="fabtn_reading_progress_details">0%</span>
+	</button>
+</div>
+
+<div id="content" class="site-content">
+
+
+
+
+
+
+
+
+
+<div class="page-information-card-container">
+	
+</div>
+
+<div id="sidebar_mask"></div>
+<aside id="leftbar" class="leftbar widget-area" role="complementary">
+		
+			<div id="leftbar_announcement" class="card bg-white shadow-sm border-0">
+				<div class="leftbar-announcement-body">
+					<div class="leftbar-announcement-title text-white">公告</div>
+					<div class="leftbar-announcement-content text-white">评论需要 F5 刷新显示 qwq, KaTex 炸了的公式随缘修（咕咕咕）。</div>
+				</div>
+			</div>
+		
+		<div id="leftbar_part1" class="widget widget_search card bg-white shadow-sm border-0">
+			<div class="leftbar-banner card-body">
+				<span class="leftbar-banner-title text-white">zerc</span>
+				
+				
+					<span class="leftbar-banner-subtitle text-white"><span class='hitokoto'></span></span>
+				
+			</div>
+			
+			
+				<ul id='leftbar_part1_menu' class='leftbar-menu'>
+					<li class='leftbar-menu-item'><a href='/'>首页</a></li><li class='leftbar-menu-item'><a href='/archives'>归档</a></li>
+				</ul>
+			
+			<div class="card-body text-center leftbar-search-button">
+				<button id="leftbar_search" class="btn btn-secondary btn-lg active btn-sm btn-block border-0" role="button" data-toggle="modal" data-target="#argon_search_modal" >
+					<i class="menu-item-icon fa fa-search mr-0"></i> 搜索
+				</button>
+			</div>
+		</div>
+		<div id="leftbar_part2" class="widget widget_search card bg-white shadow-sm border-0">
+			<div id="leftbar_part2_inner" class="card-body">
+				
+				<div class="nav-wrapper" style="padding-top: 5px;">
+	                <ul class="nav nav-pills nav-fill" role="tablist">
+						
+							<li class="nav-item sidebar-tab-switcher">
+								<a class="active show" id="leftbar_tab_catalog_btn" data-toggle="tab" href="#leftbar_tab_catalog" role="tab" aria-controls="leftbar_tab_catalog" no-pjax>文章目录</a>
+							</li>
+						
+						<li class="nav-item sidebar-tab-switcher">
+							<a class="" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
+						</li>
+	                </ul>
+				</div>
+				<div>
+					<div class="tab-content" style="padding: 10px 10px 0 10px;">
+						
+							<div class="tab-pane fade active show" id="leftbar_tab_catalog" role="tabpanel" aria-labelledby="leftbar_tab_catalog_btn">
+								<div id="leftbar_catalog"></div>
+								<script type="text/javascript">
+									$(function () {
+										$(document).headIndex({
+											articleWrapSelector: '#post_content',
+											indexBoxSelector: '#leftbar_catalog',
+											subItemBoxClass: "index-subItem-box",
+											itemClass: "index-item",
+											linkClass: "index-link",
+											offset: 80,
+										});
+									})
+								</script>
+								
+							</div>
+						
+						<div class="tab-pane fade text-center" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
+							<img id="leftbar_overview_author_image" src="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg" class="img-fluid rounded-circle shadow-sm" style="width: 100px;" alt="avatar">
+							<h6 id="leftbar_overview_author_name">zerc</h6>
+							<nav class="site-state">
+								<div class="site-state-item site-state-posts">
+									<a href="/archives">
+										<span class="site-state-item-count">28</span>
+										<span class="site-state-item-name">文章</span>
+									</a>
+								</div>
+								<div class="site-state-item site-state-categories">
+									<a data-toggle="modal" data-target="#blog_categories">
+										<span class="site-state-item-count">0</span>
+										<span class="site-state-item-name">分类</span>
+									</a>
+								</div>      
+								<div class="site-state-item site-state-tags">
+									<a data-toggle="modal" data-target="#blog_tags">
+										<span class="site-state-item-count">9</span>
+										<span class="site-state-item-name">标签</span>
+									</a>
+								</div>
+							</nav>
+							
+									<div class="site-author-links">
+										
+											<div class='site-author-links-item'>
+												<a href="https://www.luogu.com.cn/user/581312" rel='noopener' target='_blank'>luogu</a>
+											</div>
+										
+											<div class='site-author-links-item'>
+												<a href="https://github.com/zerc7" rel='noopener' target='_blank'>github</a>
+											</div>
+										
+									</div>
+								
+							
+									<div class='site-friend-links'>
+										<div class='site-friend-links-title'><i class='fa fa-fw fa-link'></i> Links</div>
+										<ul class='site-friend-links-ul'>
+											
+												<li class='site-friend-links-item'>
+													<a href='https://www.pozhu.cf' rel='noopener' target='_blank'>Pozhu(blog 现已寄)</a>
+												</li>
+											
+										</ul>
+									</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</aside>
+<div class="modal fade" id="blog_categories" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">分类</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="blog_tags" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">标签</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<a class="badge badge-secondary tag" href="/tags/daily/" rel="tag">daily <span class="tag-num">3</span></a><a class="badge badge-secondary tag" href="/tags/dp/" rel="tag">dp <span class="tag-num">2</span></a><a class="badge badge-secondary tag" href="/tags/ds/" rel="tag">ds <span class="tag-num">1</span></a><a class="badge badge-secondary tag" href="/tags/math/" rel="tag">math <span class="tag-num">5</span></a><a class="badge badge-secondary tag" href="/tags/oi/" rel="tag">oi <span class="tag-num">19</span></a><a class="badge badge-secondary tag" href="/tags/todo/" rel="tag">todo <span class="tag-num">1</span></a><a class="badge badge-secondary tag" href="/tags/travels/" rel="tag">travels <span class="tag-num">2</span></a><a class="badge badge-secondary tag" href="/tags/vscode/" rel="tag">vscode <span class="tag-num">1</span></a><a class="badge badge-secondary tag" href="/tags/%E9%97%B2%E8%B0%88/" rel="tag">闲谈 <span class="tag-num">2</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+		
+			
+	<article class="post post-full card bg-white shadow-sm border-0 post-preview">
+	<header class="post-header text-center">
+		
+		<a class="post-title" href="/daily/">每日总结</a>
+		<div class="post-meta">
+			
+						
+						<div class="post-meta-detail post-meta-detail-time">
+							<i class="fa fa-clock-o" aria-hidden="true"></i>
+							<time title="发布于 2022-2-10 22:11:55 | 编辑于 2024-2-22 0:10:25">2022-2-10 22:11
+							</time>
+						</div>
+					
+						
+							<div class="post-meta-devide">|</div>
+						
+						<div class="post-meta-detail post-meta-detail-words">
+							<i class="fa fa-file-word-o" aria-hidden="true"></i>
+							2.8k 字
+						</div>
+					
+		</div>
+		
+	</header>
+
+	<div class="post-content" id="post_content">
+		<p>​	前言：作为一名 OIer ，要每天做好反思，所以我 <del>自愿</del> 做好每日总结。</p>
+<h4 id="2-8-总结"><a href="#2-8-总结" class="headerlink" title="2.8 总结"></a>2.8 总结</h4><p>数据结构</p>
+<blockquote>
+<p>P3368 【模板】树状数组 2     P2357 守墓人    P1558 色板游戏</p>
+<p>P4145 上帝造题的七分钟 2 &#x2F; 花神游历各国</p>
+</blockquote>
+<span id="more"></span>
+
+<p>主要复习了线段树，树状数组。线段树花了很长时间去做题、Debug，比之前理解的更透彻，写起来更顺了，现在板子题基本能 A，变式不太行。</p>
+<p>数论</p>
+<blockquote>
+<p>P1939 【模板】矩阵加速（数列）  P3390 【模板】矩阵快速幂</p>
+<p>P2158 [SDOI2008] 仪仗队          POJ3090 Visible Lattice Points</p>
+</blockquote>
+<p>复习了同余，质数，矩阵乘，欧拉函数。一些结论没有刻意去记，做题时也不太会用。</p>
+<h4 id="2-9-总结"><a href="#2-9-总结" class="headerlink" title="2.9 总结"></a>2.9 总结</h4><blockquote>
+<p><strong>P4145</strong> 上帝造题的七分钟 2 &#x2F; 花神游历各国	            <strong>P3805</strong> 【模板】manacher 算法     <strong>SP2713</strong> GSS4 - Can you answer these queries IV	<strong>P1551</strong> 亲戚                             <strong>P2661</strong> [NOIP2015 提高组] 信息传递	                       <strong>P1196</strong> [NOI2002] 银河英雄传说                         </p>
+<p><strong>P3378</strong> 【模板】堆	             	<strong>P3373</strong> 【模板】线段树 2		 <strong>P3811</strong> 【模板】乘法逆元<strong>P6056</strong> [加油武汉]SIR 模型		<strong>P4549</strong> 【模板】裴蜀定理	 	<strong>P1334</strong> 瑞瑞的木板</p>
+</blockquote>
+<p>​	巩固了线段树 ( 勉强能切 )，复习了字符串，重点放在了掌握不太好的manachar ( 一道板子题 RE - CE - LTE -AC )。</p>
+<p>​	下午复习了并查集和图论，发现带权并查集掌握的太差，不是很会写，Tarjan 和图联通讲完之后没有去练，手很生，做题很不顺。还被一个玄学问题困扰了好久，后来发现 dis[x] 在 Debug 之后更新了 qwq 。</p>
+<p>​	晚上通过板子题回顾了乘法逆元，裴蜀定理等一些数学的东西。看到久违的小黄题，是多么的<del>开心</del>啊，可还是被几个题卡了很久。</p>
+<h4 id="2-10-总结"><a href="#2-10-总结" class="headerlink" title="2.10 总结"></a>2.10 总结</h4><p>​		今天是上课第一天，收获很多，也发现了很多问题。比如说 有的题在课上听得明明白白，课下一写就有各种各样的 Bug ，或者是写不下来。 </p>
+<p>​		DP 题状态勉勉强强能想到，但状态转移方程和具体实现很难顺下来。数论再次让我感受到了数学是多么神奇，但现在存在的问题是比较复杂式子推不出来，也不太会证，就比如说 $\sum$ ，对它加减乘除都很陌生 ( 虽说并不难。</p>
+<p>​		晚上着重看了看数论的东西，好像还<del>挺有意思的</del>，手打一遍之后发现很多不太能理解的地方突然明白了。总的来说 DP 和数论掌握的很差，但要比年前好很多。</p>
+<blockquote>
+<p><strong>P5367</strong> 【模板】康托展开		  			<strong>P3183</strong> [HAOI2016]食物链		</p>
+<p><strong>UVA543</strong> Goldbach’s Conjecture 		<strong>UVA11526</strong> H(n)</p>
+<p><strong>P2261</strong> [CQOI2007]余数求和 				<strong>P1403</strong> [AHOI2005]约数研究</p>
+<p><strong>P2904</strong> [USACO08MAR]River Crossing S</p>
+</blockquote>
+<h4 id="2-11-总结"><a href="#2-11-总结" class="headerlink" title="2.11 总结"></a>2.11 总结</h4><p>​	上午讲了 (ex)gcd，inv，(ex)CRT，Lucas，重拾之前讲过的东西感觉透彻了不少，知识点之间也能串联起来了。下午刷了一些板子题<del>（被 <code>“%lld”</code> 卡了一个小时</del>，写得还是不很熟练。</p>
+<p>​	晚上讲的 组合计数，感觉挺有趣的，不算太难，就略微有些抽象。</p>
+<blockquote>
+<p><strong>P2261</strong> 余数求和，<strong>P1879</strong> Corn Fields G，<strong>P1029</strong> 最大公约数和最小公倍数问题，<strong>P1495</strong> CRT</p>
+</blockquote>
+<h4 id="2-12-总结"><a href="#2-12-总结" class="headerlink" title="2.12 总结"></a>2.12 总结</h4><p>​	上午讲了概率和期望，概率还好，尤其期望，很不好理解，做题也很懵，同时也和 DP 联系很紧密，倒逼着自己练好 DP。</p>
+<p>​	下午讲的欧拉函数，（扩展）欧拉定理，证明过程勉勉强强才能跟上，有很多化简的过程不是很会，只是说举个简单点的例子证明这一步到这一步是对的，包括论证的思路，想不到也不太能顺下来。</p>
+<p>​	然后是这两天的做题，很神奇，每天都会被一个很小的<del>Bug</del>卡住，一卡就是一个多小时，qwq。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1654"><strong>P1654</strong> OSU!</a>	<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4316"><strong>P4316</strong> 绿豆蛙的归宿</a>	<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5091"><strong>P5091</strong> 【模板】扩展欧拉定理</a>	<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1297"><strong>P1297</strong> 国家集训队 单选错位</a>	<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3205"><strong>P3205</strong> HNOI2010 合唱队</a></p>
+</blockquote>
+<h4 id="2-13-总结"><a href="#2-13-总结" class="headerlink" title="2.13 总结"></a>2.13 总结</h4><p>​	上午讲的优化 DP ，数据结构优化 DP 和之前学的线段树，树状数组联系起来了。开始学的时候感觉各个板块相对来说比较独立，联系性不太强，随着学习的日渐深入，越发觉得各个方面的内容总能奇奇怪怪的结合在一起。斜率优化第一次听，开始讲的时候挺懵的，听着听着好像明白了很多，大概知道了为什么用，怎么用<del>的思想</del> 。</p>
+<p>​	下午博弈论，思维强度不算大，就是考虑的要多一点，还有就是从简单到复杂，红眼睛那个想了好久始终不明白为什么是在100天后，后来一个人，两个人这样分析的时候，哎，我悟了，这也算是一种做题学习的方法吧。</p>
+<p>$\color {rgb(157, 61, 207)}{\text{P4139 上帝与集合的正确用法}}$     <del>距离上一次切紫题还是在上一次</del></p>
+<p>$\color {rgb(255, 193, 22)}{\text{P1199 [NOIP2010 普及组] 三国游戏}}$</p>
+<p>$\color {rgb(82, 196, 26)}{\text{P1247 取火柴游戏}}$</p>
+<p>$\color {rgb(52, 152, 219)}{\text{P3807 【模板】卢卡斯定理&#x2F;Lucas 定理}}$</p>
+<h4 id="2-14-总结"><a href="#2-14-总结" class="headerlink" title="2.14 总结"></a>2.14 总结</h4><p>​	上午讲的矩阵和高斯消元，没多少太难的东西，感觉还行，就行列式和矩阵树定理没有太明白，又和图论那里结合起来了QwQ。因为不满足交换律，所以做题的时候就一直在 Debug 它乘的是行还是列。</p>
+<p>​	下午四边形不等式优化 DP ，主要在讲证明过程，嗯，就很。好多时候都是证出来了才知道它之前为什么要证这些东西，听的时候云里雾里，讲完再看时思路要顺一些。最后讲了一点计算几何，虽然只听了一点，但还是非常的 Amazing 啊。</p>
+<blockquote>
+<p><strong>P2675</strong> 《瞿葩的数字游戏》T3-三角圣地</p>
+<p><strong>P3390</strong> 【模板】矩阵快速幂</p>
+<p><strong>P1962</strong> 斐波那契数列</p>
+<p><del><strong>P5550</strong> Chino的数列</del> WA</p>
+<p><del><strong>P4345</strong> [SHOI2015]超能粒子炮·改</del> TLE</p>
+</blockquote>
+<h4 id="2-15-总结"><a href="#2-15-总结" class="headerlink" title="2.15 总结"></a>2.15 总结</h4><p>​	上午计算几何，嗯，还行，思想懂了，就是代码还没怎么打。下午多项式，其实也还行，就复数虚数哪里着实有点懵，有种上文化课的感觉<del>本来就是</del>，还有 FFT 和 NTT 哪里，很神奇，还没开始就已经结束了…数学公式的证明也很神奇，<del>像是考完试看参考答案一样</del> 。</p>
+<blockquote>
+<p>P2197 【模板】nim 游戏</p>
+<p><del>P4345 [SHOI2015]超能粒子炮·改</del> FFT fast_fast_TLE</p>
+</blockquote>
+<h4 id="2-16-总结"><a href="#2-16-总结" class="headerlink" title="2.16 总结"></a>2.16 总结</h4><p>​	上午填坑小球与盒子的排列，把各种情况都综合起来了，感觉要比之前的难好多。然后群论，，懂了又没有完全懂，尤其是轨道和稳定子，抽象成一个概念还行，化成具体的式子就很懵。下午狄利克雷卷积和莫比乌斯函数，嗯，推式子的过程还是很神奇，在此过程中还认识了一大堆奇奇怪怪的函数，有好多都是才学，性质还不熟，就导致推导的过程很痛苦。</p>
+<p>​	晚上复习数论，练了练计算几何，凸包和旋转卡壳板子题感觉还行，扩展就不太行了。</p>
+<blockquote>
+<p>P1287 盒子与球</p>
+<p>P2613 【模板】有理数取余</p>
+<p>P2742 [USACO5.1]圈奶牛Fencing the Cows &#x2F;【模板】二维凸包</p>
+<p>P1452 [USACO03FALL]Beauty Contest G &#x2F;【模板】旋转卡壳</p>
+<p><del>又是四彩斑斓的一天</del></p>
+</blockquote>
+<h4 id="2-17-总结-（2-10-1-17）"><a href="#2-17-总结-（2-10-1-17）" class="headerlink" title="2.17 总结 （2.10 - 1.17）"></a>2.17 总结 （2.10 - 1.17）</h4><p>​	上午考试，又一次体会到了数论的恐怖，，T1 再一次论证了骗分的可能性（尽管只有 10pts，T2 接近于想到了正解，但时间复杂度不太行，就直接打的暴力，30 pts，T3 属于灵光乍现，想斜边哪里卡了好久，但还是 A 了，T4 以为是计算几何，没想到是高斯消元<del>（话说想到了也不太能写下来</del> ，暴力也不太行，所以就爆零了。</p>
+<p>​	话说拿 300 pts 的是真的 dalao ，stO &amp;&amp; Orz，蒟蒻还要努力赶上。通过这次考试发现的问题是 题意的转化，推式子，还有代码实现<del>（废话</del> ，解决方法简单粗暴：多刷题，尤其是那些定理，很生很欠练。</p>
+<p>​	然后就是这些天的数学集训，收获很多，就比如说<del>认识了很多希腊字母</del> $\Pi\Sigma\sigma\alpha\beta\phi\mu··$ ，补充了很多数学的东西，但只是补充，很多并没有展开去细细讲透，自己也没有吃透，qwq，希望通过接下来这几天时间，补全短板，对数论的理解能再上一层楼。</p>
+<p>​	</p>
+<h4 id="2-18-总结"><a href="#2-18-总结" class="headerlink" title="2.18 总结"></a>2.18 总结</h4><p>​	做了几道 DP 和数论的水题（难的写不出来 qwq，后来切了道蓝题，还有一道正在 Debug …  通过做题对 DP 和基础的数论进行巩固，打好基础，当然通过做题也发现了了一些新的问题，比如说题意的转化，Ta 就是一道小黄题，标签里写了 gcd，就是想不到qwq。还有比较难的题，题意能转化成凸包，具体实现的时候就很难，甚至不一定能实现。当然收获最大的还是这两道“水题”：</p>
+<p>​	<code>P3912 素数个数</code> 让我深刻认识到 <code>STL</code> 不能乱用，不开 $O2$ $10s^+$ ，开了 $O2$ $400ms$ ，不只是常数问题了 …</p>
+<p>​	<code>P4626 一道水题 II</code> Debug ing，WA*5，和标答对拍，发现 <code>46400</code> 之后就开始 WA 了，非常玄学 …</p>
+<h4 id="2-19-总结"><a href="#2-19-总结" class="headerlink" title="2.19 总结"></a>2.19 总结</h4><p>​	<del>被计算几何折磨的一天</del> ，我以为我懂了，结果也很美好，听取蛙声一片。先解决了历史遗留问题：半平面交，我自信满满的准备切一道小蓝题，然后，，Debug 一下午 qwq 。我以为凸包还算简单，又调了一晚上，，Emm，还是要提高自己的代码能力（毕竟是一切的基础，然后就是对问题的转化，<code>P3829 [SHOI2012]信用卡凸包</code> 这个题思路真是太奇妙了，巧妙地转化成普通凸点，就很神奇，，还有就是要把常用的板子 像叉积点积这种 理解透，记熟（记错了还不一定能 调出来 qwq。</p>
+<h4 id="2-21-总结"><a href="#2-21-总结" class="headerlink" title="2.21 总结"></a>2.21 总结</h4><p>​	复习了 Nim 的几个模型；做了道数论分块的题，100 个测试点，震撼…（没开 long long 导致溢出；然后被 <code>P1762 偶数</code> 卡到崩溃，终于由 70 pts -&gt; 80 pts qwq；解决了历史遗留问题 高斯消元，顺带扩展了约旦消元，复习矩阵乘，又被 不满足交换律 卡了半天。</p>
+<p>​	通过做题感受到了自己对板子还是不熟悉，有的写过一遍了但还是不太能完整地写下来，还有就是像莫比乌斯反演这种，想的是把基础打牢之后再去看这些，理解应该会比现在更深。</p>
+<h4 id="2-22-总结"><a href="#2-22-总结" class="headerlink" title="2.22 总结"></a>2.22 总结</h4><p>​	<del>很 2 的一天，</del></p>
+<p>​	做平面最近点对的时候了解到了随机化的算法（随机化大法好，但唯一的问题时时间复杂度和正确性的权衡，以后在做题的时候慢慢积累吧，还有爬山和模拟退火，想学又学不太明白。</p>
+
+	</div>
+
+	
+
+	
+
+	
+		<div class="post-tags">
+			<i class="fa fa-tags" aria-hidden="true"></i>
+			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/daily/" rel="tag">daily</a>
+		</div>
+	
+</article>
+
+	<div id="share_container">
+	<div id="share" data-initialized="true">
+		<a class="no-pjax icon-wechat" tooltip="分享到微信">
+			<button class="btn btn-icon btn-success">
+				<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
+			<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
+				豆
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
+			<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
+			<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
+			<button class="btn btn-icon btn-warning">
+				<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
+			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
+			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=https://zerc.tk/daily/&text=每日总结" tooltip="分享到 Telegram">
+			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
+			<button class="btn btn-icon btn-default">
+				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
+			</button>
+		</a>
+	</div>
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
+		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
+	</button>
+</div>
+<script type="text/javascript">
+	socialShare("#share", {
+	    title : '每日总结',
+	    description : '​	前言：作为一名 OIer ，要每天做好反思，所以我 自愿 做好每日总结。
+2.8 总结数据结构
+...',
+	    wechatQrcodeTitle : "分享到微信",
+	    wechatQrcodeHelper : '微信扫描二维码',
+	    source : 'https://zerc.tk/daily/'
+	});
+	$("#share_show")[0].onclick = function(){
+		$("#share_container").addClass("opened");
+	};
+	$("#share_copy_link")[0].onclick = function(){
+		let input = document.createElement('input');
+		document.body.appendChild(input);
+		input.setAttribute("value", window.location.href);
+		input.setAttribute("readonly", "readonly");
+		input.setAttribute("style", "opacity: 0;mouse-events:none;");
+		input.select();
+		if (document.execCommand('copy')){
+			iziToast.show({
+				title: '链接已复制',
+				message: "链接已复制到剪贴板",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#2dce89',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-check',
+				timeout: 5000
+			});
+		}else{
+			iziToast.show({
+				title: '复制失败',
+				message: "请手动复制链接",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#f5365c',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-close',
+				timeout: 5000
+			});
+		}
+		document.body.removeChild(input);
+	};
+</script>
+
+
+
+	<div id="post_comment" class="card shadow-sm">
+		<div id="giscus"></div>
+<script src="https://giscus.app/client.js"
+        data-repo="zerc7/comment"
+        data-repo-id="R_kgDOGzyhVA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOGzyhVM4CREtV"
+        data-mapping="pathname"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+	</div>
+
+
+
+<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"><span class="page-navigation-extra-text"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>上一篇</span><a href="/code/" rel="prev"> 板子集</a></div><div class="post-navigation-item post-navigation-next"></div></div>
+
+
+
+
+		
+		
+		
+		
+
+					<footer id="footer" class="site-footer card shadow-sm border-0">
+						
+						<div>Theme <a target="_blank" rel="noopener" href="https://github.com/solstice23/hexo-theme-argon"><strong>Argon</strong></a> | Powered by Hexo</div>
+						<span id="busuanzi_container_site_uv">
+							本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+						</span>
+					</footer>
+				</main>
+			</div>
+		</div>
+		
+<script src="/argontheme.js"></script>
+
+		
+		
+		
+			<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+			<script src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+			<script src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script>
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body,{
+						delimiters: [
+							{left: "$$", right: "$$", display: true},
+							{left: "$", right: "$", display: false},
+							{left: "\\(", right: "\\)", display: false}
+						]
+					});
+				});
+			</script>
+		
+
+		
+			<script>
+				var argonEnableCodeHighlight = true;
+			</script>
+			
+<link rel="stylesheet" href="/assets/vendor/highlight/styles/onedark.css">
+
+		
+
+	</div>
+</div>
+<noscript>
+	<style>
+		article img.lazyload[src^="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPg"]{display: none;}
+		.comment-item-text .comment-sticker.lazyload{display: none;}
+	</style>
+</noscript>
+</body>
+
+
+
+</html>
+

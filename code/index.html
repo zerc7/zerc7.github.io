@@ -1,0 +1,2857 @@
+<!DOCTYPE html>
+
+<html class="amoled-dark use-big-shadow use-serif article-header-style-1">
+<head>
+	
+	<title>板子集 - zerc</title>
+	<meta charset="utf-8">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<meta name="description" content="前言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="板子集">
+<meta property="og:url" content="https://zerc.tk/code/index.html">
+<meta property="og:site_name" content="zerc">
+<meta property="og:description" content="前言">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-15T15:42:26.000Z">
+<meta property="article:modified_time" content="2024-02-22T00:10:25.000Z">
+<meta property="article:author" content="zerc">
+<meta property="article:tag" content="oi">
+<meta name="twitter:card" content="summary">
+
+	<meta name="theme-color" content="#2196F3">
+	<meta name="theme-color-rgb" content="33,150,243">
+	<meta name="theme-color-origin" content="#2196F3">
+	<meta name="argon-enable-custom-theme-color" content="true">
+	<meta name="theme-card-radius" content="7">
+	<meta name="theme-version" content="1.0.2">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+	
+<link rel="stylesheet" href="/assets/argon_css_merged.css">
+
+	
+<link rel="stylesheet" href="/style.css">
+
+	
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Open+Sans:300,400,600,700|Noto+Serif+SC:300,600&display=swap.css">
+
+	
+<script src="/assets/argon_js_merged.js"></script>
+
+	
+<script src="/assets/js/argon.min.js"></script>
+
+	
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+	
+
+	<script>
+		var argonConfig = {
+			language: "zh_CN",
+			
+				zoomify: {
+					duration: 200,
+					easing: "cubic-bezier(0.4,0,0,1)",
+					scale: 0.9
+				},
+			
+			pangu: "true",
+			
+				lazyload: {
+					threshold: 800,
+					effect: "fadeIn"
+				},
+			
+			disable_pjax: false,
+			headroom: true
+		}
+	</script>
+	<script>
+		var darkmodeAutoSwitch = "false";
+		function setDarkmode(enable){
+			if (enable == true){
+				$("html").addClass("darkmode");
+			}else{
+				$("html").removeClass("darkmode");
+			}
+			$(window).trigger("scroll");
+		}
+		function toggleDarkmode(){
+			if ($("html").hasClass("darkmode")){
+				setDarkmode(false);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "false");
+			}else{
+				setDarkmode(true);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "true");
+			}
+		}
+		if (sessionStorage.getItem("Argon_Enable_Dark_Mode") == "true"){
+			setDarkmode(true);
+		}
+		function toggleDarkmodeByPrefersColorScheme(media){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			if (media.matches){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		function toggleDarkmodeByTime(){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			let hour = new Date().getHours();
+			if (hour < 7 || hour >= 22){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		if (darkmodeAutoSwitch == 'system'){
+			var darkmodeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+			darkmodeMediaQuery.addListener(toggleDarkmodeByPrefersColorScheme);
+			toggleDarkmodeByPrefersColorScheme(darkmodeMediaQuery);
+		}
+		if (darkmodeAutoSwitch == 'time'){
+			toggleDarkmodeByTime();
+		}
+		if (darkmodeAutoSwitch == 'alwayson'){
+			setDarkmode(true);
+		}
+
+		function toggleAmoledDarkMode(){
+			$("html").toggleClass("amoled-dark");
+			if ($("html").hasClass("amoled-dark")){
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "true");
+			}else{
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "false");
+			}
+		}
+		if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "true"){
+			$("html").addClass("amoled-dark");
+		}else if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "false"){
+			$("html").removeClass("amoled-dark");
+		}
+	</script>
+	<script>
+		if (navigator.userAgent.indexOf("Safari") !== -1 && navigator.userAgent.indexOf("Chrome") === -1){
+			$("html").addClass("using-safari");
+		}
+	</script>
+
+	
+		
+<script src="/assets/vendor/smoothscroll/smoothscroll3.min.js"></script>
+
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+
+<style id="themecolor_css">
+	
+	:root{
+		--themecolor: #2196F3;
+		--themecolor-dark0: #1590F2;
+		--themecolor-dark: #0D8AEE;
+		--themecolor-dark2: #0C7CD5;
+		--themecolor-dark3: #0A6EBD;
+		--themecolor-light: #51ADF6;
+		--themecolor-rgbstr: 33,150,243;
+		--themecolor-gradient: linear-gradient(150deg,var(--themecolor-light) 15%, var(--themecolor) 70%, var(--themecolor-dark0) 94%);
+
+	}
+</style>
+<style id="theme_cardradius_css">
+	:root{
+		--card-radius: 7px;
+	}
+</style>
+
+<body>
+<div id="toolbar">
+	<header class="header-global">
+		<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light bg-primary headroom--not-bottom headroom--not-top headroom--pinned">
+			<div class="container">
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand" href="/">zerc blog</a>
+				<div class="navbar-collapse collapse" id="navbar_global">
+					<div class="navbar-collapse-header">
+						<div class="row">
+							<div class="col-6 collapse-brand"></div>
+							<div class="col-6 collapse-close">
+								<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+									<span></span>
+									<span></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<ul id="navbar_search_btn_mobile" class="navbar-nav align-items-lg-center ml-lg-auto">
+						<li class="nav-item" data-toggle="modal" data-target="#argon_search_modal" style="padding-left: 5px;">
+							<a class="nav-link nav-link-icon">
+								<i class="fa fa-search"></i>
+								<span class="nav-link-inner--text d-lg-none">搜索</span>
+							</a>
+						</li>
+					</ul>
+					
+							<ul class='navbar-nav navbar-nav-hover align-items-lg-center'>
+								
+										<li class='nav-item'>
+											<a href='/hide' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Hidepage</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/archives' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Archives</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/friends' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Friends</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/notice' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>Notice</span>
+											</a>
+											
+										</li>
+									
+										<li class='nav-item'>
+											<a href='/about' class='nav-link' >
+												<i class='ni ni-book-bookmark d-lg-none'></i>
+												<span class='nav-link-inner--text'>About</span>
+											</a>
+											
+										</li>
+									
+							</ul>
+						
+					<ul class="navbar-nav align-items-lg-center ml-lg-auto">
+						<li class="nav-item" data-toggle="modal" data-target="#argon_search_modal" id="navbar_search_btn_pc">
+							<a class="nav-link nav-link-icon">
+								<i class="fa fa-search"></i>
+								<span class="nav-link-inner--text d-lg-none">搜索</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="navbar_menu_mask" data-toggle="collapse" data-target="#navbar_global"></div>
+			</div>
+		</nav>
+	</header>
+</div>
+<div class="modal fade" id="argon_search_modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">搜索</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<!-- TODO -->
+<div class="form-group mb-3">
+	<div class="input-group input-group-alternative">
+		<div class="input-group-prepend">
+			<span class="input-group-text"><i class="fa fa-search"></i></span>
+		</div>
+		<input id="local-search-input" class="form-control" placeholder="搜索什么..." type="text"  autocomplete="off" data-search.path="search.xml" data-config.root="/">
+	</div>
+	<div id="local-search-result"></div>
+</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!--Banner-->
+<section id="banner" class="banner section section-lg section-shaped">
+	<div class="shape shape-style-1 shape-success">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	
+	<div id="banner_container" class="banner-container container text-center">
+		
+			<div class="banner-title text-white" data-text="zerc" data-interval=""><span class="banner-title-inner">&nbsp;</span>
+		
+		<span class="banner-subtitle d-block">an oier</span></div>
+	</div>
+	
+		<style>
+			section.banner{
+				background-image: url(/assets/img/banner.jpg) !important;
+			}
+		</style>
+	
+</section>
+
+
+	<style>
+		#content:before {
+			content: '';
+			display: block;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -2;
+			background: url(https://s2.loli.net/2024/02/06/4LcDYjs3CoZOMeG.png);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: ;
+			transition: opacity .5s ease;
+		}
+		html.darkmode #content:before{
+			filter: brightness(0.65);
+		}
+		
+			#content:after {
+				content: '';
+				display: block;
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -2;
+				background: url(https://s2.loli.net/2024/02/06/4LcDYjs3CoZOMeG.png);
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				opacity: 0;
+				transition: opacity .5s ease;
+			}
+			html.darkmode #content:after {
+				opacity: ;
+			}
+			html.darkmode #content:before {
+				opacity: 0;
+			}
+		
+		
+			#banner, #banner .shape {
+				background: transparent !important;
+			}
+		
+	</style>
+
+
+
+
+<div id="float_action_buttons" class="float-action-buttons fabtns-unloaded">
+	<button id="fabtn_toggle_sides" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-hidden="true" tooltip-move-to-left="移至左侧" tooltip-move-to-right="移至右侧">
+		<span class="btn-inner--icon fabtn-show-on-right"><i class="fa fa-caret-left"></i></span>
+		<span class="btn-inner--icon fabtn-show-on-left"><i class="fa fa-caret-right"></i></span>
+	</button>
+	<button id="fabtn_back_to_top" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-label="Back To Top" tooltip="回到顶部">
+		<span class="btn-inner--icon"><i class="fa fa-angle-up"></i></span>
+	</button>
+	<button id="fabtn_go_to_comment" class="btn btn-icon btn-neutral fabtn shadow-sm d-none" type="button" <-% theme.fab_show_gotocomment_button ? "" : "style='display: none;'"  aria-label="Comment" tooltip="评论">
+		<span class="btn-inner--icon"><i class="fa fa-comment-o"></i></span>
+	</button>
+	<button id="fabtn_toggle_darkmode" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" <-% theme.fab_show_darkmode_button ? "" : "style='display: none;'"  aria-label="Toggle Darkmode" tooltip-darkmode="夜间模式" tooltip-blackmode="暗黑模式" tooltip-lightmode="日间模式">
+		<span class="btn-inner--icon"><i class="fa fa-moon-o"></i><i class='fa fa-lightbulb-o'></i></span>
+	</button>
+	<button id="fabtn_toggle_blog_settings_popup" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" <-% theme.fab_show_settings_button ? "" : "style='display: none;'"  aria-label="Open Blog Settings Menu" tooltip="设置">
+		<span class="btn-inner--icon"><i class="fa fa-cog"></i></span>
+	</button>
+	<div id="fabtn_blog_settings_popup" class="card shadow-sm" style="opacity: 0;" aria-hidden="true">
+		<div id="close_blog_settings"><i class="fa fa-close"></i></div>
+		<div class="blog-setting-item mt-3">
+			<div style="transform: translateY(-4px);"><div id="blog_setting_toggle_darkmode_and_amoledarkmode" tooltip-switch-to-darkmode="切换到夜间模式" tooltip-switch-to-blackmode="切换到暗黑模式"><span>夜间模式</span><span>暗黑模式</span></div></div>
+			<div style="flex: 1;"></div>
+			<label id="blog_setting_darkmode_switch" class="custom-toggle">
+				<span class="custom-toggle-slider rounded-circle"></span>
+			</label>
+		</div>
+		<div class="blog-setting-item mt-3">
+			<div style="flex: 1;">字体</div>
+			<div>
+				<button id="blog_setting_font_sans_serif" type="button" class="blog-setting-font btn btn-outline-primary blog-setting-selector-left">Sans Serif</button><button id="blog_setting_font_serif" type="button" class="blog-setting-font btn btn-outline-primary blog-setting-selector-right">Serif</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mt-3">
+			<div style="flex: 1;">阴影</div>
+			<div>
+				<button id="blog_setting_shadow_small" type="button" class="blog-setting-shadow btn btn-outline-primary blog-setting-selector-left">浅阴影</button><button id="blog_setting_shadow_big" type="button" class="blog-setting-shadow btn btn-outline-primary blog-setting-selector-right">深阴影</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mt-3 mb-3">
+			<div style="flex: 1;">滤镜</div>
+			<div id="blog_setting_filters" class="ml-3">
+				<button id="blog_setting_filter_off" type="button" class="blog-setting-filter-btn ml-0" filter-name="off">关闭</button>
+				<button id="blog_setting_filter_sunset" type="button" class="blog-setting-filter-btn" filter-name="sunset">日落</button>
+				<button id="blog_setting_filter_darkness" type="button" class="blog-setting-filter-btn" filter-name="darkness">暗化</button>
+				<button id="blog_setting_filter_grayscale" type="button" class="blog-setting-filter-btn" filter-name="grayscale">灰度</button>
+			</div>
+		</div>
+		<div class="blog-setting-item mb-3">
+			<div id="blog_setting_card_radius_to_default" style="cursor: pointer;" tooltip="恢复默认">圆角</div>
+			<div style="flex: 1;margin-left: 20px;margin-right: 8px;transform: translateY(2px);">
+				<div id="blog_setting_card_radius"></div>
+			</div>
+		</div>
+		
+			<div class="blog-setting-item mt-1 mb-3">
+				<div style="flex: 1;">主题色</div>
+				<div id="theme-color-picker" class="ml-3"></div>
+			</div>
+		
+	</div>
+	<button id="fabtn_open_sidebar" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-label="Open Sidebar Menu" tooltip="菜单">
+		<span class="btn-inner--icon"><i class="fa fa-bars"></i></span>
+	</button>
+	<button id="fabtn_reading_progress" class="btn btn-icon btn-neutral fabtn shadow-sm" type="button" aria-hidden="true" tooltip="阅读进度">
+		<div id="fabtn_reading_progress_bar" style="width: 0%;"></div>
+		<span id="fabtn_reading_progress_details">0%</span>
+	</button>
+</div>
+
+<div id="content" class="site-content">
+
+
+
+
+
+
+
+
+
+<div class="page-information-card-container">
+	
+</div>
+
+<div id="sidebar_mask"></div>
+<aside id="leftbar" class="leftbar widget-area" role="complementary">
+		
+			<div id="leftbar_announcement" class="card bg-white shadow-sm border-0">
+				<div class="leftbar-announcement-body">
+					<div class="leftbar-announcement-title text-white">公告</div>
+					<div class="leftbar-announcement-content text-white">评论需要 F5 刷新显示 qwq, KaTex 炸了的公式随缘修（咕咕咕）。</div>
+				</div>
+			</div>
+		
+		<div id="leftbar_part1" class="widget widget_search card bg-white shadow-sm border-0">
+			<div class="leftbar-banner card-body">
+				<span class="leftbar-banner-title text-white">zerc</span>
+				
+				
+					<span class="leftbar-banner-subtitle text-white"><span class='hitokoto'></span></span>
+				
+			</div>
+			
+			
+				<ul id='leftbar_part1_menu' class='leftbar-menu'>
+					<li class='leftbar-menu-item'><a href='/'>首页</a></li><li class='leftbar-menu-item'><a href='/archives'>归档</a></li>
+				</ul>
+			
+			<div class="card-body text-center leftbar-search-button">
+				<button id="leftbar_search" class="btn btn-secondary btn-lg active btn-sm btn-block border-0" role="button" data-toggle="modal" data-target="#argon_search_modal" >
+					<i class="menu-item-icon fa fa-search mr-0"></i> 搜索
+				</button>
+			</div>
+		</div>
+		<div id="leftbar_part2" class="widget widget_search card bg-white shadow-sm border-0">
+			<div id="leftbar_part2_inner" class="card-body">
+				
+				<div class="nav-wrapper" style="padding-top: 5px;">
+	                <ul class="nav nav-pills nav-fill" role="tablist">
+						
+							<li class="nav-item sidebar-tab-switcher">
+								<a class="active show" id="leftbar_tab_catalog_btn" data-toggle="tab" href="#leftbar_tab_catalog" role="tab" aria-controls="leftbar_tab_catalog" no-pjax>文章目录</a>
+							</li>
+						
+						<li class="nav-item sidebar-tab-switcher">
+							<a class="" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
+						</li>
+	                </ul>
+				</div>
+				<div>
+					<div class="tab-content" style="padding: 10px 10px 0 10px;">
+						
+							<div class="tab-pane fade active show" id="leftbar_tab_catalog" role="tabpanel" aria-labelledby="leftbar_tab_catalog_btn">
+								<div id="leftbar_catalog"></div>
+								<script type="text/javascript">
+									$(function () {
+										$(document).headIndex({
+											articleWrapSelector: '#post_content',
+											indexBoxSelector: '#leftbar_catalog',
+											subItemBoxClass: "index-subItem-box",
+											itemClass: "index-item",
+											linkClass: "index-link",
+											offset: 80,
+										});
+									})
+								</script>
+								
+							</div>
+						
+						<div class="tab-pane fade text-center" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
+							<img id="leftbar_overview_author_image" src="https://s2.loli.net/2022/06/23/ZrVs3f7UADaMK2N.jpg" class="img-fluid rounded-circle shadow-sm" style="width: 100px;" alt="avatar">
+							<h6 id="leftbar_overview_author_name">zerc</h6>
+							<nav class="site-state">
+								<div class="site-state-item site-state-posts">
+									<a href="/archives">
+										<span class="site-state-item-count">28</span>
+										<span class="site-state-item-name">文章</span>
+									</a>
+								</div>
+								<div class="site-state-item site-state-categories">
+									<a data-toggle="modal" data-target="#blog_categories">
+										<span class="site-state-item-count">0</span>
+										<span class="site-state-item-name">分类</span>
+									</a>
+								</div>      
+								<div class="site-state-item site-state-tags">
+									<a data-toggle="modal" data-target="#blog_tags">
+										<span class="site-state-item-count">9</span>
+										<span class="site-state-item-name">标签</span>
+									</a>
+								</div>
+							</nav>
+							
+									<div class="site-author-links">
+										
+											<div class='site-author-links-item'>
+												<a href="https://www.luogu.com.cn/user/581312" rel='noopener' target='_blank'>luogu</a>
+											</div>
+										
+											<div class='site-author-links-item'>
+												<a href="https://github.com/zerc7" rel='noopener' target='_blank'>github</a>
+											</div>
+										
+									</div>
+								
+							
+									<div class='site-friend-links'>
+										<div class='site-friend-links-title'><i class='fa fa-fw fa-link'></i> Links</div>
+										<ul class='site-friend-links-ul'>
+											
+												<li class='site-friend-links-item'>
+													<a href='https://www.pozhu.cf' rel='noopener' target='_blank'>Pozhu(blog 现已寄)</a>
+												</li>
+											
+										</ul>
+									</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</aside>
+<div class="modal fade" id="blog_categories" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">分类</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="blog_tags" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">标签</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<a class="badge badge-secondary tag" href="/tags/daily/" rel="tag">daily <span class="tag-num">3</span></a><a class="badge badge-secondary tag" href="/tags/dp/" rel="tag">dp <span class="tag-num">2</span></a><a class="badge badge-secondary tag" href="/tags/ds/" rel="tag">ds <span class="tag-num">1</span></a><a class="badge badge-secondary tag" href="/tags/math/" rel="tag">math <span class="tag-num">5</span></a><a class="badge badge-secondary tag" href="/tags/oi/" rel="tag">oi <span class="tag-num">19</span></a><a class="badge badge-secondary tag" href="/tags/todo/" rel="tag">todo <span class="tag-num">1</span></a><a class="badge badge-secondary tag" href="/tags/travels/" rel="tag">travels <span class="tag-num">2</span></a><a class="badge badge-secondary tag" href="/tags/vscode/" rel="tag">vscode <span class="tag-num">1</span></a><a class="badge badge-secondary tag" href="/tags/%E9%97%B2%E8%B0%88/" rel="tag">闲谈 <span class="tag-num">2</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+		
+			
+	<article class="post post-full card bg-white shadow-sm border-0 post-preview">
+	<header class="post-header text-center">
+		
+		<a class="post-title" href="/code/">板子集</a>
+		<div class="post-meta">
+			
+						
+						<div class="post-meta-detail post-meta-detail-time">
+							<i class="fa fa-clock-o" aria-hidden="true"></i>
+							<time title="发布于 2022-2-15 15:42:26 | 编辑于 2024-2-22 0:10:25">2022-2-15 15:42
+							</time>
+						</div>
+					
+						
+							<div class="post-meta-devide">|</div>
+						
+						<div class="post-meta-detail post-meta-detail-words">
+							<i class="fa fa-file-word-o" aria-hidden="true"></i>
+							10.3k 字
+						</div>
+					
+		</div>
+		
+	</header>
+
+	<div class="post-content" id="post_content">
+		<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><span id="more"></span>
+
+
+<h3 id="码风解释"><a href="#码风解释" class="headerlink" title="码风解释"></a>码风解释</h3><p><strong>define</strong></p>
+<pre><code class="cpp">typedef long long llt;
+const int SIZ = 1e111;
+const double eps = 1e-111;
+</code></pre>
+<h3 id="关于时间复杂度"><a href="#关于时间复杂度" class="headerlink" title="关于时间复杂度"></a>关于时间复杂度</h3><p>注：from：<a target="_blank" rel="noopener" href="https://alien.blog.csdn.net/article/details/105907997?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_aa&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1.pc_relevant_aa&utm_relevant_index=1">OI竞赛的时间复杂度与数据要求_初级新手村-CSDN博客</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">时间复杂度</th>
+<th align="center">数据范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$O(n)$</td>
+<td align="center">$n \leq 10^8$</td>
+</tr>
+<tr>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$n \leq 10^6$</td>
+</tr>
+<tr>
+<td align="center">$O(n \sqrt n)$</td>
+<td align="center">$n \leq 10^5$</td>
+</tr>
+<tr>
+<td align="center">$O(n^2)$</td>
+<td align="center">$n \leq 5 \times 10^3$</td>
+</tr>
+<tr>
+<td align="center">$O(n^3)$</td>
+<td align="center">$n \leq 300$</td>
+</tr>
+<tr>
+<td align="center">$O(2^n)$</td>
+<td align="center">$n \leq 25$</td>
+</tr>
+<tr>
+<td align="center">$O(n!)$</td>
+<td align="center">$n \leq 11$</td>
+</tr>
+</tbody></table>
+<h2 id="基本算法"><a href="#基本算法" class="headerlink" title="基本算法"></a>基本算法</h2><h3 id="快读"><a href="#快读" class="headerlink" title="快读"></a>快读</h3><pre><code class="cpp">int Read() &#123;
+    int x = 0, f = 1; char ch = getchar();
+    while (ch &lt; &#39;0&#39; || ch &gt; &#39;9&#39;) 
+        &#123;if (ch == &#39;-&#39;) f = -1; ch = getchar();&#125;
+    while (ch &gt;= &#39;0&#39; &amp;&amp; ch &lt;= &#39;9&#39;)
+        x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (ch ^ 48), ch = getchar();
+    return x * f;
+&#125;
+</code></pre>
+<p><strong>__int128</strong></p>
+<pre><code class="cpp">i128 read() &#123;
+    i128 x = 0, f = 1; char ch = getchar();
+    while (ch &lt; &#39;0&#39; || ch &gt; &#39;9&#39;) 
+        &#123;if (ch == &#39;-&#39;) f = -1; ch = getchar();&#125;
+    while (ch &gt;= &#39;0&#39; &amp;&amp; ch &lt;= &#39;9&#39;)
+        x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (ch ^ 48), ch = getchar();
+    return x * f;
+&#125;
+
+void print(i128 x) &#123;
+    if (x &lt; 0) x = -x, putchar(&#39;-&#39;);
+    if (x &gt; 9) print(x / 10);
+    putchar(x % 10 + &#39;0&#39;);
+&#125;
+</code></pre>
+<p><strong>一种比较 ex 的输入方式</strong></p>
+<pre><code class="cpp">int read() &#123;
+    int x = 0,f = 1;
+    char ch = getchar();
+    while(ch &lt;  &#39;0&#39; || ch &gt;  &#39;9&#39;) &#123;
+        if (ch == &#39;\n&#39;) return INF;
+        if (ch == &#39;-&#39;) f = -1;
+        ch = getchar();
+    &#125;
+    while(ch &gt;= &#39;0&#39; &amp;&amp; ch &lt;= &#39;9&#39;)
+        x = (x&lt;&lt;3) + (x&lt;&lt;1) + (ch^48), ch = getchar();
+    return x * f;
+&#125;
+</code></pre>
+<h3 id="高精"><a href="#高精" class="headerlink" title="高精"></a>高精</h3><p>显然这不是我写的</p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+#define MAXN 1005
+#define BASE 10000
+using namespace std;
+struct hp&#123;
+    int len,s[MAXN];
+    hp()&#123;
+        len=1;
+        memset(s,0,sizeof s);
+    &#125;
+    inline void write(char a[])&#123;
+        int lena=strlen(a);
+        int k=1;
+        for(int i=0;i&lt;lena;++i)
+        &#123;
+            s[len]+=(a[lena-i-1]-&#39;0&#39;)*k;
+            k*=10;
+            if(k==BASE)++len,k=1;
+        &#125;
+    &#125;
+    inline void zero()&#123;
+        while(len&gt;1&amp;&amp;s[len]==0)
+            --len;
+    &#125;
+    inline void read()&#123;
+        char a[4*MAXN];
+        scanf(&quot;%s&quot;,a);
+        write(a);
+    &#125;
+    inline void print()&#123;
+        zero();
+        printf(&quot;%d&quot;,s[len]);
+        for(int i=len-1;i&gt;=1;--i)
+            printf(&quot;%04d&quot;,s[i]);
+    &#125;
+    inline hp operator = (const int b)&#123;
+        char a[MAXN*4];
+        sprintf(a,&quot;%d&quot;,b);
+        write(a);
+        return *this;
+    &#125;
+    inline hp operator + (hp b)const&#123;
+        hp c;
+        c.len=max(len,b.len)+1;
+        for(int i=1;i&lt;c.len;++i)
+        &#123;
+            c.s[i]+=s[i]+b.s[i]; 
+            c.s[i+1]=c.s[i]/BASE;
+            c.s[i]%=BASE;
+        &#125;
+        c.zero();
+        return c;
+    &#125;
+    inline hp operator - (hp b)&#123;
+        hp c;
+        c.len=len;
+        for(int i=1;i&lt;=c.len;++i)
+        &#123;
+            c.s[i]=s[i]-b.s[i];
+            if(c.s[i]&lt;0)
+            &#123;
+                --s[i+1];
+                c.s[i]+=BASE;
+            &#125;
+        &#125;
+        c.zero();
+        return c;
+    &#125;
+    inline hp operator * (hp b)const&#123;
+        hp c;
+        c.len=len+b.len+1;
+        for(int i=1;i&lt;=len;++i)
+        &#123;
+            int k=0;
+            for(int j=1;j&lt;=b.len;j++)
+            &#123;
+                c.s[i+j-1]+=s[i]*b.s[j]+k;
+                k=c.s[i+j-1]/BASE;
+                c.s[i+j-1]%=BASE;
+            &#125;
+            c.s[i+b.len]=k;
+        &#125;
+        c.zero();
+        return c;
+    &#125;
+    inline hp operator / (hp b)const&#123;
+        hp c;
+        hp temp;
+        c.len=len;
+        for(int i=len;i&gt;=1;--i)
+        &#123;
+            temp=temp*BASE+s[i];
+            int l=0,r=BASE,ans=0;
+            while(l&lt;=r)
+            &#123;
+                int mid=(l+r)/2;
+                if(b*mid&lt;=temp)
+                &#123;
+                    ans=mid;
+                    l=mid+1;
+                &#125;
+                else
+                    r=mid-1;
+            &#125;
+            temp=temp-b*ans;
+            c.s[i]=ans;
+        &#125;
+        c.zero();
+        return c;
+    &#125;
+    inline hp operator % (hp b)&#123;
+        return *this-*this/b*b;
+    &#125;
+    inline hp operator + (int b)const&#123;
+        hp c;
+        c=b;
+        return *this+c;
+    &#125;
+    inline hp operator - (int b)&#123;
+        hp c;
+        c=b;
+        return *this-c;
+    &#125;
+    inline hp operator * (int b)const&#123;
+        hp c;
+        c=b;
+        return *this*c;
+    &#125;
+    inline hp operator / (int b)const&#123;
+        hp c;
+        c=b;
+        return *this/c;
+    &#125;
+    inline hp operator % (int b)&#123;
+        hp c;
+        c=b;
+        return *this%c;
+    &#125;
+    inline bool operator &lt;  (hp b)const&#123;
+        if(len&lt;b.len) return true;
+        if(len&gt;b.len) return false;
+        for(int i=len;i&gt;=1;--i)
+        &#123;
+            if(s[i]&lt;b.s[i]) return true;
+            else if(s[i]&gt;b.s[i]) return false;
+        &#125;
+        return false;
+    &#125;
+    inline bool operator &gt;  (hp b)const&#123;
+        return b&lt;*this;
+    &#125;
+    inline bool operator &lt;= (hp b)const&#123;
+        return !(*this&gt;b);
+    &#125;
+    inline bool operator &gt;= (hp b)const&#123;
+        return !(*this&lt;b);
+    &#125;
+    inline bool operator == (hp b)const&#123;
+        return (!(b&gt;*this)&amp;&amp;!(b&lt;*this));
+    &#125;
+    inline bool operator != (hp b)const&#123;
+        return !(b==*this);
+    &#125;
+    inline bool operator &lt;  (int b)const&#123;
+        hp c;
+        c=b;
+        return *this&lt;c;
+    &#125;
+    inline bool operator &gt;  (int b)const&#123;
+        hp c;
+        c=b;
+        return *this&gt;c;
+    &#125;
+    inline bool operator &lt;= (int b)const&#123;
+        hp c;
+        c=b;
+        return *this&lt;=c;
+    &#125;
+    inline bool operator &gt;= (int b)const&#123;
+        hp c;
+        c=b;
+        return *this&gt;=c;
+    &#125;
+    inline bool operator == (int b)const&#123;
+        hp c;
+        c=b;
+        return *this==c;
+    &#125;
+    inline bool operator != (int b)const&#123;
+        hp c;
+        c=b;
+        return *this!=c;
+    &#125;
+&#125;a, b, sum;
+int main()&#123;
+    a.read();
+    b.read();
+    sum = a + b;
+    sum.print();
+    return 0;
+&#125;
+</code></pre>
+<p><strong>FFT A*B</strong></p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long double ldb;
+
+const int maxn = 3e6+6;
+const int mx = 3e6;
+const ldb Pi = acos(-1.0);
+
+int n, m, q = 1;
+int c[maxn];
+char aa[maxn], bb[maxn];
+
+struct Complex &#123;
+    ldb x, y;
+    friend Complex operator + (Complex a, Complex b) &#123;return &#123;a.x+b.x, a.y+b.y&#125;;&#125;
+    friend Complex operator - (Complex a, Complex b) &#123;return &#123;a.x-b.x, a.y-b.y&#125;;&#125;
+    friend Complex operator * (Complex a, Complex b) &#123;return &#123;a.x*b.x-a.y*b.y, a.x*b.y+a.y*b.x&#125;;&#125;
+&#125; x1[maxn], x2[maxn];
+
+void change(Complex x[], int len) &#123;
+    for (int i=1, j=len/2, k; i &lt; len-1; i++) &#123;
+        if (i &lt; j) swap(x[i], x[j]);
+        k = len / 2;
+        while (j &gt;= k) j -= k, k /= 2;
+        j += k;
+    &#125;
+&#125;
+
+void FFT(Complex x[], int len, int im) &#123;
+    change(x, len);
+    for (int d = 1; d &lt;= len; d &lt;&lt;= 1) &#123;
+        Complex wn = &#123;cos(Pi * 2 / d), sin(im * 2 * Pi / d)&#125;;
+        for (int j = 0; j &lt; len; j += d) &#123;
+            Complex w = &#123;1, 0&#125;;
+            for (int k = j; k &lt; j + d / 2; k++) &#123;
+                Complex u = x[k], t = w * x[k + d / 2];
+                x[k] = u + t;
+                x[k + d / 2] = u - t;
+                w = w * wn;
+            &#125;
+        &#125;
+    &#125;
+    if (im == -1)
+        for (int i = 0; i &lt; len; i++)
+            x[i].x /= len;
+&#125;
+
+int main() &#123;
+    cin &gt;&gt; aa &gt;&gt; bb;
+    n = strlen(aa); for (int i = 0; i &lt; n; i++) x1[n-i-1] = &#123;(ldb)aa[i]-48, 0&#125;; 
+    m = strlen(bb); for (int i = 0; i &lt; m; i++) x2[m-i-1] = &#123;(ldb)bb[i]-48, 0&#125;;
+    while(q &lt;= (n + m)) q &lt;&lt;= 1;
+    FFT(x1, q, 1), FFT(x2, q, 1);
+    for (int i = 0; i &lt;= q; i++) x1[i] = x1[i] * x2[i];
+    FFT(x1, q, -1);
+    for (int i = 0; i &lt;= q; i++) &#123;
+        c[i] += (int)(x1[i].x + 0.5);
+        if (c[i] &gt;= 10)
+            c[i+1] += c[i] / 10, c[i] %= 10, q += (i == q);
+    &#125;
+    while (!c[q] &amp;&amp; q) q--; q++;
+    while (--q &gt;= 0) printf(&quot;%d&quot;, c[q]); puts(&quot;&quot;);
+    return 0;
+&#125;
+</code></pre>
+<h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3><p><strong>二进制操作</strong></p>
+<pre><code class="cpp">(n&gt;&gt;k)&amp;1;     // Get_bit
+n&amp;((1&lt;&lt;k)-1); // Get_zeroTOk
+n|(1&lt;&lt;k);     // Change_to_one
+n&amp;(~(1&lt;&lt;k));  // Change_to_zero
+n^(1&lt;&lt;k);     // Change_xor
+// STL 大法好
+// bitset &lt;=&gt; int / long long
+// like: num = 2147483647;
+bitset&lt;SIZ&gt; num;
+num.count();
+num.size();
+num.any();
+num.all();
+num.to_ullong();
+</code></pre>
+<p><strong>快速幂</strong></p>
+<pre><code class="cpp">llt FastPower (llt a, llt b, llt p) &#123;
+    llt res = 1;
+    for( ; b; b &gt;&gt;= 1, a = a * a % p)
+        if(b &amp; 1) res = res * a % p;
+    return res;
+&#125;
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1226">P1226 【模板】快速幂||取余运算</a></p>
+<p><strong>龟(慢)速乘</strong></p>
+<pre><code class="cpp">llt SlowMul (llt a, llt b, llt p) &#123;
+    llt res = 0;
+    for( ; b; b &gt;&gt;= 1, a = a * 2 % p) 
+        if(b &amp; 1) res = (res + a) % p;
+    return res;
+&#125;
+</code></pre>
+<p><strong>int128</strong></p>
+<pre><code class="cpp">const llt p = 1e18
+struct int128 &#123;llt hig, low;&#125;;
+int128 Max (int128 a, int128 b) &#123;
+    if (a.hig &gt; b.hig) return a;
+    if (a.hig &lt; b.hig) return b;
+    if (a.low &gt; b.low) return a;
+    if (a.low &lt; b.low) return b;
+    return a;
+&#125;
+int128 operator + (int128 a, int128 b) &#123;
+    int128 c;
+    c.low = (a.low + b.low) % p;
+    c.hig = (a.hig + b.hig) + (a.low + b.low) / p;
+    return c;
+&#125;
+// b == 2;
+int128 operator * (int128 a, int b) &#123;
+    int128 c;
+    c.low = (a.low + b.low) % p;
+    c.hig = (a.hig + b.hig) + (a.low + b.low) / p;
+    return c;
+&#125;
+// 低位补零
+void print (int128 a) &#123;
+    if (a.hig == 0) printf(&quot;%lld&quot;, a.low);
+    else printf(&quot;%lld%018lld&quot;, a.hig, a.low);
+&#125;
+</code></pre>
+<p><strong>Lowbit</strong></p>
+<pre><code class="cpp">int Lowbit (int n) &#123;
+    // return n &amp; (-n + 1);
+    return n &amp; (-n);
+&#125;
+</code></pre>
+<p><strong>十进制取位</strong></p>
+<pre><code class="cpp">inline int GetNum (llt x, int i) &#123;   
+    x %= (llt)pow (10, i);
+    return i == 1 ? x : x / (llt)pow (10, i-1);
+&#125;
+</code></pre>
+<h3 id="HASH"><a href="#HASH" class="headerlink" title="HASH"></a>HASH</h3><pre><code class="cpp">void HASH () &#123;
+    sort (map +1, map +(n&lt;&lt;1) +1);
+    int m = unique (map +1, map +(n&lt;&lt;1) +1) - map +1;
+    for (int i = 1; i &lt;= n; i++) &#123;
+        dat[i].x = lower_bound (map+1, map+m+1, dat[i].x) - map;
+        dat[i].y = lower_bound (map+1, map+m+1, dat[i].y) - map;
+        if (dat[i].x &gt; dat[i].y) swap(dat[i].x, dat[i].y);
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="cpp">void HASH () &#123;
+    sort (b +1, b +n +1);
+    int m = unique (b +1, b +n +1) - b -1;
+    for (int i = 1; i &lt;= n; i++)
+        a[i] = lower_bound (b +1, b +m +1, a[i]) - b -1;
+&#125;
+</code></pre>
+<h3 id="前缀和与差分"><a href="#前缀和与差分" class="headerlink" title="前缀和与差分"></a>前缀和与差分</h3><p><strong>前缀和</strong></p>
+<pre><code class="cpp">scanf(&quot;%d&quot;, &amp;n);
+for(int i = 1; i &lt;= n; i++) &#123;
+    scanf(&quot;%d&quot;, &amp;a[i]);
+    pre[i] = pre[i-1] + a[i];
+&#125;
+</code></pre>
+<h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><p><strong>二分答案</strong></p>
+<pre><code class="cpp">while(l &lt;= r) &#123;
+    int mid = (l + r) &gt;&gt; 1;
+    if(check(mid)) l = mid + 1;
+    else r = mid - 1;
+&#125;
+printf(&quot;%d\n&quot;, r);
+</code></pre>
+<pre><code class="cpp">bool Check (int x) &#123;
+    // ···
+&#125;
+int main() &#123;
+    // ···
+    while(l &lt;= r) &#123;
+        int mid = (l + r) &gt;&gt; 1;
+        if(Check(mid)) l = mid + 1;
+        else r = mid - 1;
+    &#125;
+    printf(&quot;%d\n&quot;, r); // ans
+    // ···
+&#125;
+</code></pre>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p><strong>sort</strong> $O(n\ logn)$</p>
+<pre><code class="cpp">sort(a + 1, a + n + 1);
+</code></pre>
+<h3 id="倍增"><a href="#倍增" class="headerlink" title="倍增"></a>倍增</h3><p><strong>ST 表</strong></p>
+<pre><code class="cpp">int query(int l, int r)&#123;
+    int k = log2(r - l + 1);
+    return max(f[l][k], f[r - (1&lt;&lt;k) + 1][k]);
+&#125;
+int main()&#123;
+    for(int i = 1; i &lt;= n; i++)
+        f[i][0]=read();
+    for(int j = 1; j &lt;= 17; j++)
+        for(int i = 1; i+(1&lt;&lt;j)-1 &lt;= n; i++)
+            f[i][j] = max(f[i][j-1], f[i+(1&lt;&lt;(j-1))][j-1]);
+&#125;
+</code></pre>
+<p><strong>LCA</strong></p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+#define MAXN 500500
+using namespace std;
+int n,m,s,tot;
+int head[MAXN],dep[MAXN],p[MAXN][21];
+struct node&#123;
+    int v,nxt;
+&#125;e[MAXN*2];
+void add(int u,int v)&#123;
+    e[++tot].v=v;
+    e[tot].nxt=head[u];
+    head[u]=tot;
+&#125;
+void dfs(int u,int fa)&#123;
+    dep[u]=dep[fa]+1;
+    p[u][0]=fa;
+    for(int i=1;(1&lt;&lt;i) &lt;= dep[u];i++)&#123;
+        p[u][i]=p[ p[u][i-1] ][i-1];
+    &#125;
+    for(int i=head[u];i!=-1;i=e[i].nxt)&#123;
+        if(e[i].v!=fa)dfs(e[i].v,u);
+    &#125;
+&#125;
+int lca(int x,int y)&#123;
+    if(dep[x] &gt; dep[y])swap(x,y);
+    for(int i=20;i&gt;=0;i--)&#123;
+        if(dep[x] &lt;= dep[y]- (1&lt;&lt;i) )&#123;
+            y=p[y][i];
+        &#125;
+    &#125;
+    if(x==y)return x;
+    for(int i=20;i&gt;=0;i--)&#123;
+        if(p[x][i]==p[y][i])continue;
+        else &#123;
+            x=p[x][i];y=p[y][i];
+        &#125;
+    &#125;
+    return p[x][0];
+&#125;
+int main()&#123;
+    memset(head,-1,sizeof(head));
+    int a,b;
+    scanf(&quot;%d%d%d&quot;,&amp;n,&amp;m,&amp;s);
+    for(int i=1;i&lt;n;i++)&#123;
+        scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+        add(a,b);add(b,a);
+    &#125;
+    dfs(s,0);
+    for(int i=1;i&lt;=m;i++)&#123;
+        scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+        printf(&quot;%d\n&quot;,lca(a,b));
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><pre><code class="cpp">int find (int x) &#123;
+    if (fa[x] == x) return x;
+    else return fa[x] = find (fa[x]);
+&#125;
+void merge (int x, int y) &#123;
+    fa[find (x)] = find (y);
+&#125;
+void init () &#123;
+    for (int i = 1; i &lt;= n&lt;&lt;1; i++)
+        fa[i] = i;
+&#125;
+</code></pre>
+<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><pre><code class="cpp">for(int i = 1; i &lt;= n; i++)
+    cin &gt;&gt; a[i];
+for(int i = 1; i &lt;= n; i++)&#123;
+    while(top &amp;&amp; a[i] &gt; a[st[top]])&#123;
+        ans[st[top]] = i;
+        top--;
+    &#125;
+    st[++top] = i;
+&#125;
+</code></pre>
+<h3 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+#define Max 1000100
+using namespace std;
+// struct node&#123;minn,maxn&#125;ans[Max];
+int n, j, k, a[Max];
+deque&lt;int&gt; q;
+int main()&#123;
+    cin &gt;&gt; n &gt;&gt; k;
+    for(int i = 1; i &lt;= n; i++)
+        cin &gt;&gt; a[i];
+    for(int i = 1; i &lt;= n; i++)&#123;
+        while(!q.empty() &amp;&amp; q.back() &gt;= a[i]) q.pop_back();
+        q.push_back(a[i]);
+        if(i-j &gt;= k &amp;&amp; a[j] == q.front())&#123;
+            j++; q.pop_front();
+        &#125;
+        if(i-j &gt;= k &amp;&amp; a[j] != q.front())&#123;
+            j++;
+        &#125;
+        if(i &gt;= k) cout &lt;&lt; q.front() &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    q.clear();
+    j = 0;
+    for(int i = 1; i &lt;= n; i++)&#123;
+        while(!q.empty() &amp;&amp; q.back() &lt;= a[i]) q.pop_back();
+        q.push_back(a[i]);
+        if(i-j &gt;= k &amp;&amp; a[j] == q.front())&#123;
+            j++; q.pop_front();
+        &#125;
+        if(i-j &gt;= k &amp;&amp; a[j] != q.front())&#123;
+            j++;
+        &#125;
+        if(i &gt;= k) cout &lt;&lt; q.front() &lt;&lt; &quot; &quot;;
+    &#125;
+&#125;
+</code></pre>
+<h3 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h3><p><strong>逆序对</strong></p>
+<pre><code class="cpp">// 树状数组
+#include&lt;bits/stdc++.h&gt;
+#define llt long long
+#define Max 500050
+using namespace std;
+int n, tre[Max], rak[Max];
+llt ans;
+struct node&#123;
+    int num, val;
+&#125;f[Max];
+bool cmp(node a, node b)&#123;
+    if(a.val == b.val) return a.num &lt; b.num;
+    else return a.val &lt; b.val;
+&#125;
+void add(int a, int b)&#123;
+    for(; a &lt;= n; a += a&amp;-a)
+        tre[a] += b;
+&#125;
+int query(int a)&#123;
+    int tot = 0;
+    for(; a; a -= a&amp;-a)
+        tot += tre[a];
+    return tot;
+&#125;
+int main()&#123;
+    cin &gt;&gt; n;
+    for(int i = 1; i &lt;= n; i++)
+        cin &gt;&gt; f[i].val, f[i].num = i;
+    sort(f + 1, f + n + 1, cmp);
+    for(int i = 1; i &lt;= n; i++)
+        rak[f[i].num] = i;
+    for(int i = 1; i &lt;= n; i++)
+        add(rak[i], 1), ans += i-query(rak[i]);
+    cout &lt;&lt; ans &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><pre><code class="cpp">#include&lt;cstdio&gt;
+#define LI (i&lt;&lt;1)
+#define RI (i&lt;&lt;1|1)
+#define llt long long
+using namespace std;
+const int siz = 1001000;
+struct Tre &#123;
+    int l, r; llt sum, tag;
+    int len() &#123;return r - l + 1;&#125;
+&#125; tre[siz];
+int n, m;
+llt data[siz];
+void push_up (int i) &#123;
+    tre[i].sum = tre[LI].sum + tre[RI].sum;
+&#125;
+void push_down (int i) &#123;
+    tre[LI].sum += tre[LI].len() * tre[i].tag;
+    tre[RI].sum += tre[RI].len() * tre[i].tag;
+    tre[LI].tag += tre[i].tag;
+    tre[RI].tag += tre[i].tag;
+    tre[i ].tag =  0;
+&#125;
+void build (int l, int r, int i) &#123;
+    tre[i].l = l, tre[i].r = r;
+    if (l == r) &#123;
+        tre[i].sum = data[l];
+        return;
+    &#125;
+    int mid = (l + r) &gt;&gt; 1;
+    build (l,   mid, LI);
+    build (mid+1, r, RI);
+    push_up (i);
+&#125;
+void change (int l, int r, llt k, int i) &#123;
+    if (l &lt;= tre[i].l &amp;&amp; tre[i].r &lt;= r) &#123;
+        tre[i].sum += tre[i].len() * k;
+        tre[i].tag += k;
+        return;
+    &#125;
+    push_down (i);
+    if (l &lt;= tre[LI].r) change (l, r, k, LI);
+    if (tre[RI].l &lt;= r) change (l, r, k, RI);
+    push_up (i);
+&#125;
+llt query (int l, int r, int i) &#123;
+    if (l &lt;= tre[i].l &amp;&amp; tre[i].r &lt;= r) &#123;
+        return tre[i].sum;
+    &#125;
+    push_down (i);
+    llt res = 0;
+    if (l &lt;= tre[LI].r) res += query (l, r, LI);
+    if (tre[RI].l &lt;= r) res += query (l, r, RI);
+    return res;
+&#125;
+int main () &#123;
+    scanf (&quot;%d%d&quot;, &amp;n, &amp;m);
+    for (int i = 1; i &lt;= n; i++)
+        scanf (&quot;%lld&quot;, &amp;data[i]);
+    build (1, n, 1);
+    for (int i = 1; i &lt;= m; i++) &#123;
+        int opt, l, r; llt k;
+        scanf (&quot;%d%d%d&quot;, &amp;opt, &amp;l, &amp;r);
+        if (opt == 1) scanf (&quot;%lld&quot;, &amp;k), change (l, r, k, 1);
+        else printf (&quot;%lld\n&quot;, query (l, r, 1));
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h3 id="莫队"><a href="#莫队" class="headerlink" title="莫队"></a>莫队</h3><pre><code class="cpp">#include&lt;algorithm&gt;  // ~~Mo_Queue~~
+#include&lt;cstdio&gt;
+#include&lt;cmath&gt;
+#define Max 100100
+using namespace std;
+int n, q, len, maxn, a[Max], pos[Max], cnt[Max&lt;&lt;1], sum[Max];
+struct node&#123;
+    int l, r, id, ans;
+&#125;query[Max&lt;&lt;1];
+bool cmp1(node x, node y)&#123;
+    if(pos[x.l] != pos[y.l]) return pos[x.l] &lt; pos[y.l];
+    else return x.r &lt; y.r;
+&#125;
+bool cmp2(node x, node y)&#123;
+    return x.id &lt; y.id;
+&#125;
+void add(int x)&#123;
+    sum[++cnt[a[x]]]++;
+    maxn = max (maxn, cnt[a[x]]);
+    return;
+&#125;
+void del(int x)&#123;
+    if(sum[cnt[a[x]]] == 1 &amp;&amp; maxn == cnt[a[x]]) maxn--;
+    sum[cnt[a[x]]--]--;
+    return;
+&#125;
+int main()&#123;
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;q);
+    len = sqrt(n);
+    for(int i = 1; i &lt;= n; i++)&#123;
+        scanf(&quot;%d&quot;, &amp;a[i]);
+        a[i] += Max-100;  // 离散化
+    &#125;
+    for(int i = 1; i &lt;= q; i++)&#123;
+        scanf(&quot;%d%d&quot;,&amp;query[i].l, &amp;query[i].r);
+        query[i].id = i;
+    &#125;
+    for(int i = 1; i &lt;= n; i++)&#123;
+        pos[i] = (i-1)/len + 1;
+    &#125;
+    sort(query+1, query+q+1, cmp1);
+    int l = 1, r = 0;
+    for(int i = 1; i &lt;= q; i++)&#123;
+        while(l &lt; query[i].l) del(l++);
+        while(l &gt; query[i].l) add(--l);
+        while(r &lt; query[i].r) add(++r);
+        while(r &gt; query[i].r) del(r--);
+        query[i].ans = maxn;
+    &#125;
+    sort(query+1, query+q+1, cmp2);
+    for(int i = 1; i &lt;= q; i++)&#123;
+        printf(&quot;%d\n&quot;, query[i].ans);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h3 id="左偏树"><a href="#左偏树" class="headerlink" title="左偏树"></a>左偏树</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int maxn = 100100;
+
+struct Tree&#123;
+    int ls, rs, val, dist, root;
+&#125; tre[maxn];
+
+int n, m;
+
+void build(int x, int val) &#123;
+    tre[x].root = x;
+    tre[x].val = val;
+&#125;
+
+int merge(int x, int y) &#123;
+    if (!x || !y)
+        return x | y;
+    if (tre[x].val &gt; tre[y].val || (tre[x].val == tre[y].val &amp;&amp; x &gt; y)) 
+        swap(x, y);
+    tre[x].rs = merge(tre[x].rs, y);
+    if (tre[tre[x].rs].dist &gt; tre[tre[x].ls].dist) 
+        swap(tre[x].ls, tre[x].rs);
+    tre[tre[x].ls].root = tre[tre[x].rs].root = tre[x].root = x;
+    tre[x].dist = tre[tre[x].rs].dist + 1;
+    return x;
+&#125;
+
+int pop(int x) &#123;
+    tre[x].val = -1;
+    tre[tre[x].ls].root = tre[x].ls;
+    tre[tre[x].rs].root = tre[x].rs;
+    return tre[x].root =  merge(tre[x].ls, tre[x].rs);
+&#125;
+
+int get(int x) &#123;
+    return tre[x].root == x ? x : tre[x].root = get(tre[x].root);
+&#125;
+
+int main() &#123;
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+    tre[0].dist = -1;
+    for (int i = 1, x; i &lt;= n; i++) &#123;
+        scanf(&quot;%d&quot;, &amp;x);
+        build(i, x);
+    &#125;
+    for (int i = 1; i &lt;= m; i++) &#123;
+        int opt, x, y;
+        scanf(&quot;%d %d&quot;, &amp;opt, &amp;x);
+        if (opt == 1) &#123;
+            scanf(&quot;%d&quot;, &amp;y);
+            if (tre[x].val == -1 || tre[y].val == -1)
+                continue;
+            x = get(x), y = get(y);
+            if (x != y)
+                tre[x].root = tre[y].root = merge(x, y);
+        &#125;
+        else &#123;
+            if (tre[x].val == -1)
+                puts(&quot;-1&quot;);
+            else
+                printf(&quot;%d\n&quot;, tre[get(x)].val), pop(get(x));
+        &#125;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="manacher"><a href="#manacher" class="headerlink" title="manacher"></a>manacher</h3><pre><code class="cpp">string ch;
+char str[Max&lt;&lt;1];
+int p[Max&lt;&lt;1], ans, len;
+int main () &#123;
+    cin &gt;&gt; ch;
+    len = ch.length();
+    str[0] = &#39;#&#39;;
+    for (int i = 0; i &lt;= len; i++) &#123; 
+        str[i * 2 + 1] = &#39;|&#39;;
+        str[i * 2 + 2] = ch[i];
+    &#125;
+    int mr = 0, ct = 0; len = len * 2 + 1;
+    for (int i = 1; i &lt; len; i++) &#123;
+        if (i &lt;= mr) 
+            p[i] = min (p[(ct &lt;&lt; 1) - i], mr - i + 1);
+        while (str[i - p[i]] == str[i + p[i]]) 
+            p[i]++;
+        if (p[i] + i &gt; mr) 
+            mr = p[i] + i - 1, ct = i;
+        ans = max (ans, p[i]); 
+    &#125;
+    cout &lt;&lt; ans-1 &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int siz = 1000100;
+char aaa[siz], ccc[siz];
+int nxt[siz];
+int main () &#123;
+    cin &gt;&gt; ccc+1 &gt;&gt; aaa+1;
+    for (int i = 2, j = 0; aaa[i]; i++) &#123;
+        while (aaa[i] != aaa[j+1] &amp;&amp; j)
+            j = nxt[j];
+        if (aaa[i] == aaa[j+1])
+            j++;
+        nxt[i] = j;
+    &#125;
+    for (int i = 1, j = 0; ccc[i]; i++) &#123;
+        while (ccc[i] != aaa[j+1] &amp;&amp; j)
+            j = nxt[j];
+        if (ccc[i] == aaa[j+1])
+            j++;
+        if (j == strlen(aaa+1))
+            printf (&quot;%d\n&quot;, i - strlen(aaa+1) +1);
+    &#125;
+    for (int i = 1; aaa[i]; i++)
+        printf (&quot;%d &quot;, nxt[i]);
+    return 0;
+&#125;
+</code></pre>
+<h3 id="trie"><a href="#trie" class="headerlink" title="trie"></a>trie</h3><pre><code class="cpp">struct TRIE &#123;
+    int tre[sizw][26], ctl[sizw], cnt;
+    bool mark[sizw], node[sizw];
+    void insert (string s) &#123; 
+        int u = 0;
+        for (int i = 0; s[i]; i++) &#123;
+            int c = s[i] - &#39;a&#39;;
+            if (!tre[u][c]) tre[u][c] = ++cnt;
+            ctl[tre[u][c]] = c + &#39;a&#39;;
+            u = tre[u][c];
+        &#125;
+        mark[u] = 1;
+    &#125;
+    void find (string s) &#123;
+        int u = 0;
+        for (int i = 0; s[i]; i++) &#123;
+            int c = s[i] - &#39;a&#39;;
+            node[tre[u][c]] = 1;
+            u = tre[u][c];
+        &#125;
+    &#125;
+    void dfs (int c) &#123;
+        if (mark[c]) 
+            tot++, way += &quot;P&quot;;
+        if (tot == n) &#123;
+            printf (&quot;%d\n&quot;, way.length ());
+            for (int i = 0; way[i]; cout &lt;&lt; way[i] &lt;&lt; endl, i++) ;
+        &#125;
+        for (int i = 0; i &lt; 26; i++) &#123;
+            if (!node[tre[c][i]] &amp;&amp; tre[c][i]) &#123;
+                way += ctl[tre[c][i]];
+                dfs (tre[c][i]);
+                way += &#39;-&#39;;
+            &#125;
+        &#125;
+        for (int i = 0; i &lt; 26; i++) &#123;
+            if (node[tre[c][i]] &amp;&amp; tre[c][i]) &#123;
+                way += ctl[tre[c][i]];
+                dfs (tre[c][i]);
+                way += &#39;-&#39;;
+            &#125;
+        &#125;
+    &#125;
+&#125; trie;
+</code></pre>
+<h3 id="AC-自动机"><a href="#AC-自动机" class="headerlink" title="AC 自动机"></a>AC 自动机</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+namespace automaton &#123;
+    const int MAXN = 1e6+6;
+    int cnt, mx;
+    char p[222][155], str[MAXN];
+    int tre[MAXN][26], val[MAXN], fail[MAXN];
+    int ans[222];
+    queue&lt;int&gt; q;
+
+    void clear() &#123;
+        cnt = mx = 0;
+        memset(tre, 0, sizeof tre);
+        memset(val, 0, sizeof val);
+        memset(ans, 0, sizeof ans);
+        memset(fail, 0, sizeof fail);
+    &#125;
+
+    void insert(int pos) &#123;
+        int u = 0;
+        for (int i = 1; p[pos][i]; i++) &#123;
+            if (!tre[u][p[pos][i]-&#39;a&#39;])
+                tre[u][p[pos][i]-&#39;a&#39;] = ++cnt;
+            u = tre[u][p[pos][i]-&#39;a&#39;];
+        &#125;
+        val[u] = pos;
+    &#125;
+
+    void build() &#123;
+        for (int i = 0; i &lt; 26; i++)
+            if (tre[0][i]) q.push(tre[0][i]);
+        while (!q.empty()) &#123;
+            int u = q.front(); q.pop();
+            for (int i = 0; i &lt; 26; i++) &#123;
+                if (tre[u][i])
+                    fail[tre[u][i]] = tre[fail[u]][i],
+                    q.push(tre[u][i]);
+                else
+                    tre[u][i] = tre[fail[u]][i];
+            &#125;
+        &#125;
+    &#125;
+
+    int query() &#123;
+        int u = 0;
+        for (int i = 1; str[i]; i++) &#123;
+            u = tre[u][str[i]-&#39;a&#39;];
+            for (int j = u; j; j = fail[j]) &#123;
+                if (val[j])
+                    ans[val[j]]++;
+                // printf(&quot;%d %d\n&quot;, ans[val[j]], val[j]);
+                if (j)
+                    mx = max(mx, ans[val[j]]);
+            &#125;
+        &#125;
+        return mx;
+    &#125;   
+&#125;
+using namespace automaton;
+
+int main() &#123;
+    int n;
+    while (~scanf(&quot;%d&quot;, &amp;n) &amp;&amp; n) &#123;
+        clear();
+        for (int i = 1; i &lt;= n; i++)
+            cin &gt;&gt; p[i]+1, insert(i);
+        build();
+        cin &gt;&gt; str+1;
+        printf(&quot;%d\n&quot;, query());
+        for (int i = 1; i &lt;= n; i++)
+            if (ans[i] == mx)
+                cout &lt;&lt; p[i]+1 &lt;&lt; endl;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h3 id="SA-amp-amp-SAM"><a href="#SA-amp-amp-SAM" class="headerlink" title="SA &amp;&amp; SAM"></a>SA &amp;&amp; SAM</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int MAXN = 1e6+6;
+
+int n, m = 128, cnt;
+int sa[MAXN], rk[MAXN], t[MAXN], d[MAXN];
+char str[MAXN];
+
+int main() &#123;
+    cin &gt;&gt; str+1;
+    n = strlen(str+1);
+    for (int i = 1; i &lt;= n; i++)
+        rk[i] = str[i], t[rk[i]]++;
+    for (int i = 1; i &lt;= m; i++)
+        t[i] += t[i-1];
+    for (int i = n; i &gt;= 1; i--)
+        sa[t[rk[i]]] = i, t[rk[i]]--;
+    for (int k = 1; k &lt;= n; k &lt;&lt;= 1) &#123;
+        cnt = 0;
+        for (int i = n-k+1; i &lt;= n; i++)
+            d[++cnt] = i;
+        for (int i = 1; i &lt;= n; i++)
+            if (sa[i] &gt; k) d[++cnt] = sa[i] - k;
+        for (int i = 1; i &lt;= m; i++)
+            t[i] = 0;
+        for (int i = 1; i &lt;= n; i++)
+            t[rk[d[i]]]++;
+        for (int i = 1; i &lt;= m; i++)
+            t[i] += t[i - 1];
+        for (int i = n; i &gt;= 1; i -= 1) 
+            sa[t[rk[d[i]]]] = d[i], t[rk[d[i]]]--;
+        swap(d, rk);
+        rk[sa[1]] = cnt = 1;
+        for (int i = 2; i &lt;= n; i++) &#123;
+            if (d[sa[i]] == d[sa[i - 1]] &amp;&amp; d[sa[i] + k] == d[sa[i - 1] + k])
+                rk[sa[i]] = cnt;
+            else rk[sa[i]] = ++cnt;
+        &#125;
+        if (cnt == n) break;
+        m = cnt;
+    &#125;
+
+    for (int i = 1; i &lt;= n; i++)
+        printf(&quot;%d &quot;, sa[i]); puts(&quot;&quot;);
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+namespace SAM &#123;
+    const int MAXN = 2e6+6;
+    int siz, lst, ans;
+    int len[MAXN], cnt[MAXN], lik[MAXN], tre[MAXN][26];
+    char str[MAXN];
+
+    void insert(int c) &#123;
+        int cur = ++siz, p;
+        len[cur] = len[lst] + 1;
+        cnt[cur] = 1;
+        for (p = lst; p &amp;&amp; !tre[p][c]; p = lik[p])
+            tre[p][c] = cur;
+        if (!p) 
+            lik[cur] = 1;
+        else &#123;
+            int x = tre[p][c];
+            if (len[p]+1 == len[x])
+                lik[cur] = x;
+            else &#123;
+                int y = ++siz;
+                len[y] = len[p] + 1;
+                memcpy(tre[y], tre[x], sizeof tre[x]);
+                lik[y] = lik[x];
+                lik[cur] = lik[x] = y;
+                while (p &amp;&amp; tre[p][c] == x)
+                    tre[p][c] = y, p = lik[p];
+            &#125;
+        &#125;
+        lst = cur;
+    &#125;
+
+    vector&lt;int&gt; nxt[MAXN];
+    void dfs(int x) &#123;
+        for (int i = 0; i &lt; nxt[x].size(); i++)
+            dfs(nxt[x][i]),
+            cnt[x] += cnt[nxt[x][i]];
+        if (cnt[x] != 1)
+            ans = max(ans, cnt[x] * len[x]);
+    &#125;
+&#125;
+using namespace SAM;
+
+int main() &#123;
+    cin &gt;&gt; str+1;
+    siz = lst = 1;
+    for (int i = 1; str[i]; i++)
+        insert(str[i]-&#39;a&#39;);
+    for (int i = 2; i &lt;= siz; i++)
+        nxt[lik[i]].push_back(i);
+    dfs(1);
+    printf(&quot;%d\n&quot;, ans);
+    return 0;
+&#125;
+</code></pre>
+<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><h3 id="质数-amp-amp-筛法"><a href="#质数-amp-amp-筛法" class="headerlink" title="质数 &amp;&amp; 筛法"></a>质数 &amp;&amp; 筛法</h3><p>注：参照：<a target="_blank" rel="noopener" href="https://oi-wiki.org/math/number-theory/sieve/">筛法 - OI Wiki</a></p>
+<p><strong>筛法优化（以下 code 未对此优化）</strong></p>
+<ul>
+<li>筛至平方根</li>
+<li>只筛奇数</li>
+</ul>
+<p><strong>Eratosthenes 筛 （埃氏筛）</strong> $O(n\ log\ logn)$ </p>
+<p>注：根据 <a target="_blank" rel="noopener" href="https://oi-wiki.org/lang/csl/bitset/">bitset - OI Wiki</a> 中关于速度测试的内容可以近乎认为其时间复杂度为 $O(n)$ <em>（需要<strong>吸氧</strong>！否则时间是 bool 的五倍以上）</em></p>
+<pre><code class="cpp">bitset&lt;SIZ&gt; vis; 
+void GetPrimes () &#123;
+    for (int i = 2; i &lt;= n; i++) &#123;
+        if (vis[i]) continue;
+        prime[++cnt] = i;
+        for (int j = i; j &lt;= n / i; j++)
+            vis[i*j] = 1;
+    &#125;
+&#125;
+</code></pre>
+<p><strong>欧拉筛（线性筛法）</strong> $O(n)$</p>
+<pre><code class="cpp">// tedukuri version  &lt;Maybe MLE&gt;
+int vis[SIZ], prime[SIZ];
+void GetPrimes () &#123;
+    for (int i = 2; i &lt;= n; i++) &#123;
+        if (!vis[i]) 
+            vis[i] = i, prime[++cnt] = i;
+        for (int j = 1; j &lt;= cnt; j++) &#123;
+            if (prime[j] &gt; vis[i] || prime[j] &gt; n / i)
+                break;
+            vis[ i*prime[j] ] = prime[j];
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3383">P3383 【模板】线性筛素数</a></p>
+<h3 id="一些定理"><a href="#一些定理" class="headerlink" title="一些定理"></a>一些定理</h3><p><strong>(扩展)欧几里得算法</strong></p>
+<blockquote>
+<p>$O(log n)$</p>
+</blockquote>
+<pre><code class="cpp">// STL: __gcd ();
+int Gcd (int a, int b) &#123;
+    return b ? Gcd(b, a % b) : a;
+&#125;
+</code></pre>
+<pre><code class="cpp">int x, y;
+int ExGcd (int a, int b) &#123;
+    if (!b) &#123;x = 1, y = 0; return a;&#125;
+    int d = ExGcd(b, a % b);
+    int z = x; x = y; y = z - y * (a - b);
+    return d;
+&#125;
+// if (!d|c) printf(&quot;NoSolution!&quot;);
+</code></pre>
+<pre><code class="cpp">// an other version
+int ExGcd (int a, int b, int &amp;x, int &amp;y) &#123;
+    // ···
+&#125;
+</code></pre>
+<pre><code class="cpp">// an other version
+void ExGcd (int a, int b, int &amp;x, int &amp;y) &#123;
+    if (!b) x = 1, y = 0;
+    else ExGcd (b, a % b, y, x), y -= a / b * x;
+&#125;
+</code></pre>
+<p><strong>Lucas 定理</strong></p>
+<pre><code class="cpp">llt Lucas (llt n, llt m) &#123;
+    if(!m) return 1;
+    return C (n % p, m % p) * lucas (n / p, m / p) % p;
+&#125;
+</code></pre>
+<p><strong>中国剩余定理（孙子定理） (Ex)CRT</strong></p>
+<pre><code class="cpp">for (int i = 1; i &lt;= n; i++) &#123;
+    scanf(&quot;%lld%lld&quot;, &amp;mod[i], &amp;c[i]);
+    ModMax *= mod[i];
+&#125;
+for (int i = 1; i &lt;= n; i++) &#123;
+    llt Mi = ModMax / mod[i];
+    x = y = 0;
+    ExGcd(Mi, mo[i]);
+    ans += c[i] * Mi * (x &lt; 0 ? x + mod[i] : x);
+&#125;
+</code></pre>
+<pre><code class="cpp">llt mod[siz], rst[siz];
+llt ExCRT () &#123;
+    for (int i = 1; i &lt; n; i++) &#123;
+        llt a = mod[i], b = mod[i+1], c = rst[i+1] - rst[i],
+            gcd = Gcd (a, b), k1, k2;
+        if (c % gcd) return -1;
+        a /= gcd, b/= gcd, c /= gcd;
+        ExGcd (a, b, k1, k2);
+        k1 = ((k1 * c) % b + b) % b;
+        mod[i + 1] = mod[i] / Gcd(mod[i], mod[i + 1]) * mod[i + 1] ;
+        rst[i + 1] = (mod[i] * k1 % mod[i + 1] + rst[i]) % mod[i + 1];
+    &#125;
+    return rst[n];
+&#125;
+</code></pre>
+<p><strong>BSGS</strong></p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long llt;
+map&lt;llt, int&gt; mp;
+llt p, b, n, len;
+llt QPow (llt a, llt b) &#123;
+    llt res = 1;
+    for ( ; b; b &gt;&gt;= 1, a = a * a % p)
+        if (b &amp; 1) res = res * a % p;
+    return res;
+&#125;
+int main () &#123;
+    scanf (&quot;%lld%lld%lld&quot;, &amp;p, &amp;b, &amp;n);
+    len = ceil (sqrt (p));
+    for (llt i = 0, j = n; i &lt;= len-1; i++, j = j * b % p)
+        mp[j] = i;
+    for (llt i = 1, k=QPow(b,len), j = k; i &lt;= len; i++, j=j*k%p)
+        if (mp.count (j))&#123;printf(&quot;%lld\n&quot;, i*len-mp[j]);return 0;&#125;
+    puts (&quot;no solution&quot;);
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="cpp">i128 BSGS (i128 a, i128 b) &#123;
+    map &lt;i128, i128&gt; mp; mp.clear();
+    b %= p;
+    i128 t = (i128)sqrt ((llt)p) + 1;
+    for (i128 j = 0; j &lt; t; j++) &#123;
+        i128 val = b * QPow(a, j) % p;
+        mp[val] = j;
+    &#125;
+    a = QPow(a, t);
+    if (!a) return (!b) ? 1 : -1;
+    for (i128 i = 0; i &lt;= t; i++) &#123;
+        i128 val = QPow (a, i);
+        i128 j = mp.find(val) == mp.end() ? -1 : mp[val];
+        if (j &gt;= 0 &amp;&amp; i * t - j &gt;= 0)
+            return i * t - j;
+    &#125;
+    return -1;
+&#125;
+</code></pre>
+<p><strong>高斯消元</strong></p>
+<pre><code class="cpp">double f[111][111];
+int main () &#123;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i = 1; i &lt;= n; i++)
+        for (int j = 1; j &lt;= n + 1; j++)
+            scanf(&quot;%lf&quot;, &amp;f[i][j]);
+    for (int i = 1; i &lt;= n; i++) &#123;
+        int maxi = i;
+        for (int j = i + 1; j &lt;= n; j++)
+            if (fabs(f[j][i]) &gt; fabs(f[maxi][i]))
+                maxi = j;
+        for (int j = 1; j &lt;= n + 1; j++)
+            swap(f[i][j], f[maxi][j]);
+        if (!f[i][i]) &#123;
+            puts(&quot;No Solution&quot;); return 0;&#125;
+        for (int j = 1; j &lt;= n; j++) &#123;
+            if (j == i) continue;
+            double tmp = f[j][i] / f[i][i];
+            for (int k = i + 1; k &lt;= n + 1; k++)
+                f[j][k] -= f[i][k] * tmp;
+        &#125;
+    &#125;
+    for (int i = 1; i &lt;= n; i++)
+        printf(&quot;%0.2lf\n&quot;, f[i][n+1] / f[i][i]);
+    return 0;
+&#125;
+</code></pre>
+<h3 id="矩阵-Matrix"><a href="#矩阵-Matrix" class="headerlink" title="矩阵 Matrix"></a>矩阵 Matrix</h3><p><strong>矩阵快速幂</strong></p>
+<p>注：适用情况：$n \leq 100\ , \ k \leq 10^{12}$</p>
+<pre><code class="cpp">struct Mar &#123;
+    llt mar[SIZ][SIZ];
+    friend Mar operator * (Mar x, Mar y) &#123;
+        Mar z; memset(z.mar, 0, sizeof(z.mar));
+        for(int i = 1; i &lt;= n; i++)
+            for(int j = 1; j &lt;= n; j++)
+                for(int k = 1; k &lt;= n; k++)
+                    z.mar[i][j] += x.mar[i][k] * y.mar[k][j],
+                        z.mar[i][j] %= MOD;
+        return z;
+    &#125;
+&#125; a;
+Mar QPow (Mar a, llt b) &#123;
+    Mar res; memset(res.mar, 0, sizeof(res.mar));
+    for(int i = 1; i &lt;= n; i++)
+        res.mar[i][i] = 1;
+    for( ; b; b &gt;&gt;= 1, a = a * a)
+        if(b &amp; 1) res = res * a;
+    return res;
+&#125;
+</code></pre>
+<p><strong>矩阵求逆</strong></p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long llt;
+const int maxn = 444;
+const int p = 1e9+7;
+
+llt a[maxn][maxn &lt;&lt; 1];
+int n;
+
+llt Pow(llt a, llt b) &#123;
+    int res = 1;
+    for ( ; b; b &gt;&gt;= 1, a = a * a % p)
+        if (b &amp; 1) res = res * a % p;
+    return res;
+&#125;
+
+llt Inv(llt a) &#123;
+    return Pow(a, p-2);
+&#125;
+
+int main() &#123;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i = 1; i &lt;= n; i++) &#123;
+        a[i][i + n] = 1;
+        for (int j = 1; j &lt;= n; j++) 
+            scanf(&quot;%d&quot;, &amp;a[i][j]);
+    &#125;
+    int r;
+    for (int i = 1; i &lt;= n; i++) &#123;
+        r = i;
+        for (int j = i + 1; j &lt;= n; j++)
+            if (a[j][i] &gt; a[r][i]) r = j;
+        if (r != i) swap(a[i], a[r]);
+        if (!a[i][i]) &#123;
+            puts(&quot;No Solution&quot;);
+            return 0;
+        &#125;
+        int inv = Inv(a[i][i]);
+        for (int k = 1; k &lt;= n; k++) &#123;
+            if (i == k) continue;
+            int q = a[k][i] * inv % p;
+            for (int j = i; j &lt;= (n &lt;&lt; 1); j++)
+                a[k][j] = ((a[k][j] - a[i][j] * q) % p + p) % p;
+        &#125;
+        for (int j = 1; j &lt;= (n &lt;&lt; 1); j++)
+            a[i][j] = a[i][j] * inv % p;
+    &#125;
+    for (int i = 1; i &lt;= n; i++, puts(&quot;&quot;)) 
+        for (int j = n + 1; j &lt;= (n &lt;&lt; 1); j++)
+            printf(&quot;%lld &quot;, a[i][j]);
+    return 0;
+&#125;
+</code></pre>
+<h3 id="高斯消元"><a href="#高斯消元" class="headerlink" title="高斯消元"></a>高斯消元</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+double f[111][111];
+int n;
+
+int main() &#123;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i = 1; i &lt;= n; i++)
+        for (int j = 1; j &lt;= n + 1; j++)
+            scanf(&quot;%lf&quot;, &amp;f[i][j]);
+    for (int i = 1; i &lt;= n; i++) &#123;
+        int mx = i;
+        for (int j = i + 1; j &lt;= n; j++)
+            if (fabs(f[j][i]) &gt; fabs(f[mx][i]))
+                mx = j;
+        for (int j = 1; j &lt;= n + 1; j++)
+            swap(f[i][j], f[mx][j]);
+        if (!f[i][i])
+            puts(&quot;No Solution&quot;), exit (0);
+        for (int j = 1; j &lt;= n; j++)
+            if (i != j)
+                for (int k = i + 1; k &lt;= n + 1; k++)
+                    f[j][k] -= f[i][k] * f[j][i] / f[i][i];
+    &#125;
+    for (int i = 1; i &lt;= n; i++)
+        printf(&quot;%0.2lf\n&quot;, f[i][n+1] / f[i][i]);
+    return 0;
+&#125;
+</code></pre>
+<h3 id="多项式"><a href="#多项式" class="headerlink" title="多项式"></a>多项式</h3><p><strong>FFT</strong></p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef double ldb;
+
+const int maxn = 3e6+6;
+const ldb Pi = acos(-1.0);
+
+int n, m, q = 1;
+int a[maxn], b[maxn], c[maxn];
+
+struct Complex &#123;
+    ldb x, y;
+    friend Complex operator + (Complex a, Complex b) &#123;return &#123;a.x+b.x, a.y+b.y&#125;;&#125;
+    friend Complex operator - (Complex a, Complex b) &#123;return &#123;a.x-b.x, a.y-b.y&#125;;&#125;
+    friend Complex operator * (Complex a, Complex b) &#123;return &#123;a.x*b.x-a.y*b.y, a.x*b.y+a.y*b.x&#125;;&#125;
+&#125; x1[maxn], x2[maxn];
+
+void change(Complex x[], int len) &#123;
+    for (int i=1, j=len/2, k; i &lt; len-1; i++) &#123;
+        if (i &lt; j) swap(x[i], x[j]);
+        k = len / 2;
+        while (j &gt;= k) j -= k, k /= 2;
+        j += k;
+    &#125;
+&#125;
+
+void FFT(Complex x[], int len, int im) &#123;
+    change(x, len);
+    for (int d = 1; d &lt;= len; d &lt;&lt;= 1) &#123;
+        Complex wn = &#123;cos(Pi * 2 / d), sin(im * 2 * Pi / d)&#125;;
+        for (int j = 0; j &lt; len; j += d) &#123;
+            Complex w = &#123;1, 0&#125;;
+            for (int k = j; k &lt; j + d / 2; k++) &#123;
+                Complex u = x[k], t = w * x[k + d / 2];
+                x[k] = u + t;
+                x[k + d / 2] = u - t;
+                w = w * wn;
+            &#125;
+        &#125;
+    &#125;
+    if (im == -1)
+        for (int i = 0; i &lt; len; i++)
+            x[i].x /= len;
+&#125;
+
+int main() &#123;
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+    for (int i = 0; i &lt;= n; i++) scanf(&quot;%d&quot;, &amp;a[i]), x1[i]=&#123;(ldb)a[i], 0&#125;;
+    for (int i = 0; i &lt;= m; i++) scanf(&quot;%d&quot;, &amp;b[i]), x2[i]=&#123;(ldb)b[i], 0&#125;;
+    while(q &lt;= (n + m + 2)) q &lt;&lt;= 1;
+    FFT(x1, q, 1), FFT(x2, q, 1);
+    for (int i = 0; i &lt;  q; i++) x1[i] = x1[i] * x2[i];
+    FFT(x1, q, -1);
+    for (int i = 0; i &lt;  q; i++) c[i] = (int)(x1[i].x + 0.5);
+    q = n + m;
+    for (int i = 0; i &lt;= q; i++) printf(&quot;%d &quot;, c[i]); puts(&quot;&quot;);
+    return 0;
+&#125;
+</code></pre>
+<p><strong>朗格朗日插值</strong></p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long  llt;
+const int p =998244353;
+const int maxn = 3e3+3;
+
+int n, k;
+llt ans, u, v, x[maxn], y[maxn];
+
+llt qpzc(llt a, llt b) &#123;
+    llt res = 1;
+    for ( ; b; b &gt;&gt;= 1, a = a * a % p)
+        if (b &amp; 1) res = res * a % p;
+    return res;
+&#125;
+
+llt inv(llt a) &#123;
+    return qpzc(a, p - 2);
+&#125;
+
+int main() &#123;
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;k);
+    for (int i = 1; i &lt;= n; i++) 
+        scanf(&quot;%lld %lld&quot;, &amp;x[i], &amp;y[i]);
+    for (int i = 1; i &lt;= n; i++) &#123;
+        u = y[i] % p; v = 1ll;
+        for (int j = 1; j &lt;= n; j++)
+            if (i != j)
+                u = u * ((k - x[j]) % p + p) % p,
+                v = v * ((x[i] - x[j] % p + p) % p) % p;
+        ans = (ans + u * inv(v) % p) % p;
+    &#125;
+    printf(&quot;%lld\n&quot;, ans);
+&#125;
+</code></pre>
+<h3 id="类欧几里得"><a href="#类欧几里得" class="headerlink" title="类欧几里得"></a>类欧几里得</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long llt;
+const llt p = 998244353;
+const llt inv2 = 499122177;
+const llt inv6 = 166374059;
+
+struct zerc &#123;
+    llt f, g, h;
+    void mod() &#123;
+        f = (f % p + p) % p, 
+        g = (g % p + p) % p, 
+        h = (h % p + p) % p;
+    &#125;
+&#125;;
+
+zerc calc(llt n, llt a, llt b, llt c) &#123;	
+    // printf(&quot;|&gt; %lld %lld %lld %lld\n&quot;, n, a, b, c);
+    llt m = ((a * n + b) / c - 1);
+    llt n1bc = ((n + 1) * (b / c)) % p;
+    llt n1bc2= ((n + 1) * (b / c) % p * (b / c) % p) % p;
+    llt n2ac = (n * (n + 1) % p * inv2 % p * (a / c) % p) % p;
+    llt n2bc = (n * (n + 1) % p * inv2 % p * (b / c) % p) % p;
+    llt n21acbc = (n * (n + 1) % p * (a / c) % p * (b / c) % p) % p;
+    llt n3ac = (n * (n + 1) % p * (n * 2 + 1) % p * inv6 % p * (a / c) % p)  % p;
+    llt n3ac2= (n * (n + 1) % p * (n * 2 + 1) % p * inv6 % p * (a / c) % p * (a / c) % p)  % p;
+    zerc d, e;
+    if (!a) &#123;
+        d.f = n1bc;
+        d.g = n2bc;
+        d.h = n1bc2;
+        return d;
+    &#125;
+    if (a &gt;= c || b &gt;= c) &#123;
+        d.f = n2ac + n1bc;
+        d.g = n3ac + n2bc;
+        d.h = n3ac2 + n1bc2 + n21acbc;
+        d.mod();
+        e = calc(n, a % c, b % c, c);
+        d.f += e.f;
+        d.g += e.g;
+        d.h += e.h + (b / c) * 2 * e.f % p + (a / c) * 2 * e.g % p;
+        d.mod();
+        return d;
+    &#125;
+    if (a &lt; c &amp;&amp; b &lt; c) &#123;
+        e = calc(m, c, c - b - 1, a);
+        d.f = (n * (m + 1) % p - e.f) % p;
+        d.mod();
+        d.g = (n * (m + 1) % p * (n + 1) % p - e.h - e.f) % p * inv2 % p;
+        d.mod();
+        d.h = (n * (m + 1) % p * (m + 2) % p - e.g * 2 % p - e.f * 2 % p - d.f) % p;
+        d.mod();
+        return d;
+    &#125;
+    return d;
+&#125;
+
+int main() &#123;
+// 	freopen(&quot;P5170_6.in&quot;, &quot;r&quot;, stdin);
+// 	freopen(&quot;P5170.out&quot;, &quot;w&quot;, stdout);
+    int T; scanf(&quot;%d&quot;, &amp;T); while (T--) &#123;
+        llt n, a, b, c;
+        scanf(&quot;%lld %lld %lld %lld&quot;, &amp;n, &amp;a, &amp;b, &amp;c);
+        zerc ans = calc(n, a, b, c);
+        printf(&quot;%lld %lld %lld\n&quot;, ans.f, ans.h, ans.g);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h3 id="组合数学"><a href="#组合数学" class="headerlink" title="组合数学"></a>组合数学</h3><p><strong>第 II 类斯特林数</strong></p>
+<pre><code class="cpp">s[0][0] = 1;
+for (int i = 1; i &lt;= n; i++)
+    for (int j = 1; j &lt;= m; j++)
+        s[i][j] = s[i-1][j] * j + s[i-1][j-1];
+</code></pre>
+<p><strong>组合数</strong></p>
+<pre><code class="cpp">void init() &#123;
+    fac[0] = 1;
+    for (int i = 1; i &lt;= p; i++)
+        fac[i] = (fac[i-1] * i) % p;
+&#125;
+llt C (llt n, llt m) &#123;
+    if(m &gt; n) return 0;
+    return ((fac[n] * FastPower (fac[m], p-2, p)) % p * FastPower (fac[n-m], p-2, p) %p);
+&#125;
+</code></pre>
+<pre><code class="cpp">typedef long long llt;
+const int siz = 100100;
+const int p = 998244353;
+const int ed = 200000;
+int n;
+char qp[siz];
+llt fac[siz&lt;&lt;1], inv[siz&lt;&lt;1];
+llt FastPower (llt a, llt b) &#123;
+    llt res = 1;
+    for( ; b; b &gt;&gt;= 1, a = a * a % p)
+        if(b &amp; 1) res = res * a % p;
+    return res;
+&#125;
+llt C(int n, int m) &#123;
+    if (m &gt; n) return 0; 
+    return fac[n] * inv[m] % p * inv[n-m] % p;
+&#125;
+void init () &#123;
+    fac[0] = 1;
+    for (int i = 1; i &lt;= ed; i++)
+        fac[i] = fac[i-1] * i % p;
+    inv[ed] = FastPower(fac[ed], p-2);
+    for (int i = ed; i &gt;= 1; i--)
+        inv[i-1] = inv[i] * i % p;
+&#125;
+</code></pre>
+<h3 id="计算几何"><a href="#计算几何" class="headerlink" title="计算几何"></a>计算几何</h3><p><strong>凸包 &amp;&amp; 旋转卡壳</strong></p>
+<pre><code class="cpp">struct Dot &#123;
+    double x, y;
+&#125;p[SIZ], stack[SIZ];
+
+double Len(Dot a, Dot b) &#123;
+    return sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
+&#125;
+
+double MulStar(Dot c, Dot a, Dot b) &#123;
+    return (a.x - c.x) * (b.y - c.y) - (b.x - c.x) * (a.y - c.y);
+&#125;
+
+bool Cmp(Dot a, Dot b) &#123;
+    if(MulStar(p[1], a, b) &lt; 0) return 1;
+    if(MulStar(p[1], a, b) == 0 &amp;&amp; Len(a, p[1]) &lt; Len(b, p[1])) return 1;
+    return 0;
+&#125;
+
+void GetConHull() &#123;
+    sort(p + 2, p + n + 1, Cmp);
+    stack[++top] = p[1];
+    for(int i = 2; i &lt;= n; i++) &#123;
+        while(top &gt; 1 &amp;&amp; MulStar(stack[top], stack[top-1], p[i]) &lt;= 0)
+            --top;
+        stack[++top] = p[i];
+    &#125;
+    stack[top+1] = p[1];
+&#125;
+
+double GetMaxD () &#123;
+    if(top == 1) return 0;
+    if(top == 2) return Len(stack[top], stack[top-1]);
+    for(int i = 1, j = 2; i &lt;= top; i++) &#123;
+        while(MulStar(stack[i+1], stack[i], stack[j]) &lt;= 
+              MulStar(stack[i+1], stack[i], stack[j+1]))
+            j = j == top ? 1 : j+1;
+        ans = max (ans, Len(stack[i], stack[j]));
+        ans = max (ans, Len(stack[i+1], stack[j]));
+    &#125;
+    return ans;
+&#125;
+
+int main() &#123;
+    scanf(&quot;%d&quot;, &amp;n);
+    for(int i = 1; i &lt;= n; i++) &#123;
+        scanf(&quot;%lf%lf&quot;, &amp;p[i].x, &amp;p[i].y);
+        if(p[i].y &lt; p[1].y || (p[i].y == p[1].y &amp;&amp; p[i].x &lt; p[1].x))
+            swap(p[1], p[i]);
+    &#125;
+    // ···
+&#125;
+</code></pre>
+<p><strong>半平main交</strong></p>
+<pre><code class="cpp">#include&lt;algorithm&gt;
+#include&lt;cstdio&gt;
+#include&lt;cmath&gt;
+#define eps 1e-13
+#define SIZ 100010
+using namespace std;
+int n, m, cnt, l, r;
+struct Vector &#123;
+    double x, y;
+    double Len() &#123;return sqrt(x * x + y * y);&#125;
+    void operator += (const Vector &amp;a) &#123;
+        x += a.x, y += a.y;&#125;
+    void operator -= (const Vector &amp;a) &#123;
+        x -= a.x, y -= a.y;&#125;
+    void operator *= (const double &amp;a) &#123;
+        x *= a, y *= a;&#125;
+    void operator /= (const double &amp;a) &#123;
+        x /= a, y /= a;&#125;
+&#125; input[SIZ], point[SIZ];
+Vector operator + (const Vector &amp;a, const Vector &amp;b) &#123;
+    return ((Vector)&#123;a.x + b.x, a.y + b.y&#125;);&#125;
+Vector operator - (const Vector &amp;a, const Vector &amp;b) &#123;
+    return ((Vector)&#123;a.x - b.x, a.y - b.y&#125;);&#125;
+Vector operator * (const Vector &amp;a, const double &amp;b) &#123;
+    return ((Vector)&#123;a.x * b, a.y * b&#125;);&#125;
+Vector operator / (const Vector &amp;a, const double &amp;b) &#123;
+    return ((Vector)&#123;a.x / b, a.y / b&#125;);&#125;
+double MulDot (const Vector &amp;a, const Vector &amp;b) &#123;
+    return a.x * b.x + a.y * b.y;&#125;
+double MulCro (const Vector &amp;a, const Vector &amp;b) &#123;
+    return a.x * b.y - a.y * b.x;&#125;
+struct Line &#123;
+    Vector st, ed;
+    double sigma;
+    void MakeLine (const Vector &amp;a, const Vector &amp;b) &#123;
+        st = a, ed = b; sigma = atan2(b.y, b.x);&#125;
+&#125; line[SIZ], que[SIZ];
+bool OnRight (const Line &amp;a, const Vector &amp;b) &#123;
+    return MulCro(a.ed, b - a.st) &lt;= -eps;&#125;
+bool Cmp (const Line &amp;a, const Line &amp;b) &#123;
+    return a.sigma &lt; b.sigma;&#125;
+Vector Intersect (const Line &amp;a, const Line &amp;b) &#123;
+    return a.st + a.ed * (MulCro(b.ed, a.st - b.st) / MulCro(a.ed, b.ed));&#125;
+double PolyArea (int n, Vector *line) &#123;
+    double res = 0;
+    for (int i = 1; i &lt; n; i++) res += MulCro(line[i], line[i+1]);
+    res += MulCro(line[n], line[1]);
+    return res / 2;&#125;
+bool HalfPlane (int n, Line *a, Vector *point) &#123;
+    sort(line + 1, line + n + 1, Cmp);
+    l = r = 0; que[0] = line[1];
+    for (int i = 2; i &lt;= n; i ++) &#123;
+        while (l &lt; r &amp;&amp; OnRight(line[i], point[r  ])) r--;
+        while (l &lt; r &amp;&amp; OnRight(line[i], point[l+1])) l++;
+        que[++r] = line[i];
+        if (fabs(MulCro(que[r].ed, que[r-1].ed)) &lt;= eps) &#123;
+            if (OnRight(que[r], que[r-1].st) &amp;&amp; MulDot(que[r].ed, que[r-1].ed)&lt;=eps) 
+                return 0;
+            r--;
+            if (!OnRight(que[r], line[i].st)) que[r] = line[i];
+        &#125;
+        if (l &lt; r) point[r] = Intersect(que[r], que[r-1]);
+    &#125;
+    while (l &lt; r &amp;&amp; OnRight(que[l], point[r])) r--;
+    if (r - l &lt;= 1) return 0;
+    point[l] = Intersect (que[l], que[r]);
+    return 1;
+&#125;
+int main() &#123;
+    scanf(&quot;%d&quot;, &amp;n);
+    while (n--) &#123;
+        scanf(&quot;%d&quot;, &amp;m);
+        for (int i = 1; i &lt;= m; i++) 
+            scanf(&quot;%lf%lf&quot;, &amp;input[i].x, &amp; input[i].y);
+        for (int i = 1; i &lt;  m; i++) 
+            line[++cnt].MakeLine(input[i], input[i+1] - input[i]);
+            line[++cnt].MakeLine(input[m], input[1] - input[m]);
+    &#125;
+    if (!HalfPlane(cnt, line, point)) 
+        printf(&quot;0.000&quot;);
+    else 
+        printf(&quot;%0.3lf\n&quot;, PolyArea(r - l + 1, point + l -1));
+    return 0;
+&#125;
+</code></pre>
+<p><strong>平main最近点对（随机旋转坐标系）</strong> </p>
+<p>非正解</p>
+<pre><code class="cpp">struct Point &#123;
+    double x, y;
+    bool friend operator &lt; (Point a, Point b) &#123;
+        return a.x &lt; b.x;
+    &#125;
+&#125; point[200200];
+double Len (Point a, Point b) &#123;
+    return sqrt ((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
+&#125;
+void Revolve (double theta) &#123;
+    for (int i = 1; i &lt;= n; i++) &#123;
+        double xx = point[i].x, yy = point[i].y;
+        point[i].x = cos (theta) * xx - sin (theta) * yy;
+        point[i].y = sin (theta) * xx + cos (theta) * yy;
+    &#125;
+    sort (point + 1, point + n + 1);
+    for (int i = 1; i &lt;= n; i++)
+        for (int j = i + 1; j &lt;= i + 100 &amp;&amp; j &lt;= n; j++)
+            ans = min (ans, Len (point[i], point[j]));
+&#125;
+int main () &#123;
+    srand (time (NULL));
+    scanf (&quot;%d&quot;, &amp;n);
+    for (int i = 1; i &lt;= n; i++)
+        scanf (&quot;%lf%lf&quot;, &amp;point[i].x, &amp;point[i].y);
+    Revolve (0);
+    Revolve ( rand() %360);
+    Revolve ( rand() %360);
+    Revolve ( rand() %360);
+    printf (&quot;%0.4lf&quot;, ans);
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="cpp">// max
+    for (int i = 1; i &lt;= 10; i++)
+        for (int j = max (n - 100, 1); j &lt;= n; j++)
+            maxn = max (maxn, Len (point[i], point[j]));
+</code></pre>
+<h2 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h2><h3 id="Dij"><a href="#Dij" class="headerlink" title="Dij"></a>Dij</h3><pre><code class="cpp">struct Edge &#123;
+    int tto, nxt, val;
+&#125; edge[siz&lt;&lt;1];
+void add (int u, int v, int w) &#123;
+    edge[++cnt] = (Edge)&#123;v, head[u], w&#125;;
+    head[u] = cnt;
+&#125;
+void Dij () &#123;
+    memset (dis, 0x3f, sizeof(dis));
+    dis[st] = 0;
+    q.push ((ver)&#123;0, st&#125;);
+    while (!q.empty()) &#123;
+        int uu = q.top ().i; q.pop();
+        if (! vis[uu]) &#123;
+            vis[uu] = true;
+            for (int i = head[uu]; i; i = edge[i].nxt) &#123;
+                int tt = edge[i].tto;
+                if (dis[tt] &gt; dis[uu] + edge[i].val) &#123;
+                    dis[tt] = dis[uu] + edge[i].val;
+                    q.push ((ver)&#123;dis[tt], tt&#125;);
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h3 id="差分约束"><a href="#差分约束" class="headerlink" title="差分约束"></a>差分约束</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int maxn = 5e3+3;
+
+int n, m, cnt, head[maxn], dis[maxn], tot[maxn];
+struct edge &#123;int v, nxt, w;&#125; e[maxn &lt;&lt; 1];
+bool vis[maxn];
+queue&lt;int&gt; q;
+
+void add(int u, int v, int w) &#123;
+    e[++cnt] = &#123;v, head[u], w&#125;, head[u] = cnt;
+&#125;
+
+bool spfa(int u) &#123;
+    for (int i = 1; i &lt;= n; i++)
+        dis[i] = INT_MAX;
+    vis[u] = 1;
+    q.push(u);
+    while (!q.empty()) &#123;
+        u = q.front(); q.pop();
+        vis[u] = 0;
+        for (int i = head[u]; i; i = e[i].nxt) &#123;
+            int v = e[i].v;
+            int w = e[i].w;
+            if (dis[v] &gt; dis[u] + w) &#123;
+                dis[v] = dis[u] + w;
+                if (!vis[v]) &#123;
+                    vis[v] = 1, tot[v]++;
+                    q.push(v);
+                    if (tot[v] == n + 1) &#123;
+                        return 0;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    return 1;
+&#125;
+
+int main() &#123;
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+    for (int i = 1; i &lt;= n; i++) &#123;
+        add(0, i, 0);
+    &#125;
+    for (int i = 1; i &lt;= m; i++) &#123;
+        int u, v, w;
+        scanf(&quot;%d %d %d&quot;, &amp;u, &amp;v, &amp;w);
+        add(v, u, w);
+    &#125;
+    if (spfa(0)) &#123;
+        for (int i = 1; i &lt;= n; i++) &#123;
+            printf(&quot;%d &quot;, dis[i]);
+        &#125;
+    &#125;
+    else &#123;
+        printf(&quot;NO\n&quot;);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h3 id="最小生成树-kruskal"><a href="#最小生成树-kruskal" class="headerlink" title="最小生成树 kruskal"></a>最小生成树 kruskal</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+long long ans;
+int f[5050];
+int n, m, now;
+struct node&#123;
+    int u, v, w;
+&#125;tre[200020];
+bool cmp(node x, node y)&#123;
+    return x.w &lt; y.w;
+&#125;
+int find(int x)&#123;
+    if(x == f[x]) return x;
+    else f[x] = find(f[x]);
+&#125;
+void kruskal()&#123;
+    for(int i = 1; i &lt;= m; i++)&#123;
+        int u = find(tre[i].u);
+        int v = find(tre[i].v);
+        if(u == v) continue;
+        ans += tre[i].w;
+        f[u] = v;
+        now++;
+        if(now == n - 1) break;
+    &#125;
+&#125;
+int main()&#123;
+    cin &gt;&gt; n &gt;&gt; m;
+    for(int i = 1; i &lt;= n; i++)
+        f[i] = i;
+    for(int i = 1; i &lt;= m; i++)
+        cin &gt;&gt; tre[i].u &gt;&gt; tre[i].v &gt;&gt; tre[i].w;
+    sort(tre + 1, tre + m + 1, cmp);
+    kruskal();
+    if(now == n - 1) cout &lt;&lt; ans &lt;&lt; endl;
+    else cout &lt;&lt; &quot;orz&quot; &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<h3 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h3><p><strong>最大流</strong></p>
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long llt;
+
+const int maxn = 222;
+const int maxm = 5555 &lt;&lt; 1;
+
+struct edge &#123; int to, nxt, flow; &#125;  e[maxm];
+int cnt=1, head[maxn], dis[maxn], cur[maxm];
+int n, m, s, t;
+
+void add (int u, int v, int w) &#123;
+    e[++cnt] = &#123;v, head[u], w&#125;; head[u] = cnt;
+    e[++cnt] = &#123;u, head[v], 0&#125;; head[v] = cnt;
+&#125;
+
+bool bfs (int s, int t) &#123;
+    memset (dis, 0, sizeof dis);
+    memcpy (cur, head, sizeof head);
+    int x;  queue&lt;int&gt; q;
+    q.push (s); dis[s] = 1;
+    while (!q.empty ()) &#123;
+        x = q.front (); q.pop ();
+        for (int i = head[x]; i; i = e[i].nxt) &#123;
+            if (e[i].flow &amp;&amp; !dis[e[i].to]) &#123;
+                dis[e[i].to] = dis[x] + 1;
+                q.push (e[i].to);
+                if (e[i].to == t) return 1;
+            &#125;
+        &#125;
+    &#125;
+    return 0;
+&#125;
+
+llt dfs (int x, llt flow) &#123;
+    if (x == t) return flow;
+    llt rest = flow; int i;
+    for (i = cur[x]; i; i = e[i].nxt) &#123;
+        if (e[i].flow &amp;&amp; dis[e[i].to] == dis[x] + 1) &#123;
+            llt k = dfs (e[i].to, min (rest, (llt)e[i].flow));
+            if (!k) dis[e[i].to] = -1;
+            e[ i ].flow -= k;
+            e[i^1].flow += k;
+            if (!(rest -= k)) break;
+        &#125;
+    &#125;
+    cur[x] = i;
+    return flow - rest;
+&#125;
+
+llt Dinic () &#123;
+    llt maxflow = 0;
+    while (bfs (s, t))
+        maxflow += dfs (s, LLONG_MAX);
+    return maxflow;
+&#125;
+
+int Read() &#123;
+    int x = 0, f = 1; char ch = getchar();
+    while (ch &lt; &#39;0&#39; || ch &gt; &#39;9&#39;) 
+        &#123;if (ch == &#39;-&#39;) f = -1; ch = getchar();&#125;
+    while (ch &gt;= &#39;0&#39; &amp;&amp; ch &lt;= &#39;9&#39;)
+        x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (ch ^ 48), ch = getchar();
+    return x * f;
+&#125;
+
+int main () &#123;
+    n=Read(), m=Read(), s=Read(), t=Read();
+    // scanf (&quot;%d %d %d %d&quot;, &amp;n, &amp;m, &amp;s, &amp;t);
+    for (int i = 1; i &lt;= m; i++) &#123;
+        int u = Read(), v=Read(), w=Read();
+        // scanf (&quot;%d %d %d&quot;, &amp;u, &amp;v, &amp;w);
+        add (u, v, w);
+    &#125;
+    printf (&quot;%lld\n&quot;, Dinic ());
+&#125;
+</code></pre>
+<h2 id="随机化算法"><a href="#随机化算法" class="headerlink" title="随机化算法"></a>随机化算法</h2><h3 id="随机数生成"><a href="#随机数生成" class="headerlink" title="随机数生成"></a>随机数生成</h3><pre><code class="cpp">srand (time (NULL));
+int R = rand() %p;
+</code></pre>
+<h3 id="随机化算法-1"><a href="#随机化算法-1" class="headerlink" title="随机化算法"></a>随机化算法</h3><p><strong>随机旋转坐标系</strong></p>
+<pre><code class="cpp">数论 -&gt; 计算几何
+</code></pre>
+<h2 id="对拍"><a href="#对拍" class="headerlink" title="对拍"></a>对拍</h2><h3 id="随机数据"><a href="#随机数据" class="headerlink" title="随机数据"></a>随机数据</h3><h3 id="对拍-1"><a href="#对拍-1" class="headerlink" title="对拍"></a>对拍</h3><p>注：from：<code>tedukuri</code> .</p>
+<pre><code class="cpp">#include&lt;cstdlib&gt;
+#include&lt;cstdio&gt;
+#include&lt;ctime&gt;
+int main() &#123;
+    for (int T = 1; T &lt;= 10000; T++) &#123;
+        // 自行设定适当的路径
+        system(&quot;C:\\random.exe&quot;);
+        // 返回当前程序已经运行的CPU时间，windows下单位ms，类unix下单位s
+        double st = clock();
+        system(&quot;C:\\sol.exe&quot;);
+        double ed = clock();
+        system(&quot;C:\\bf.exe&quot;);
+        if (system(&quot;fc C:\\data.out C:\\data.ans&quot;)) &#123;
+            puts(&quot;Wrong Answer&quot;);
+            // 程序立即退出，此时data.in即为发生错误的数据，可人工演算、调试
+            return 0;
+        &#125;
+        else &#123;
+            printf(&quot;Accepted, 测试点 #%d, 用时 %.0lfms\n&quot;, T, ed - st);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+
+	</div>
+
+	
+
+	
+
+	
+		<div class="post-tags">
+			<i class="fa fa-tags" aria-hidden="true"></i>
+			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/oi/" rel="tag">oi</a>
+		</div>
+	
+</article>
+
+	<div id="share_container">
+	<div id="share" data-initialized="true">
+		<a class="no-pjax icon-wechat" tooltip="分享到微信">
+			<button class="btn btn-icon btn-success">
+				<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
+			<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
+				豆
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
+			<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
+			<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
+			<button class="btn btn-icon btn-warning">
+				<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
+			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
+			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=https://zerc.tk/code/&text=板子集" tooltip="分享到 Telegram">
+			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
+			<button class="btn btn-icon btn-default">
+				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
+			</button>
+		</a>
+	</div>
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
+		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
+	</button>
+</div>
+<script type="text/javascript">
+	socialShare("#share", {
+	    title : '板子集',
+	    description : '前言
+
+
+码风解释define
+typedef long long llt;
+const int S...',
+	    wechatQrcodeTitle : "分享到微信",
+	    wechatQrcodeHelper : '微信扫描二维码',
+	    source : 'https://zerc.tk/code/'
+	});
+	$("#share_show")[0].onclick = function(){
+		$("#share_container").addClass("opened");
+	};
+	$("#share_copy_link")[0].onclick = function(){
+		let input = document.createElement('input');
+		document.body.appendChild(input);
+		input.setAttribute("value", window.location.href);
+		input.setAttribute("readonly", "readonly");
+		input.setAttribute("style", "opacity: 0;mouse-events:none;");
+		input.select();
+		if (document.execCommand('copy')){
+			iziToast.show({
+				title: '链接已复制',
+				message: "链接已复制到剪贴板",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#2dce89',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-check',
+				timeout: 5000
+			});
+		}else{
+			iziToast.show({
+				title: '复制失败',
+				message: "请手动复制链接",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#f5365c',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-close',
+				timeout: 5000
+			});
+		}
+		document.body.removeChild(input);
+	};
+</script>
+
+
+
+	<div id="post_comment" class="card shadow-sm">
+		<div id="giscus"></div>
+<script src="https://giscus.app/client.js"
+        data-repo="zerc7/comment"
+        data-repo-id="R_kgDOGzyhVA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOGzyhVM4CREtV"
+        data-mapping="pathname"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+	</div>
+
+
+
+<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"><span class="page-navigation-extra-text"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>上一篇</span><a href="/ji/" rel="prev"> 寄！for teachers</a></div><div class="post-navigation-item post-navigation-next"><span class="page-navigation-extra-text">下一篇 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span><a href="/daily/" rel="next"> 每日总结</a></div></div>
+
+
+
+
+		
+		
+		
+		
+
+					<footer id="footer" class="site-footer card shadow-sm border-0">
+						
+						<div>Theme <a target="_blank" rel="noopener" href="https://github.com/solstice23/hexo-theme-argon"><strong>Argon</strong></a> | Powered by Hexo</div>
+						<span id="busuanzi_container_site_uv">
+							本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+						</span>
+					</footer>
+				</main>
+			</div>
+		</div>
+		
+<script src="/argontheme.js"></script>
+
+		
+		
+		
+			<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+			<script src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+			<script src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script>
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body,{
+						delimiters: [
+							{left: "$$", right: "$$", display: true},
+							{left: "$", right: "$", display: false},
+							{left: "\\(", right: "\\)", display: false}
+						]
+					});
+				});
+			</script>
+		
+
+		
+			<script>
+				var argonEnableCodeHighlight = true;
+			</script>
+			
+<link rel="stylesheet" href="/assets/vendor/highlight/styles/onedark.css">
+
+		
+
+	</div>
+</div>
+<noscript>
+	<style>
+		article img.lazyload[src^="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPg"]{display: none;}
+		.comment-item-text .comment-sticker.lazyload{display: none;}
+	</style>
+</noscript>
+</body>
+
+
+
+</html>
+
