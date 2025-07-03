@@ -1,493 +1,368 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
-    <meta name="description" content="Hexo Theme Keep">
-    <meta name="author" content="zerc">
+  <meta charset="utf-8">
+  <title>ZZU Grades Querier</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>  
+  <style>
+    html {max-width: 800px; margin: auto; background-color: white;}
+    body {font-family: 'Times New Roman', Times, serif; text-align: center; display: flex; flex-direction: column;}
+    main {flex-grow: 1; margin-bottom: 60px;}
+    footer {position: fixed; bottom: 0px; left: 0; right: 0; font-family: 'Courier New', Courier, monospace; background-color: #ffffff;}
+    h1 {margin-top: 80px; margin-bottom: 50px;}
+    div[id="list"] { margin-top: 100px; font-family: 'Courier New', Courier, monospace;}
+    div[id="popups"] {
+      border: 1px solid gray;
+    }
+    span[class="tbtn"] {
+      border: 1px solid cadetblue;
+      border-radius: 4px;
+      color:cadetblue;
+      cursor: pointer;
+    }
+    span[class="tbtn"]:hover {
+      color:white;
+      background-color:cadetblue;
+    }
+    input[type="text"] {padding: 8px; width: 200px; border-radius: 4px; border: 1px solid gray;}
+    input[type="text"]:focus {border: 1px solid rgba(0, 0, 0, 0.9); outline: 0px;}
+    button {padding: 8px; width: 60px; border-radius: 4px; border: 1px solid gray; background-color: white; color: gray; cursor: pointer;}
+    button:hover {background-color: #4CAF50; color: white; border-color: #4CAF50;}
+    table {width: 100%; border-collapse: collapse; margin-top: 20px;}
+    th, td {border: 1px solid #ddd; padding: 8px;}
+    th.sorted {
+      color:cadetblue;
+    }
+    th {background-color: #f2f2f2;}
+    tr[class="term1"] {
+      background-color: #ffffff;
+    }
+    tr[class="term2"] {
+      background-color: #f9f9f9;
+    }
     
-    <title>
-        
-            ZZU Grades Querier |
-        
-        ZERC ZONE
-    </title>
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    
-        <link rel="shortcut icon" href="/images/main.jpg">
-    
-    
-<link rel="stylesheet" href="/font/css/fontawesome.min.css">
-
-    
-<link rel="stylesheet" href="/font/css/regular.min.css">
-
-    
-<link rel="stylesheet" href="/font/css/solid.min.css">
-
-    
-<link rel="stylesheet" href="/font/css/brands.min.css">
-
-    
-        
-            
-        
-            
-                
-<link rel="stylesheet" href="/css/custom.css">
-
-            
-        
-    
-    <script class="keep-theme-configurations">
-    const KEEP = window.KEEP || {}
-    KEEP.hexo_config = {"hostname":"zerc7.github.io","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"ZERC ZONE","author":"zerc","avatar":"/images/main.jpg","favicon":"/images/main.jpg"},"menu":{"home":"/","archives":"/archives","project":"/project"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"一路上有太多的遗憾，满是心酸但不曾后悔。","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/zerc7","weixin":null,"qq":"https://qm.qq.com/q/jI3Tn7k5Ow","weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"3508610899@qq.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":null,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":[null,"/css/custom.css"],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
-    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
-    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
-  </script>
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-
-<body>
-<div class="progress-bar-container">
-    
-        <span class="scroll-progress-bar"></span>
-    
-
-    
-        <span class="pjax-progress-bar"></span>
-        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
-    
-</div>
-
-
-
-<main class="page-container border-box">
-    <!-- home first screen  -->
-    
-
-    <!-- page content -->
-    <div class="page-main-content border-box">
-        <div class="page-main-content-top">
-            
-<header class="header-wrapper">
-
-    <div class="border-box header-content">
-        <div class="left flex-start border-box">
-            
-            <a class="site-name border-box" href="/">
-               ZERC ZONE
-            </a>
-        </div>
-
-        <div class="right border-box">
-            <div class="pc border-box">
-                <ul class="menu-list border-box">
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/">
-                                
-                                HOME
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/archives">
-                                
-                                ARCHIVES
-                                
-                            </a>
-                            
-                        </li>
-                    
-                        
-                        <li class="menu-item flex-start border-box">
-                            <a class="menu-text-color border-box" href="/project">
-                                
-                                PROJECT
-                                
-                            </a>
-                            
-                        </li>
-                    
-                    
-                        <li class="menu-item search search-popup-trigger">
-                            <i class="menu-text-color fas search fa-search"></i>
-                        </li>
-                    
-                </ul>
-            </div>
-            <div class="mobile border-box flex-start">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
-                
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="header-drawer">
-        <ul class="drawer-menu-list border-box">
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
-                            
-                            HOME
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
-                            
-                            ARCHIVES
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-                
-                <li class="drawer-menu-item border-box not-sub-menu">
-                    <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/project">
-                            
-                            PROJECT
-                        </a>
-                        
-                    </label>
-                    
-                </li>
-            
-        </ul>
-    </div>
-
-    <div class="window-mask"></div>
-
-</header>
-
-
-        </div>
-
-        <div class="page-main-content-middle border-box">
-
-            <div class="main-content border-box">
-                
-
-                    
-
-<div class="fade-in-down-animation">
-    <div class="page-template-container border-box keep-container ">
-        <!-- page top -->
-        
-
-        <!-- page bottom -->
-        <div class="page-template-bottom border-box">
-            <!-- use page template -->
-            
-
-            <!-- page content -->
-            <div class="page-content border-box keep-markdown-body ">
-                
-                    <h1 id="ZZU-Grades-Querier"><a href="#ZZU-Grades-Querier" class="headerlink" title="ZZU Grades Querier"></a>ZZU Grades Querier</h1><p><a href="https://zerc7.github.io/zzu-grades-querier/demo">Online demo</a></p>
-<h2 id="历程"><a href="#历程" class="headerlink" title="历程"></a>历程</h2><p>2025 年 1 月：</p>
-<p>期末考完了，各科的成绩陆续出了，也是比较关心成绩，隔三岔五地去教务系统上看，有一次对成绩单下方的“扫码验证”的二维码感兴趣，然后试了试，发现不需要登录就能查看我的成绩，也就是说，我只要知道别人的这个网址，就能知道 TA 的成绩。然后就去看这个网址的构成，发现并不复杂，就是后面跟着的杂乱无章的字符搞不懂，但直觉告诉我那是 Base64 编码，解码之后发现，哎，下划线隔成了学号，6位数字（下称 uID）和一个好多位的数字（后来知道了那是时间戳），然后我就每个数字都加 1，再编码，回车，哇，是我学号的下一位人的成绩。就这样发现了教务系统的这个小 Bug，也不能称之为 Bug，或许可以叫 Feature。</p>
-<p>可是这多少是有点麻烦了，然后就想用 Python 写个小程序，输入学号就能直接告诉我成绩，可是我 Python 只会点皮毛，网络方面更是一窍不通，所以就让 AI 帮我写代码，然后我再小修小改，效果还不错。</p>
-<p>2025 年 2 月：</p>
-<p>我作为“产品经理”，想让界面变得好看，切合 Windows 11 的风格，也用上云母，但是干活的也是我，作为一个废物“程序员”，再 AI 的建议下试了好几个第三方库，也试过 PyQt，但都因为我不太会用或者是这样那样的 Bug，最终都放弃了。</p>
-<p>此外，我还加了批量导出的功能，爬了整个专业的成绩。</p>
-<p>2025 年 2 - 4 月：</p>
-<p>因为有用手机查成绩的需求，所以一直想开发 Android APP，但是我太笨了，实在搞不懂，然后就一搁再搁。</p>
-<p>其实想过用网页的，部署在 Github Pages 上，但 AI 给的代码有问题，我也不会搞，就认为不行，后来就考虑弄到 CloudFlare Workers 上，确实成功了，但是吧，workers.dev 被封了，只能挂梯，太难受了，抱着试一试的心态又让 AI 生成了份 html 代码，这次竟然跑成了（原先应该是没有写 UA 导致的问题），修修改改部署到了 Github 上，也就是现在的 Demo（Ver 0.0.1）。</p>
-<p>2025 年 4 月：</p>
-<p>部署成之后就有两大任务，界面美化（Ver 0.1.0 实现），支持更多的学号（因为 uID 是按学号顺序来的，只能根据已知的学号，uID 推得其余的，工作量还是很大的）。</p>
-<p>又用“一个木函”APP 将这个网页转成了 APP，安装包仅 647KB，安装后也就几 MB，感觉也不见得比原生 APP 差，后续再改改，然后放到 release。</p>
-<h2 id="TO-DO-List"><a href="#TO-DO-List" class="headerlink" title="TO-DO List"></a>TO-DO List</h2><ul>
-<li><p>支持更多学号；</p>
-</li>
-<li><p>增加排序功能；</p>
-</li>
-<li><p>增加按学期筛选功能；</p>
-</li>
-<li><p>Release Android APP（在手机上我认为小而美的 APP 比使用浏览器的体验是更好的）。</p>
-</li>
-</ul>
-<h2 id="DEMO-更新日志："><a href="#DEMO-更新日志：" class="headerlink" title="DEMO 更新日志："></a>DEMO 更新日志：</h2><p>Ver 0.1.2_Alpha (2025.04.14):</p>
-<p>引入“不蒜子”用作统计界面访问次数；引入 Google Analytics，统计访问量和“查询”函数调用次数。</p>
-<p>Ver 0.1.1_Alpha (2025.04.13):</p>
-<p>增添 favicon（借鉴 Excel 图标形状）；优化 “Debug Mode” 激活方式，较先前更为优雅。</p>
-<p>Ver 0.1.0_Alpha (2025.04.13):</p>
-<p>焕新界面，简洁优雅；引入 list（显示受支持的学号）， footer 和 “Debug Mode”。</p>
-<p>Ver 0.0.1_Alpha (2025.04.12):</p>
-<p>创建项目，代码由 AI 辅助生成。</p>
-
-                
-            </div>
-
-            <!-- comment plugin -->
-            
-        </div>
-    </div>
-</div>
-
-
-                
-            </div>
-        </div>
-
-        <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;2025
-    
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">zerc</a>
-        
-    </div>
-
-    <div class="theme-info info-item">
-        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
-
-    
-
-    
-        <div class="count-info info-item">
-            
-                <span class="count-item border-box word">
-                    <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">2.8k</span>
-                </span>
-            
-
-            
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box">Unique Visitor</span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            
-
-            
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box">Page View</span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            
-        </div>
-    
-
-    
-</footer>
-
-        </div>
-    </div>
-
-    <!-- post tools -->
-    
-
-    <!-- side tools -->
-    <div class="side-tools">
-        <div class="side-tools-container border-box ">
-    <ul class="side-tools-list side-tools-show-handle border-box">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
-
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <!-- toggle mode -->
-        
-            <li class="tools-item tool-toggle-theme-mode flex-center">
-                <i class="fas fa-moon"></i>
-            </li>
-        
-
-        <!-- rss -->
-        
-
-        <!-- to bottom -->
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="exposed-tools-list border-box">
-        
-
-        
-
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-
-        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
-            <i class="arrow fas fa-arrow-up"></i>
-            <span class="percent"></span>
-        </li>
-    </ul>
-</div>
-
-    </div>
-
-    <!-- image mask -->
-    <div class="zoom-in-image-mask">
-    <img class="zoom-in-image">
-</div>
-
-
-    <!-- local search -->
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fas fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="close-popup-btn">
-                <i class="fas fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-
-    <!-- tablet toc -->
-    
-</main>
-
-
-
-
-
-<!-- common js -->
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/header-shrink.js"></script>
-
-<script src="/js/back2top.js"></script>
-
-<script src="/js/toggle-theme.js"></script>
-
-<script src="/js/code-block.js"></script>
-
-<script src="/js/main.js"></script>
-
-<script src="/js/libs/anime.min.js"></script>
-
-
-<!-- local search -->
-
-    
-<script src="/js/local-search.js"></script>
-
-
-
-<!-- lazyload -->
-
-    
-<script src="/js/lazyload.js"></script>
-
-
-
-<div class="pjax">
-    <!-- home page -->
-    
-
-    <!-- post page -->
-    
-
-    <!-- categories page -->
-    
-
-    <!-- links page -->
-    
-
-    <!-- photos page -->
-    
-
-    <!-- tools page -->
-    
-</div>
-
-<!-- mermaid -->
-
-
-<!-- pjax -->
-
-    
-<script src="/js/libs/pjax.min.js"></script>
-
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        window.pjax = new Pjax({
-            selectors: [
-                'head title',
-                '.page-container',
-                '.pjax'
-            ],
-            history: true,
-            debug: false,
-            cacheBust: false,
-            timeout: 0,
-            analytics: false,
-            currentUrlFullReload: false,
-            scrollRestoration: false,
-        });
-
-        document.addEventListener('pjax:send', () => {
-            KEEP.utils.pjaxProgressBarStart()
-        });
-
-        document.addEventListener('pjax:complete', () => {
-            KEEP.utils.pjaxProgressBarEnd()
-            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
-            KEEP.initExecute()
-        });
+    /* 设置弹窗容器样式 */
+#settingsModal {
+    display: none; /* 初始为隐藏状态 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 设置弹窗内容样式 */
+#settingsModal .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* 关闭按钮样式 */
+#settingsModal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+#settingsModal .close:hover {
+    color: #333;
+}
+
+/* 设置弹窗的输入框和按钮的样式 */
+#settingsModal input[type="text"],
+#settingsModal input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#settingsModal button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#settingsModal button:hover {
+    background-color: #45a049;
+}
+  </style>
+
+  <script>
+    let DebugMode = false;
+    let clickCount = 0;
+    let lastClickTime = 0;
+    let sortDirection = false;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const ver = document.getElementById('ver');
+      ver.addEventListener('click', function() {
+        const currentTime = Date.now();
+        if (currentTime - lastClickTime > 10000) clickCount = 0;
+        clickCount++;
+        lastClickTime = currentTime;
+        if (clickCount >= 5) {
+          DebugMode = true;
+          document.getElementById('list').innerHTML = 'Debug Mode Activated';
+          clickCount = 0;
+        }
+      });
     });
-</script>
 
+    async function query() {
+      const studentID = document.getElementById('studentID').value.trim();
+      if(studentID == 'Test') {
+        document.getElementById('list').style.display = 'none';
+        document.getElementById('infoTable').style.display = 'table';
+        document.getElementById('infoBody').innerHTML = `<tr><td>Test Class</td><td>Test Name</td><td>Test GPA</td><td>Test Rank</td></tr>`;
+        document.getElementById('gradesTable').style.display = 'table';
+        document.getElementById('gradesBody').innerHTML = '';
+        for (var i = 0; i < 9; i++) {
+          const row = document.createElement('tr'); row.className="term1";
+          row.innerHTML = `<td>24-25 I</td><td>Test ${i}</td><td>${i}</td><td>8${i}</td><td>3.${i}</td>`;
+          document.getElementById('gradesBody').appendChild(row);
+        };
+        for (var i = 0; i < 16; i++) {
+          const row = document.createElement('tr'); row.className="term2";
+          row.innerHTML = `<td>24-25 II</td><td>Test</td><td>2</td><td>80</td><td>1.0</td>`;
+          document.getElementById('gradesBody').appendChild(row);
+        };
+      } else {
+        if(!studentID) return alert('Please enter student ID');
+        document.getElementById('list').style.display = 'none';
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = 'Loading...';
+        try {
+          const urls = genURLs(studentID);
+          const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3';
+          const u0Response = await fetch(urls[0], {headers: {'User-Agent': UA}});
+          if (!u0Response.ok) throw new Error('Error!');
+          const u0Data = await u0Response.text();
+          const u1Response = await fetch(urls[1], {headers: {'User-Agent': UA}});
+          if (!u1Response.ok) throw new Error('Error!');
+          const u1Data = await u1Response.text();
+          const data = parseData(u0Data, u1Data);
+          if (DebugMode) resultDiv.innerHTML = genUID(studentID) + `<br><a href=${urls[0]}>raw data 0</a><br><a href=${urls[1]}>raw data 1</a>`;
+          else resultDiv.innerHTML = '';
+          document.getElementById('infoTable').style.display = 'table';
+          document.getElementById('infoBody').innerHTML = `<tr><td>${data.class}</td><td>${data.name}</td><td>${data.gpa}</td><td>${data.rank}</td></tr>`;
+          document.getElementById('gradesTable').style.display = 'table';
+          document.getElementById('gradesBody').innerHTML = '';
 
+          data.grades.forEach(item => {
+            const row = document.createElement('tr');
+            if(item.term[7] == 'I') row.className = "term2"; else row.className = "term1";
+            row.innerHTML = `<td>${item.term}</td><td>${item.crname}</td><td>${item.credits}</td><td>${item.grades}</td><td>${item.gpoints}</td>`;
+            document.getElementById('gradesBody').appendChild(row);
+          });
+        } catch(error) {resultDiv.innerHTML = `<p style="color: red;">${error.message}</p>`;}
+        gtag('event', 'function_called', { 'event_category': 'Query Function', 'event_label': 'Query' });
+      }
+      
+      sortDirection=true, sortTable(2), sortDirection=true, sortTable(0);
+    }
 
+    function sortTable(columnIndex) {
+      const table = document.getElementById('gradesTable');
+      const ths = table.querySelectorAll('th');
+      ths.forEach(th => th.classList.remove('sorted'));
+      ths[columnIndex].classList.add('sorted');
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
 
+      sortDirection = !sortDirection;
+
+      rows.sort((a, b) => {
+        const aValue = a.cells[columnIndex].textContent;
+        const bValue = b.cells[columnIndex].textContent;
+
+        // const aNum = parseFloat(aValue);
+        // const bNum = parseFloat(bValue);
+        // if (!isNaN(aNum) && !isNaN(bNum)) {
+        //   return sortDirection ? aNum - bNum : bNum - aNum;
+        // }
+
+        return sortDirection ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+      });
+
+      tbody.innerHTML = '';
+      rows.forEach(row => tbody.appendChild(row));
+    }
     
+    function parseData(u0Data, u1Data) {
+      const result = {class: '', name: '', gpa: '', rank: '', grades: []};
+      try {
+        const classMatch = u1Data.match(/班级名称:(.+?)<\/td>/);
+        const nameMatch = u0Data.match(/姓名:(.+?),学号/);
+        const gpaMatch = u0Data.match(/为(.+?),专业/);
+        const rankMatch = u0Data.match(/第(.+?)名/);
+        const totalMatch = u0Data.match(/总人数(.+?)。/);
         
-    
+        result.class = classMatch ? classMatch[1].trim() : 'N/A';
+        result.name = nameMatch ? nameMatch[1].trim() : 'N/A';
+        result.gpa = gpaMatch ? gpaMatch[1].trim() : 'N/A';
+        result.rank = rankMatch && totalMatch ? `${rankMatch[1].trim()}/${totalMatch[1].trim()}` : 'N/A';
 
+        // const termGPMatch = u1Data.match(/学期平均绩点:[\s\S]*?(\d+\.\d+)/);
+
+        const courseRows = u1Data.match(/<tr>[\s\S]*?<td class="tableStyleTd2" >[^<]+<\/td>[\s\S]*?<\/tr>/g) || [];
+        
+        let termName
+        courseRows.forEach(row => {
+          const termMatch = row.match(/、([^<]+) /)
+          const courseMatch = row.match(/<td class="tableStyleTd2" >([^<]+)<\/td>[\s\S]*?<td class="tableStyleTd">([^<]+)<\/td>[\s\S]*?<td class="tableStyleTd">([^<]+)<\/td>[\s\S]*?<td class="tableStyleTd">([^<]+)<\/td>[\s\S]*?<td class="tableStyleTd8">([^<]*)<\/td>/);
+
+          if (termMatch) {
+            termName = termMatch[1].trim()
+          }
+          if (courseMatch) {
+            result.grades.push({
+              term: termName[2]+termName[3]+termName[4]+termName[7]+termName[8]+' '+(termName[12] == '一' ? 'I' : 'II'),
+              crname: courseMatch[1].trim(),
+              type: courseMatch[2].trim(),
+              credits: courseMatch[3].trim(),
+              grades: courseMatch[4].trim(),
+              gpoints: courseMatch[5].trim()
+            });
+          }
+        });
+        return result;
+      } catch (error) {throw new Error(`Parse Data Error: ${error.message}`);}
+    }
+
+    function genURLs(sID) {
+      const uID = genUID(sID);
+      const timestamp = Date.now();
+      const encodeUrl0 = btoa(`${uID}_${sID}_${uID}_${timestamp}`);
+      const encodeUrl1 = btoa(`${uID}_${sID}_1_${timestamp}`);
+      return [
+        `https://jw.v.zzu.edu.cn/eams/check-grade!printGradeRank.action?state=${encodeUrl0}`,
+        `https://jw.v.zzu.edu.cn/eams/check-grade!report.action?state=${encodeUrl1}`
+      ];
+    }
+
+    function genUID(studentID) {
+      const sID = parseInt(studentID);
+
+      const sIDGrade   = 0 | (sID / 100000000) % 10000;
+      const sIDCollege = 0 | (sID / 1000000) % 100;
+      const sIDMajor   = 0 | (sID / 10000) % 100;
+      const sIDClass   = 0 | (sID / 100) % 100;
+      const sIDId      = 0 | (sID / 1) % 100;
+
+      let uid = -1;
+      switch(sIDGrade) {
+        case 2023: switch(sIDCollege) {
+          // case 15: switch(sIDMajor) {
+          //   case 6: uid = 444353; break; // 202315060641
+          // }
+          case 21: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 32 + sIDId + 444353 - (sIDClass >= 4 ? sIDClass - 3 : 0); break;
+            default: break;
+          } break;
+        } break;
+        case 2024: switch(sIDCollege) {
+          // case 11: switch(sIDMajor) {
+          //   case 0: uid = 454517; break;
+          // } break;
+          case 15: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 51 + sIDId + 454518 - (sIDClass >= 8 ? sIDClass - 7 : 0); break;
+            case 6: uid = (sIDClass - 1) * 42 + sIDId + 455024; break;
+          } break;
+          case 21: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 32 + sIDId + 455276; break;
+            case 6: uid = (sIDClass - 1) * 35 + sIDId + 455467; break;
+          } break;
+          case 22: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 33 + sIDId + 455537 - (sIDClass >= 6 ? sIDClass - 5 : 0); break;
+          } break;
+          // case 23: switch(sIDMajor) {
+          //   case 0: uid = (sIDClass - 1) * 35 + sIDId + 455797; break;
+          // } break;
+        } break;
+      }
+      return uid;
+    }
+  </script>
+  <script>
+    function showSettings() {
+    document.getElementById('settingsModal').style.display = 'flex';
+    }
+
+    function closeSettings() {
+        document.getElementById('settingsModal').style.display = 'none';
+    }
+    
+            window.addEventListener('click', (event) => {
+            if (event.target === settingsModal) {
+                settingsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+  </script>
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM2L5ZZ5QZ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PM2L5ZZ5QZ');</script>
+</head>
+<body>
+  <main>
+    <h1>ZZU Grades Querier</h1>
+    <div>
+      <input type="text" id="studentID" autocomplete="off" autofocus="ok" onkeypress="if(event.key === 'Enter') query()" placeholder="Please enter student ID">
+      <button onclick="query()">Query</button>
+    </div>
+    <div id="list">
+      List of supported student IDs:<br>202321000101-202321000831<br>202415000101-202415001050<br>202415060101-202415060642<br>202421000102-202421000631<br>202421060101-202421060235<br>202422000101-202422000832
+      <br><br>If your ID isn't in this range,<br>please contact me on Github.
+      <br><br><span style="color: red;">It's for learning reference only,<br>don't use it for illegal acts.</span>
+    </div>
+    
+    <div id="result"></div>
+    <table id="infoTable" style="display: none;"><thead><tr><th>班级</th><th>姓名</th><th>GPA</th><th>排名</th></tr></thead><tbody id="infoBody"></tbody></table>
+    <table id="gradesTable" style="display: none;">
+      <thead>
+        <tr>
+          <th class="sortable" onclick="sortTable(0)">学期 🡙</th>
+          <th class="sortable" onclick="sortTable(1)">课程名称 🡙</th>
+          <th class="sortable" onclick="sortTable(2)">学分 🡙</th>
+          <th class="sortable" onclick="sortTable(3)">成绩 🡙</th>
+          <th class="sortable" onclick="sortTable(4)">绩点 🡙</th>
+        </tr>
+      </thead>
+      <tbody id="gradesBody"></tbody>
+    </table>
+  </main>
+  <div id="settingsModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSettings()">&times;</span>
+        <h2>Settings</h2>
+        <input type="text" id="settingInput1" placeholder="Setting 1">
+        <input type="text" id="settingInput2" placeholder="Setting 2">
+        <button onclick="saveSettings()">Save</button>
+    </div>
+</div>
+  <footer id="footer">
+    <!-- <span>Page View </span><span id="busuanzi_value_page_pv"></span><br> -->
+    <span class="tbtn" onclick="show()">About</span> <span class="tbtn" onclick="showSettings()">Setting</span><br>
+    <span>© 2025 ZERC</span> <span id="ver">Ver_0.1.0 Developer Edition</span>
+  </footer>
 </body>
 </html>
