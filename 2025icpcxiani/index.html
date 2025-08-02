@@ -9,7 +9,7 @@
     
     <title>
         
-            赛时 VSCode 简明配置教程 |
+            [参赛日记] 2025 ICPC 西安邀请赛 |
         
         ZERC ZONE
     </title>
@@ -200,7 +200,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        赛时 VSCode 简明配置教程
+                        [参赛日记] 2025 ICPC 西安邀请赛
                     </div>
                 
 
@@ -226,13 +226,13 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-04-22 19:09:00</span>
+                <span class="datetime">2025-05-05 16:46:41</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Tue Apr 22 2025 19:20:21 GMT+0800">2025-04-22 19:20:21</span>
+                    <span class="datetime" data-updated="Mon May 05 2025 18:20:35 GMT+0800">2025-05-05 18:20:35</span>
                 </span>
             
         
@@ -240,20 +240,11 @@
         
 
         
-            <span class="post-tag meta-info-item border-box">
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/VSCode/">VSCode</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
 
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>378 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>308 Words</span>
             </span>
         
         
@@ -280,18 +271,17 @@
                     
 
                     
-                         <p><a href="https://zerc7.github.io/Templates/vscode-config/VSCode.pdf">PDF Version</a></p>
-<p>赛时 VSCode 可能不包含任何插件，因此在较短时间内配置好 VSCode 的编译运行指令是很有必要的（虽然我觉得没有任何插件的 VSCode 和 DEV-C++ 基本没有区别）。</p>
-<p>在工作文件夹下新建文件夹 <code>.vscode</code>，新建文件 <code>tasks.json</code>。</p>
-<p>运行程序时可以从同目录下的 <code>sample.in</code> 读入数据并输出到 <code>sample.out</code>。</p>
-<p>可将 <code>.exe</code> 替换为 <code>$&#123;fileBasenameNoExtension&#125;</code>。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cls; g++ &#x27;$&#123;file&#125;&#x27; -std=c++14 -Wall -o .exe&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;run&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cls; Get-Content ./sample.in | ./.exe &gt; ./sample.out&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;buildrun&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cls; g++ &#x27;$&#123;file&#125;&#x27; -std=c++14 -Wall -o .exe; Get-Content ./sample.in | ./.exe &gt; ./sample.out&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+                         <p>省流：打铁。</p>
+<p>但是只差 5 名。</p>
+<p>但是罚时差了 60 分钟。</p>
+<hr>
+<p>这是我加的第一个队（上学期校赛没找到队友最后单挑拿了rk 9，其余都是单人赛），这是我们第一次参赛，<del>这是我们第一次打铁</del>，甚至 3 个人来自 2 个校区的 3 个学院且彼此在两个月前互不相识，只在网上知道某人某场比赛拿了 rank 几，能凑到一块是队友想打邀请赛，问我打不打，我觉得可以去，隧答应。</p>
+<p>感谢学长上早八，抢到了 3 个名额。</p>
+<p>一个月前 VP 了去年的邀请赛，4 题 Cu。</p>
+<h2 id="Day-1-5-2"><a href="#Day-1-5-2" class="headerlink" title="Day -1 5.2"></a>Day -1 5.2</h2><p>坐火车过来的，因为学校不报销，能省则省吧。</p>
+<p>沿途好多山，真的好好看。</p>
+<p>提早一天到西安（由比赛顺便旅游变成了旅游顺便打比赛），先去了青龙寺（因为不要门票），里面好多佛像和中日友好的一些碑，然后发现佛祖也与时俱进，每个投币的地方都贴了二维码，支持赛博捐款（哭笑，然后去了大雁塔，当然没有上去，隔着老远拍了几张照。</p>
 
-<p>配置快捷键，shift+numpad_add 设为字体放大，f9 - f11 依次为编译，运行，编译并运行（老 DEV 了）。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shift+numpad_add&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editor.action.fontZoomIn&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shift+numpad_subtract&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editor.action.fontZoomOut&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;f9&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;workbench.action.tasks.runTask&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;f10&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;workbench.action.tasks.runTask&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="string">&quot;run&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;f11&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;workbench.action.tasks.runTask&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="string">&quot;buildrun&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
-
-<p>设置自动保存。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;files.autoSave&quot;</span><span class="punctuation">:</span> <span class="string">&quot;afterDelay&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
                     
                 </div>
 
@@ -299,14 +289,6 @@
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
-                        
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/VSCode/">VSCode</a>
-                                    </li>
-                                
-                            </ul>
                         
                     </div>
                     <div>
@@ -322,14 +304,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2025icpcxiani/"
-                                   title="[参赛日记] 2025 ICPC 西安邀请赛"
+                                   href="/cf2130/"
+                                   title="[CF] 1040 Div 2 部分题解"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">[参赛日记] 2025 ICPC 西安邀请赛</span>
+                                        <span class="post-nav-title-item text-ellipsis">[CF] 1040 Div 2 部分题解</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -339,11 +321,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/gplt2025/"
-                                   title="[参赛日记] 2025 天梯赛"
+                                   href="/vscode-config-for-xcpc/"
+                                   title="赛时 VSCode 简明配置教程"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">[参赛日记] 2025 天梯赛</span>
+                                        <span class="post-nav-title-item text-ellipsis">赛时 VSCode 简明配置教程</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -371,7 +353,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1-5-2"><span class="nav-text">Day -1 5.2</span></a></li></ol>
     </div>
 </div>
 
@@ -554,7 +536,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1-5-2"><span class="nav-text">Day -1 5.2</span></a></li></ol>
     </div>
 </div>
 
