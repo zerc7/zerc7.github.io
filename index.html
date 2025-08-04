@@ -39,11 +39,17 @@
 
             
         
+            
+                
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+
+            
+        
     
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"zerc7.github.io","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"ZERC ZONE","author":"zerc","avatar":"/images/main.jpg","favicon":"/images/main.jpg"},"menu":{"home":"/","archives":"/archives","project":"/project"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"一路上有太多的遗憾，满是心酸但不曾后悔。","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/zerc7","weixin":null,"qq":"https://qm.qq.com/q/jI3Tn7k5Ow","weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"3508610899@qq.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":null,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":[null,"/css/custom.css"],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"ZERC ZONE","author":"zerc","avatar":"/images/main.jpg","favicon":"/images/main.jpg"},"menu":{"home":"/","archives":"/archives","project":"/project"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"一路上有太多的遗憾，满是心酸但不曾后悔。","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/zerc7","weixin":null,"qq":"https://qm.qq.com/q/jI3Tn7k5Ow","weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"3508610899@qq.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":null,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":[null,"/css/custom.css","https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
@@ -412,6 +418,197 @@ mjx-container[display="true"] + br {
                 <div class="home-post-item-bottom border-box">
                     
                     <h3 class="home-post-title border-box">
+                        <a href="/ml2/">
+                            [机器学习] 学习笔记 贰 训练不起来怎么办
+                        </a>
+                    </h3>
+
+                    <div class="home-post-content keep-markdown-body">
+                        
+                            
+ Model Bias
+Problem: The model is too simple.
+Solution: Redesign you model to make it more flexible.
+More features or Deep L...
+                        
+                    </div>
+
+                    
+
+<div class="post-meta-info-container border-box home">
+    <div class="post-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fa-solid fa-history"></i>&nbsp;<span class="home-post-history"
+                                                                                data-updated="Mon Aug 04 2025 23:13:07 GMT+0800"
+                >2025-08-04 23:13:07</span>
+            </span>
+        
+
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/ml2/">Read more&nbsp;<i class="icon fas fa-angle-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-post-item">
+
+                
+
+                <div class="home-post-item-bottom border-box">
+                    
+                    <h3 class="home-post-title border-box">
+                        <a href="/mlwork1/">
+                            [机器学习] 作业 壹 2022Spring-hw1 COVID-19 Cases Prediction
+                        </a>
+                    </h3>
+
+                    <div class="home-post-content keep-markdown-body">
+                        
+                             Download Data
+123!gdown https://drive.google.com/uc?id=1kLSW_-cW2Huj7bh84YTdimGBOJaODiOS --output covid.train.csv!gdown http...
+                        
+                    </div>
+
+                    
+
+<div class="post-meta-info-container border-box home">
+    <div class="post-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fa-solid fa-history"></i>&nbsp;<span class="home-post-history"
+                                                                                data-updated="Mon Aug 04 2025 17:23:10 GMT+0800"
+                >2025-08-04 17:23:10</span>
+            </span>
+        
+
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/mlwork1/">Read more&nbsp;<i class="icon fas fa-angle-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-post-item">
+
+                
+
+                <div class="home-post-item-bottom border-box">
+                    
+                    <h3 class="home-post-title border-box">
+                        <a href="/ml1/">
+                            [机器学习] 学习笔记 壹 基本概念
+                        </a>
+                    </h3>
+
+                    <div class="home-post-content keep-markdown-body">
+                        
+                            李宏毅 Machine Learning (2021 Spring)
+ 什么是机器学习
+Machine Learning ~= Looking for Function
+ 机器学习可以做什么：
+
+
+Speech Recognition
+
+
+Image...
+                        
+                    </div>
+
+                    
+
+<div class="post-meta-info-container border-box home">
+    <div class="post-meta-info border-box">
+        
+            <span class="meta-info-item border-box">
+                <i class="icon fa-solid fa-history"></i>&nbsp;<span class="home-post-history"
+                                                                                data-updated="Mon Aug 04 2025 08:20:38 GMT+0800"
+                >2025-08-04 08:20:38</span>
+            </span>
+        
+
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+        <a class="home-read-more" href="/ml1/">Read more&nbsp;<i class="icon fas fa-angle-right"></i></a>
+    
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-post-item">
+
+                
+
+                <div class="home-post-item-bottom border-box">
+                    
+                    <h3 class="home-post-title border-box">
                         <a href="/cf2130/">
                             [CF] 1040 Div 2 部分题解
                         </a>
@@ -426,10 +623,9 @@ mjx-container[display="true"] + br {
 题面
 题解
 
-A. Submission is All You Need
-给定非负整数可重集 ，重复任意次操作：选取子集 ，将  或  添加到分数，删去 。求最大分数。
+ A. Submission is All You Need
 
-只有当  时，...
+给定非负整数可重集 SSS，重复任意次操作：选取子集 S′S'S′，将 sum(S′)\text{sum}(...
                         
                     </div>
 
@@ -608,9 +804,10 @@ A. Submission is All You Need
                         
                             (100) + (25+25+25+17) + (2+20+0) = 214 = Ag-5
 没赛时代码，就不写题解了。
-赛时L1-1 签到。
+ 赛时
+L1-1 签到。
 然后服务器不出意料的炸了……
-L1-3（高温补贴）就几个判断，但是题面写的真的很烂，写一半就又重写了一遍……...
+L1-3（高温补贴）就几个判断，但是题面写的真的很烂，写一半就又重写了一遍...
                         
                     </div>
 
@@ -774,8 +971,9 @@ PDF(适于打印): The 2024 ICPC China Shaanxi National Invitational Programming
 
                     <div class="home-post-content keep-markdown-body">
                         
-                            用进废退暂且不论其观点在生物演化方面的的对错，进探讨字面意思以及在生活中的表现。
-很早就听人说过一个人的智力巅峰是在高中，而我真正理解这句话是在上学期的期末考试（哭笑。现在回想的话，上了大学之后好像就很少再认认真真地学东西了，专业课前期勉强还能听得懂...
+                             用进废退
+暂且不论其观点在生物演化方面的的对错，进探讨字面意思以及在生活中的表现。
+很早就听人说过一个人的智力巅峰是在高中，而我真正理解这句话是在上学期的期末考试（哭笑。现在回想的话，上了大学之后好像就很少再认认真真地学东西了，专业课前期勉强还能听...
                         
                     </div>
 
@@ -820,59 +1018,41 @@ PDF(适于打印): The 2024 ICPC China Shaanxi National Invitational Programming
                 </div>
             </li>
         
-            <li class="home-post-item">
-
-                
-
-                <div class="home-post-item-bottom border-box">
-                    
-                    <h3 class="home-post-title border-box">
-                        <a href="/new/">
-                            一段新的开始
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
-                        
-                            其实刚上大学那会是想继续写的，但是经历的事情还少，也没啥值得说的，而且也很少把时间投到算法竞赛里面，更没有要写的了。
-但是下学期开始有了更多的比赛，尤其是四月中旬的天梯赛，五月初的西安邀请赛，都“提醒”或者说督促我花更多的时间到这里面，这段时间也确实...
-                        
-                    </div>
-
-                    
-
-<div class="post-meta-info-container border-box home">
-    <div class="post-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fa-solid fa-history"></i>&nbsp;<span class="home-post-history"
-                                                                                data-updated="Wed Apr 02 2025 16:33:24 GMT+0800"
-                >2025-04-02 16:33:24</span>
-            </span>
-        
-
-        
-
-        
-
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/new/">Read more&nbsp;<i class="icon fas fa-angle-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
     </ul>
     
+    <div class="paginator border-box flex-center">
+        <div class="border-box first-page paginator-btn not-allow">
+            <a class="border-box"><i class="fa-solid fa-angle-double-left"></i></a>
+        </div>
+
+        <div class="border-box paginator-btn">
+            <a class="border-box"
+               href="/"
+            ><i class="fa-solid fa-chevron-left"></i></a>
+        </div>
+
+
+        <div class="page-number-box border-box flex-center">
+            <input class="page-number-input border-box base-style"
+                   type="number"
+                   value="1"
+                   min="1"
+                   max="2"
+            /><span class="delimiter base-style">/</span><span class="base-style">2</span>
+        </div>
+
+
+        <div class="border-box paginator-btn allowed">
+            <a class="border-box"
+               href="/page/2/"
+            ><i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div class="border-box last-page paginator-btn allowed">
+            <a class="border-box"><i class="fa-solid fa-angle-double-right"></i></a>
+        </div>
+    </div>
+
 
 
 
@@ -904,7 +1084,7 @@ PDF(适于打印): The 2024 ICPC China Shaanxi National Invitational Programming
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">3.5k</span>
+                    <span class="item-value border-box word">7.1k</span>
                 </span>
             
 

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="zerc">
+    
+    <title>
+        
+            [机器学习] 作业 壹 2022Spring-hw1 COVID-19 Cases Prediction |
+        
+        ZERC ZONE
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/main.jpg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+        
+            
+                
+<link rel="stylesheet" href="/css/custom.css">
+
+            
+        
+            
+                
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+
+            
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"zerc7.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"ZERC ZONE","author":"zerc","avatar":"/images/main.jpg","favicon":"/images/main.jpg"},"menu":{"home":"/","archives":"/archives","project":"/project"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"一路上有太多的遗憾，满是心酸但不曾后悔。","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/zerc7","weixin":null,"qq":"https://qm.qq.com/q/jI3Tn7k5Ow","weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"3508610899@qq.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":null,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":[null,"/css/custom.css","https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+            <a class="site-name border-box" href="/">
+               ZERC ZONE
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/project">
+                                
+                                PROJECT
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/project">
+                            
+                            PROJECT
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        [机器学习] 作业 壹 2022Spring-hw1 COVID-19 Cases Prediction
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/main.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">zerc</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-08-04 08:29:57</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Mon Aug 04 2025 17:23:10 GMT+0800">2025-08-04 17:23:10</span>
+                </span>
+            
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>892 Words</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>5 Mins</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="download-data"><a class="markdownIt-Anchor" href="#download-data"></a> Download Data</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!gdown https://drive.google.com/uc?id=1kLSW_-cW2Huj7bh84YTdimGBOJaODiOS --output covid.train.csv</span><br><span class="line"></span><br><span class="line">!gdown https://drive.google.com/uc?id=1iiI5qROrAhZn-o4FPqsE97bMzDEFvIdg --output covid.test.csv</span><br></pre></td></tr></table></figure>
+<p>Data: 118 features (id + 37 + 16 * 5, label included)</p>
+<h2 id="import-packages"><a class="markdownIt-Anchor" href="#import-packages"></a> Import Packages</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader, Dataset, random_split</span><br><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.pyplot <span class="keyword">import</span> figure</span><br></pre></td></tr></table></figure>
+<h2 id="same-seed"><a class="markdownIt-Anchor" href="#same-seed"></a> Same Seed</h2>
+<p>保证实验的可重复性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">same_seed</span>(<span class="params">seed</span>):</span><br><span class="line">    <span class="comment"># 使用确定性的卷积算法</span></span><br><span class="line">    torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">    <span class="comment"># 禁止为卷积层选择最优算法</span></span><br><span class="line">    torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br><span class="line">    np.random.seed(seed)</span><br><span class="line">    torch.manual_seed(seed)</span><br><span class="line">    <span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">        torch.cuda.manual_seed(seed)</span><br></pre></td></tr></table></figure>
+<h2 id="dataset"><a class="markdownIt-Anchor" href="#dataset"></a> Dataset</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">data_set_split</span>(<span class="params">data_set, valid_ratio, seed</span>):</span><br><span class="line">    valid_data_size = <span class="built_in">int</span>(<span class="built_in">len</span>(data_set) * valid_ratio)</span><br><span class="line">    train_data_size = <span class="built_in">len</span>(data_set) - valid_data_size</span><br><span class="line">    train_set, valid_set = random_split(data_set, [train_data_size, valid_data_size], generator=torch.Generator().manual_seed(seed))</span><br><span class="line">    <span class="keyword">return</span> np.array(train_set), np.array(valid_set)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">select_feature</span>(<span class="params">train_set, valid_set, test_set</span>):</span><br><span class="line">    label_train_set = train_set[:, -<span class="number">1</span>]</span><br><span class="line">    label_valid_set = valid_set[:, -<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    feature_train_set = train_set[:, :-<span class="number">1</span>]</span><br><span class="line">    feature_valid_set = valid_set[:, :-<span class="number">1</span>]</span><br><span class="line">    feature_test_set = test_set</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> feature_train_set, feature_valid_set, feature_test_set, label_train_set, label_valid_set</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">COVID19Dataset</span>(<span class="title class_ inherited__">Dataset</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, features, targets=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="keyword">if</span> targets <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="variable language_">self</span>.targets = targets</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="variable language_">self</span>.targets = torch.FloatTensor(targets)</span><br><span class="line">        <span class="variable language_">self</span>.features = torch.FloatTensor(features)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, idx</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.targets <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">self</span>.features[idx]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">self</span>.features[idx], <span class="variable language_">self</span>.targets[idx]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(<span class="variable language_">self</span>.features)</span><br></pre></td></tr></table></figure>
+<h2 id="neural-network-model"><a class="markdownIt-Anchor" href="#neural-network-model"></a> Neural Network Model</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">my_model</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, input_dim</span>):</span><br><span class="line">        <span class="built_in">super</span>(my_model, <span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="variable language_">self</span>.layers = nn.Sequential(</span><br><span class="line">            nn.Linear(input_dim, <span class="number">64</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            <span class="comment"># nn.Linear(64, 64),</span></span><br><span class="line">            <span class="comment"># nn.ReLU(),</span></span><br><span class="line">            <span class="comment"># nn.Linear(64, 64),</span></span><br><span class="line">            <span class="comment"># nn.ReLU(),</span></span><br><span class="line">            <span class="comment"># nn.Linear(64, 64),</span></span><br><span class="line">            <span class="comment"># nn.ReLU(),</span></span><br><span class="line">            <span class="comment"># nn.Linear(64, 32),</span></span><br><span class="line">            <span class="comment"># nn.ReLU(),</span></span><br><span class="line">            nn.Linear(<span class="number">64</span>, <span class="number">1</span>),</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = <span class="variable language_">self</span>.layers(x)</span><br><span class="line">        x = x.squeeze(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<h2 id="hyper-parameters"><a class="markdownIt-Anchor" href="#hyper-parameters"></a> Hyper Parameters</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">device = <span class="string">&#x27;cuda&#x27;</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">&#x27;cpu&#x27;</span></span><br><span class="line">config = &#123;</span><br><span class="line">    <span class="string">&#x27;seed&#x27;</span>: <span class="number">7</span>,</span><br><span class="line">    <span class="string">&#x27;valid_ratio&#x27;</span>: <span class="number">0.2</span>,</span><br><span class="line">    <span class="string">&#x27;n_epochs&#x27;</span>: <span class="number">5000</span>,</span><br><span class="line">    <span class="string">&#x27;batch_size&#x27;</span>: <span class="number">256</span>,</span><br><span class="line">    <span class="string">&#x27;lr&#x27;</span>: <span class="number">1e-5</span>,</span><br><span class="line">    <span class="string">&#x27;early_stop&#x27;</span>: <span class="number">800</span>,</span><br><span class="line">    <span class="string">&#x27;save_path&#x27;</span>: <span class="string">&#x27;./models/model.ckpt&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="training-progress"><a class="markdownIt-Anchor" href="#training-progress"></a> Training Progress</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">loss_record_train = []</span><br><span class="line">loss_record_valid = []</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">train_loader, valid_loader, model, config, device</span>):</span><br><span class="line">    criterion = nn.MSELoss(reduction=<span class="string">&#x27;mean&#x27;</span>)</span><br><span class="line">    optimizer = torch.optim.SGD(model.parameters(), lr=config[<span class="string">&#x27;lr&#x27;</span>], momentum=<span class="number">0.9</span>)</span><br><span class="line">    writer = SummaryWriter()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">&#x27;./models&#x27;</span>):</span><br><span class="line">        os.mkdir(<span class="string">&#x27;./models&#x27;</span>)</span><br><span class="line">    n_epochs = config[<span class="string">&#x27;n_epochs&#x27;</span>]</span><br><span class="line">    best_loss = math.inf</span><br><span class="line">    step = <span class="number">0</span></span><br><span class="line">    early_stop_count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(n_epochs):</span><br><span class="line">        model.train()</span><br><span class="line">        loss_record = []</span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> train_loader:</span><br><span class="line">            optimizer.zero_grad()</span><br><span class="line">            x, y = x.to(device), y.to(device)</span><br><span class="line">            pred = model(x)</span><br><span class="line">            loss = criterion(pred, y)</span><br><span class="line">            loss.backward()</span><br><span class="line">            optimizer.step()</span><br><span class="line">            step += <span class="number">1</span></span><br><span class="line">            loss_record.append(loss.detach().item())</span><br><span class="line">            loss_record_train.append(loss.detach().item())</span><br><span class="line">        mean_train_loss = <span class="built_in">sum</span>(loss_record) / <span class="built_in">len</span>(loss_record)</span><br><span class="line">        writer.add_scalar(<span class="string">&#x27;loss/train&#x27;</span>, mean_train_loss, step)</span><br><span class="line"></span><br><span class="line">        model.<span class="built_in">eval</span>()</span><br><span class="line">        loss_record = []</span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> valid_loader:</span><br><span class="line">            x, y = x.to(device), y.to(device)</span><br><span class="line">            <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">                pred = model(x)</span><br><span class="line">                loss = criterion(pred, y)</span><br><span class="line">            loss_record.append(loss.item())</span><br><span class="line"></span><br><span class="line">        mean_valid_loss = <span class="built_in">sum</span>(loss_record) / <span class="built_in">len</span>(loss_record)</span><br><span class="line">        loss_record_valid.append(mean_valid_loss)</span><br><span class="line">        writer.add_scalar(<span class="string">&#x27;loss/valid&#x27;</span>, mean_valid_loss, step)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;Epoch [<span class="subst">&#123;epoch+<span class="number">1</span>&#125;</span>/<span class="subst">&#123;n_epochs&#125;</span>]: Train loss: <span class="subst">&#123;mean_train_loss:<span class="number">.4</span>f&#125;</span>, Valid loss: <span class="subst">&#123;mean_valid_loss:<span class="number">.4</span>f&#125;</span>]&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> mean_valid_loss &lt; best_loss:</span><br><span class="line">            best_loss = mean_valid_loss</span><br><span class="line">            torch.save(model.state_dict(), config[<span class="string">&#x27;save_path&#x27;</span>])</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&#x27;Saving model[<span class="subst">&#123;epoch+<span class="number">1</span>&#125;</span>/<span class="subst">&#123;n_epochs&#125;</span>] with valid loss <span class="subst">&#123;best_loss:<span class="number">.3</span>f&#125;</span>&#x27;</span>)</span><br><span class="line">            early_stop_count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            early_stop_count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> early_stop_count &gt; config[<span class="string">&#x27;early_stop&#x27;</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;Early stopping&#x27;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h2 id="prepare"><a class="markdownIt-Anchor" href="#prepare"></a> Prepare</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">same_seed(config[<span class="string">&#x27;seed&#x27;</span>])</span><br><span class="line">train_data = pd.read_csv(<span class="string">&#x27;./covid.train.csv&#x27;</span>).drop(columns=[<span class="string">&#x27;id&#x27;</span>]).values</span><br><span class="line">test_set = pd.read_csv(<span class="string">&#x27;./covid.test.csv&#x27;</span>).drop(columns=[<span class="string">&#x27;id&#x27;</span>]).values</span><br><span class="line">train_set, valid_set = data_set_split(train_data, config[<span class="string">&#x27;valid_ratio&#x27;</span>], config[<span class="string">&#x27;seed&#x27;</span>])</span><br><span class="line">feature_train, feature_valid, feature_test, label_train, label_valid = select_feature(train_set, valid_set, test_set)</span><br><span class="line"></span><br><span class="line">train_dataset = COVID19Dataset(feature_train, label_train)</span><br><span class="line">valid_dataset = COVID19Dataset(feature_valid, label_valid)</span><br><span class="line">test_dataset = COVID19Dataset(feature_test)</span><br><span class="line"></span><br><span class="line">train_loader = DataLoader(train_dataset, batch_size=config[<span class="string">&#x27;batch_size&#x27;</span>], shuffle=<span class="literal">True</span>)</span><br><span class="line">valid_loader = DataLoader(valid_dataset, batch_size=config[<span class="string">&#x27;batch_size&#x27;</span>], shuffle=<span class="literal">True</span>)</span><br><span class="line">test_loader = DataLoader(test_dataset, batch_size=config[<span class="string">&#x27;batch_size&#x27;</span>], shuffle=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="start"><a class="markdownIt-Anchor" href="#start"></a> Start</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = my_model(input_dim=feature_train.shape[<span class="number">1</span>]).to(device)</span><br><span class="line">train(train_loader, valid_loader, model, config, device)</span><br></pre></td></tr></table></figure>
+<h2 id="plot-learning-curve"><a class="markdownIt-Anchor" href="#plot-learning-curve"></a> Plot Learning Curve</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">plot_learning_curve</span>():</span><br><span class="line">    total_steps = <span class="built_in">len</span>(loss_record_train)</span><br><span class="line">    x_1 = <span class="built_in">range</span>(total_steps)</span><br><span class="line">    x_2 = x_1[::<span class="built_in">len</span>(loss_record_train) // <span class="built_in">len</span>(loss_record_valid)]</span><br><span class="line">    figure(figsize=(<span class="number">6</span>, <span class="number">4</span>))</span><br><span class="line">    plt.plot(x_1, loss_record_train, c=<span class="string">&#x27;tab:red&#x27;</span>, label=<span class="string">&#x27;train&#x27;</span>)</span><br><span class="line">    plt.plot(x_2, loss_record_valid, c=<span class="string">&#x27;tab:cyan&#x27;</span>, label=<span class="string">&#x27;mean valid&#x27;</span>)</span><br><span class="line">    plt.ylim(<span class="number">0.0</span>, <span class="number">5.</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;Training steps&#x27;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;MSE loss&#x27;</span>)</span><br><span class="line">    plt.title(<span class="string">&#x27;Learning curve of COVID-19 model&#x27;</span>)</span><br><span class="line">    plt.legend()</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">plot_learning_curve()</span><br></pre></td></tr></table></figure>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/images/2022SHW1_20_0.png"
+                        alt="png" 
+                 ></p>
+<h2 id="predict"><a class="markdownIt-Anchor" href="#predict"></a> Predict</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">test_set, model, config</span>):</span><br><span class="line">    model.<span class="built_in">eval</span>()</span><br><span class="line">    preds = []</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> test_loader:</span><br><span class="line">        x = x.to(device)</span><br><span class="line">        <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">            pred = model(x)</span><br><span class="line">            preds.append(pred.detach().cpu())</span><br><span class="line">    preds = torch.cat(preds, dim=<span class="number">0</span>).numpy()</span><br><span class="line">    <span class="keyword">return</span> preds</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_pred</span>(<span class="params">preds, file</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        writer = csv.writer(fp)</span><br><span class="line">        writer.writerow([<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;tested_positive&#x27;</span>])</span><br><span class="line">        <span class="keyword">for</span> i, p <span class="keyword">in</span> <span class="built_in">enumerate</span>(preds):</span><br><span class="line">            writer.writerow([i, p])</span><br><span class="line"></span><br><span class="line">model = my_model(input_dim=feature_train.shape[<span class="number">1</span>]).to(device)</span><br><span class="line">model.load_state_dict(torch.load(config[<span class="string">&#x27;save_path&#x27;</span>]))</span><br><span class="line">preds = predict(test_loader, model, config)</span><br><span class="line">save_pred(preds, <span class="string">&#x27;./pred.csv&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/ml2/"
+                                   title="[机器学习] 学习笔记 贰 训练不起来怎么办"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">[机器学习] 学习笔记 贰 训练不起来怎么办</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/ml1/"
+                                   title="[机器学习] 学习笔记 壹 基本概念"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">[机器学习] 学习笔记 壹 基本概念</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#download-data"><span class="nav-text"> Download Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import-packages"><span class="nav-text"> Import Packages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#same-seed"><span class="nav-text"> Same Seed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-text"> Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#neural-network-model"><span class="nav-text"> Neural Network Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hyper-parameters"><span class="nav-text"> Hyper Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#training-progress"><span class="nav-text"> Training Progress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prepare"><span class="nav-text"> Prepare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#start"><span class="nav-text"> Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plot-learning-curve"><span class="nav-text"> Plot Learning Curve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#predict"><span class="nav-text"> Predict</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">zerc</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+                <span class="count-item border-box word">
+                    <span class="item-type border-box">Total words</span>
+                    <span class="item-value border-box word">7.1k</span>
+                </span>
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#download-data"><span class="nav-text"> Download Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import-packages"><span class="nav-text"> Import Packages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#same-seed"><span class="nav-text"> Same Seed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-text"> Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#neural-network-model"><span class="nav-text"> Neural Network Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hyper-parameters"><span class="nav-text"> Hyper Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#training-progress"><span class="nav-text"> Training Progress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prepare"><span class="nav-text"> Prepare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#start"><span class="nav-text"> Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plot-learning-curve"><span class="nav-text"> Plot Learning Curve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#predict"><span class="nav-text"> Predict</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+
+</body>
+</html>
