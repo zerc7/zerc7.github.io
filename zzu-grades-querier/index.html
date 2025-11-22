@@ -41,7 +41,7 @@
       background-color: #f9f9f9;
     }
     
-    /* 设置弹窗容器样式 */
+/* 设置弹窗容器样式 */
 #settingsModal {
     display: none; /* 初始为隐藏状态 */
     position: fixed;
@@ -112,20 +112,15 @@
     let lastClickTime = 0;
     let sortDirection = false;
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const ver = document.getElementById('ver');
-      ver.addEventListener('click', function() {
-        const currentTime = Date.now();
-        if (currentTime - lastClickTime > 10000) clickCount = 0;
-        clickCount++;
-        lastClickTime = currentTime;
-        if (clickCount >= 5) {
-          DebugMode = true;
-          document.getElementById('list').innerHTML = 'Debug Mode Activated';
-          clickCount = 0;
-        }
-      });
+    window.addEventListener('DOMContentLoaded', (event) => {
+      loadSettings();
     });
+    
+    function loadSettings() {
+      const debugMode = localStorage.getItem('DebugMode') === 'true';
+      DebugMode = debugMode;
+      document.getElementById('debugMode').checked = debugMode;
+    }
 
     async function query() {
       const studentID = document.getElementById('studentID').value.trim();
@@ -271,9 +266,9 @@
       let uid = -1;
       switch(sIDGrade) {
         case 2023: switch(sIDCollege) {
-          // case 15: switch(sIDMajor) {
-          //   case 6: uid = 444353; break; // 202315060641
-          // }
+          case 15: switch(sIDMajor) {
+            case 6: uid = (sIDClass - 1) * 42 + sIDId + 444103 - (sIDClass >= 6 ? sIDClass - 5 : 0); break;
+          }
           case 21: switch(sIDMajor) {
             case 0: uid = (sIDClass - 1) * 32 + sIDId + 444353 - (sIDClass >= 4 ? sIDClass - 3 : 0); break;
             default: break;
@@ -329,22 +324,27 @@
       }
       return uid;
     }
-  </script>
-  <script>
+
     function showSettings() {
-    document.getElementById('settingsModal').style.display = 'flex';
+      document.getElementById('settingsModal').style.display = 'flex';
+      document.getElementById('debugMode').checked = DebugMode;
+    }
+    
+    function saveSettings() {
+      DebugMode = document.getElementById('debugMode').checked;
+      localStorage.setItem('DebugMode', DebugMode);
+      closeSettings();
     }
 
     function closeSettings() {
-        document.getElementById('settingsModal').style.display = 'none';
+      document.getElementById('settingsModal').style.display = 'none';
     }
     
-            window.addEventListener('click', (event) => {
-            if (event.target === settingsModal) {
-                settingsModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
+    window.addEventListener('click', (event) => {
+      if (event.target === document.getElementById('settingsModal')) {
+        closeSettings();
+      }
+    });
   </script>
   <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM2L5ZZ5QZ"></script>
@@ -393,15 +393,14 @@
     <div class="modal-content">
         <span class="close" onclick="closeSettings()">&times;</span>
         <h2>Settings</h2>
-        <input type="text" id="settingInput1" placeholder="Setting 1">
-        <input type="text" id="settingInput2" placeholder="Setting 2">
+        Debug Mode: <input type="checkbox" id="debugMode">
         <button onclick="saveSettings()">Save</button>
     </div>
 </div>
   <footer id="footer">
     <!-- <span>Page View </span><span id="busuanzi_value_page_pv"></span><br> -->
-    <span class="tbtn" onclick="window.location.href='/zzu-grades-querier/about'">About</span> <span class="tbtn" onclick="showSettings()">Setting</span><br>
-    <span>© 2025 ZERC</span> <span id="ver">Ver_0.2.1 Developer Edition</span>
+    <span class="tbtn" onclick="window.location.href=''">About</span> <span class="tbtn" onclick="showSettings()">Setting</span><br>
+    <span>© 2025 ZERC</span> <span id="ver">Ver_0.3.0</span>
   </footer>
 </body>
 </html>
