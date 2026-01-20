@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ZZUGQ Temp</title>
+  <link rel="icon" href="\images\zzugq.ico" type="image/x-icon"/>  
+  <style>
+    html {max-width: 800px; margin: auto; background-color: white;}
+    body {font-family: 'Times New Roman', Times, serif; text-align: center; display: flex; flex-direction: column;}
+    main {flex-grow: 1; margin-bottom: 60px;}
+    footer {position: fixed; bottom: 0px; left: 0; right: 0; font-family: 'Courier New', Courier, monospace; background-color: #ffffff;}
+    h1 {margin-top: 80px; margin-bottom: 50px;}
+    div[id="list"] { margin-top: 100px; font-family: 'Courier New', Courier, monospace;}
+    div[id="popups"] {
+      border: 1px solid gray;
+    }
+    span[class="tbtn"] {
+      border: 1px solid cadetblue;
+      border-radius: 4px;
+      color:cadetblue;
+      cursor: pointer;
+    }
+    span[class="tbtn"]:hover {
+      color:white;
+      background-color:cadetblue;
+    }
+    input[type="text"] {padding: 8px; width: 200px; border-radius: 4px; border: 1px solid gray;}
+    input[type="text"]:focus {border: 1px solid rgba(0, 0, 0, 0.9); outline: 0px;}
+    button {padding: 8px; width: 60px; border-radius: 4px; border: 1px solid gray; background-color: white; color: gray; cursor: pointer;}
+    button:hover {background-color: #4CAF50; color: white; border-color: #4CAF50;}
+    table {width: 100%; border-collapse: collapse; margin-top: 20px;}
+    th, td {border: 1px solid #ddd; padding: 8px;}
+    th.sorted {
+      color:cadetblue;
+    }
+    th {background-color: #f2f2f2;}
+    tr[class="term1"] {
+      background-color: #ffffff;
+    }
+    tr[class="term2"] {
+      background-color: #f9f9f9;
+    }
+    
+/* 设置弹窗容器样式 */
+#settingsModal {
+    display: none; /* 初始为隐藏状态 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 设置弹窗内容样式 */
+#settingsModal .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* 关闭按钮样式 */
+#settingsModal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+#settingsModal .close:hover {
+    color: #333;
+}
+
+/* 设置弹窗的输入框和按钮的样式 */
+#settingsModal input[type="text"],
+#settingsModal input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#settingsModal button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#settingsModal button:hover {
+    background-color: #45a049;
+}
+  </style>
+
+  <script>
+    let DebugMode = false;
+    let clickCount = 0;
+    let lastClickTime = 0;
+    let sortDirection = false;
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+      loadSettings();
+    });
+    
+    function loadSettings() {
+      const debugMode = localStorage.getItem('DebugMode') === 'true';
+      DebugMode = debugMode;
+      document.getElementById('debugMode').checked = debugMode;
+    }
+
+    async function query() {
+      const studentID = document.getElementById('studentID').value.trim();
+      if(studentID == 'Test') {
+        document.getElementById('list').style.display = 'none';
+        document.getElementById('infoTable').style.display = 'table';
+        document.getElementById('infoBody').innerHTML = `<tr><td>Test Class</td><td>Test Name</td><td>Test GPA</td><td>Test Rank</td></tr>`;
+        document.getElementById('gradesTable').style.display = 'table';
+        document.getElementById('gradesBody').innerHTML = '';
+        for (var i = 0; i < 9; i++) {
+          const row = document.createElement('tr'); row.className="term1";
+          row.innerHTML = `<td>24-25 I</td><td>Test ${i}</td><td>${i}</td><td>8${i}</td><td>3.${i}</td>`;
+          document.getElementById('gradesBody').appendChild(row);
+        };
+        for (var i = 0; i < 16; i++) {
+          const row = document.createElement('tr'); row.className="term2";
+          row.innerHTML = `<td>24-25 II</td><td>Test</td><td>2</td><td>80</td><td>1.0</td>`;
+          document.getElementById('gradesBody').appendChild(row);
+        };
+      } else {
+        if(!studentID) return alert('Please enter student ID');
+        document.getElementById('list').style.display = 'none';
+        const resultDiv = document.getElementById('result');
+        // resultDiv.innerHTML = 'Loading...';
+        const urls = genURLs(studentID);
+        resultDiv.innerHTML = genUID(studentID) + `<br><a href=${urls[0]}>raw data 0</a><br><a href=${urls[1]}>raw data 1</a>`;
+        // try {
+        //   const urls = genURLs(studentID);
+        //   const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3';
+        //   const u0Response = await fetch(urls[0], {headers: {'User-Agent': UA}});
+        //   if (!u0Response.ok) throw new Error('Error!');
+        //   const u0Data = await u0Response.text();
+        //   const u1Response = await fetch(urls[1], {headers: {'User-Agent': UA}});
+        //   if (!u1Response.ok) throw new Error('Error!');
+        //   const u1Data = await u1Response.text();
+        //   const data = parseData(u0Data, u1Data);
+        //   if (DebugMode) resultDiv.innerHTML = genUID(studentID) + `<br><a href=${urls[0]}>raw data 0</a><br><a href=${urls[1]}>raw data 1</a>`;
+        //   else resultDiv.innerHTML = '';
+        //   document.getElementById('infoTable').style.display = 'table';
+        //   document.getElementById('infoBody').innerHTML = `<tr><td>${data.class}</td><td>${data.name}</td><td>${data.gpa}</td><td>${data.rank}</td></tr>`;
+        //   document.getElementById('gradesTable').style.display = 'table';
+        //   document.getElementById('gradesBody').innerHTML = '';
+
+        //   data.grades.forEach(item => {
+        //     const row = document.createElement('tr');
+        //     if(item.term[7] == 'I') row.className = "term2"; else row.className = "term1";
+        //     row.innerHTML = `<td>${item.term}</td><td>${item.crname}</td><td>${item.credits}</td><td>${item.grades}</td><td>${item.gpoints}</td>`;
+        //     document.getElementById('gradesBody').appendChild(row);
+        //   });
+        // } catch(error) {resultDiv.innerHTML = `<p style="color: red;">${error.message}</p>`;}
+        // gtag('event', 'function_called', { 'event_category': 'Query Function', 'event_label': 'Query' });
+      }
+      
+      sortDirection=true, sortTable(2), sortDirection=true, sortTable(0);
+    }
+
+    function sortTable(columnIndex) {
+      const table = document.getElementById('gradesTable');
+      const ths = table.querySelectorAll('th');
+      ths.forEach(th => th.classList.remove('sorted'));
+      ths[columnIndex].classList.add('sorted');
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+
+      sortDirection = !sortDirection;
+
+      rows.sort((a, b) => {
+        const aValue = a.cells[columnIndex].textContent;
+        const bValue = b.cells[columnIndex].textContent;
+
+        // const aNum = parseFloat(aValue);
+        // const bNum = parseFloat(bValue);
+        // if (!isNaN(aNum) && !isNaN(bNum)) {
+        //   return sortDirection ? aNum - bNum : bNum - aNum;
+        // }
+
+        return sortDirection ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+      });
+
+      tbody.innerHTML = '';
+      rows.forEach(row => tbody.appendChild(row));
+    }
+    
+    function parseData(u0Data, u1Data) {
+      const result = {class: '', name: '', gpa: '', rank: '', grades: []};
+      try {
+        const classMatch = u1Data.match(/班级名称:(.+?)<\/td>/);
+        const nameMatch = u0Data.match(/姓名:(.+?),学号/);
+        const gpaMatch = u0Data.match(/为(.+?),专业/);
+        const rankMatch = u0Data.match(/第(.+?)名/);
+        const totalMatch = u0Data.match(/总人数(.+?)。/);
+        
+        result.class = classMatch ? classMatch[1].trim() : 'N/A';
+        result.name = nameMatch ? nameMatch[1].trim() : 'N/A';
+        result.gpa = gpaMatch ? gpaMatch[1].trim() : 'N/A';
+        result.rank = rankMatch && totalMatch ? `${rankMatch[1].trim()}/${totalMatch[1].trim()}` : 'N/A';
+
+        // const termGPMatch = u1Data.match(/学期平均绩点:[\s\S]*?(\d+\.\d+)/);
+
+        const courseRows = u1Data.match(/<tr>[\s\S]*?<td class="tableStyleTd2" >[^<]+<\/td>[\s\S]*?<\/tr>/g) || [];
+        
+        let termName
+        courseRows.forEach(row => {
+          const termMatch = row.match(/、([^<]+) /)
+          const courseMatch = row.match(/<td class="tableStyleTd2" >([^<]+)<\/td>[\s\S]*?<td class="tableStyleTd">([^<]+)<\/td>[\s\S]*?<td class="tableStyleTd">([^<]+)<\/td>[\s\S]*?<td class="tableStyleTd">([^<]+)<\/td>[\s\S]*?<td class="tableStyleTd8">([^<]*)<\/td>/);
+
+          if (termMatch) {
+            termName = termMatch[1].trim()
+          }
+          if (courseMatch) {
+            result.grades.push({
+              term: termName[2]+termName[3]+termName[4]+termName[7]+termName[8]+' '+(termName[12] == '一' ? 'I' : 'II'),
+              crname: courseMatch[1].trim(),
+              type: courseMatch[2].trim(),
+              credits: courseMatch[3].trim(),
+              grades: courseMatch[4].trim(),
+              gpoints: courseMatch[5].trim()
+            });
+          }
+        });
+        return result;
+      } catch (error) {throw new Error(`Parse Data Error: ${error.message}`);}
+    }
+
+    function genURLs(sID) {
+      const uID = genUID(sID);
+      const timestamp = Date.now();
+      // const encodeUrl0 = btoa(`${uID}_${sID}_${uID}_${timestamp}`);
+      // const encodeUrl1 = btoa(`${uID}_${sID}_1_${timestamp}`);
+      const encodeUrl2 = btoa(`${uID}_${sID}_2_${timestamp}`);
+      // return [
+      //   `https://jw.v.zzu.edu.cn/eams/check-grade!printFirstGradeRank.action?state=${encodeUrl0}`,
+      //   `https://jw.v.zzu.edu.cn/eams/check-grade!report.action?state=${encodeUrl1}`
+      // ];
+      return [
+        `https://jwxt.zzu.edu.cn/student/grade/sheet/qrcode/grade-rank-zh?state=${encodeUrl2}`,
+        `https://jwxt.zzu.edu.cn/student/grade/sheet/qrcode/grade-zh?state=${encodeUrl2}`
+      ];
+    }
+
+    function genUID(studentID) {
+      const sID = parseInt(studentID);
+
+      const sIDGrade   = 0 | (sID / 100000000) % 10000;
+      const sIDCollege = 0 | (sID / 1000000) % 100;
+      const sIDMajor   = 0 | (sID / 10000) % 100;
+      const sIDClass   = 0 | (sID / 100) % 100;
+      const sIDId      = 0 | (sID / 1) % 100;
+
+      let uid = -1;
+      switch(sIDGrade) {
+        case 2023: switch(sIDCollege) {
+          case 15: switch(sIDMajor) {
+            case 6: uid = (sIDClass - 1) * 42 + sIDId + 444103 - (sIDClass >= 6 ? sIDClass - 5 : 0); break;
+          }
+          case 21: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 32 + sIDId + 444353 - (sIDClass >= 4 ? sIDClass - 3 : 0); break;
+            default: break;
+          } break;
+        } break;
+        case 2024: switch(sIDCollege) {
+          case 3: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 34 + sIDId + 452680 - (sIDClass >= 4 ? sIDClass - 3 : 0); break;
+          } break;
+          case 4: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 35 + sIDId + 452880; break;
+            case 8: uid = (sIDClass - 1) * 33 + sIDId + 453090; break;
+          } break;
+          case 5: switch(sIDMajor) {
+            case 10: uid = (sIDClass - 1) * 37 + sIDId + 453155 - (sIDClass >= 6 ? sIDClass - 5 : 0); break;
+          } break;
+          case 6: switch(sIDMajor) {
+            case 1: uid = (sIDClass - 1) * 39 + sIDId + 453375 - (sIDClass >= 5 ? sIDClass - 4 : 0); break;
+          } break;
+          case 7: switch(sIDMajor) {
+            case 1: uid = (sIDClass - 1) * 33 + sIDId + 453606; break;
+            case 7: uid = (sIDClass - 1) * 36 + sIDId + 453672; break;
+            case 11: uid = sIDId + 453851; break;
+          } break;
+          case 8: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 37 + sIDId + 453871 - (sIDClass >= 7 ? sIDClass - 6 : 0); break;
+          } break;
+          case 9: switch(sIDMajor) {
+            case 1: uid = (sIDClass - 1) * 39 + sIDId + 454164; break;
+            case 6: uid = (sIDClass - 1) * 40 + sIDId + 454241; break;
+          } break;
+          case 10: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 35 + sIDId + 454281; break;
+          } break;
+          case 11: switch(sIDMajor) {
+            case 3: uid = (sIDClass - 1) * 33 + sIDId + 454386; break;
+          } break;
+          case 15: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 51 + sIDId + 454518 - (sIDClass >= 8 ? sIDClass - 7 : 0); break;
+            case 6: uid = (sIDClass - 1) * 42 + sIDId + 455024; break;
+          } break;
+          case 21: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 32 + sIDId + 455276; break;
+            case 6: uid = (sIDClass - 1) * 35 + sIDId + 455467; break;
+          } break;
+          case 22: switch(sIDMajor) {
+            case 0: uid = (sIDClass - 1) * 33 + sIDId + 455537 - (sIDClass >= 6 ? sIDClass - 5 : 0); break;
+          } break;
+          // case 23: switch(sIDMajor) {
+          //   case 0: uid = (sIDClass - 1) * 35 + sIDId + 455797; break;
+          // } break;
+        } break;
+      }
+      return uid;
+    }
+
+    function showSettings() {
+      document.getElementById('settingsModal').style.display = 'flex';
+      document.getElementById('debugMode').checked = DebugMode;
+    }
+    
+    function saveSettings() {
+      DebugMode = document.getElementById('debugMode').checked;
+      localStorage.setItem('DebugMode', DebugMode);
+      closeSettings();
+    }
+
+    function closeSettings() {
+      document.getElementById('settingsModal').style.display = 'none';
+    }
+    
+    window.addEventListener('click', (event) => {
+      if (event.target === document.getElementById('settingsModal')) {
+        closeSettings();
+      }
+    });
+  </script>
+  <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM2L5ZZ5QZ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PM2L5ZZ5QZ');</script>
+</head>
+<body>
+  <main>
+    <h1>ZZU Grades Querier</h1>
+    <div>
+      <input type="text" id="studentID" autocomplete="off" autofocus="ok" onkeypress="if(event.key === 'Enter') query()" placeholder="Please enter student ID">
+      <button onclick="query()">Query</button>
+    </div>
+    <div id="list">
+      List of supported student IDs:<br>
+      202321______<br>
+      202403______<br>
+      202404______<br>
+      202405______<br>
+      202406______<br>
+      202407______<br>
+      202408______<br>
+      202409______<br>
+      20241_______<br>
+      202421______<br>
+      202422______
+      <!-- <br><br>If your ID isn't in this range,<br>please contact me on Github. -->
+      <br><br><span style="color: red;">It's for learning reference only,<br>don't use it for illegal acts.</span>
+      <br><br><span style="color: red;">Adapted to the new academic affairs system interface,<br> but due to CORS, the data cannot be parsed.</span>
+    </div>
+    
+    <div id="result"></div>
+    <table id="infoTable" style="display: none;"><thead><tr><th>班级</th><th>姓名</th><th>GPA</th><th>排名</th></tr></thead><tbody id="infoBody"></tbody></table>
+    <table id="gradesTable" style="display: none;">
+      <thead>
+        <tr>
+          <th class="sortable" onclick="sortTable(0)">学期 🡙</th>
+          <th class="sortable" onclick="sortTable(1)">课程名称 🡙</th>
+          <th class="sortable" onclick="sortTable(2)">学分 🡙</th>
+          <th class="sortable" onclick="sortTable(3)">成绩 🡙</th>
+          <th class="sortable" onclick="sortTable(4)">绩点 🡙</th>
+        </tr>
+      </thead>
+      <tbody id="gradesBody"></tbody>
+    </table>
+  </main>
+  <div id="settingsModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSettings()">&times;</span>
+        <h2>Settings</h2>
+        Debug Mode: <input type="checkbox" id="debugMode">
+        <button onclick="saveSettings()">Save</button>
+    </div>
+</div>
+  <footer id="footer">
+    <!-- <span>Page View </span><span id="busuanzi_value_page_pv"></span><br> -->
+    <span class="tbtn" onclick="window.location.href=''">About</span> <span class="tbtn" onclick="showSettings()">Setting</span><br>
+    <span>© 2025 ZERC</span> <span id="ver">Ver_0.3.0</span>
+  </footer>
+</body>
+</html>
